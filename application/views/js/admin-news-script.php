@@ -1,0 +1,141 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<script>
+    var newsObject = {
+        activebNewsID: '',
+        initNewsPage: function() {
+            var today = new Date((new Date()).setHours(0, 0, 0, 0));
+            $('.date-field').datepicker({
+                format: 'yyyy/mm/dd',
+                autoclose: true,
+                clearBtn: true,
+                todayHighlight: true,
+                startDate:today
+            });
+        },
+        showNewsCreateModal: function () {
+            newsObject.activebNewsID = '';
+            $('#news_modal').html('Create');
+            $('#NewsTitle').val('');
+            $('#NewsDescription').val('');
+            $('#NewsImagePathThumbnail').attr('src', '');
+            $('#NewsPublishDate').val('');
+            $('#NewsUnpublishedDate').val('');
+            $("#NewsIsActiveNo").prop("checked", true);
+            $('#addNewsModal').modal('show');
+        },
+        deleteNews: function (newsID) {
+            console.log('Method Name: newsObject.deleteNews');
+            var formURL = "<?php echo site_url('News/deleteNews');?>?NewsID="+newsID;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'newsObject.deleteNews', function(response){
+                if (response) {
+                    var success_msg = 'You have successfully deleted data!';
+                    mimsPopup.showSidePopUp('Success!!!', success_msg, true);
+                    newsObject.populateNewsList();
+                } else {
+                    mimsPopup.showSidePopUp('Error!!!','Data is not deleted successfully!', false);
+                }
+            });
+        },
+        submitNewsModal: function () {
+            $('#addNewsModal').modal('hide');
+            var formURL = newsObject.activebNewsID == '' ? "<?php echo site_url('News/addNews');?>" : "<?php echo site_url('News/updateNews');?>?NewsID="+newsObject.activebNewsID;
+            var form = $('form#addNewNews');
+            if (window.FormData){
+                var postData = new FormData(form[0]);
+            } else {
+                return false;
+            }
+
+            $.ajax({
+                url         : formURL,
+                data        : postData,
+                cache       : false,
+                contentType : false,
+                processData : false,
+                type        : 'POST',
+                dataType    : "JSONp",
+                beforeSend:function(){
+
+                },
+                success:function(serverResponse, textStatus, jqXHR)
+                {
+                    var data = serverResponse.response;
+                    if (data) {
+                        if (data.error_msg != ''){
+                            mimsPopup.showSidePopUp('Error!!!',data.error_msg, false);
+                        } else if (data.result){
+                            var success_msg = 'You have successfully added a news.';
+                            mimsPopup.showSidePopUp('Success!!!', success_msg, true);
+                            newsObject.populateNewsList();
+                        }
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown)
+                {
+
+                },
+                statusCode: {
+
+                },
+                complete: function(){
+
+                },
+                timeout: 300000
+            });
+        },
+        populateNewsList: function() {
+            var formURL = "<?php echo site_url('News/getAllNewss')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'newsObject.getNewsList', function(newsData){
+                var news_tr_text = '';
+                $('tbody.news-list').html('');
+                for(var i = 0; i < newsData.length; i++) {
+                    news_tr_text = '<tr class="table-row">' +
+                        '<td><a class="link" onclick="newsObject.showNewsEditModal('+newsData[i].ID+')">'+newsData[i].Title+'</a></td>' +
+                        '<td>' + newsData[i].PublishDateTime + '</td>' +
+                        '<td>' + newsData[i].UnpublishedDateTime + '</td>' +
+                        '<td>' +
+                        '<div class="actions">' +
+                        '<a onclick="newsObject.showNewsEditModal('+newsData[i].ID+')"><img src="<?php echo base_url();?>application/views/images/svg/edit-regular.svg"></a>' +
+                        '<a onclick="newsObject.deleteNews('+newsData[i].ID+')" class="delete"><img src="<?php echo base_url();?>application/views/images/svg/trash-alt-regular.svg"></a>' +
+                        '</div>' +
+                        '</td>' +
+                        '</tr>';
+                    $('tbody.news-list').append(news_tr_text);
+                }
+            });
+        },
+        showNewsEditModal: function (newsID) {
+            console.log('Method Name: newsObject.showNewsEditModal');
+            newsObject.activebNewsID = newsID;
+            var formURL = "<?php echo site_url('News/getNewsDetailInformation')?>?NewsID="+newsID;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'newsObject.showNewsEditModal', function(newsData){
+                $('#NewsTitle').val(newsData.Title);
+                $('#NewsDescription').val(newsData.Description);
+                $('#NewsImagePathThumbnail').attr('src', '<?php echo base_url()?>NewsImages/'+newsData.ImagePath);
+                $('#NewsPublishDate').datepicker('setValue', newsData.PublishDateTime);
+                $('#NewsUnpublishedDate').datepicker('setValue', newsData.UnpublishedDateTime);
+                if (newsData.IsActive) {
+                    $("#NewsIsActiveYes").prop("checked", true);
+                } else {
+                    $("#NewsIsActiveNo").prop("checked", true);
+                }
+            });
+            $('#news_modal').html('Update');
+            $('#addNewsModal').modal('show');
+        },
+        setNewsImagePathThumbnail: function (input, objectID) {
+            console.log('newsObject.setNewsImagePathThumbnail' + 'Params: input, objectID' + ' Values: ' + input + ' ' + objectID);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#'+objectID).attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    }
+
+    newsObject.initNewsPage();
+</script>
