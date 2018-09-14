@@ -23,80 +23,41 @@
                     <div class="col-md-6">
                         <div class="drug-update">
                             <h4 class="title">DRUG UPDATE</h4>
-                            <h5 class="sub-title">
-                                New Products
-                            </h5>
-                            <ul class="list-inline float-left">
-                                <li><a href="">Advixa 40</a></li>
-                                <li><a href="">Anema Laline Laxative</a></li>
-                                <li><a href="">Antivenom</a></li>
-                            </ul>
-                            <ul class="list-inline float-right">
-                                <li><a href="">Aprima</a></li>
-                                <li><a href="">Carbestop</a></li>
-                                <li><a href="">Dapaglip</a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <a href="" class="btn btn-s float-right">
-                                <i class="fas fa-chevron-right"></i> see more
-                            </a>
-                            <div class="clearfix"></div>
-                            <h5 class="sub-title">
-                                New Brands
-                            </h5>
-                            <ul class="list-inline float-left">
-                                <li><a href=""> Apidra Cartridge</a></li>
-                                <li><a href="">Brezofil</a></li>
-                                <li><a href="">CEF-3</a></li>
-                                <li><a href="">Cefaten 100ML Suspension </a></li>
-                            </ul>
-                            <ul class="list-inline float-right">
-                                <li><a href="">Citalon 5</a></li>
-                                <li><a href="">Clinosol Vit IV</a></li>
-                                <li><a href="">Dialon 3MG Tablet</a></li>
-                                <li><a href="">Dimerol-MR60</a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <a href="" class="btn btn-s float-right">
-                                <i class="fas fa-chevron-right"></i> see more
-                            </a>
-                            <div class="clearfix"></div>
-                            <h5 class="sub-title">
-                                New Presentation
-                            </h5>
-                            <ul class="list-inline float-left">
-                                <li><a href="">5X</a></li>
-                                <li><a href="">ACI ORS </a></li>
-                                <li><a href="">ACI ORS Fruity</a></li>
-                                <li><a href="">Amlabery</a></li>
-                            </ul>
-                            <ul class="list-inline float-right">
-                                <li><a href="">Anlic</a></li>
-                                <li><a href="">Anxitab</a></li>
-                                <li><a href="">Azapin 15</a></li>
-                                <li><a href="">Bilicir 150 </a></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <a href="" class="btn btn-s float-right">
-                                <i class="fas fa-chevron-right"></i> see more
-                            </a>
+                            <div class="clearfix new-products-ul">
+                                <h5 class="sub-title">
+                                    New Products
+                                </h5>
+                                <ul class="list-inline float-left"></ul>
+                                <ul class="list-inline float-right"></ul>
+                                <a href="" class="btn btn-s float-right">
+                                    <i class="fas fa-chevron-right"></i> see more
+                                </a>
+                            </div>
+                            <div class="clearfix new-brand-ul">
+                                <h5 class="sub-title">
+                                    New Brands
+                                </h5>
+                                <ul class="list-inline float-left"></ul>
+                                <ul class="list-inline float-right"></ul>
+                                <a href="" class="btn btn-s float-right">
+                                    <i class="fas fa-chevron-right"></i> see more
+                                </a>
+                            </div>
+                            <div class="clearfix new-presentation-ul">
+                                <h5 class="sub-title">
+                                    New Presentation
+                                </h5>
+                                <ul class="list-inline float-left"></ul>
+                                <ul class="list-inline float-right"></ul>
+                                <a href="" class="btn btn-s float-right">
+                                    <i class="fas fa-chevron-right"></i> see more
+                                </a>
+                            </div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="product-highlights">
-                            <h3 class="title">PRODUCT HIGHLIGHTS</h3>
-                            <img src="<?php echo base_url().'application/views/';?>img/img-3.png" alt="product" class="img-fluid" style="padding: 79px 0;">
-                            <img src="<?php echo base_url().'application/views/';?>img/img-4.png" alt="product" class="img-fluid" style="width: 100%;">
-                            <div class="product-detail">
-                                <h4 class="title">PRODUCT</h4>
-                                <p class="info" style="color: #4C99D3;font-size: 20px;margin-bottom: 70px;"><a href="">Xigduo XR</a></p>
-                                <h4 class="title">CONTENT</h4>
-                                <p class="info">(Per 5 mg/1,000 mg)</p>
-                                <h4 class="title">INDICATIONS</h4>
-                                <p class="info">Adjunct to diet & exercise to improve glycaemic control in adult w...R</p>
-                            </div>
-                        </div>
+                        <div class="product-highlights"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -173,4 +134,8 @@
 
 <script>
     frontendCommonMethods.getSideBarData();
+    drugObject.getNewBrands(1);
+    drugObject.getNewPresentations(1);
+    drugObject.getNewProducts(1);
+    drugObject.getHighlightedBrands();
 </script>

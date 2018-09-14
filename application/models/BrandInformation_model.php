@@ -350,15 +350,49 @@ class BrandInformation_model extends GeneralData_model {
 
     public function getHighlightedBrands() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $this->db->select('*');
-        $this->db->from('brandinformation');
-        $this->db->where('IsActive', 1);
-        $this->db->where('IsHighlighted', 1);
+        $this->db->select('b.ID');
+        $this->db->select('b.Name');
+        $this->db->select('b.PriceInBDT');
+        $this->db->select('b.ImagePath');
+        $this->db->select('g.ID AS GenericID');
+        $this->db->select('g.Name AS GenericName');
+        $this->db->select('g.Classification');
+        $this->db->select('g.SafetyRemark');
+        $this->db->select('g.Indication');
+        $this->db->select('g.DosageAdministration');
+        $this->db->select('g.ContraindicationPrecaution');
+        $this->db->select('g.SideEffect');
+        $this->db->select('g.PregnancyLactation');
+        $this->db->select('m.ID AS ManufacturerID');
+        $this->db->select('m.Name AS ManufacturerName');
+        $this->db->select('df.ID AS DosageFormID');
+        $this->db->select('df.Name AS DosageForm');
+        $this->db->select('s.ID AS StrengthID');
+        $this->db->select('s.Name AS StrengthName');
+        $this->db->select('ps.ID AS PackSizeID');
+        $this->db->select('ps.Name AS PackSize');
+        $this->db->select('b.IsHighlighted');
+        $this->db->select('b.IsNewProduct');
+        $this->db->select('b.IsNewBrand');
+        $this->db->select('b.IsNewPresentation');
+        $this->db->select('b.IsActive');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
+        $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
+        $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        $this->db->where('df.IsActive', 1);
+        $this->db->where('s.IsActive', 1);
+        $this->db->where('ps.IsActive', 1);
+        $this->db->where('b.IsHighlighted', 1);
         $this->db->order_by('CreateDate', 'DESC');
         $this->db->limit(1);
         $all_new_information = $this->db->get('brandinformation');
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
-        return $all_new_information;
+        return isset($all_new_information[0]['ID']) ? $all_new_information[0] : array();
     }
 
     public function getAllDrugInfoForAutoComplete() {

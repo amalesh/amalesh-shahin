@@ -7,25 +7,72 @@
         getNewProducts: function(allProduct) {
             var formURL = "<?php echo site_url('Brand/getNewProducts?AllProduct=')?>"+allProduct;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
+                $('div.new-products-ul ul').html('');
+                if(drugData) {
+                    var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
+                    for (var i = 0; i < home_page_new_item_limit / 2; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-products-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
 
+                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-products-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
+                }
             }
         },
         getNewPresentations: function(allPresentation) {
             var formURL = "<?php echo site_url('Brand/getFeaturePresentations?AllPresentation=')?>"+allPresentation;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeaturePresentations', function(drugData){
+                $('div.new-resentation-ul ul').html('');
+                if(drugData) {
+                    var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
+                    for (var i = 0; i < home_page_new_item_limit / 2; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-resentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
 
+                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-resentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
+                }
             }
         },
         getNewBrands: function(allBrand) {
             var formURL = "<?php echo site_url('Brand/getFeatureBrands?AllBrand=')?>"+allBrand;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureBrands', function(drugData){
+                $('div.new-brand-ul ul').html('');
+                if(drugData) {
+                    var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
+                    for (var i = 0; i < home_page_new_item_limit / 2; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-brand-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
 
+                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
+                        if (i == drugData.length) break;
+                        $('div.new-brand-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                    }
+                }
             }
         },
         getHighlightedBrands: function() {
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
-
+                if(drugData) {
+                    $('.product-highlights').html('<h3 class="title">PRODUCT HIGHLIGHTS</h3>' +
+                        '<img src="<?php echo base_url()?>BrandImages/'+drugData.ImagePath+'" alt="product" class="img-fluid" style="padding: 79px 0;">' +
+                        '                            <div class="product-detail">' +
+                        '                                <h4 class="title">PRODUCT</h4>' +
+                        '                                <p class="info" style="color: #4C99D3;font-size: 20px;margin-bottom: 70px;"><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData.ID+'">'+drugData.Name+'</a></p>' +
+                        '                                <h4 class="title">CONTENT</h4>' +
+                        '                                <p class="info">('+drugData.StrengthName+')</p>' +
+                        '                                <h4 class="title">INDICATIONS</h4>' +
+                        '                                <p class="info">'+drugData.Indication+'</p>' +
+                        '                            </div>');
+                }
             }
         },
         changeSearchOption: function() {
