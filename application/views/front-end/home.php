@@ -101,7 +101,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="product-add-1 text-center">
+                        <div class="add-bottom-left-823x115">
                             <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-5.png" alt="add" class="img-fluid"></a>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="product-add-2">
+                <div class="add-home-page-top-right-305x355">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-2.png" alt="add"></a>
                 </div>
                 <div class="sidebar-news">

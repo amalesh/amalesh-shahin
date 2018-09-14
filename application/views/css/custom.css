@@ -215,6 +215,19 @@ a.btn.btn-s.float-right {
     padding: 5px 0;
 }
 
+
+/* Advertisements Classes*/
+
+.add-home-page-top-right-305x355{
+    margin-bottom: 50px;
+}
+.add-inner-page-top-right-340x350{
+    margin-bottom: 50px;
+}
+
+.add-bottom-left-823x115{
+    margin: 60px 0;
+}
 .product-add-2 {
     margin-bottom: 50px;
 }
@@ -278,7 +291,7 @@ section.visitor {
 }
 
 .footer li a {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     padding-left: 11px;
     font-size: 18pt;
@@ -410,8 +423,8 @@ section.visitor {
 .find-doctor .title {
     color: #2B499C;
     font-size: 30pt;
-    position: absolute;
-    top: -1.9%;
+    /*position: absolute;
+    top: -1.9%;*/
     background: #fff;
 }
 
@@ -435,8 +448,8 @@ section.visitor {
     border-radius: 12px;
     padding: 40px 0;
     margin-bottom: 30px;
-   /* font-size: 7pt;
-    font-weight: 700;*/
+   font-size: 13px;
+   /* font-weight: 700;*/
 }
 
 td{
