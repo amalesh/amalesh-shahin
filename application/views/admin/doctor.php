@@ -59,13 +59,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Doctor</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Doctor</h4>
             </div>
             <form id="addNewDoctor" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Name </span>
                             <span class="required-field">*</span>
                         </label>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Specialization </span>
                             <span class="required-field">*</span>
                         </label>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Profession Degree </span>
                             <span class="required-field">*</span>
                         </label>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Gender </span>
                             <span class="required-field">*</span>
                         </label>
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image </span>
                         </label>
                         <div class="col-md-6">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image Thumbnail</span>
                         </label>
                         <div class="col-md-6">
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Home Address </span>
                         </label>
                         <div class="col-md-6">
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                     <div class="form-group home-existing-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Home Address Detail</span>
                         </label>
                         <div class="col-md-6">
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Country </span>
                         </label>
                         <div class="col-md-6">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>State </span>
                         </label>
                         <div class="col-md-6">
@@ -152,7 +152,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>City </span>
                         </label>
                         <div class="col-md-6">
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Address</span>
                         </label>
                         <div class="col-md-6">
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Longitude </span>
                         </label>
                         <div class="col-md-6">
@@ -176,7 +176,7 @@
                         </div>
                     </div>
                     <div class="form-group home-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Latitude </span>
                         </label>
                         <div class="col-md-6">
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Chamber Address </span>
                         </label>
                         <div class="col-md-6">
@@ -192,7 +192,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-existing-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Chamber Address Detail</span>
                         </label>
                         <div class="col-md-6">
@@ -200,7 +200,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Country </span>
                         </label>
                         <div class="col-md-6">
@@ -208,7 +208,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>State </span>
                         </label>
                         <div class="col-md-6">
@@ -216,7 +216,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>City </span>
                         </label>
                         <div class="col-md-6">
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Address</span>
                         </label>
                         <div class="col-md-6">
@@ -232,7 +232,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Longitude </span>
                         </label>
                         <div class="col-md-6">
@@ -240,7 +240,7 @@
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Latitude </span>
                         </label>
                         <div class="col-md-6">
@@ -248,7 +248,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Phone No </span>
                         </label>
                         <div class="col-md-6">
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Mobile No(1) </span>
                         </label>
                         <div class="col-md-6">
@@ -264,7 +264,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Mobile No(2) </span>
                         </label>
                         <div class="col-md-6">
@@ -272,7 +272,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Mobile No(3) </span>
                         </label>
                         <div class="col-md-6">
@@ -280,7 +280,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Hotline </span>
                         </label>
                         <div class="col-md-6">
@@ -288,7 +288,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>

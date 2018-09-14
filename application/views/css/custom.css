@@ -772,3 +772,7 @@ td .link{
     height: 30px;
     font-size: 12px;
 }
+
+.modal-body input([type=radio]) {
+    font-size: 14px;
+}
