@@ -60,13 +60,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Special Reports</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Special Reports</h4>
             </div>
             <form id="addNewSpecialReports" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Title </span>
                             <span class="required-field">*</span>
                         </label>
@@ -75,7 +75,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Link Address </span>
                         </label>
                         <div class="col-md-6">
@@ -83,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image </span>
                             <span class="required-field">*</span>
                         </label>
@@ -92,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image Thumbnail</span>
                         </label>
                         <div class="col-md-6">
@@ -100,7 +100,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>

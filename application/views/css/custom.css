@@ -428,15 +428,19 @@ section.visitor {
 }
 
 .doctor-list {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
     align-items: center;
     border: 1px solid #B9BABD;
     border-radius: 12px;
     padding: 40px 0;
     margin-bottom: 30px;
-    font-size: 7pt;
-    font-weight: 700;
+   /* font-size: 7pt;
+    font-weight: 700;*/
+}
+
+td{
+    font-size: 14px;
 }
 
 .doctor-photo,
@@ -752,13 +756,23 @@ span.separator-2 {
 .address-pagination {
     margin-top: 100px;
 }
-
 .general-table thead{
     background-color: #5a3cac;
     font-size: 14px;
     border-top: 1px solid #333;
+    color:#ffffff;
 }
 
 td .link{
+    font-size: 14px;
+}
+
+.modal-body input:not([type=radio]), .modal-body select{
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+}
+
+.modal-body input([type=radio]) {
     font-size: 14px;
 }

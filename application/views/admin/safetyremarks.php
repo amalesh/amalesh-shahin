@@ -56,13 +56,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Safety Remark</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Safety Remark</h4>
             </div>
             <form id="addNewSafetyRemarks" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Remarks </span>
                             <span class="required-field">*</span>
                         </label>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>

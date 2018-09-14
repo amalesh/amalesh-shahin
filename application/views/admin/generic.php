@@ -14,7 +14,8 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading edit-link-title">
-                            Generic List <span class="add-new-content"><a onclick="genericObject.showGenericCreateModal()">Add New Generic</a></span>
+                            <h2>Generic List </h2>
+                            <span class="add-new-content"><a onclick="genericObject.showGenericCreateModal()">Add New Generic</a></span>
                         </header>
                         <div class="panel-body" style="display: block;">
                             <table class="table  table-hover general-table">
@@ -60,13 +61,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Generic</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Generic</h4>
             </div>
             <form id="addNewGeneric" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Name </span>
                             <span class="required-field">*</span>
                         </label>
@@ -75,7 +76,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Classification </span>
                             <span class="required-field">*</span>
                         </label>
@@ -84,7 +85,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Safety Remark </span>
                             <span class="required-field">*</span>
                         </label>
@@ -93,37 +94,37 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Indication</label>
+                        <label class="control-label col-md-4">Indication</label>
                         <div class="col-md-6">
                             <textarea id="Indication" name="Indication" rows="6" class="form-control" type="text" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Dosage Administration</label>
+                        <label class="control-label col-md-4">Dosage Administration</label>
                         <div class="col-md-6">
                             <textarea id="DosageAdministration" name="DosageAdministration" rows="6" class="form-control" type="text" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Contraindication Precaution</label>
+                        <label class="control-label col-md-4">Contraindication Precaution</label>
                         <div class="col-md-6">
                             <textarea id="ContraindicationPrecaution" name="ContraindicationPrecaution" rows="6" class="form-control" type="text" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Side Effect</label>
+                        <label class="control-label col-md-4">Side Effect</label>
                         <div class="col-md-6">
                             <textarea id="SideEffect" name="SideEffect" rows="6" class="form-control" type="text" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Pregnancy Lactation</label>
+                        <label class="control-label col-md-4">Pregnancy Lactation</label>
                         <div class="col-md-6">
                             <textarea id="PregnancyLactation" name="PregnancyLactation" rows="6" class="form-control" type="text" maxlength="500"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>

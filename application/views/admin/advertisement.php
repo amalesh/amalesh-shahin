@@ -66,13 +66,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Advertisement</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Advertisement</h4>
             </div>
             <form id="addNewAdvertisement" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Organization </span>
                             <span class="required-field">*</span>
                         </label>
@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Advertisement Position </span>
                             <span class="required-field">*</span>
                         </label>
@@ -90,13 +90,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group advertisement-position-detail" style="display: none">
-                        <label class="control-label col-md-3"></label>
+                        <label class="control-label col-md-4"></label>
                         <div class="col-md-6">
                             <textarea id="AdvertisementPositionDetail" rows="6" class="form-control" type="text" disabled></textarea>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image </span>
                             <span class="required-field">*</span>
                         </label>
@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image Thumbnail</span>
                         </label>
                         <div class="col-md-6">
@@ -113,7 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Title </span>
                         </label>
                         <div class="col-md-6">
@@ -121,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Body Text </span>
                         </label>
                         <div class="col-md-6">
@@ -129,7 +129,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Link URL </span>
                         </label>
                         <div class="col-md-6">
@@ -137,7 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Publish Date </span>
                             <span class="required-field">*</span>
                         </label>
@@ -146,7 +146,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Unpublish Date </span>
                             <span class="required-field">*</span>
                         </label>
@@ -155,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Contact Person </span>
                         </label>
                         <div class="col-md-6">
@@ -163,7 +163,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Email </span>
                         </label>
                         <div class="col-md-6">
@@ -171,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Mobile No </span>
                         </label>
                         <div class="col-md-6">
@@ -179,7 +179,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>

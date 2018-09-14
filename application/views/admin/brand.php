@@ -63,13 +63,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h3 class="modal-title">Add New Brand</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Add New Brand</h4>
             </div>
             <form id="addNewBrand" class="form-horizontal">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Name </span>
                             <span class="required-field">*</span>
                         </label>
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Generic </span>
                             <span class="required-field">*</span>
                         </label>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Manufacturer </span>
                             <span class="required-field">*</span>
                         </label>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Dosage Form </span>
                             <span class="required-field">*</span>
                         </label>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Strength </span>
                             <span class="required-field">*</span>
                         </label>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Pack Size </span>
                             <span class="required-field">*</span>
                         </label>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Price In BDT </span>
                             <span class="required-field">*</span>
                         </label>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image </span>
                             <span class="required-field">*</span>
                         </label>
@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">
+                        <label class="control-label col-md-4">
                             <span>Image Thumbnail</span>
                         </label>
                         <div class="col-md-6">
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Highlighted</label>
+                        <label class="control-label col-md-4">Is Highlighted</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>
@@ -162,7 +162,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is New Product</label>
+                        <label class="control-label col-md-4">Is New Product</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is New Brand</label>
+                        <label class="control-label col-md-4">Is New Brand</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>
@@ -188,7 +188,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is New Presentation</label>
+                        <label class="control-label col-md-4">Is New Presentation</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>
@@ -201,7 +201,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3">Is Active</label>
+                        <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
                                 <label>
