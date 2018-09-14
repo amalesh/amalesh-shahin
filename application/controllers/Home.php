@@ -13,6 +13,7 @@ class Home extends CI_Controller {
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/home');
         $this->load->view('front-end/footer');
     }
