@@ -428,15 +428,19 @@ section.visitor {
 }
 
 .doctor-list {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
     align-items: center;
     border: 1px solid #B9BABD;
     border-radius: 12px;
     padding: 40px 0;
     margin-bottom: 30px;
-    font-size: 7pt;
-    font-weight: 700;
+   /* font-size: 7pt;
+    font-weight: 700;*/
+}
+
+td{
+    font-size: 14px;
 }
 
 .doctor-photo,
@@ -763,11 +767,8 @@ td .link{
     font-size: 14px;
 }
 
-.modal-body input:not([type=check]){
+.modal-body input:not([type=radio]), .modal-body select{
     width: 100%;
     height: 30px;
-}
-
-.modal-body input[type=select]{
-    width: 100% !important;
+    font-size: 12px;
 }
