@@ -20,11 +20,11 @@
                         $('div.new-products-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
-            }
+            });
         },
         getNewPresentations: function(allPresentation) {
-            var formURL = "<?php echo site_url('Brand/getFeaturePresentations?AllPresentation=')?>"+allPresentation;
-            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeaturePresentations', function(drugData){
+            var formURL = "<?php echo site_url('Brand/getNewPresentations?AllPresentation=')?>"+allPresentation;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getNewPresentations', function(drugData){
                 $('div.new-resentation-ul ul').html('');
                 if(drugData) {
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
@@ -38,11 +38,11 @@
                         $('div.new-resentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
-            }
+            });
         },
         getNewBrands: function(allBrand) {
-            var formURL = "<?php echo site_url('Brand/getFeatureBrands?AllBrand=')?>"+allBrand;
-            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureBrands', function(drugData){
+            var formURL = "<?php echo site_url('Brand/getNewBrands?AllBrand=')?>"+allBrand;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getNewBrands', function(drugData){
                 $('div.new-brand-ul ul').html('');
                 if(drugData) {
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
@@ -56,7 +56,7 @@
                         $('div.new-brand-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
-            }
+            });
         },
         getHighlightedBrands: function() {
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
@@ -73,7 +73,7 @@
                         '                                <p class="info">'+drugData.Indication+'</p>' +
                         '                            </div>');
                 }
-            }
+            });
         },
         changeSearchOption: function() {
             $('#searchDrugOption').autocomplete({
@@ -148,6 +148,5 @@
         }
     }
 
-    drugObject.totalDrug = <?php echo $TotalDrug;?>;
-    drugObject.getDrugList(1);
+    drugObject.totalDrug = <?php echo isset($TotalDrug) ? $TotalDrug : 0;?>;
 </script>

@@ -134,8 +134,8 @@
 
 <script>
     frontendCommonMethods.getSideBarData();
-    drugObject.getNewBrands(1);
-    drugObject.getNewPresentations(1);
-    drugObject.getNewProducts(1);
+    drugObject.getNewBrands(0);
+    drugObject.getNewPresentations(0);
+    drugObject.getNewProducts(0);
     drugObject.getHighlightedBrands();
 </script>

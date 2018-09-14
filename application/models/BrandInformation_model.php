@@ -311,7 +311,7 @@ class BrandInformation_model extends GeneralData_model {
         if ($all_item == 0) {
             $this->db->limit(config_item('home_page_new_item_limit'));
         }
-        $all_new_information = $this->db->get();
+        $all_new_information = $this->db->get()->result_array();
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $all_new_information;
     }
@@ -327,7 +327,7 @@ class BrandInformation_model extends GeneralData_model {
         if ($all_item == 0) {
             $this->db->limit(config_item('home_page_new_item_limit'));
         }
-        $all_new_information = $this->db->get();
+        $all_new_information = $this->db->get()->result_array();
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $all_new_information;
     }
@@ -343,7 +343,7 @@ class BrandInformation_model extends GeneralData_model {
         if ($all_item == 0) {
             $this->db->limit(config_item('home_page_new_item_limit'));
         }
-        $all_new_information = $this->db->get();
+        $all_new_information = $this->db->get()->result_array();
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $all_new_information;
     }
@@ -388,9 +388,9 @@ class BrandInformation_model extends GeneralData_model {
         $this->db->where('s.IsActive', 1);
         $this->db->where('ps.IsActive', 1);
         $this->db->where('b.IsHighlighted', 1);
-        $this->db->order_by('CreateDate', 'DESC');
+        $this->db->order_by('b.CreateDate', 'DESC');
         $this->db->limit(1);
-        $all_new_information = $this->db->get('brandinformation');
+        $all_new_information = $this->db->get()->result_array();
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return isset($all_new_information[0]['ID']) ? $all_new_information[0] : array();
     }

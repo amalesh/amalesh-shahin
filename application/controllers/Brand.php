@@ -34,7 +34,7 @@ class Brand extends CI_Controller {
     public function showBrandDetail()
     {
         $data = array();
-        $data['BrandDetail'] = $this->BrandInformation_model->getBrandDetail();
+        $data['BrandDetail'] = $this->BrandInformation_model->getBrandFullDetail();
         $this->load->view('front-end/header');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/brand-detail', $data);
@@ -149,27 +149,27 @@ class Brand extends CI_Controller {
     }
 
     public function getAllDrugInfoForAutoComplete() {
-        $all_drug_info_for_auto_complete = $this->getAllDrugInfoForAutoComplete();
+        $all_drug_info_for_auto_complete = $this->BrandInformation_model->getAllDrugInfoForAutoComplete();
         $this->sendRestAPIResponse($all_drug_info_for_auto_complete);
     }
 
     public function getNewProducts() {
-        $all_drug_info = $this->getNewProducts();
+        $all_drug_info = $this->BrandInformation_model->getNewProducts();
         $this->sendRestAPIResponse($all_drug_info);
     }
 
     public function getNewPresentations() {
-        $all_drug_info = $this->getNewPresentations();
+        $all_drug_info = $this->BrandInformation_model->getNewPresentations();
         $this->sendRestAPIResponse($all_drug_info);
     }
 
     public function getNewBrands() {
-        $all_drug_info = $this->getNewBrands();
+        $all_drug_info = $this->BrandInformation_model->getNewBrands();
         $this->sendRestAPIResponse($all_drug_info);
     }
 
     public function getHighlightedBrands() {
-        $all_drug_info = $this->getHighlightedBrands();
+        $all_drug_info = $this->BrandInformation_model->getHighlightedBrands();
         $this->sendRestAPIResponse($all_drug_info);
     }
 

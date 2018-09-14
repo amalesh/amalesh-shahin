@@ -31,108 +31,18 @@
                     </ul>
                 </div>
                 <div class="product-details">
-                    <h4 class="title"><?php echo $DrugDetail['BrandName'];?></h4>
+                    <h4 class="title"><?php echo $BrandDetail['Name'];?></h4>
                     <div class="product-info">
-                        <p><b>Manufacturer :  </b><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>?ManufacturerID=<?php echo $DrugDetail['ManufacturerID'];?>"><?php echo $DrugDetail['ManufacturerName'];?></a></p>
-                        <p><b>Generic Name :</b><?php echo $DrugDetail['GenericName'];?></p>
-                        <p><b>Brand Name :</b><?php echo $DrugDetail['BrandName'];?></p>
-                        <p><b>Drug Class :</b><?php echo $DrugDetail['ClassificationName'];?></p>
-                        <p><b>Safety Remarks: </b><?php echo $DrugDetail['SafetyRemark'];?></p>
-                        <p><b>Indications: </b><?php echo $DrugDetail['Indication'];?></p>
-                        <p><b>Dosage & Administration :</b><?php echo $DrugDetail['DosageForm'];?></p>
-                        <p><b>Contraindication & Precaution :</b><?php echo $DrugDetail['ContraindicationPrecaution'];?></p>
-                        <p><b>Side effect:</b><?php echo $DrugDetail['SideEffect'];?></p>
-                        <p><b>Use in Pregnancy & Lactation :</b><?php echo $DrugDetail['PregnancyLactation'];?></p>
+                        <p><b>Manufacturer :  </b><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>?ManufacturerID=<?php echo $BrandDetail['ManufacturerID'];?>"><?php echo $BrandDetail['ManufacturerName'];?></a></p>
+                        <p><b>Generic Name :</b><?php echo $BrandDetail['GenericName'];?></p>
+                        <p><b>Drug Class :</b><?php echo $BrandDetail['Classification'];?></p>
+                        <p><b>Safety Remarks: </b><?php echo $BrandDetail['SafetyRemark'];?></p>
+                        <p><b>Indications: </b><?php echo $BrandDetail['Indication'];?></p>
+                        <p><b>Dosage & Administration :</b><?php echo $BrandDetail['DosageForm'];?></p>
+                        <p><b>Contraindication & Precaution :</b><?php echo $BrandDetail['ContraindicationPrecaution'];?></p>
+                        <p><b>Side effect:</b><?php echo $BrandDetail['SideEffect'];?></p>
+                        <p><b>Use in Pregnancy & Lactation :</b><?php echo $BrandDetail['PregnancyLactation'];?></p>
 
-                    </div>
-                </div>
-                <div class="presentation">
-                    <h4 class="title">Presentation</h4>
-                    <div class="presentation-table">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Brand Name</th>
-                                <th scope="col">Dosage Form</th>
-                                <th scope="col">Strength</th>
-                                <th scope="col">Pack Size</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-
-                                <td><a href="">ACE</a></td>
-                                <td>TAB</td>
-                                <td>500mg</td>
-                                <td>50x10’s</td>
-                                <td>400.00</td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>O:SUSP </td>
-                                <td>120mg/5mL</td>
-                                <td>60ml</td>
-                                <td>20.64</td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SYR </td>
-                                <td>120mg/5mL</td>
-                                <td>100mI</td>
-                                <td>31.78 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SYR </td>
-                                <td>120mg/5mL</td>
-                                <td>60ml</td>
-                                <td>20.64 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>P-O:DPS</td>
-                                <td> 80mg/mL </td>
-                                <td>15ml </td>
-                                <td> 14.77 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>P-O:DPS</td>
-                                <td> 80mg/mL </td>
-                                <td>30ml</td>
-                                <td> 20.64 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SUPP</td>
-                                <td> 60mg</td>
-                                <td>2x5’s </td>
-                                <td> 35.10 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SUPP</td>
-                                <td> 125mg </td>
-                                <td>4x5’s </td>
-                                <td> 80.20 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SUPP</td>
-                                <td> 250mg </td>
-                                <td>4x5’s </td>
-                                <td> 100.20 </td>
-                            </tr>
-                            <tr>
-                                <td><a href="">ACE</a></td>
-                                <td>SUPP</td>
-                                <td> 500mg </td>
-                                <td>4x5’s </td>
-                                <td> 160.80 </td>
-                            </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
                 <div class="product-add-5">
