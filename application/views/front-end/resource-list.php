@@ -10,12 +10,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="product-add-3">
+                <div class="add-inner-page-left-523x52">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-14.png" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="product-add-4">
+                <div class="add-inner-page-right-523x52">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-15.png" alt="" class="img-fluid"></a>
                 </div>
             </div>

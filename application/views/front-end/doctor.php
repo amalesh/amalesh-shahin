@@ -50,46 +50,42 @@
                     foreach ($AllDoctors AS $doctor) {
                         $image_path = empty($doctor['ImagePath']) ? base_url().'application/views/img/doctor.png' : base_url().'application/views/img/'.$doctor['ImagePath'];
                         $hotline_info = empty($doctor['Hotline']) ? '' : '<br>Hotline: '.$doctor['Hotline'];
-                        echo '<div class="doctor-list">
-                        <div class="doctor-photo">
-                            <a href=""><img src="'.$image_path.'" alt="doctor"></a>
-                        </div>
-                        <span class="separator-2"></span>
-                        <div class="doctor-name">
-                            <p class="name">'.$doctor['Name'].'</p>
-                            <p class="title">'.$doctor['Specialization'].'</p>
-                            <p class="designation">'.$doctor['ProfessionDegree'].'</p>
-                        </div>
-                        <span class="separator-2"></span>
-                        <div class="doctor-address">
-                            <span class="icon float-left"><i class="fas fa-map-marker-alt"></i></span>
-                            <address class="float-right">
-                                Chamber<br>'.$doctor['ChamberAddress'].$hotline_info.'
-                            </address>
-                            <div class="clearfix"></div>
-                        </div>
-                        <span class="separator-2"></span>
-                        <div class="doctor-phone">
-                            <span class="icon float-left"><i class="fas fa-mobile"></i></span>
-                            <div class="float-right">
-                                <h4 class="title">Phone Number</h4>
-                                <p class="number">'.$doctor['PhoneNo'].'</p>
-                                <p class="number">'.$doctor['MobileNo1'].'</p>
-                                <p class="number">'.$doctor['MobileNo2'].'</p>
-                                <p class="number">'.$doctor['MobileNo3'].'</p>
+                        echo '<div class="doctor-list row">
+                            <div class="doctor-photo col-md-2">
+                                <a href=""><img src="'.$image_path.'" alt="doctor"></a>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
+                            <div class="doctor-name  col-md-3">
+                                <h5 class="name">'.$doctor['Name'].'</h5>
+                                <p class="title">'.$doctor['Specialization'].'</p>
+                                <p class="designation">'.$doctor['ProfessionDegree'].'</p>
+                            </div>
+                            <div class="doctor-address  col-md-4">
+                                <span class="icon float-left"><i class="fas fa-map-marker-alt"></i></span> <strong>Chamber</strong><br><br>
+                                <address CLASS="clearfix">
+                                '.$doctor['ChamberAddress'].$hotline_info.'
+                                </address>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="doctor-phone  col-md-2">
+                                <span class="icon float-left"><i class="fas fa-mobile"></i></span> <strong>Phone No.</strong><br><br>
+                                <div class="float-right">
+                                    <p class="number">'.$doctor['PhoneNo'].'</p>
+                                    <p class="number">'.$doctor['MobileNo1'].'</p>
+                                    <p class="number">'.$doctor['MobileNo2'].'</p>
+                                    <p class="number">'.$doctor['MobileNo3'].'</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                     </div>';
                     }
                     ?>
                 </div>
-                <div class="product-add-5" style="position: relative;">
+                <div class="add-bottom-left-823x115" style="position: relative;">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-13.png" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="product-add-2">
+                <div class="add-inner-page-top-right-340x350">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-18.png" alt="add" class="img-fluid"></a>
                 </div>
                 <div class="sidebar-news">
