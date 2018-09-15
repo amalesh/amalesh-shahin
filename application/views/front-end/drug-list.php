@@ -30,21 +30,29 @@
                         <li class="list-inline-item"><a href="">Manufacturer</a></li>
                     </ul>
                 </div>
-                <div class="product-details" style="border: 0;padding-left: 0;">
-                    <h4 class="title">PARACETAMOL</h4>
-
-                </div>
                 <div class="presentation">
-                    <h4 class="title">Brand of Paracetamol</h4>
                     <div class="presentation-table">
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
                                 <th scope="col" style="width: 150px;">Brand Name</th>
                                 <th scope="col">Manufacturer</th>
+                                <th scope="col">Generic</th>
+                                <th scope="col">Price</th>
                             </tr>
                             </thead>
-                            <tbody class="drug-list"></tbody>
+                            <tbody class="drug-list">
+                            <?php
+                            foreach ($AllBrands AS $brand) {
+                                echo '<tr>';
+                                echo '<td><a href="'.site_url('Brand/showBrandDetail').'?BrandID='.$brand['ID'].'">'.$brand['Name'].'</a></td>';
+                                echo '<td><a href="'.site_url('Manufacturer/getManufacturerDetail').'?ManufacturerID='.$brand['ManufacturerID'].'">'.$brand['ManufacturerName'].'</a></td>';
+                                echo '<td><a href="'.site_url('Generic/showGenericDetail').'?GenericID='.$brand['GenericID'].'">'.$brand['GenericName'].'</a></td>';
+                                echo '<td>'.$brand['PriceInBDT'].'</td>';
+                                echo '</tr>';
+                            }
+                            ?>
+                            </tbody>
                         </table>
                         <nav aria-label="Page navigation example">
                             <ul class="pagination" id="drug-pagination"></ul>
@@ -61,12 +69,8 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
+                    <ul class="list-inline sidebar-jobs"></ul>
                     <ul class="list-inline">
-                        <li><a href="">Sales Representative - Square Pharma</a></li>
-                        <li><a href="">Area Manager - Navana Pharma</a></li>
-                        <li><a href="">Accounts Officer - AristoPharma </a></li>
-                        <li><a href="">Sales Representative - Square Pharma</a></li>
-                        <li><a href="">Area Manager - Navana Pharma</a></li>
                         <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more
                         </a>
@@ -75,25 +79,9 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">LOCAL NEWS</h4>
+                    <ul class="list-inline sidebar-news"></ul>
                     <ul class="list-inline">
-                        <li><a href="">Shahana first female pro-VC of BSMMU</a></li>
-                        <li><a href="">Princess Maria spends time with special children</a></li>
-                        <li><a href="">Health Campain organised by  AristoPharma</a></li>
-                        <li><a href="">Annual Conference - Square Pharma</a></li>
-                        <a href="<?php echo site_url('LocalNews/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">INTERNATIONAL HEALTH</h4>
-                    <ul class="list-inline">
-                        <li><a href="">800 Canadian doctors protest pay raises,  .......</a></li>
-                        <li><a href="">Global campaign takes aim at tobacco ........</a></li>
-                        <li><a href="">Thyroid removal linked to increased bone-......</a></li>
-                        <li><a href="">Heart disease patients live longer when ........</a></li>
-                        <a href="" class="btn btn-s float-right">
+                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more
                         </a>
                         <div class="clearfix"></div>
@@ -101,15 +89,9 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">IMPORTANT ADDRESSES</h4>
+                    <ul class="list-inline sidebar-assress"></ul>
                     <ul class="list-inline">
-                        <li><a href="">24 Hours Pharmacies</a></li>
-                        <li><a href="">Ambulance Services</a></li>
-                        <li><a href="">Bangladesh Pharmaceuticals Companies web link</a></li>
-                        <li><a href="">Blood Banks</a></li>
-                        <li><a href="">Cancer Hospitals</a></li>
-                        <li><a href="">Cardiac Hospitals</a></li>
-                        <li><a href="">Eye Banks</a></li>
-                        <a href="<?php echo site_url('ImportantAddress/getAllImportantAddress')?>" class="btn btn-s float-right">
+                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more
                         </a>
                         <div class="clearfix"></div>
@@ -176,3 +158,7 @@
         </div>
     </div>
 </section>
+<script>
+    frontendCommonMethods.getSideBarData();
+    drugObject.populatePagination(1);
+</script>

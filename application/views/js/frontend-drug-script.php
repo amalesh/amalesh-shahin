@@ -5,6 +5,7 @@
         searchOption: 'Brand',
         totalDrug: 0,
         getNewProducts: function(allProduct) {
+            console.log('Method Name: drugObject.getNewProducts Param: allProduct Value: '+[allProduct].toString());
             var formURL = "<?php echo site_url('Brand/getNewProducts?AllProduct=')?>"+allProduct;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
                 $('div.new-products-ul ul').html('');
@@ -23,24 +24,27 @@
             });
         },
         getNewPresentations: function(allPresentation) {
+            console.log('Method Name: drugObject.getNewPresentations Param: allPresentation Value: '+[allPresentation].toString());
             var formURL = "<?php echo site_url('Brand/getNewPresentations?AllPresentation=')?>"+allPresentation;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getNewPresentations', function(drugData){
-                $('div.new-resentation-ul ul').html('');
+                console.dir(drugData);
+                $('div.new-presentation-ul ul').html('');
                 if(drugData) {
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
                     for (var i = 0; i < home_page_new_item_limit / 2; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-resentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-presentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
                     }
 
                     for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-resentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-presentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
             });
         },
-        getNewBrands: function(allBrand) {
+        changeSearchOption: function(allBrand) {
+            console.log('Method Name: drugObject.changeSearchOption Param: allBrand Value: '+[allBrand].toString());
             var formURL = "<?php echo site_url('Brand/getNewBrands?AllBrand=')?>"+allBrand;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getNewBrands', function(drugData){
                 $('div.new-brand-ul ul').html('');
@@ -58,7 +62,8 @@
                 }
             });
         },
-        getHighlightedBrands: function() {
+        changeSearchOption: function() {
+            console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
                 if(drugData) {
@@ -76,18 +81,22 @@
             });
         },
         changeSearchOption: function() {
+            console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
             $('#searchDrugOption').autocomplete({
                 source: drugObject.searchOptionAutoComplete
             });
         },
-        getDrugList: function(pageNo) {
+        getDrugList: function(getDrugList) {
+            console.log('Method Name: drugObject.getDrugList Param: getDrugList Value: '+[getDrugList].toString());
             var formURL = "<?php echo site_url('Brand/getAllDrugInformation')?>"+'?PageNo='+pageNo;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getDrugList', function(drugData){
                 var drug_td_text = '';
                 for(var i = 0; i < drugData.length; i++) {
                     drug_td_text = '<tr>' +
-                        '<td><a href="<?php echo site_url('Brand/showDrugDetail')?>'+'?DrugID='+drugData[i].DrugID+'">'+drugData[i].BrandName+'</a></td>' +
+                        '<td><a href="<?php echo site_url('Brand/showBrandDetail')?>'+'?BrandID='+drugData[i].ID+'">'+drugData[i].Name+'</a></td>' +
                         '<td><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>'+'?ManufacturerID='+drugData[i].ManufacturerID+'">'+drugData[i].ManufacturerName+'</a></td>' +
+                        '<td><a href="<?php echo site_url('Generic/showGenericDetail')?>'+'?GenericID='+drugData[i].GenericID+'">'+drugData[i].GenericName+'</a></td>' +
+                        '<td>'+drugData[i].PriceInBDT+'</td>' +
                         '</tr>';
                     $('tbody.drug-list').append(drug_td_text);
                 }
@@ -95,6 +104,7 @@
             drugObject.populatePagination(pageNo);
         },
         getAllDrugInfoForAutoComplete: function(option) {
+            console.log('Method Name: drugObject.getAllDrugInfoForAutoComplete Param: option Value: '+[option].toString());
             drugObject.searchOption = option;
             var formURL = "<?php echo site_url('Brand/getAllDrugInfoForAutoComplete')?>"+'?SearchOption='+drugObject.searchOption;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getAllDrugInfoForAutoComplete', function(drugData){
@@ -102,6 +112,7 @@
             });
         },
         populatePagination: function (pageNo) {
+            console.log('Method Name: drugObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = <?php echo config_item('per_page_information_number');?>;
             var total_page = Math.ceil(drugObject.totalDrug / per_page_information_number);
             var total_pagination = <?php echo config_item('total_page');?>;

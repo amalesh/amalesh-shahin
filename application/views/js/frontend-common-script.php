@@ -5,6 +5,7 @@
         activeBrandAlphabet: '',
         activeGenericAlphabet: '',
         getSideBarData: function () {
+            console.log('Method Name: frontendCommonMethods.getSideBarData Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('CommonMethods/getSideBarInformation')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getSideBarData', function(sideBarData){
                 if (sideBarData) {
@@ -43,6 +44,7 @@
             });
         },
         searchBrandAlphabetically: function (alphabet, pageNo) {
+            console.log('Method Name: frontendCommonMethods.searchBrandAlphabetically Param: allProduct Value: '+[alphabet, pageNo].toString());
             frontendCommonMethods.activeBrandAlphabet = alphabet;
             var formURL = "<?php echo site_url('Product/searchBrandAlphabetically')?>"+'?Alphabet='+alphabet+'&PageNo='+pageNo;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.searchBrandAlphabetically', function(brandData){
@@ -60,6 +62,7 @@
             frontendCommonMethods.populatePagination('brand', pageNo);
         },
         searchGenericAlphabetically: function (alphabet, pageNo) {
+            console.log('Method Name: frontendCommonMethods.searchGenericAlphabetically Param: allProduct Value: '+[alphabet, pageNo].toString());
             frontendCommonMethods.activeGenericAlphabet = alphabet;
             var formURL = "<?php echo site_url('Product/searchGenericAlphabetically')?>"+'?Alphabet='+alphabet+'&PageNo='+pageNo;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.searchGenericAlphabetically', function(brandData){
@@ -77,6 +80,7 @@
             frontendCommonMethods.populatePagination('generic', pageNo);
         },
         populatePagination: function (searchBy, pageNo) {
+            console.log('Method Name: frontendCommonMethods.populatePagination Param: searchBy, pageNo Value: '+[searchBy, pageNo].toString());
             var per_page_information_number = <?php echo config_item('per_page_information_number');?>;
             var total_page = Math.ceil(frontendCommonMethods.totalDrug / per_page_information_number);
             var total_pagination = <?php echo config_item('total_page');?>;

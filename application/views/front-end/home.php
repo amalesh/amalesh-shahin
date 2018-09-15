@@ -9,10 +9,10 @@
                         </div>
                         <div class="col-md-9">
                             <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a href="">Brand</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a href="">Generic</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a href="">Indication</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a href="">Manufacturer</a></li>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Generic</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Indication</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Manufacturer</a></li>
                             </ul>
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
                             <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
@@ -29,7 +29,7 @@
                                 </h5>
                                 <ul class="list-inline float-left"></ul>
                                 <ul class="list-inline float-right"></ul>
-                                <a href="" class="btn btn-s float-right">
+                                <a href="<?php echo site_url('Brand/showAllNewProducts')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
                                 </a>
                             </div>
@@ -39,7 +39,7 @@
                                 </h5>
                                 <ul class="list-inline float-left"></ul>
                                 <ul class="list-inline float-right"></ul>
-                                <a href="" class="btn btn-s float-right">
+                                <a href="<?php echo site_url('Brand/showAllNewBrands')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
                                 </a>
                             </div>
@@ -49,7 +49,7 @@
                                 </h5>
                                 <ul class="list-inline float-left"></ul>
                                 <ul class="list-inline float-right"></ul>
-                                <a href="" class="btn btn-s float-right">
+                                <a href="<?php echo site_url('Brand/showAllNewPresentations')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
                                 </a>
                             </div>

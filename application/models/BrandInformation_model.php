@@ -434,4 +434,69 @@ class BrandInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $all_text;
     }
+
+    public function getAllNewData($brandType) {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+        $this->db->select('b.ID');
+        $this->db->select('b.Name');
+        $this->db->select('b.PriceInBDT');
+        $this->db->select('g.ID AS GenericID');
+        $this->db->select('g.Name AS GenericName');
+        $this->db->select('m.ID AS ManufacturerID');
+        $this->db->select('m.Name AS ManufacturerName');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->where('b.IsActive', 1);
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        switch ($brandType) {
+            case 'Product':
+                $this->db->where('b.IsNewProduct', 1);
+                break;
+            case 'Brand':
+                $this->db->where('b.IsNewBrand', 1);
+                break;
+            case 'Presentation':
+                $this->db->where('b.IsNewPresentation', 1);
+                break;
+            default:
+                break;
+        }
+
+        $this->db->order_by('b.Name');
+        $this->db->limit(config_item('per_page_information_number'), $page_no - 1);
+        $all_new_information = $this->db->get()->result_array();
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        return $all_new_information;
+    }
+
+    public function getTotalNewData($brandType) {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->where('b.IsActive', 1);
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        switch ($brandType) {
+            case 'Product':
+                $this->db->where('b.IsNewProduct', 1);
+                break;
+            case 'Brand':
+                $this->db->where('b.IsNewBrand', 1);
+                break;
+            case 'Presentation':
+                $this->db->where('b.IsNewPresentation', 1);
+                break;
+            default:
+                break;
+        }
+
+        $total = $this->db->count_all_results();
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        return $total;
+    }
 }

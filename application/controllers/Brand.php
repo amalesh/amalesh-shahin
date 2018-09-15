@@ -173,6 +173,51 @@ class Brand extends CI_Controller {
         $this->sendRestAPIResponse($all_drug_info);
     }
 
+    public function showAllNewProducts() {
+        $data = array();
+        $total_brand = $this->BrandInformation_model->getTotalNewData('Product');
+        $data['TotalBrand'] = $total_brand;
+        $all_new_brand = $this->BrandInformation_model->getAllNewData('Product');
+        $data['AllBrands'] = $all_new_brand;
+
+        $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
+        $this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-drug-script');
+        $this->load->view('front-end/drug-list', $data);
+        $this->load->view('front-end/footer');
+    }
+
+    public function showAllNewBrands() {
+        $data = array();
+        $total_brand = $this->BrandInformation_model->getTotalNewData('Brand');
+        $data['TotalBrand'] = $total_brand;
+        $all_new_brand = $this->BrandInformation_model->getAllNewData('Brand');
+        $data['AllBrands'] = $all_new_brand;
+
+        $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
+        $this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-drug-script');
+        $this->load->view('front-end/drug-list', $data);
+        $this->load->view('front-end/footer');
+    }
+
+    public function showAllNewPresentations() {
+        $data = array();
+        $total_brand = $this->BrandInformation_model->getTotalNewData('Presentation');
+        $data['TotalBrand'] = $total_brand;
+        $all_new_brand = $this->BrandInformation_model->getAllNewData('Presentation');
+        $data['AllBrands'] = $all_new_brand;
+
+        $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
+        $this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-drug-script');
+        $this->load->view('front-end/drug-list', $data);
+        $this->load->view('front-end/footer');
+    }
+
     private function sendRestAPIResponse($response){
         $rest_api_response = array();
         $rest_api_response['response'] = $response;
