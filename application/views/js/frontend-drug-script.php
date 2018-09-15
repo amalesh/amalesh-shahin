@@ -1,8 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <script>
     var drugObject = {
-        searchOptionAutoComplete: [],
-        searchOption: 'Brand',
+        searchOptionForBrand: [],
+        searchOptionForGeneric: [],
+        searchOptionForIndication: [],
+        searchOptionForManufacturer: [],
         totalDrug: 0,
         getNewProducts: function(allProduct) {
             console.log('Method Name: drugObject.getNewProducts Param: allProduct Value: '+[allProduct].toString());
@@ -80,10 +82,27 @@
                 }
             });
         },
-        changeSearchOption: function() {
+        changeSearchOption: function(searchOption) {
             console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
+            var search_options = [];
+            switch (searchOption) {
+                case 'brand':
+                    search_options = drugObject.searchOptionForBrand;
+                    break;
+                case 'generic':
+                    search_options = drugObject.searchOptionForGeneric;
+                    break;
+                case 'indication':
+                    search_options = drugObject.searchOptionForIndication;
+                    break;
+                case 'manufacturer':
+                    search_options = drugObject.searchOptionForManufacturer;
+                    break;
+                default:
+                    break;
+            }
             $('#searchDrugOption').autocomplete({
-                source: drugObject.searchOptionAutoComplete
+                source: search_options
             });
         },
         getDrugList: function(getDrugList) {
@@ -103,12 +122,15 @@
             });
             drugObject.populatePagination(pageNo);
         },
-        getAllDrugInfoForAutoComplete: function(option) {
-            console.log('Method Name: drugObject.getAllDrugInfoForAutoComplete Param: option Value: '+[option].toString());
-            drugObject.searchOption = option;
-            var formURL = "<?php echo site_url('Brand/getAllDrugInfoForAutoComplete')?>"+'?SearchOption='+drugObject.searchOption;
+        getAllDrugInfoForAutoComplete: function() {
+            console.log('Method Name: drugObject.getAllDrugInfoForAutoComplete Param: option Value: ');
+            var formURL = "<?php echo site_url('Brand/getAllDrugInfoForAutoComplete')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getAllDrugInfoForAutoComplete', function(drugData){
-                drugObject.searchOptionAutoComplete = drugData;
+                drugObject.searchOptionForBrand = drugData.Brand;
+                drugObject.searchOptionForGeneric = drugData.Generic;
+                drugObject.searchOptionForIndication = drugData.Indication;
+                drugObject.searchOptionForManufacturer = drugData.Manufacturer;
+                drugObject.changeSearchOption('brand');
             });
         },
         populatePagination: function (pageNo) {

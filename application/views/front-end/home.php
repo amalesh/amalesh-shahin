@@ -10,9 +10,9 @@
                         <div class="col-md-9">
                             <ul class="list-inline text-center">
                                 <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Generic</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Indication</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Manufacturer</a></li>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
                             </ul>
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
                             <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
@@ -138,4 +138,5 @@
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);
     drugObject.getHighlightedBrands();
+    drugObject.getAllDrugInfoForAutoComplete();
 </script>

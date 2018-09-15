@@ -397,42 +397,55 @@ class BrandInformation_model extends GeneralData_model {
 
     public function getAllDrugInfoForAutoComplete() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $search_option = $this->input->get('SearchOption');
-        switch ($search_option) {
-            case 'Brand':
-                $this->db->select('Name');
-                $this->db->from('brandinformation');
-                $this->db->where('IsActive', 1);
-                $information = $this->db->get()->result_array();
-                break;
-            case 'Generic':
-                $this->db->select('Name AS InfoText');
-                $this->db->from('genericinformation');
-                $this->db->where('IsActive', 1);
-                $information = $this->db->get()->result_array();
-                break;
-            case 'Indication':
-                $this->db->select('Indication AS InfoText');
-                $this->db->from('genericinformation');
-                $this->db->where('IsActive', 1);
-                $information = $this->db->get()->result_array();
-                break;
-            case 'Manufacturer':
-                $this->db->select('Name AS InfoText');
-                $this->db->from('manufacturerinformation');
-                $this->db->where('IsActive', 1);
-                $information = $this->db->get()->result_array();
-                break;
-            default:
-                break;
+        $this->db->select('Name');
+        $this->db->distinct();
+        $this->db->from('brandinformation');
+        $this->db->where('IsActive', 1);
+        $result = $this->db->get()->result_array();
+        $brand_information = array();
+        foreach ($result AS $data) {
+            $brand_information[] = $data['Name'];
         }
 
-        $all_text = array();
-        foreach ($information AS $info) {
-            $all_text[] = $info['InfoText'];
+        $this->db->select('Name');
+        $this->db->distinct();
+        $this->db->from('genericinformation');
+        $this->db->where('IsActive', 1);
+        $result = $this->db->get()->result_array();
+        $generic_information = array();
+        foreach ($result AS $data) {
+            $generic_information[] = $data['Name'];
         }
+
+        $this->db->select('Indication');
+        $this->db->distinct();
+        $this->db->from('genericinformation');
+        $this->db->where('IsActive', 1);
+        $result = $this->db->get()->result_array();
+        $indication_information = array();
+        foreach ($result AS $data) {
+            $indication_information[] = $data['Indication'];
+        }
+
+        $this->db->select('Name');
+        $this->db->distinct();
+        $this->db->from('manufacturerinformation');
+        $this->db->where('IsActive', 1);
+        $result = $this->db->get()->result_array();
+        $manufacturer_information = array();
+        foreach ($result AS $data) {
+            $manufacturer_information[] = $data['Name'];
+        }
+
+        $search_option_data = array(
+            'Brand' => $brand_information,
+            'Generic' => $generic_information,
+            'Indication' => $indication_information,
+            'Manufacturer' => $manufacturer_information
+        );
+
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
-        return $all_text;
+        return $search_option_data;
     }
 
     public function getAllNewData($brandType) {
