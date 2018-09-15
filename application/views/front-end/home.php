@@ -9,13 +9,13 @@
                         </div>
                         <div class="col-md-9">
                             <ul class="list-inline text-center">
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
+                                <li class="list-inline-item"><a class="search_option_type search_by_brand" onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_generic" onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_indication" onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_manufacturer" onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
                             </ul>
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
-                            <a href="#" class="search-btn"><i class="fas fa-search"></i></a>
+                            <a onclick="drugObject.searchBrandInformation()" class="search-btn"><i class="fas fa-search"></i></a>
                         </div>
                     </div>
                 </div>

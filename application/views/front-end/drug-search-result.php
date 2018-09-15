@@ -152,5 +152,4 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    drugObject.populatePagination(1);
 </script>

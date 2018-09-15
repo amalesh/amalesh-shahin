@@ -1,11 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <script>
     var drugObject = {
+        searchOption: '',
         searchOptionForBrand: [],
         searchOptionForGeneric: [],
         searchOptionForIndication: [],
         searchOptionForManufacturer: [],
         totalDrug: 0,
+        searchBrandInformation: function() {
+            console.log('Method Name: drugObject.searchBrandInformation Param:  Value: ');
+            var search_option = $('#searchDrugOption').val();
+            if (search_option == '') return false;
+            var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOption+'&Value='+search_option;
+            window.location.replace(formURL);
+        },
         getNewProducts: function(allProduct) {
             console.log('Method Name: drugObject.getNewProducts Param: allProduct Value: '+[allProduct].toString());
             var formURL = "<?php echo site_url('Brand/getNewProducts?AllProduct=')?>"+allProduct;
@@ -84,7 +92,10 @@
         },
         changeSearchOption: function(searchOption) {
             console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
+            drugObject.searchOption = searchOption;
             var search_options = [];
+            $('.search_option_type').css('color', '#1996C0');
+            $('.search_by_'+searchOption).css('color', 'blue');
             switch (searchOption) {
                 case 'brand':
                     search_options = drugObject.searchOptionForBrand;
@@ -115,7 +126,7 @@
                         '<td><a href="<?php echo site_url('Brand/showBrandDetail')?>'+'?BrandID='+drugData[i].ID+'">'+drugData[i].Name+'</a></td>' +
                         '<td><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>'+'?ManufacturerID='+drugData[i].ManufacturerID+'">'+drugData[i].ManufacturerName+'</a></td>' +
                         '<td><a href="<?php echo site_url('Generic/showGenericDetail')?>'+'?GenericID='+drugData[i].GenericID+'">'+drugData[i].GenericName+'</a></td>' +
-                        '<td>'+drugData[i].PriceInBDT+'</td>' +
+                        '<td>'+drugData[i].PriceInBDT+' Tk</td>' +
                         '</tr>';
                     $('tbody.drug-list').append(drug_td_text);
                 }

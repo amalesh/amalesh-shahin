@@ -512,4 +512,76 @@ class BrandInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $total;
     }
+
+    public function getSearchResult() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $option_type = $this->input->get('Type');
+        $option_value = $this->input->get('Value');
+        $this->db->select('b.ID');
+        $this->db->select('b.Name');
+        $this->db->select('b.PriceInBDT');
+        $this->db->select('g.ID AS GenericID');
+        $this->db->select('g.Name AS GenericName');
+        $this->db->select('m.ID AS ManufacturerID');
+        $this->db->select('m.Name AS ManufacturerName');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->where('b.IsActive', 1);
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        switch ($option_type) {
+            case 'brand':
+                $this->db->like('LOWER(b.Name)', strtolower($option_value));
+                break;
+            case 'generic':
+                $this->db->like('LOWER(g.Name)', strtolower($option_value));
+                break;
+            case 'indication':
+                $this->db->like('LOWER(g.Indication)', strtolower($option_value));
+                break;
+            case 'manufacturer':
+                $this->db->like('LOWER(m.Name)', strtolower($option_value));
+                break;
+            default:
+                break;
+        }
+
+        $this->db->order_by('b.Name');
+        $all_new_information = $this->db->get()->result_array();
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        return $all_new_information;
+    }
+
+    public function getTotalSearchResult() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $option_type = $this->input->get('Type');
+        $option_value = $this->input->get('Value');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->where('b.IsActive', 1);
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        switch ($option_type) {
+            case 'brand':
+                $this->db->like('LOWER(b.Name)', strtolower($option_value));
+                break;
+            case 'generic':
+                $this->db->like('LOWER(g.Name)', strtolower($option_value));
+                break;
+            case 'indication':
+                $this->db->like('LOWER(g.Indication)', strtolower($option_value));
+                break;
+            case 'manufacturer':
+                $this->db->like('LOWER(m.Name)', strtolower($option_value));
+                break;
+            default:
+                break;
+        }
+
+        $total = $this->db->count_all_results();
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        return $total;
+    }
 }
