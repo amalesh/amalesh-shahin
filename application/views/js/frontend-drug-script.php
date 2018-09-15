@@ -43,8 +43,8 @@
                 }
             });
         },
-        changeSearchOption: function(allBrand) {
-            console.log('Method Name: drugObject.changeSearchOption Param: allBrand Value: '+[allBrand].toString());
+        getNewBrands: function(allBrand) {
+            console.log('Method Name: drugObject.getNewBrands Param: allBrand Value: '+[allBrand].toString());
             var formURL = "<?php echo site_url('Brand/getNewBrands?AllBrand=')?>"+allBrand;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getNewBrands', function(drugData){
                 $('div.new-brand-ul ul').html('');
@@ -62,8 +62,8 @@
                 }
             });
         },
-        changeSearchOption: function() {
-            console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
+        getHighlightedBrands: function() {
+            console.log('Method Name: drugObject.getHighlightedBrands Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
                 if(drugData) {
