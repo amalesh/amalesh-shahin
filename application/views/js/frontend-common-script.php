@@ -156,6 +156,18 @@
                     '                                    </a>' +
                     '                                </li>');
             }
+        },
+        inArrayCaseInsensitive: function (value, dataArray) {
+            var index = -1;
+            value = value.toLowerCase();
+            for(var i = 0; i < dataArray.length; i++) {
+                if (value == $.trim(dataArray[i].toLowerCase())) {
+                    index = i;
+                    break;
+                }
+            }
+
+            return index;
         }
     }
 

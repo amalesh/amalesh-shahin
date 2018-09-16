@@ -792,6 +792,11 @@ td .link{
     font-size: 12px;
 }
 
-.modal-body input([type=radio]) {
-    font-size: 14px;
+/*.modal-body input([type=radio]) {*/
+    /*font-size: 14px;*/
+/*}*/
+
+.error_message {
+    color: red;
+    display: none;
 }

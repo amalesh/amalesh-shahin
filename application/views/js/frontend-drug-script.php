@@ -12,6 +12,32 @@
             var search_option = $('#searchDrugOption').val();
             if (search_option == '') return false;
             var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOption+'&Value='+search_option;
+            switch (drugObject.searchOption) {
+                case 'brand':
+                    if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForBrand) == -1) {
+                        $('.invalid-search-option-error').show();
+                        return false;
+                    }
+                    break;
+                case 'generic':
+                    if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForGeneric) == -1) {
+                        $('.invalid-search-option-error').show();
+                        return false;
+                    }
+                    break;
+                case 'indication':
+                    break;
+                case 'manufacturer':
+                    if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForManufacturer) == -1) {
+                        $('.invalid-search-option-error').show();
+                        return false;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            $('.invalid-search-option-error').hide();
             window.location.replace(formURL);
         },
         getNewProducts: function(allProduct) {
@@ -124,8 +150,9 @@
                 for(var i = 0; i < drugData.length; i++) {
                     drug_td_text = '<tr>' +
                         '<td><a href="<?php echo site_url('Brand/showBrandDetail')?>'+'?BrandID='+drugData[i].ID+'">'+drugData[i].Name+'</a></td>' +
-                        '<td><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>'+'?ManufacturerID='+drugData[i].ManufacturerID+'">'+drugData[i].ManufacturerName+'</a></td>' +
-                        '<td><a href="<?php echo site_url('Generic/showGenericDetail')?>'+'?GenericID='+drugData[i].GenericID+'">'+drugData[i].GenericName+'</a></td>' +
+                        '<td>'+drugData[i].DosageForm+'</td>' +
+                        '<td>'+drugData[i].StrengthName+'</td>' +
+                        '<td>'+drugData[i].PackSize+'</td>' +
                         '<td>'+drugData[i].PriceInBDT+' Tk</td>' +
                         '</tr>';
                     $('tbody.drug-list').append(drug_td_text);
