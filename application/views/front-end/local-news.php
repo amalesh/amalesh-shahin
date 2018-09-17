@@ -17,96 +17,22 @@
 
                 <div class="news-list">
                     <div class="news padding-top-30">
-                        <div class="job">
+                        <?php
+                        foreach ($AllNews AS $news) {
+                            echo '<div class="job">
                             <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
+                                <a href="'.site_url('News/showIndividualNewsDetail?NewsID='.$news['ID']).'"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> '.$news['Title'].'</h1></a>
+                                <p>'.$news['Description'].'</p>
+                                <a href="'.site_url('News/showIndividualNewsDetail?NewsID='.$news['ID']).'" class="see-details">See more</a>
                             </div>
                             <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
+                                <img src="'.base_url('NewsImages/'.$news['ImagePath']).'" alt="">
                             </div>
-                        </div>
-                        <div class="job">
-                            <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
-                            </div>
-                            <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
-                            </div>
-                        </div>
-                        <div class="job">
-                            <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
-                            </div>
-                            <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
-                            </div>
-                        </div>
-                        <div class="job">
-                            <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
-                            </div>
-                            <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
-                            </div>
-                        </div>
-                        <div class="job">
-                            <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
-                            </div>
-                            <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
-                            </div>
-                        </div>
-                        <div class="job">
-                            <div class="job-info">
-                                <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                                <a href="#" class="see-details">See more</a>
-                            </div>
-                            <div class="see-more">
-                                <img src="<?php echo base_url().'application/views/';?>img//news-img.png" alt="">
-                            </div>
-                        </div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                <li class="page-item"><a class="page-link" href="#">8</a></li>
-                                <li class="page-item"><a class="page-link" href="#">9</a></li>
-                                <li class="page-item"><a class="page-link" href="#">10</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-
+                        </div>';
+                        }
+                        ?>
                     </div>
                 </div>
-
-
             </div>
             <div class="col-md-4 sidebar">
                 <div class="product-add-2">

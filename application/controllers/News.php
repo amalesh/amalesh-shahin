@@ -14,18 +14,26 @@ class News extends CI_Controller {
     }
 
     public function getAllLocalNews() {
+        $all_active_local_news = $this->NewsInformation_model->getAllActiveNewsInformation();
+        $data = array();
+        $data['AllNews'] = $all_active_local_news;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-news');
+        $this->load->view('front-end/local-news', $data);
         $this->load->view('front-end/footer');
     }
 
     public function showIndividualNewsDetail() {
+        $news_information = $this->NewsInformation_model->getIndividualNewsDetail();
+        $all_active_local_news = $this->NewsInformation_model->getAllActiveNewsInformation();
+        $data = array();
+        $data['AllNews'] = $all_active_local_news;
+        $data['NewsInfo'] = $news_information;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-news-detail');
+        $this->load->view('front-end/local-news-detail', $data);
         $this->load->view('front-end/footer');
     }
 

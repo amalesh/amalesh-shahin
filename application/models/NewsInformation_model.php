@@ -19,6 +19,8 @@ class NewsInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->db->select('n.ID, n.Title, n.Description, n.ImagePath, n.PublishDateTime, n.UnpublishedDateTime, n.IsActive');
         $this->db->from('newsInformation AS n');
+        $this->db->where('n.PublishDateTime <=', date('Y-m-d H:i:s'));
+        $this->db->where('n.UnpublishedDateTime >=', date('Y-m-d H:i:s'));
         $this->db->where('n.IsActive', 1);
         $result = $this->db->get()->result_array();
         $news_information = array();
@@ -26,7 +28,41 @@ class NewsInformation_model extends GeneralData_model {
         foreach ($result AS $info) {
             $info['UnpublishedDateTime'] = substr($info['UnpublishedDateTime'], 0, 10);
             $info['PublishDateTime'] = substr($info['PublishDateTime'], 0, 10);
+            $temp = explode('-', $info['UnpublishedDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['UnpublishedDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $info['PublishDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['PublishDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+
             $news_information[$total++] = $info;
+        }
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $news_information;
+    }
+
+    public function getIndividualNewsDetail() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $news_id = $this->input->get('NewsID');
+        $this->db->select('n.ID, n.Title, n.Description, n.ImagePath, n.PublishDateTime, n.UnpublishedDateTime, n.IsActive');
+        $this->db->from('newsInformation AS n');
+        $this->db->where('n.PublishDateTime <=', date('Y-m-d H:i:s'));
+        $this->db->where('n.UnpublishedDateTime >=', date('Y-m-d H:i:s'));
+        $this->db->where('n.ID', $news_id);
+        $this->db->where('n.IsActive', 1);
+        $news_information = $this->db->get()->result_array();
+        if (isset($news_information[0]['ID'])) {
+            $news_information[0]['UnpublishedDateTime'] = substr($news_information[0]['UnpublishedDateTime'], 0, 10);
+            $news_information[0]['PublishDateTime'] = substr($news_information[0]['PublishDateTime'], 0, 10);
+            $temp = explode('-', $news_information[0]['UnpublishedDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $news_information[0]['UnpublishedDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $news_information[0]['PublishDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $news_information[0]['PublishDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+
+            return $news_information[0];
         }
 //        echo $this->db->last_query();
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
