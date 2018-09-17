@@ -16,125 +16,21 @@
                     </div>
                 </div>
                 <div class="job-list">
-                    <div class="job">
+                    <?php
+                    foreach ($AllJobs AS $job) {
+                        echo '<div class="job">
                         <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
+                            <a href="'.site_url('Job/showJobDetail?JobID='.$job['ID']).'"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> '.$job['Title'].'</h1></a>
+                            <h4 class="date">Posted on '.$job['PublishDate'].'</h4>
+                            <p>'.$job['Description'].'</p>
                         </div>
                         <div class="see-more">
-                            <a href="#">Read more</a>
+                            <a href="'.site_url('Job/showJobDetail?JobID='.$job['ID']).'">Read more</a>
                         </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <div class="job">
-                        <div class="job-info">
-                            <a href="#"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> Sales Representative - Square Pharma</h1></a>
-                            <h4 class="date">Posted on 16th April 2018</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consectetur vitae in nostrum reiciendis asperiores</p>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                    </div>';
+                    }
+                    ?>
                 </div>
-
-
-
             </div>
             <div class="col-md-4">
                 <div class="product-add-2">

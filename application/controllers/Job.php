@@ -25,8 +25,15 @@ class Job extends CI_Controller {
         $this->load->view('front-end/footer');
     }
 
-    public function showIndividualJobDetail() {
-
+    public function showJobDetail() {
+        $job_information = $this->JobInformation_model->getJobDetail();
+        $data = array();
+        $data['JobInfo'] = $job_information;
+        $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
+        $this->load->view('front-end/main-menu');
+        $this->load->view('front-end/job-detail', $data);
+        $this->load->view('front-end/footer');
     }
 
     public function getJobListForAdmin() {

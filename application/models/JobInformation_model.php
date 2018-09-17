@@ -26,6 +26,12 @@ class JobInformation_model extends GeneralData_model {
         foreach ($result AS $info) {
             $info['ApplicationDeadline'] = substr($info['ApplicationDeadline'], 0, 10);
             $info['PublishDate'] = substr($info['PublishDate'], 0, 10);
+            $temp = explode('-', $info['ApplicationDeadline']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['ApplicationDeadline'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $info['PublishDate']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['PublishDate'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
             $job_information[$total++] = $info;
         }
 //        echo $this->db->last_query();
@@ -125,6 +131,32 @@ class JobInformation_model extends GeneralData_model {
                 $job_information[0]['ApplicationDeadline'] = str_replace('-','/', $job_information[0]['ApplicationDeadline']);
                 $job_information[0]['PublishDate'] = substr($job_information[0]['PublishDate'], 0, 10);
                 $job_information[0]['PublishDate'] = str_replace('-','/', $job_information[0]['PublishDate']);
+                return $job_information[0];
+            }
+            return array();
+        }
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $this->prepareErrorResponse(ERROR_INVALID_REQUEST);
+    }
+
+    public function getJobDetail() {
+        log_message('debug', __METHOD__ . ' Method Start with Arguments: ' . print_r(func_get_args(), true));
+        $job_id = $this->input->get('JobID');
+        if ($job_id) {
+            $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
+            $this->db->from('jobinformation AS j');
+            $this->db->where('j.ID', $job_id);
+            $this->db->limit(1);
+            $job_information = $this->db->get()->result_array();
+            if (isset($job_information[0]['ID'])) {
+                $job_information[0]['ApplicationDeadline'] = substr($job_information[0]['ApplicationDeadline'], 0, 10);
+                $job_information[0]['PublishDate'] = substr($job_information[0]['PublishDate'], 0, 10);
+                $temp = explode('-', $job_information[0]['ApplicationDeadline']);
+                $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+                $job_information[0]['ApplicationDeadline'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+                $temp = explode('-', $job_information[0]['PublishDate']);
+                $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+                $job_information[0]['PublishDate'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
                 return $job_information[0];
             }
             return array();
