@@ -597,7 +597,18 @@ class BrandInformation_model extends GeneralData_model {
                 $all_new_information = $this->db->get()->result_array();
                 break;
             case 'manufacturer':
-                $this->db->like('LOWER(m.Name)', strtolower($option_value));
+                $this->db->select('b.Name');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->where('LOWER(m.Name)', strtolower($option_value));
+                $this->db->group_by(array("b.Name", "g.Name"));
+                $this->db->order_by('b.Name', 'g.Name');
+                $all_new_information = $this->db->get()->result_array();
                 break;
             default:
                 break;
@@ -650,7 +661,16 @@ class BrandInformation_model extends GeneralData_model {
                 $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
                 break;
             case 'manufacturer':
-                $this->db->like('LOWER(m.Name)', strtolower($option_value));
+                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', g.Name))) AS Total");
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->where('LOWER(m.Name)', strtolower($option_value));
+                $result = $this->db->count_all_results();
+                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
                 break;
             default:
                 break;

@@ -254,6 +254,12 @@ class Brand extends CI_Controller {
                 $this->load->view('front-end/search-result-indication', $data);
                 break;
             case 'manufacturer':
+                $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
+                $data['TotalBrand'] = $total_brand;
+                $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
+                $data['AllManufacturers'] = $all_new_brand;
+                $data['Manufacturer'] = $option_value;
+
                 $this->load->view('front-end/search-result-manufacturer', $data);
                 break;
             default:
