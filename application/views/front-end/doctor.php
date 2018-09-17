@@ -176,7 +176,7 @@
                             <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
                         </div>
                     </div>
-                    <a href="" class="btn btn-s float-right" style="margin-right: 26%;">
+                    <a href="" class="btn btn-s float-right">
                         <i class="fas fa-chevron-right"></i> see more
                     </a>
                     <div class="clearfix"></div>

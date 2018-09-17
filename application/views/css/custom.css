@@ -277,6 +277,7 @@ section.visitor {
 .footer {
     background: url(../img/footer.png);
     padding-top: 50px;
+    margin-top: 50px;
 }
 
 .footer h3.title.text-center {
