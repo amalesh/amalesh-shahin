@@ -19,6 +19,7 @@ class Brand extends CI_Controller {
         $data['TotalBrand'] = $total_brand;
 
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/brand-list', $data);
         $this->load->view('js/frontend-brand-script');

@@ -14,18 +14,13 @@ class SpecialReports extends CI_Controller {
     }
 
     public function getAllLocalSpecialReports() {
+        $all_special_reports = $this->SpecialReports_model->getAllActiveSpecialReports();
+        $data = array();
+        $data['AllSpecialReports'] = $all_special_reports;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-specialreports');
-        $this->load->view('front-end/footer');
-    }
-
-    public function showIndividualSpecialReportsDetail() {
-        $this->load->view('front-end/header');
-        $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-specialreports-detail');
+        $this->load->view('front-end/local-special-reports', $data);
         $this->load->view('front-end/footer');
     }
 

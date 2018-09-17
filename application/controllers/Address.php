@@ -16,6 +16,7 @@ class Address extends CI_Controller {
 
     public function getAllImportantAddress() {
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/important-addresses');
         $this->load->view('front-end/footer');
