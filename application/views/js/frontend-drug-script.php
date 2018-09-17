@@ -220,4 +220,10 @@
     }
 
     drugObject.totalDrug = <?php echo isset($TotalDrug) ? $TotalDrug : 0;?>;
+
+    $(document).bind('keydown', function(e){
+        if (e.which == 13){
+            $('#searchInformation').trigger('click');
+        }
+    });
 </script>

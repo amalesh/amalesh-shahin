@@ -15,7 +15,7 @@
                                 <li class="list-inline-item"><a class="search_option_type search_by_manufacturer" onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
                             </ul>
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
-                            <a onclick="drugObject.searchBrandInformation()" class="search-btn"><i class="fas fa-search"></i></a>
+                            <a onclick="drugObject.searchBrandInformation()" id="searchInformation" class="search-btn"><i class="fas fa-search"></i></a>
                             <span class="error_message invalid-search-option-error">Please enter a valid search option.</span>
                         </div>
                     </div>
