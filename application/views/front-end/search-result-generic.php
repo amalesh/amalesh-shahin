@@ -23,37 +23,31 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="presentation">
-                    <h4><?php echo $AllBrands[0]['Name'];?></h4>
+                    <h4><?php echo $GenericData[0]['Name'];?></h4>
                     <div class="brand-generic-detail">
-                        <p><b>Generic Name: </b><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$AllBrands[0]['GenericName']);?>"><?php echo $AllBrands[0]['GenericName'];?></a></p>
-                        <p><b>Drug Class: </b><?php echo $AllBrands[0]['Classification'];?></p>
-                        <p><b>Safety Remarks: </b><?php echo $AllBrands[0]['SafetyRemark'];?></p>
-                        <p><b>Indication: </b><?php echo $AllBrands[0]['Indication'];?></p>
-                        <p><b>Dosage & Administration: </b><?php echo $AllBrands[0]['DosageAdministration'];?></p>
-                        <p><b>Contraindication & Precaution: </b><?php echo $AllBrands[0]['ContraindicationPrecaution'];?></p>
-                        <p><b>Side Effect: </b><?php echo $AllBrands[0]['SideEffect'];?></p>
-                        <p><b>Use in Pregnancy & Lactation: </b><?php echo $AllBrands[0]['PregnancyLactation'];?></p>
+                        <p><b>Generic Name: </b><?php echo $GenericData[0]['Name'];?></p>
+                        <p><b>Drug Class: </b><?php echo $GenericData[0]['Classification'];?></p>
+                        <p><b>Safety Remarks: </b><?php echo $GenericData[0]['SafetyRemark'];?></p>
+                        <p><b>Indication: </b><?php echo $GenericData[0]['Indication'];?></p>
+                        <p><b>Dosage & Administration: </b><?php echo $GenericData[0]['DosageAdministration'];?></p>
+                        <p><b>Contraindication & Precaution: </b><?php echo $GenericData[0]['ContraindicationPrecaution'];?></p>
+                        <p><b>Side Effect: </b><?php echo $GenericData[0]['SideEffect'];?></p>
+                        <p><b>Use in Pregnancy & Lactation: </b><?php echo $GenericData[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
                                 <th scope="col" style="width: 150px;">Brand Name</th>
-                                <th scope="col">Dosage Form</th>
-                                <th scope="col">Strength</th>
-                                <th scope="col">Pack Size</th>
-                                <th scope="col">Price</th>
+                                <th scope="col">Manufacturer Name</th>
                             </tr>
                             </thead>
                             <tbody class="drug-list">
                             <?php
-                            foreach ($AllBrands AS $brand) {
+                            foreach ($BrandData AS $brand) {
                                 echo '<tr>';
-                                echo '<td><a href="'.site_url('Brand/showBrandDetail').'?BrandID='.$brand['ID'].'">'.$brand['Name'].'</a></td>';
-                                echo '<td>'.$brand['DosageForm'].'</td>';
-                                echo '<td>'.$brand['StrengthName'].'</td>';
-                                echo '<td>'.$brand['PackSize'].'</td>';
-                                echo '<td>'.$brand['PriceInBDT'].' Tk</td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
+                                echo '<td>'.$brand['ManufacturerName'].'</td>';
                                 echo '</tr>';
                             }
                             ?>

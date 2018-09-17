@@ -223,10 +223,6 @@ class Brand extends CI_Controller {
         $option_value = $this->input->get('Value');
 
         $data = array();
-        $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
-        $data['TotalBrand'] = $total_brand;
-        $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
-        $data['AllBrands'] = $all_new_brand;
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
@@ -234,9 +230,18 @@ class Brand extends CI_Controller {
         $this->load->view('js/frontend-drug-script');
         switch ($option_type) {
             case 'brand':
+                $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
+                $data['TotalBrand'] = $total_brand;
+                $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
+                $data['AllBrands'] = $all_new_brand;
+
                 $this->load->view('front-end/search-result-drug', $data);
                 break;
             case 'generic':
+                $data = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
+                $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
+                $data['TotalBrand'] = $total_brand;
+
                 $this->load->view('front-end/search-result-generic', $data);
                 break;
             case 'indication':
