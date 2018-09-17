@@ -33,8 +33,8 @@
                 <div class="product-details">
                     <h4 class="title"><?php echo $BrandDetail['Name'];?></h4>
                     <div class="product-info">
-                        <p><b>Manufacturer :  </b><a href="<?php echo site_url('Manufacturer/getManufacturerDetail')?>?ManufacturerID=<?php echo $BrandDetail['ManufacturerID'];?>"><?php echo $BrandDetail['ManufacturerName'];?></a></p>
-                        <p><b>Generic Name :</b><?php echo $BrandDetail['GenericName'];?></p>
+                        <p><b>Manufacturer :  </b><?php echo $BrandDetail['ManufacturerName'];?></p>
+                        <p><b>Generic Name :</b><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$BrandDetail['GenericName'])?>"><?php echo $BrandDetail['GenericName'];?></a></p>
                         <p><b>Drug Class :</b><?php echo $BrandDetail['Classification'];?></p>
                         <p><b>Safety Remarks: </b><?php echo $BrandDetail['SafetyRemark'];?></p>
                         <p><b>Indications: </b><?php echo $BrandDetail['Indication'];?></p>
