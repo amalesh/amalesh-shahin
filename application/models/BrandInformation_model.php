@@ -548,6 +548,36 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->order_by('b.Name');
                 $all_new_information = $this->db->get()->result_array();
                 break;
+            case 'brand_by_alphabetically':
+                $this->db->select('b.ID');
+                $this->db->select('b.Name');
+                $this->db->select('b.PriceInBDT');
+                $this->db->select('df.Name AS DosageForm');
+                $this->db->select('s.Name AS StrengthName');
+                $this->db->select('ps.Name AS PackSize');
+                $this->db->select('g.ID AS GenericID');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->select('g.Classification');
+                $this->db->select('g.SafetyRemark');
+                $this->db->select('g.Indication');
+                $this->db->select('g.DosageAdministration');
+                $this->db->select('g.ContraindicationPrecaution');
+                $this->db->select('g.SideEffect');
+                $this->db->select('g.PregnancyLactation');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
+                $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
+                $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('df.IsActive', 1);
+                $this->db->where('s.IsActive', 1);
+                $this->db->where('ps.IsActive', 1);
+                $this->db->like('LOWER(b.Name)', $option_value, 'after');
+                $this->db->order_by('b.Name');
+                $all_new_information = $this->db->get()->result_array();
+                break;
             case 'generic':
                 $this->db->select('b.Name');
                 $this->db->select('m.Name AS ManufacturerName');
@@ -579,6 +609,25 @@ class BrandInformation_model extends GeneralData_model {
                 $all_new_information = array(
                     'BrandData' => $all_data,
                     'GenericData' => $generic_data
+                );
+                break;
+            case 'generic_by_alphabetically':
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->like('LOWER(g.Name)', $option_value, 'after');
+                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
+                $this->db->order_by("b.Name", "g.Name", "m.Name");
+                $all_data = $this->db->get()->result_array();
+
+                $all_new_information = array(
+                    'BrandData' => $all_data
                 );
                 break;
             case 'indication':
@@ -636,6 +685,20 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('LOWER(b.Name)', strtolower($option_value));
                 $total = $this->db->count_all_results();
                 break;
+            case 'brand_by_alphabetically':
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
+                $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
+                $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('df.IsActive', 1);
+                $this->db->where('s.IsActive', 1);
+                $this->db->where('ps.IsActive', 1);
+                $this->db->like('LOWER(b.Name)', $option_value, 'after');
+                $total = $this->db->count_all_results();
+                break;
             case 'generic':
                 $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', m.Name))) AS Total");
                 $this->db->from('brandinformation AS b');
@@ -645,6 +708,18 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
                 $this->db->where('LOWER(g.Name)', strtolower($option_value));
+                $result = $this->db->count_all_results();
+                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
+                break;
+            case 'generic_by_alphabetically':
+                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', g.Name,' ### ', m.Name))) AS Total");
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->like('LOWER(g.Name)', $option_value, 'after');
                 $result = $this->db->count_all_results();
                 $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
                 break;

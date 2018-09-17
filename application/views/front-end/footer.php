@@ -11,111 +11,111 @@
         <h3 class="title text-center">Drug Index A to Z</h3>
         <h4 class="sub-title">Browse Alphabetically (Brand)</h4>
         <ul class="list-inline text-center">
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('a', 1)">A</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=a');?>">A</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('b', 1)">B</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=b');?>">B</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('c', 1)">C</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=c');?>">C</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('d', 1)">D</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=d');?>">D</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('e', 1)">E</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=e');?>">E</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('f', 1)">F</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=f');?>">F</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('g', 1)">G</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=g');?>">G</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('h', 1)">H</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=h');?>">H</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('i', 1)">I</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=i');?>">I</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('j', 1)">J</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=j');?>">J</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('k', 1)">K</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=k');?>">K</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('l', 1)">L</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=l');?>">L</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('m', 1)">M</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=m');?>">M</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('n', 1)">N</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=n');?>">N</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('o', 1)">O</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=o');?>">O</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('p', 1)">P</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=p');?>">P</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('q', 1)">Q</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=q');?>">Q</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('r', 1)">R</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=r');?>">R</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('s', 1)">S</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=s');?>">S</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('t', 1)">T</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=t');?>">T</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('u', 1)">U</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=u');?>">U</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('v', 1)">V</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=v');?>">V</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('w', 1)">W</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=w');?>">W</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('x', 1)">X</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=x');?>">X</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('y', 1)">Y</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=y');?>">Y</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchBrandAlphabetically('z', 1)">Z</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=z');?>">Z</a></li>
         </ul>
         <h4 class="sub-title">Browse Alphabetically (Generic)</h4>
         <ul class="list-inline text-center">
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('a', 1)">A</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=a');?>">A</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('b', 1)">B</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=b');?>">B</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('c', 1)">C</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=c');?>">C</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('d', 1)">D</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=d');?>">D</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('e', 1)">E</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=e');?>">E</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('f', 1)">F</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=f');?>">F</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('g', 1)">G</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=g');?>">G</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('h', 1)">H</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=h');?>">H</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('i', 1)">I</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=i');?>">I</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('j', 1)">J</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=j');?>">J</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('k', 1)">K</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=k');?>">K</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('l', 1)">L</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=l');?>">L</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('m', 1)">M</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=m');?>">M</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('n', 1)">N</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=n');?>">N</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('o', 1)">O</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=o');?>">O</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('p', 1)">P</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=p');?>">P</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('q', 1)">Q</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=q');?>">Q</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('r', 1)">R</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=r');?>">R</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('s', 1)">S</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=s');?>">S</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('t', 1)">T</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=t');?>">T</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('u', 1)">U</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=u');?>">U</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('v', 1)">V</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=v');?>">V</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('w', 1)">W</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=w');?>">W</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('x', 1)">X</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=x');?>">X</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('y', 1)">Y</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=y');?>">Y</a></li>
             <span class="separator"></span>
-            <li class="list-inline-item"><a onclick="frontendCommonMethods.searchGenericAlphabetically('z', 1)">Z</a></li>
+            <li class="list-inline-item"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic_by_alphabetically&Value=z');?>">Z</a></li>
         </ul>
         <div class="download-app text-center">
             <h4 class="title">Download free mims app</h4>
