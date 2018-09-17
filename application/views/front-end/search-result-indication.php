@@ -88,43 +88,7 @@
                         <div class="clearfix"></div>
                     </ul>
                 </div>
-                <div class="speacial-reports">
-                    <h3 class="title">Special Reports</h3>
-                    <div class="media">
-                        <img class="mr-3" src="<?php echo base_url().'application/views/';?>img/img-8.png" alt="image">
-                        <div class="media-body">
-                            <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <img class="mr-3" src="<?php echo base_url().'application/views/';?>img/img-7.png" alt="image">
-                        <div class="media-body">
-                            <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <img class="mr-3" src="<?php echo base_url().'application/views/';?>img/img-8.png" alt="image">
-                        <div class="media-body">
-                            <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <img class="mr-3" src="<?php echo base_url().'application/views/';?>img/img-7.png" alt="image">
-                        <div class="media-body">
-                            <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <img class="mr-3" src="<?php echo base_url().'application/views/';?>img/img-8.png" alt="image">
-                        <div class="media-body">
-                            <h5 class="mt-0"><a href="">High sugar intake in pregnancy may raise childhood allergy risk</a></h5>
-                        </div>
-                    </div>
-                    <a href="" class="btn btn-s float-right" style="margin-right: 26%;">
-                        <i class="fas fa-chevron-right"></i> see more
-                    </a>
-                    <div class="clearfix"></div>
-                </div>
+                <div class="special-reports-sidebar"></div>
             </div>
         </div>
         <div class="row">

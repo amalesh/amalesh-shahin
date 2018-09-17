@@ -16,6 +16,7 @@ class LocalNews extends CI_Controller {
     public function getAllLocalNews()
     {
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/local-news');
         $this->load->view('front-end/footer');
@@ -24,6 +25,7 @@ class LocalNews extends CI_Controller {
     public function getLocalNewsDetail()
     {
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/local-news-detail');
         $this->load->view('front-end/footer');

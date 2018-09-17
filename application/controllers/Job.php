@@ -19,6 +19,7 @@ class Job extends CI_Controller {
         $data = array();
         $data['AllJobs'] = $all_active_job_information;
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/job-circular', $data);
         $this->load->view('front-end/footer');

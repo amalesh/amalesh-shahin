@@ -36,6 +36,7 @@ class Brand extends CI_Controller {
         $data = array();
         $data['BrandDetail'] = $this->BrandInformation_model->getBrandFullDetail();
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/brand-detail', $data);
         $this->load->view('front-end/footer');

@@ -18,7 +18,6 @@
                     $('ul.sidebar-jobs').html('');
                     $('ul.sidebar-news').html('');
                     $('ul.sidebar-address').html('');
-                    $('div.speacial-reports').html('<h3 class="title">Special Reports</h3>');
 
                     for(var i = 0; i < all_jobs.length; i++) {
                         $('ul.sidebar-jobs').append('<li><a href="<?php echo site_url('Job/showIndividualJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+all_jobs[i].Title+'</a></li>');
@@ -32,13 +31,33 @@
                         $('ul.sidebar-news').append('<li><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+all_news[i].ID+'">'+all_news[i].Title+'</a></li>');
                     }
 
-                    for(var i = 0; i < all_special_reports.length; i++) {
-                        $('div.speacial-reports').append('<div class="media">' +
-                            '<img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">'+
-                            '<div class="media-body">'+
-                            '<h5 class="mt-0"><a href="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].LinkAddress+'">'+all_special_reports[i].Title+'</a></h5>'+
-                            '</div>'+
-                        '</div>');
+                    if($('div.speacial-reports').length) {
+                        $('div.speacial-reports').html('<h3 class="title">Special Reports</h3>');
+                        for(var i = 0; i < all_special_reports.length; i++) {
+                            $('div.speacial-reports').append('<div class="media">' +
+                                '<img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">'+
+                                '<div class="media-body">'+
+                                '<h5 class="mt-0"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a></h5>'+
+                                '</div>'+
+                                '</div>');
+                        }
+                    }
+
+                    if ($('div.special-reports-sidebar').length) {
+                        $('div.special-reports-sidebar').html('<h3 class="title">Special Reports</h3>');
+                        for(var i = 0; i < all_special_reports.length; i++) {
+                            $('div.special-reports-sidebar').append('<div class="media">' +
+                                '                        <img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">' +
+                                '                        <div class="media-body">' +
+                                '                            <h5 class="mt-0"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a></h5>' +
+                                '                        </div>' +
+                                '                    </div>');
+                        }
+
+                        $('div.special-reports-sidebar').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right" style="margin-right: 26%;">' +
+                            '                        <i class="fas fa-chevron-right"></i> see more' +
+                            '                    </a>' +
+                            '                    <div class="clearfix"></div>');
                     }
                 }
             });

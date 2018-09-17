@@ -19,6 +19,7 @@ class Resource extends CI_Controller {
         $data = array();
         $data['AllResources'] = $all_resource_information;
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/resource-list', $data);
         $this->load->view('js/frontend-resource-script');

@@ -15,6 +15,7 @@ class SpecialReports extends CI_Controller {
 
     public function getAllLocalSpecialReports() {
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/local-specialreports');
         $this->load->view('front-end/footer');
@@ -22,6 +23,7 @@ class SpecialReports extends CI_Controller {
 
     public function showIndividualSpecialReportsDetail() {
         $this->load->view('front-end/header');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/local-specialreports-detail');
         $this->load->view('front-end/footer');
