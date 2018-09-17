@@ -16,6 +16,7 @@
                             </ul>
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
                             <a onclick="drugObject.searchBrandInformation()" class="search-btn"><i class="fas fa-search"></i></a>
+                            <span class="error_message invalid-search-option-error">Please enter a valid search option.</span>
                         </div>
                     </div>
                 </div>

@@ -219,17 +219,36 @@ class Brand extends CI_Controller {
     }
 
     public function searchBrandInformation() {
+        $option_type = $this->input->get('Type');
+        $option_value = $this->input->get('Value');
+
         $data = array();
-        $total_brand = $this->BrandInformation_model->getTotalSearchResult();
+        $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
         $data['TotalBrand'] = $total_brand;
-        $all_new_brand = $this->BrandInformation_model->getSearchResult();
+        $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
         $data['AllBrands'] = $all_new_brand;
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-drug-script');
-        $this->load->view('front-end/drug-search-result', $data);
+        switch ($option_type) {
+            case 'brand':
+                $this->load->view('front-end/search-result-drug', $data);
+                break;
+            case 'generic':
+                $this->load->view('front-end/search-result-generic', $data);
+                break;
+            case 'indication':
+                $this->load->view('front-end/search-result-indication', $data);
+                break;
+            case 'manufacturer':
+                $this->load->view('front-end/search-result-manufacturer', $data);
+                break;
+            default:
+                break;
+        }
+
         $this->load->view('front-end/footer');
     }
 
