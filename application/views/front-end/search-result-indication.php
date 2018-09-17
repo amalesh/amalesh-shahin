@@ -39,7 +39,7 @@
                                 echo '<tr>';
                                 echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
                                 echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value='.$brand['GenericName']).'">'.$brand['GenericName'].'</a></td>';
-                                echo '<td>'.$brand['ManufacturerName'].'</td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=manufacturer&Value='.$brand['ManufacturerName']).'">'.$brand['ManufacturerName'].'</a></td>';
                                 echo '</tr>';
                             }
                             ?>

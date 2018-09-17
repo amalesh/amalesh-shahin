@@ -22,20 +22,16 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="search-bar" style="border: none;margin-bottom: 0;padding-top: 0;">
-                    <ul class="list-inline text-left" style="margin-top: 0;">
-                        <li class="list-inline-item"><a href="">Brand</a></li><span class="separator"></span>
-                        <li class="list-inline-item"><a href="">Generic</a></li><span class="separator"></span>
-                        <li class="list-inline-item"><a href="">Indication</a></li><span class="separator"></span>
-                        <li class="list-inline-item"><a href="">Manufacturer</a></li>
-                    </ul>
-                </div>
                 <div class="product-details">
-                    <h4 class="title"><?php echo $BrandDetail['Name'];?></h4>
+                    <h4 class="title"><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value='.$BrandDetail['Name'])?>"><?php echo $BrandDetail['Name'];?></a></h4>
                     <div class="product-info">
-                        <p><b>Manufacturer :  </b><?php echo $BrandDetail['ManufacturerName'];?></p>
+                        <p><b>Manufacturer :  </b><a href="<?php echo site_url('Brand/searchBrandInformation?Type=manufacturer&Value='.$BrandDetail['ManufacturerName'])?>"><?php echo $BrandDetail['ManufacturerName'];?></a></p>
                         <p><b>Generic Name :</b><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$BrandDetail['GenericName'])?>"><?php echo $BrandDetail['GenericName'];?></a></p>
                         <p><b>Drug Class :</b><?php echo $BrandDetail['Classification'];?></p>
+                        <p><b>Dosage Form: </b><?php echo $BrandDetail['DosageForm'];?></p>
+                        <p><b>Strength: </b><?php echo $BrandDetail['StrengthName'];?></p>
+                        <p><b>Pack Size: </b><?php echo $BrandDetail['PackSize'];?></p>
+                        <p><b>Price: </b><?php echo $BrandDetail['PriceInBDT'];?> Tk</p>
                         <p><b>Safety Remarks: </b><?php echo $BrandDetail['SafetyRemark'];?></p>
                         <p><b>Indications: </b><?php echo $BrandDetail['Indication'];?></p>
                         <p><b>Dosage & Administration :</b><?php echo $BrandDetail['DosageForm'];?></p>
