@@ -13,16 +13,19 @@ class Job extends CI_Controller {
         $this->load->model('JobInformation_model');
     }
 
-    public function getAllJobInformation()
-    {
-        $all_active_job_information = $this->JobInformation_model->getAllActiveJobInformation();
+    public function getAllJobInformation(){
         $data = array();
-        $data['AllJobs'] = $all_active_job_information;
+        list($data['AllJobs'], $data['TotalJob']) = $this->JobInformation_model->getAllActiveJobInformation();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
         $this->load->view('front-end/job-circular', $data);
         $this->load->view('front-end/footer');
+    }
+
+    public function getJobInformationForFrontend(){
+        $job_information = $this->JobInformation_model->getJobInformationForFrontend();
+        $this->sendRestAPIResponse($job_information);
     }
 
     public function showJobDetail() {

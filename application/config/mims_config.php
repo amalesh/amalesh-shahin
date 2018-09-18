@@ -12,3 +12,4 @@ $config['per_page_information_number_for_generic_search'] = 20;
 $config['per_page_information_number_for_generic_by_alphabetically_search'] = 20;
 $config['per_page_information_number_for_indication_search'] = 20;
 $config['per_page_information_number_for_manufacturer_search'] = 20;
+$config['per_page_job_information_number'] = 10;

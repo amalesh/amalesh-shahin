@@ -20,6 +20,39 @@ class JobInformation_model extends GeneralData_model {
         $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
         $this->db->from('jobinformation AS j');
         $this->db->where('j.IsActive', 1);
+        $this->db->limit(config_item('per_page_job_information_number'));
+        $result = $this->db->get()->result_array();
+        $job_information = array();
+        $total = 0;
+        foreach ($result AS $info) {
+            $info['ApplicationDeadline'] = substr($info['ApplicationDeadline'], 0, 10);
+            $info['PublishDate'] = substr($info['PublishDate'], 0, 10);
+            $temp = explode('-', $info['ApplicationDeadline']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['ApplicationDeadline'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $info['PublishDate']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['PublishDate'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $job_information[$total++] = $info;
+        }
+
+        $this->db->select('j.ID');
+        $this->db->from('jobinformation AS j');
+        $this->db->where('j.IsActive', 1);
+        $result = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return array($job_information, count($result));
+    }
+
+    public function getJobInformationForFrontend() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+        $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
+        $this->db->from('jobinformation AS j');
+        $this->db->where('j.IsActive', 1);
+        $this->db->limit(config_item('per_page_job_information_number'), ($page_no - 1) * config_item('per_page_job_information_number'));
         $result = $this->db->get()->result_array();
         $job_information = array();
         $total = 0;

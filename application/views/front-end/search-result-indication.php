@@ -33,7 +33,7 @@
                                 <th scope="col">Manufacturer Name</th>
                             </tr>
                             </thead>
-                            <tbody class="drug-list">
+                            <tbody class="indication-list">
                             <?php
                             foreach ($AllIndications AS $brand) {
                                 echo '<tr>';

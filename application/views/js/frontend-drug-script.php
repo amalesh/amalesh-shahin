@@ -15,8 +15,17 @@
                 if (drugData) {
                     switch (drugObject.searchOptionType) {
                         case 'brand':
-                            break;
                         case 'brand_by_alphabetically':
+                            $('tbody.drug-list').html('');
+                            for(var i = 0; i < drugData.length; i++) {
+                                $('tbody.drug-list').append('<tr>');
+                                $('tbody.drug-list').append('<td><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=');?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></td>');
+                                $('tbody.drug-list').append('<td>'+drugData[i].DosageForm+'</td>');
+                                $('tbody.drug-list').append('<td>'+drugData[i].StrengthName+'</td>');
+                                $('tbody.drug-list').append('<td>'+drugData[i].PackSize+'</td>');
+                                $('tbody.drug-list').append('<td>'+drugData[i].PriceInBDT+' Tk</td>');
+                                $('tbody.drug-list').append('</tr>');
+                            }
                             break;
                         case 'generic':
                             $('tbody.generic-list').html('');
@@ -28,10 +37,33 @@
                             }
                             break;
                         case 'generic_by_alphabetically':
+                            $('tbody.generic-alphabetically-list').html('');
+                            for(var i = 0; i < drugData.length; i++) {
+                                $('tbody.generic-alphabetically-list').append('<tr>');
+                                $('tbody.generic-alphabetically-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=');?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></td>');
+                                $('tbody.generic-alphabetically-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value=');?>'+drugData[i].GenericName+'">'+drugData[i].GenericName+'</a></td>');
+                                $('tbody.generic-alphabetically-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=manufacturer&Value=');?>'+drugData[i].ManufacturerName+'">'+drugData[i].ManufacturerName+'</a></td>');
+                                $('tbody.generic-alphabetically-list').append('</tr>');
+                            }
                             break;
                         case 'indication':
+                            $('tbody.indication-list').html('');
+                            for(var i = 0; i < drugData.length; i++) {
+                                $('tbody.indication-list').append('<tr>');
+                                $('tbody.indication-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=');?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></td>');
+                                $('tbody.indication-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value=');?>'+drugData[i].GenericName+'">'+drugData[i].GenericName+'</a></td>');
+                                $('tbody.indication-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=manufacturer&Value=');?>'+drugData[i].ManufacturerName+'">'+drugData[i].ManufacturerName+'</a></td>');
+                                $('tbody.indication-list').append('</tr>');
+                            }
                             break;
                         case 'manufacturer':
+                            $('tbody.manufacturer-list').html('');
+                            for(var i = 0; i < drugData.length; i++) {
+                                $('tbody.manufacturer-list').append('<tr>');
+                                $('tbody.manufacturer-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=');?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></td>');
+                                $('tbody.manufacturer-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value=');?>'+drugData[i].GenericName+'">'+drugData[i].GenericName+'</a></td>');
+                                $('tbody.manufacturer-list').append('</tr>');
+                            }
                             break;
                         default:
                             break;
