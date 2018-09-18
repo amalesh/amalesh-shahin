@@ -516,6 +516,8 @@ class BrandInformation_model extends GeneralData_model {
     public function getSearchResult($option_type, $option_value) {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $all_new_information = array();
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
 
         switch ($option_type) {
             case 'brand':
@@ -546,6 +548,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('ps.IsActive', 1);
                 $this->db->where('LOWER(b.Name)', strtolower($option_value));
                 $this->db->order_by('b.Name');
+                $this->db->limit(config_item('per_page_information_number_for_brand_search'), ($page_no - 1) * config_item('per_page_information_number_for_brand_search'));
                 $all_new_information = $this->db->get()->result_array();
                 break;
             case 'brand_by_alphabetically':
@@ -576,6 +579,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('ps.IsActive', 1);
                 $this->db->like('LOWER(b.Name)', $option_value, 'after');
                 $this->db->order_by('b.Name');
+                $this->db->limit(config_item('per_page_information_number_for_brand_by_alphabetically_search'), ($page_no - 1) * config_item('per_page_information_number_for_brand_by_alphabetically_search'));
                 $all_new_information = $this->db->get()->result_array();
                 break;
             case 'generic':
@@ -590,6 +594,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('LOWER(g.Name)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "m.Name"));
                 $this->db->order_by('b.Name', 'm.Name');
+                $this->db->limit(config_item('per_page_information_number_for_generic_search'), ($page_no - 1) * config_item('per_page_information_number_for_generic_search'));
                 $all_data = $this->db->get()->result_array();
 
                 $this->db->select('g.Name');
@@ -606,10 +611,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->limit(1);
                 $generic_data = $this->db->get()->result_array();
 
-                $all_new_information = array(
-                    'BrandData' => $all_data,
-                    'GenericData' => $generic_data
-                );
+                return array($all_data, $generic_data);
                 break;
             case 'generic_by_alphabetically':
                 $this->db->select('b.Name');
@@ -624,11 +626,8 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->like('LOWER(g.Name)', $option_value, 'after');
                 $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
                 $this->db->order_by("b.Name", "g.Name", "m.Name");
-                $all_data = $this->db->get()->result_array();
-
-                $all_new_information = array(
-                    'BrandData' => $all_data
-                );
+                $this->db->limit(config_item('per_page_information_number_for_generic_by_alphabetically_search'), ($page_no - 1) * config_item('per_page_information_number_for_generic_by_alphabetically_search'));
+                $all_new_information = $this->db->get()->result_array();
                 break;
             case 'indication':
                 $this->db->select('b.Name');
@@ -643,6 +642,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->like('LOWER(g.Indication)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
                 $this->db->order_by('b.Name', 'g.Name', 'm.Name');
+                $this->db->limit(config_item('per_page_information_number_for_indication_search'), ($page_no - 1) * config_item('per_page_information_number_for_indication_search'));
                 $all_new_information = $this->db->get()->result_array();
                 break;
             case 'manufacturer':
@@ -657,6 +657,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('LOWER(m.Name)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "g.Name"));
                 $this->db->order_by('b.Name', 'g.Name');
+                $this->db->limit(config_item('per_page_information_number_for_manufacturer_search'), ($page_no - 1) * config_item('per_page_information_number_for_manufacturer_search'));
                 $all_new_information = $this->db->get()->result_array();
                 break;
             default:
@@ -672,6 +673,21 @@ class BrandInformation_model extends GeneralData_model {
         $total = 0;
         switch ($option_type) {
             case 'brand':
+                $this->db->select('b.ID');
+                $this->db->select('b.Name');
+                $this->db->select('b.PriceInBDT');
+                $this->db->select('df.Name AS DosageForm');
+                $this->db->select('s.Name AS StrengthName');
+                $this->db->select('ps.Name AS PackSize');
+                $this->db->select('g.ID AS GenericID');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->select('g.Classification');
+                $this->db->select('g.SafetyRemark');
+                $this->db->select('g.Indication');
+                $this->db->select('g.DosageAdministration');
+                $this->db->select('g.ContraindicationPrecaution');
+                $this->db->select('g.SideEffect');
+                $this->db->select('g.PregnancyLactation');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
@@ -683,9 +699,26 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('s.IsActive', 1);
                 $this->db->where('ps.IsActive', 1);
                 $this->db->where('LOWER(b.Name)', strtolower($option_value));
-                $total = $this->db->count_all_results();
+                $this->db->order_by('b.Name');
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             case 'brand_by_alphabetically':
+                $this->db->select('b.ID');
+                $this->db->select('b.Name');
+                $this->db->select('b.PriceInBDT');
+                $this->db->select('df.Name AS DosageForm');
+                $this->db->select('s.Name AS StrengthName');
+                $this->db->select('ps.Name AS PackSize');
+                $this->db->select('g.ID AS GenericID');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->select('g.Classification');
+                $this->db->select('g.SafetyRemark');
+                $this->db->select('g.Indication');
+                $this->db->select('g.DosageAdministration');
+                $this->db->select('g.ContraindicationPrecaution');
+                $this->db->select('g.SideEffect');
+                $this->db->select('g.PregnancyLactation');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
@@ -697,10 +730,13 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('s.IsActive', 1);
                 $this->db->where('ps.IsActive', 1);
                 $this->db->like('LOWER(b.Name)', $option_value, 'after');
-                $total = $this->db->count_all_results();
+                $this->db->order_by('b.Name');
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             case 'generic':
-                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', m.Name))) AS Total");
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
@@ -708,11 +744,15 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
                 $this->db->where('LOWER(g.Name)', strtolower($option_value));
-                $result = $this->db->count_all_results();
-                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
+                $this->db->group_by(array("b.Name", "m.Name"));
+                $this->db->order_by('b.Name', 'm.Name');
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             case 'generic_by_alphabetically':
-                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', g.Name,' ### ', m.Name))) AS Total");
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->select('g.Name AS GenericName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
@@ -720,11 +760,15 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
                 $this->db->like('LOWER(g.Name)', $option_value, 'after');
-                $result = $this->db->count_all_results();
-                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
+                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
+                $this->db->order_by("b.Name", "g.Name", "m.Name");
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             case 'indication':
-                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', g.Name,' ### ', m.Name))) AS Total");
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->select('g.Name AS GenericName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
@@ -732,11 +776,14 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
                 $this->db->like('LOWER(g.Indication)', strtolower($option_value));
-                $result = $this->db->count_all_results();
-                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
+                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
+                $this->db->order_by('b.Name', 'g.Name', 'm.Name');
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             case 'manufacturer':
-                $this->db->select("COUNT(DISTINCT(CONCAT(b.Name,' ### ', g.Name))) AS Total");
+                $this->db->select('b.Name');
+                $this->db->select('g.Name AS GenericName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
                 $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
@@ -744,8 +791,10 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
                 $this->db->where('LOWER(m.Name)', strtolower($option_value));
-                $result = $this->db->count_all_results();
-                $total = isset($result[0]['Total']) ? $result[0]['Total'] : 0;
+                $this->db->group_by(array("b.Name", "g.Name"));
+                $this->db->order_by('b.Name', 'g.Name');
+                $data = $this->db->get()->result_array();
+                $total = count($data);
                 break;
             default:
                 break;
@@ -753,5 +802,144 @@ class BrandInformation_model extends GeneralData_model {
 
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $total;
+    }
+
+    public function getSearchResultForFrontend($option_type, $option_value) {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $data = array();
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+
+        switch ($option_type) {
+            case 'brand':
+                $this->db->select('b.ID');
+                $this->db->select('b.Name');
+                $this->db->select('b.PriceInBDT');
+                $this->db->select('df.Name AS DosageForm');
+                $this->db->select('s.Name AS StrengthName');
+                $this->db->select('ps.Name AS PackSize');
+                $this->db->select('g.ID AS GenericID');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->select('g.Classification');
+                $this->db->select('g.SafetyRemark');
+                $this->db->select('g.Indication');
+                $this->db->select('g.DosageAdministration');
+                $this->db->select('g.ContraindicationPrecaution');
+                $this->db->select('g.SideEffect');
+                $this->db->select('g.PregnancyLactation');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
+                $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
+                $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('df.IsActive', 1);
+                $this->db->where('s.IsActive', 1);
+                $this->db->where('ps.IsActive', 1);
+                $this->db->where('LOWER(b.Name)', strtolower($option_value));
+                $this->db->order_by('b.Name');
+                $this->db->limit(config_item('per_page_information_number_for_brand_search'), ($page_no - 1) * config_item('per_page_information_number_for_brand_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            case 'brand_by_alphabetically':
+                $this->db->select('b.ID');
+                $this->db->select('b.Name');
+                $this->db->select('b.PriceInBDT');
+                $this->db->select('df.Name AS DosageForm');
+                $this->db->select('s.Name AS StrengthName');
+                $this->db->select('ps.Name AS PackSize');
+                $this->db->select('g.ID AS GenericID');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->select('g.Classification');
+                $this->db->select('g.SafetyRemark');
+                $this->db->select('g.Indication');
+                $this->db->select('g.DosageAdministration');
+                $this->db->select('g.ContraindicationPrecaution');
+                $this->db->select('g.SideEffect');
+                $this->db->select('g.PregnancyLactation');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
+                $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
+                $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('df.IsActive', 1);
+                $this->db->where('s.IsActive', 1);
+                $this->db->where('ps.IsActive', 1);
+                $this->db->like('LOWER(b.Name)', $option_value, 'after');
+                $this->db->order_by('b.Name');
+                $this->db->limit(config_item('per_page_information_number_for_brand_by_alphabetically_search'), ($page_no - 1) * config_item('per_page_information_number_for_brand_by_alphabetically_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            case 'generic':
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->where('LOWER(g.Name)', strtolower($option_value));
+                $this->db->group_by(array("b.Name", "m.Name"));
+                $this->db->order_by('b.Name', 'm.Name');
+                $this->db->limit(config_item('per_page_information_number_for_generic_search'), ($page_no - 1) * config_item('per_page_information_number_for_generic_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            case 'generic_by_alphabetically':
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->like('LOWER(g.Name)', $option_value, 'after');
+                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
+                $this->db->order_by("b.Name", "g.Name", "m.Name");
+                $this->db->limit(config_item('per_page_information_number_for_generic_by_alphabetically_search'), ($page_no - 1) * config_item('per_page_information_number_for_generic_by_alphabetically_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            case 'indication':
+                $this->db->select('b.Name');
+                $this->db->select('m.Name AS ManufacturerName');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->like('LOWER(g.Indication)', strtolower($option_value));
+                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
+                $this->db->order_by('b.Name', 'g.Name', 'm.Name');
+                $this->db->limit(config_item('per_page_information_number_for_indication_search'), ($page_no - 1) * config_item('per_page_information_number_for_indication_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            case 'manufacturer':
+                $this->db->select('b.Name');
+                $this->db->select('g.Name AS GenericName');
+                $this->db->from('brandinformation AS b');
+                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+                $this->db->where('b.IsActive', 1);
+                $this->db->where('g.IsActive', 1);
+                $this->db->where('m.IsActive', 1);
+                $this->db->where('LOWER(m.Name)', strtolower($option_value));
+                $this->db->group_by(array("b.Name", "g.Name"));
+                $this->db->order_by('b.Name', 'g.Name');
+                $this->db->limit(config_item('per_page_information_number_for_manufacturer_search'), ($page_no - 1) * config_item('per_page_information_number_for_manufacturer_search'));
+                $data = $this->db->get()->result_array();
+                break;
+            default:
+                break;
+        }
+
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        return $data;
     }
 }

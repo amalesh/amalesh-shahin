@@ -1,18 +1,51 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 <script>
     var drugObject = {
-        searchOption: '',
+        searchOptionType: '',
+        searchOptionValue: '',
+        perPageInformationNumber: '',
         searchOptionForBrand: [],
         searchOptionForGeneric: [],
         searchOptionForIndication: [],
         searchOptionForManufacturer: [],
         totalDrug: 0,
+        getSearchResult: function(pageNo) {
+            var formURL = "<?php echo site_url('Brand/getSearchResult?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue+'&PageNo='+pageNo;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
+                if (drugData) {
+                    switch (drugObject.searchOptionType) {
+                        case 'brand':
+                            break;
+                        case 'brand_by_alphabetically':
+                            break;
+                        case 'generic':
+                            $('tbody.generic-list').html('');
+                            for(var i = 0; i < drugData.length; i++) {
+                                $('tbody.generic-list').append('<tr>');
+                                $('tbody.generic-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=');?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></td>');
+                                $('tbody.generic-list').append('<td>'+drugData[i].ManufacturerName+'</td>');
+                                $('tbody.generic-list').append('</tr>');
+                            }
+                            break;
+                        case 'generic_by_alphabetically':
+                            break;
+                        case 'indication':
+                            break;
+                        case 'manufacturer':
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+        },
         searchBrandInformation: function() {
             console.log('Method Name: drugObject.searchBrandInformation Param:  Value: ');
             var search_option = $('#searchDrugOption').val();
+            drugObject.searchOptionValue = search_option;
             if (search_option == '') return false;
-            var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOption+'&Value='+search_option;
-            switch (drugObject.searchOption) {
+            var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue;
+            switch (drugObject.searchOptionType) {
                 case 'brand':
                     if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForBrand) == -1) {
                         $('.invalid-search-option-error').show();
@@ -118,7 +151,7 @@
         },
         changeSearchOption: function(searchOption) {
             console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
-            drugObject.searchOption = searchOption;
+            drugObject.searchOptionType = searchOption;
             var search_options = [];
             $('.search_option_type').css('color', '#1996C0');
             $('.search_by_'+searchOption).css('color', 'blue');
@@ -171,19 +204,20 @@
                 drugObject.changeSearchOption('brand');
             });
         },
-        populatePagination: function (pageNo) {
+        populatePagination: function (objectID, pageNo, populateList) {
             console.log('Method Name: drugObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
-            var per_page_information_number = <?php echo config_item('per_page_information_number');?>;
+            var per_page_information_number = drugObject.perPageInformationNumber;
             var total_page = Math.ceil(drugObject.totalDrug / per_page_information_number);
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
-            var pagination_li_text = '';
-            $('ul#drug-pagination').html('');
+            var pagination_li_text;
+            console.log('per_page_information_number: '+per_page_information_number+' total_page: '+total_page+' total_pagination: '+total_pagination+' start_page_no: '+start_page_no);
+            $('ul#'+objectID).html('');
             if (pageNo > 1) {
                 var previous_page_no = pageNo - 1;
-                $('ul#drug-pagination').html('<li class="page-item">' +
-                    '                                    <a class="page-link" aria-label="Previous" onclick="drugObject.getDrugList('+previous_page_no+')>' +
+                $('ul#'+objectID).html('<li class="page-item">' +
+                    '                                    <a class="page-link" aria-label="Previous" onclick="drugObject.populatePagination(\''+objectID+'\','+previous_page_no+', true)>' +
                     '                                        <span>&laquo;</span>' +
                     '                                        <span class="sr-only">Previous</span>' +
                     '                                    </a>' +
@@ -196,9 +230,9 @@
                 if (i == pageNo) {
                     pagination_li_text = '<li class="page-item active"><a class="page-link" href="#">'+i+'</a></li>';
                 } else {
-                    pagination_li_text = '<li class="page-item"><a class="page-link" onclick="drugObject.getDrugList('+i+')"></a></li>';
+                    pagination_li_text = '<li class="page-item"><a class="page-link" onclick="drugObject.populatePagination(\''+objectID+'\','+i+', true)">'+i+'</a></li>';
                 }
-                $('ul#drug-pagination').append(pagination_li_text);
+                $('ul#'+objectID).append(pagination_li_text);
                 page_counter++;
                 if (page_counter == total_pagination || page_counter > total_page) {
                     break;
@@ -208,18 +242,17 @@
 
             if (total_page > pageNo) {
                 var next_page_no = pageNo + 1;
-                $('ul#drug-pagination').append('<li class="page-item">' +
-                    '                                    <a class="page-link" aria-label="Next" onclick="drugObject.getDrugList('+next_page_no+')>' +
+                $('ul#'+objectID).append('<li class="page-item">' +
+                    '                                    <a class="page-link" aria-label="Next" onclick="drugObject.populatePagination(\''+objectID+'\','+next_page_no+', true)>' +
                     '                                        <span>&raquo;</span>' +
                     '                                        <span class="sr-only">Next</span>' +
                     '                                    </a>' +
                     '                                </li>');
             }
 
+            if (populateList === true) drugObject.getSearchResult(pageNo);
         }
     }
-
-    drugObject.totalDrug = <?php echo isset($TotalDrug) ? $TotalDrug : 0;?>;
 
     $(document).bind('keydown', function(e){
         if (e.which == 13){

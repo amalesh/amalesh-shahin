@@ -224,7 +224,10 @@ class Brand extends CI_Controller {
         $option_type = $this->input->get('Type');
         $option_value = $this->input->get('Value');
 
-        $data = array();
+        $data = array(
+            'OptionType' => $option_type,
+            'OptionValue' => $option_value
+        );
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
@@ -236,6 +239,7 @@ class Brand extends CI_Controller {
                 $data['TotalBrand'] = $total_brand;
                 $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $data['AllBrands'] = $all_new_brand;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_brand_search');
 
                 $this->load->view('front-end/search-result-drug', $data);
                 break;
@@ -244,20 +248,23 @@ class Brand extends CI_Controller {
                 $data['TotalBrand'] = $total_brand;
                 $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $data['AllBrands'] = $all_new_brand;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_brand_by_alphabetically_search');
 
                 $this->load->view('front-end/search-result-drug-alphabetically', $data);
                 break;
             case 'generic':
-                $data = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
+                list($data['BrandData'], $data['GenericData']) = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
                 $data['TotalBrand'] = $total_brand;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_generic_search');
 
                 $this->load->view('front-end/search-result-generic', $data);
                 break;
             case 'generic_by_alphabetically':
-                $data = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
+                $data['BrandData'] = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $total_brand = $this->BrandInformation_model->getTotalSearchResult($option_type, $option_value);
                 $data['TotalBrand'] = $total_brand;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_generic_by_alphabetically_search');
 
                 $this->load->view('front-end/search-result-generic-alphabetically', $data);
                 break;
@@ -267,6 +274,7 @@ class Brand extends CI_Controller {
                 $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $data['AllIndications'] = $all_new_brand;
                 $data['Indication'] = $option_value;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_indication_search');
 
                 $this->load->view('front-end/search-result-indication', $data);
                 break;
@@ -276,6 +284,7 @@ class Brand extends CI_Controller {
                 $all_new_brand = $this->BrandInformation_model->getSearchResult($option_type, $option_value);
                 $data['AllManufacturers'] = $all_new_brand;
                 $data['Manufacturer'] = $option_value;
+                $data['PerPageInformationNumber'] = config_item('per_page_information_number_for_manufacturer_search');
 
                 $this->load->view('front-end/search-result-manufacturer', $data);
                 break;
@@ -284,6 +293,14 @@ class Brand extends CI_Controller {
         }
 
         $this->load->view('front-end/footer');
+    }
+
+    public function getSearchResult() {
+        $option_type = $this->input->get('Type');
+        $option_value = $this->input->get('Value');
+        $data = $this->BrandInformation_model->getSearchResultForFrontend($option_type, $option_value);
+
+        $this->sendRestAPIResponse($data);
     }
 
     private function sendRestAPIResponse($response){

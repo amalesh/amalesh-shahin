@@ -42,19 +42,19 @@
                                 <th scope="col">Manufacturer Name</th>
                             </tr>
                             </thead>
-                            <tbody class="drug-list">
+                            <tbody class="drug-list generic-list">
                             <?php
                             foreach ($BrandData AS $brand) {
                                 echo '<tr>';
                                 echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
-                                echo '<td>'.$brand['ManufacturerName'].'</td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=manufacturer&Value='.$brand['ManufacturerName']).'">'.$brand['ManufacturerName'].'</a></td>';
                                 echo '</tr>';
                             }
                             ?>
                             </tbody>
                         </table>
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination" id="drug-pagination"></ul>
+                            <ul class="pagination" id="search-genetic-pagination"></ul>
                         </nav>
                     </div>
                 </div>
@@ -123,5 +123,9 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    drugObject.populatePagination(1);
+    drugObject.searchOptionType = '<?php echo $OptionType;?>';
+    drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
+    drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
+    drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
+    drugObject.populatePagination('search-genetic-pagination', 1);
 </script>
