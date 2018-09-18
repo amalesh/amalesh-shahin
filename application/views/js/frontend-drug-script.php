@@ -217,7 +217,7 @@
             if (pageNo > 1) {
                 var previous_page_no = pageNo - 1;
                 $('ul#'+objectID).html('<li class="page-item">' +
-                    '                                    <a class="page-link" aria-label="Previous" onclick="drugObject.populatePagination(\''+objectID+'\','+previous_page_no+', true)>' +
+                    '                                    <a class="page-link" aria-label="Previous" onclick="drugObject.populatePagination(\''+objectID+'\','+previous_page_no+', true)">' +
                     '                                        <span>&laquo;</span>' +
                     '                                        <span class="sr-only">Previous</span>' +
                     '                                    </a>' +
@@ -226,6 +226,9 @@
             }
             
             for(var i = start_page_no; ; i++) {
+                if (page_counter == total_pagination - 1 || page_counter == total_page) {
+                    break;
+                }
                 pagination_li_text = '';
                 if (i == pageNo) {
                     pagination_li_text = '<li class="page-item active"><a class="page-link" href="#">'+i+'</a></li>';
@@ -234,16 +237,13 @@
                 }
                 $('ul#'+objectID).append(pagination_li_text);
                 page_counter++;
-                if (page_counter == total_pagination || page_counter > total_page) {
-                    break;
-                }
                 console.log('page_counter: '+page_counter+' total_pagination: '+total_pagination+' total_page: '+total_page);
             }
 
             if (total_page > pageNo) {
                 var next_page_no = pageNo + 1;
                 $('ul#'+objectID).append('<li class="page-item">' +
-                    '                                    <a class="page-link" aria-label="Next" onclick="drugObject.populatePagination(\''+objectID+'\','+next_page_no+', true)>' +
+                    '                                    <a class="page-link" aria-label="Next" onclick="drugObject.populatePagination(\''+objectID+'\','+next_page_no+', true)">' +
                     '                                        <span>&raquo;</span>' +
                     '                                        <span class="sr-only">Next</span>' +
                     '                                    </a>' +

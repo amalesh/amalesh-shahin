@@ -44,7 +44,7 @@
                             </tbody>
                         </table>
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination" id="drug-pagination"></ul>
+                            <ul class="pagination" id="search-manufacturer-pagination"></ul>
                         </nav>
                     </div>
                 </div>
@@ -113,5 +113,9 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    drugObject.populatePagination(1);
+    drugObject.searchOptionType = '<?php echo $OptionType;?>';
+    drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
+    drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
+    drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
+    drugObject.populatePagination('search-manufacturer-pagination', 1);
 </script>
