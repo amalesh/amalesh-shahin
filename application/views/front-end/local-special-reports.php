@@ -34,6 +34,9 @@
                     }
                     ?>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="special-report-pagination"></ul>
+                </nav>
             </div>
             <div class="col-md-4">
                 <div class="product-add-2">
@@ -96,4 +99,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    specialReportObject.totalSpecialReport = <?php echo isset($TotalSpecialReport) ? $TotalSpecialReport : 0;?>;
+    specialReportObject.perPageInformationNumber = <?php echo config_item('per_page_special_report_number');?>;
+    specialReportObject.populatePagination(1);
 </script>

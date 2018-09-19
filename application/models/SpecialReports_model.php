@@ -20,10 +20,30 @@ class SpecialReports_model extends GeneralData_model {
         $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
         $this->db->from('specialreports AS sr');
         $this->db->where('sr.IsActive', 1);
+        $this->db->limit(config_item('per_page_special_report_number'));
+        $special_report = $this->db->get()->result_array();
+
+        $this->db->select('sr.ID');
+        $this->db->from('specialreports AS sr');
+        $this->db->where('sr.IsActive', 1);
         $result = $this->db->get()->result_array();
 //        echo $this->db->last_query();
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
-        return $result;
+        return array($special_report, count($result));
+    }
+    
+    public function getSpecialReportForFrontend() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+        $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
+        $this->db->from('specialreports AS sr');
+        $this->db->where('sr.IsActive', 1);
+        $this->db->limit(config_item('per_page_special_report_number'), ($page_no - 1) * config_item('per_page_special_report_number'));
+        $special_report = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $special_report;
     }
 
     public function createSpecialReports($userID) {

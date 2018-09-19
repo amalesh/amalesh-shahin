@@ -33,6 +33,9 @@
                         ?>
                     </div>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="news-pagination"></ul>
+                </nav>
             </div>
             <div class="col-md-4 sidebar">
                 <div class="product-add-2">
@@ -75,4 +78,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    newsObject.totalNews = <?php echo isset($TotalNews) ? $TotalNews : 0;?>;
+    newsObject.perPageInformationNumber = <?php echo config_item('per_page_news_information_number');?>;
+    newsObject.populatePagination(1);
 </script>

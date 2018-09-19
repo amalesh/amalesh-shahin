@@ -22,6 +22,42 @@ class NewsInformation_model extends GeneralData_model {
         $this->db->where('n.PublishDateTime <=', date('Y-m-d H:i:s'));
         $this->db->where('n.UnpublishedDateTime >=', date('Y-m-d H:i:s'));
         $this->db->where('n.IsActive', 1);
+        $this->db->limit(config_item('per_page_news_information_number'));
+        $result = $this->db->get()->result_array();
+        $news_information = array();
+        $total = 0;
+        foreach ($result AS $info) {
+            $info['UnpublishedDateTime'] = substr($info['UnpublishedDateTime'], 0, 10);
+            $info['PublishDateTime'] = substr($info['PublishDateTime'], 0, 10);
+            $temp = explode('-', $info['UnpublishedDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['UnpublishedDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $info['PublishDateTime']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['PublishDateTime'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+
+            $news_information[$total++] = $info;
+        }
+
+        $this->db->select('n.ID');
+        $this->db->from('newsInformation AS n');
+        $this->db->where('n.IsActive', 1);
+        $result = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return array($news_information, count($result));
+    }
+
+    public function getNewsInformationForFrontend() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+        $this->db->select('n.ID, n.Title, n.Description, n.ImagePath, n.PublishDateTime, n.UnpublishedDateTime, n.IsActive');
+        $this->db->from('newsInformation AS n');
+        $this->db->where('n.PublishDateTime <=', date('Y-m-d H:i:s'));
+        $this->db->where('n.UnpublishedDateTime >=', date('Y-m-d H:i:s'));
+        $this->db->where('n.IsActive', 1);
+        $this->db->limit(config_item('per_page_news_information_number'), ($page_no - 1) * config_item('per_page_news_information_number'));
         $result = $this->db->get()->result_array();
         $news_information = array();
         $total = 0;
