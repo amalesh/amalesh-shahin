@@ -130,6 +130,8 @@ class DoctorInformation_model extends GeneralData_model {
 
     public function getAllActiveDoctorInformation() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
         $this->db->select("d.ID");
         $this->db->select("d.Name");
         $this->db->select("d.Specialization");
@@ -159,9 +161,24 @@ class DoctorInformation_model extends GeneralData_model {
         $this->db->join('state AS hs', 'hl.StateID = hs.ID', 'left');
         $this->db->join('city AS hci', 'hl.CityID = hci.ID', 'left');
         $this->db->where('d.IsActive', 1);
+        $this->db->limit(config_item('per_page_doctor_information_number'), ($page_no - 1) * config_item('per_page_doctor_information_number'));
+        $all_doctor_information = $this->db->get()->result_array();
+
+        $this->db->select("d.ID");
+        $this->db->from('doctorinformation AS d');
+        $this->db->join('location AS cl', 'cl.ID = d.ChamberAddressID', 'left');
+        $this->db->join('country AS cc', 'cl.CountryID = cc.ID', 'left');
+        $this->db->join('state AS cs', 'cl.StateID = cs.ID', 'left');
+        $this->db->join('city AS cci', 'cl.CityID = cci.ID', 'left');
+        $this->db->join('location AS hl', 'hl.ID = d.HomeAddressID', 'left');
+        $this->db->join('country AS hc', 'hl.CountryID = hc.ID', 'left');
+        $this->db->join('state AS hs', 'hl.StateID = hs.ID', 'left');
+        $this->db->join('city AS hci', 'hl.CityID = hci.ID', 'left');
+        $this->db->where('d.IsActive', 1);
         $all_information = $this->db->get()->result_array();
+
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
-        return $all_information;
+        return array($all_doctor_information, count($all_information));
     }
 
     public function getDoctorDetailInformation() {
@@ -297,10 +314,9 @@ class DoctorInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
     }
 
-    public function search() {
-        $doctorSearchBy = $this->input->get('doctorSearchBy');
-        $doctorLocation = $this->input->get('doctorLocation');
-        $doctorGender = $this->input->get('doctorGender');
+    public function search($doctorSearchBy, $doctorLocation, $doctorGender) {
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
         $this->db->select('d.ID, d.Name, d.Specialization, d.ProfessionDegree, d.Gender, d.ImagePath, d.PhoneNo, d.MobileNo1, d.MobileNo2, d.MobileNo3, d.Hotline, cl.Address AS ChamberAddress, hl.Address AS HomeAddress');
         $this->db->from('doctorinformation AS d');
         $this->db->join('location AS cl', 'cl.ID = d.ChamberAddressID', 'left');
@@ -319,7 +335,30 @@ class DoctorInformation_model extends GeneralData_model {
             $this->db->where($where);
         }
 
+        $this->db->limit(config_item('per_page_doctor_information_number'), ($page_no - 1) * config_item('per_page_doctor_information_number'));
+
+        $all_doctor_information = $this->db->get()->result_array();
+
+        $this->db->select('d.ID');
+        $this->db->from('doctorinformation AS d');
+        $this->db->join('location AS cl', 'cl.ID = d.ChamberAddressID', 'left');
+        $this->db->join('location AS hl', 'hl.ID = d.HomeAddressID', 'left');
+        $this->db->where('d.IsActive', 1);
+        if ($doctorGender) {
+            $this->db->where('d.Gender', $doctorGender);
+        }
+
+        if ($doctorLocation) {
+            $this->db->like('LOWER(cl.Address)', strtolower($doctorLocation));
+        }
+
+        if ($doctorSearchBy) {
+            $where = sprintf("(LOWER(d.Specialization) LIKE '%s%s%s' OR LOWER(d.Name) LIKE '%s%s%s' OR LOWER(cl.Address) LIKE '%s%s%s')", '%', strtolower($doctorSearchBy), '%', '%', strtolower($doctorSearchBy), '%', '%', strtolower($doctorSearchBy), '%');
+            $this->db->where($where);
+        }
+
         $all_information = $this->db->get()->result_array();
-        return $all_information;
+
+        return array($all_doctor_information, count($all_information));
     }
 }

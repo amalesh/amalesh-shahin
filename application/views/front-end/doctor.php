@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <button class="btn" onclick="doctorObject.searchDoctor()"><i class="fas fa-search"></i> Search</button>
+                            <button class="btn" onclick="doctorObject.searchDoctor(1)"><i class="fas fa-search"></i> Search</button>
                         </div>
                     </div>
                 </div>
@@ -80,6 +80,9 @@
                     }
                     ?>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="doctor-pagination"></ul>
+                </nav>
                 <div class="add-bottom-left-823x115" style="position: relative;">
                     <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-13.png" alt="" class="img-fluid"></a>
                 </div>
@@ -104,7 +107,7 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
+                    <ul class="list-inline sidebar-doctors"></ul>
                     <ul class="list-inline">
                         <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more
@@ -159,4 +162,6 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
+    doctorObject.populatePagination(1);
 </script>

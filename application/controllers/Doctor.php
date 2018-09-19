@@ -15,22 +15,24 @@ class Doctor extends CI_Controller {
 
     public function getAllDoctorInformation()
     {
-        $all_doctor_information = $this->DoctorInformation_model->getAllActiveDoctorInformation();
-//        echo '<pre>';print_r($all_doctor_information);echo '</pre>';
         $data = array();
-        $data['AllDoctors'] = $all_doctor_information;
-        log_message('debug', 'All Doctor Information: '.print_r($all_doctor_information, true));
+        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->getAllActiveDoctorInformation();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/doctor', $data);
         $this->load->view('js/frontend-doctor-script');
+        $this->load->view('front-end/doctor', $data);
         $this->load->view('front-end/footer');
     }
 
     public function search() {
-        $all_doctor_information = $this->DoctorInformation_model->search();
-        $this->sendRestAPIResponse($all_doctor_information);
+        $doctorSearchBy = $this->input->get('doctorSearchBy');
+        $doctorLocation = $this->input->get('doctorLocation');
+        $doctorGender = $this->input->get('doctorGender');
+
+        $data = array();
+        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->search($doctorSearchBy, $doctorLocation, $doctorGender);
+        $this->sendRestAPIResponse($data);
     }
 
     public function getDoctorListForAdmin() {
