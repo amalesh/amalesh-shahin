@@ -19,6 +19,7 @@ class Job extends CI_Controller {
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-job-script');
         $this->load->view('front-end/job-circular', $data);
         $this->load->view('front-end/footer');
     }

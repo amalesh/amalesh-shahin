@@ -31,6 +31,9 @@
                     }
                     ?>
                 </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="job-circular-pagination"></ul>
+                </nav>
             </div>
             <div class="col-md-4">
                 <div class="product-add-2">
@@ -73,4 +76,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    jobObject.totalJob = <?php echo isset($TotalJob) ? $TotalJob : 0;?>;
+    jobObject.perPageInformationNumber = <?php echo config_item('per_page_job_information_number');?>;
+    jobObject.populatePagination(1);
 </script>
