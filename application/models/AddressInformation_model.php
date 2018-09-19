@@ -79,8 +79,41 @@ class AddressInformation_model extends GeneralData_model {
 
     public function getAllActiveAddressInformation() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $address_category_id = $this->input->get('AddressCategoryID');
         $this->db->select('a.ID, a.Name, a.AddressCategoryID, a.Address, a.ContactNumber, a.IsActive');
+        $this->db->from('addressinformation AS a');
+        $this->db->where('a.IsActive', 1);
+        $this->db->order_by('a.Name');
+        $this->db->limit(config_item('per_page_address_information_number'));
+        $all_address_information = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+//        echo '<pre>';print_r($all_address_information);echo '</pre>';
+
+        $this->db->select('a.ID');
+        $this->db->from('addressinformation AS a');
+        $this->db->where('a.IsActive', 1);
+        $this->db->order_by('a.Name');
+        $all_information = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return array($all_address_information, count($all_information));
+    }
+
+    public function getAddressForFrontend() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $address_category_id = $this->input->get('AddressCategoryID');
+        $page_no = $this->input->get('PageNo');
+        $page_no = empty($page_no) ? 1 : $page_no;
+        $this->db->select('a.ID, a.Name, a.AddressCategoryID, a.Address, a.ContactNumber, a.IsActive');
+        $this->db->from('addressinformation AS a');
+        if (!empty($address_category_id)) {
+            $this->db->where('a.AddressCategoryID', $address_category_id);
+        }
+        $this->db->where('a.IsActive', 1);
+        $this->db->order_by('a.Name');
+        $this->db->limit(config_item('per_page_address_information_number'), ($page_no - 1) * config_item('per_page_address_information_number'));
+        $all_address_information = $this->db->get()->result_array();
+
+        $this->db->select('a.ID');
         $this->db->from('addressinformation AS a');
         if (!empty($address_category_id)) {
             $this->db->where('a.AddressCategoryID', $address_category_id);
@@ -90,7 +123,7 @@ class AddressInformation_model extends GeneralData_model {
         $all_information = $this->db->get()->result_array();
 //        echo $this->db->last_query();
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
-        return $all_information;
+        return array($all_address_information, count($all_information));
     }
 
     public function getAddressDetail(){

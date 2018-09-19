@@ -10,16 +10,27 @@ class Address extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('AddressCategory_model');
         $this->load->model('AddressInformation_model');
         $this->load->model('Location_model');
     }
 
     public function getAllImportantAddress() {
+        $data = array();
+        list($data['AllAddress'], $data['TotalAddress']) = $this->AddressInformation_model->getAllActiveAddressInformation();
+        $data['AllAddressCategory'] = $this->AddressCategory_model->getAllActiveAddressCategory();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
-        $this->load->view('front-end/important-addresses');
+        $this->load->view('js/frontend-address-script');
+        $this->load->view('front-end/important-addresses', $data);
         $this->load->view('front-end/footer');
+    }
+
+    public function getAddressForFrontend(){
+        $data = array();
+        list($data['AllAddress'], $data['TotalAddress']) = $this->AddressInformation_model->getAddressForFrontend();
+        $this->sendRestAPIResponse($data);
     }
 
     public function getAllExistingLocation() {

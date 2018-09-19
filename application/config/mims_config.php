@@ -15,4 +15,5 @@ $config['per_page_information_number_for_manufacturer_search'] = 20;
 $config['per_page_job_information_number'] = 10;
 $config['per_page_news_information_number'] = 10;
 $config['per_page_special_report_number'] = 10;
-$config['per_page_doctor_information_number'] = 2;
+$config['per_page_doctor_information_number'] = 10;
+$config['per_page_address_information_number'] = 10;

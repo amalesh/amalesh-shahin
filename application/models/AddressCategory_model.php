@@ -15,6 +15,18 @@ class AddressCategory_model extends GeneralData_model {
         //log_message("debug",__CLASS__.'#'.__LINE__.' Method Name: '.$this->router->fetch_method());
     }
 
+    public function getAllActiveAddressCategory() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $this->db->select('ID');
+        $this->db->select('Name');
+        $this->db->from('addresscategory');
+        $this->db->where('IsActive', 1);
+        $this->db->order_by('Name');
+        $all_category = $this->db->get()->result_array();
+        return $all_category;
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+    }
+
     public function createAddressCategory($userID) {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->require_fields = array('AddressCategoryName');
