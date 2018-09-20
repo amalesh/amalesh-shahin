@@ -22,6 +22,8 @@
         </div>
         <div class="row">
             <div class="col-md-8">
+                <h2>Special Reports</h2>
+                <br/>
                 <div class="special-reports">
                     <?php
                     foreach ($AllSpecialReports AS $report) {
