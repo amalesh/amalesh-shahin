@@ -23,8 +23,12 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Location</label>
                                 <select class="form-control" id="doctorLocation">
-                                    <option value="0">Search cities</option>
-                                    <option value="dhaka">Dhaka</option>
+                                    <option value="0">Search Cities</option>
+                                    <?php
+                                    foreach ($Cities AS $city) {
+                                        echo '<option value="'.$city['ID'].'">'.$city['Name'].'</option>';
+                                    }
+                                    ?>
                                 </select>
                             </div>
                         </div>

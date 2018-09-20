@@ -327,7 +327,7 @@ class DoctorInformation_model extends GeneralData_model {
         }
 
         if ($doctorLocation) {
-            $this->db->like('LOWER(cl.Address)', strtolower($doctorLocation));
+            $this->db->where('cl.CityID', $doctorLocation);
         }
 
         if ($doctorSearchBy) {
