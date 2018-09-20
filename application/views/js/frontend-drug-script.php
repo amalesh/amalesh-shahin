@@ -8,9 +8,22 @@
         searchOptionForGeneric: [],
         searchOptionForIndication: [],
         searchOptionForManufacturer: [],
+        searchManufacturerBrandOption: '',
         totalDrug: 0,
+        getManufacturerBrand: function(searchOption){
+            $('li.search-manufacturer-option').removeClass('active');
+            $('li.search-manufacturer-option-'+searchOption).addClass('active');
+            drugObject.searchManufacturerBrandOption = searchOption;
+            drugObject.searchOptionType = 'manufacturer';
+            var formURL = "<?php echo site_url('Brand/getTotalManufacturerBrand?Manufacturer=')?>"+drugObject.searchOptionValue+'&ManufacturerBrandOption='+drugObject.searchManufacturerBrandOption;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
+                drugObject.totalDrug = drugData;
+                drugObject.getSearchResult(1);
+                drugObject.populatePagination(1);
+            });
+        },
         getSearchResult: function(pageNo) {
-            var formURL = "<?php echo site_url('Brand/getSearchResult?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue+'&PageNo='+pageNo;
+            var formURL = "<?php echo site_url('Brand/getSearchResult?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue+'&PageNo='+pageNo+'&ManufacturerBrandOption='+drugObject.searchManufacturerBrandOption;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
                 if (drugData) {
                     switch (drugObject.searchOptionType) {
@@ -64,6 +77,27 @@
                                 $('tbody.manufacturer-list').append('<td><a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value=');?>'+drugData[i].GenericName+'">'+drugData[i].GenericName+'</a></td>');
                                 $('tbody.manufacturer-list').append('</tr>');
                             }
+                            break;
+                        default:
+                            break;
+                    }
+                } else {
+                    switch (drugObject.searchOptionType) {
+                        case 'brand':
+                        case 'brand_by_alphabetically':
+                            $('tbody.drug-list').html('');
+                            break;
+                        case 'generic':
+                            $('tbody.generic-list').html('');
+                            break;
+                        case 'generic_by_alphabetically':
+                            $('tbody.generic-alphabetically-list').html('');
+                            break;
+                        case 'indication':
+                            $('tbody.indication-list').html('');
+                            break;
+                        case 'manufacturer':
+                            $('tbody.manufacturer-list').html('');
                             break;
                         default:
                             break;

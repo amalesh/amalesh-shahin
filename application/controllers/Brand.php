@@ -306,6 +306,11 @@ class Brand extends CI_Controller {
         $this->sendRestAPIResponse($data);
     }
 
+    public function getTotalManufacturerBrand() {
+        $data = $this->BrandInformation_model->getTotalManufacturerBrand();
+        $this->sendRestAPIResponse($data);
+    }
+
     private function sendRestAPIResponse($response){
         $rest_api_response = array();
         $rest_api_response['response'] = $response;
