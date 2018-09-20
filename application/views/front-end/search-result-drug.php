@@ -35,6 +35,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $AllBrands[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
+                        <h1>Presentation</h1>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
