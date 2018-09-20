@@ -181,6 +181,7 @@ class Brand extends CI_Controller {
         $data['TotalBrand'] = $total_brand;
         $all_new_brand = $this->BrandInformation_model->getAllNewData('Product');
         $data['AllBrands'] = $all_new_brand;
+        $data['PageTitle'] = 'New Products';
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
@@ -196,6 +197,7 @@ class Brand extends CI_Controller {
         $data['TotalBrand'] = $total_brand;
         $all_new_brand = $this->BrandInformation_model->getAllNewData('Brand');
         $data['AllBrands'] = $all_new_brand;
+        $data['PageTitle'] = 'New Brands';
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
@@ -211,6 +213,7 @@ class Brand extends CI_Controller {
         $data['TotalBrand'] = $total_brand;
         $all_new_brand = $this->BrandInformation_model->getAllNewData('Presentation');
         $data['AllBrands'] = $all_new_brand;
+        $data['PageTitle'] = 'New Presentations';
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
