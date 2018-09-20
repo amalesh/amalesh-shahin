@@ -10,19 +10,19 @@ $job_title = $JobInfo['Title'];
 $job_organization = !empty($JobInfo['Organization']) ? ' - '.$JobInfo['Organization'] : '';
 $job_publish_date = !empty($JobInfo['PublishDate']) ? 'Posted on '.$JobInfo['PublishDate'] : '';
 $job_description = $JobInfo['Description'];
-$job_position = !empty($JobInfo['Position']) ? '<li><i class="fas fa-chevron-right"></i>Position: '.$JobInfo['Position'].'</li>' : '';
-$job_application_deadline = !empty($JobInfo['ApplicationDeadline']) ? '<li><i class="fas fa-chevron-right"></i>Application Deadline: '.$JobInfo['ApplicationDeadline'].'</li>' : '';
-$job_salary = !empty($JobInfo['Salary']) ? '<li><i class="fas fa-chevron-right"></i>Salary: '.$JobInfo['Salary'].'</li>' : '';
-$job_educational_requirement = !empty($JobInfo['EducationalRequirement']) ? '<li><i class="fas fa-chevron-right"></i>Educational Requirement: '.$JobInfo['EducationalRequirement'].'</li>' : '';
-$job_experience_requirement = !empty($JobInfo['ExperienceRequirement']) ? '<li><i class="fas fa-chevron-right"></i>Experience Requirement: '.$JobInfo['ExperienceRequirement'].'</li>' : '';
-$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? '<li><i class="fas fa-chevron-right"></i>Number of Vacancy: '.$JobInfo['NumberOfVacancy'].'</li>' : '';
-$job_age_limit = !empty($JobInfo['AgeLimit']) ? '<li><i class="fas fa-chevron-right"></i>Age Limit: '.$JobInfo['AgeLimit'].'</li>' : '';
-$job_location = !empty($JobInfo['Location']) ? '<li><i class="fas fa-chevron-right"></i>Location: '.$JobInfo['Location'].'</li>' : '';
-$job_source = !empty($JobInfo['JobSource']) ? '<li><i class="fas fa-chevron-right"></i>Job Source: '.$JobInfo['JobSource'].'</li>' : '';
-$job_type = !empty($JobInfo['JobType']) ? '<li><i class="fas fa-chevron-right"></i>Job Type: '.$JobInfo['JobType'].'</li>' : '';
-$job_employment_type = !empty($JobInfo['EmploymentType']) ? '<li><i class="fas fa-chevron-right"></i>Employment Type: '.$JobInfo['EmploymentType'].'</li>' : '';
-$job_nature = !empty($JobInfo['JobNature']) ? '<li><i class="fas fa-chevron-right"></i>Job Nature: '.$JobInfo['JobNature'].'</li>' : '';
-$job_applying_procedure = !empty($JobInfo['ApplyingProcedure']) ? '<li><i class="fas fa-chevron-right"></i>Applying Procedure: '.$JobInfo['ApplyingProcedure'].'</li>' : '';
+$job_position = !empty($JobInfo['Position']) ? '<li><i class="fas fa-chevron-right"></i><b>Position:</b> '.$JobInfo['Position'].'</li>' : '';
+$job_application_deadline = !empty($JobInfo['ApplicationDeadline']) ? '<li><i class="fas fa-chevron-right"></i><b>Application Deadline:</b> '.$JobInfo['ApplicationDeadline'].'</li>' : '';
+$job_salary = !empty($JobInfo['Salary']) ? '<li><i class="fas fa-chevron-right"></i><b>Salary:</b> '.$JobInfo['Salary'].'</li>' : '';
+$job_educational_requirement = !empty($JobInfo['EducationalRequirement']) ? '<li><i class="fas fa-chevron-right"></i><b>Educational Requirement:</b> '.$JobInfo['EducationalRequirement'].'</li>' : '';
+$job_experience_requirement = !empty($JobInfo['ExperienceRequirement']) ? '<li><i class="fas fa-chevron-right"></i><b>Experience Requirement:</b> '.$JobInfo['ExperienceRequirement'].'</li>' : '';
+$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? '<li><i class="fas fa-chevron-right"></i><b>Number of Vacancy:</b> '.$JobInfo['NumberOfVacancy'].'</li>' : '';
+$job_age_limit = !empty($JobInfo['AgeLimit']) ? '<li><i class="fas fa-chevron-right"></i><b>Age Limit:</b> '.$JobInfo['AgeLimit'].'</li>' : '';
+$job_location = !empty($JobInfo['Location']) ? '<li><i class="fas fa-chevron-right"></i><b>Location:</b> '.$JobInfo['Location'].'</li>' : '';
+$job_source = !empty($JobInfo['JobSource']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Source:</b> '.$JobInfo['JobSource'].'</li>' : '';
+$job_type = !empty($JobInfo['JobType']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Type:</b> '.$JobInfo['JobType'].'</li>' : '';
+$job_employment_type = !empty($JobInfo['EmploymentType']) ? '<li><i class="fas fa-chevron-right"></i><b>Employment Type:</b> '.$JobInfo['EmploymentType'].'</li>' : '';
+$job_nature = !empty($JobInfo['JobNature']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Nature:</b> '.$JobInfo['JobNature'].'</li>' : '';
+$job_applying_procedure = !empty($JobInfo['ApplyingProcedure']) ? '<li><i class="fas fa-chevron-right"></i><b>Applying Procedure:</b> '.$JobInfo['ApplyingProcedure'].'</li>' : '';
 $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-news text-center">
                         <p>See job circular image</p>
                         <div class="round">
