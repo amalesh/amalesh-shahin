@@ -24,10 +24,10 @@
                                 ?>
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group imp-address-filter">
                             <label for="exampleInputEmail1">Area</label>
                             <input type="text" class="form-control" id="addressArea" placeholder="Search Area">
-                            <input type="button" value="Search" onclick="addressObject.getLocationWiseAddresses()">
+                            <input type="button" class="btn" value="Search" onclick="addressObject.getLocationWiseAddresses()">
                         </div>
                         <ul class="requirement-list address-list">
                             <?php
@@ -43,6 +43,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="addresses">
+                            <h4>Currently Selected Filter</h4>
                             <table class="table addtess-detail">
                                 <thead class="thead-dark">
                                 <tr>

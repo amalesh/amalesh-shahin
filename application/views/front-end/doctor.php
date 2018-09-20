@@ -67,7 +67,7 @@
                             <div class="doctor-photo col-md-2">
                                 <a href=""><img src="'.$image_path.'" alt="doctor"></a>
                             </div>
-                            <div class="doctor-name  col-md-3">
+                            <div class="doctor-name  col-md-4">
                                 <h5 class="name">'.$doctor['Name'].'</h5>
                                 <p class="title">'.$doctor['Specialization'].'</p>
                                 <p class="designation">'.$doctor['ProfessionDegree'].'</p>

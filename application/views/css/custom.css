@@ -468,7 +468,7 @@ section.visitor {
     align-items: center;
     border: 1px solid #B9BABD;
     border-radius: 12px;
-    padding: 40px 0;
+    padding: 20px 0;
     margin-bottom: 30px;
    font-size: 13px;
    /* font-weight: 700;*/
@@ -588,12 +588,11 @@ span.separator-2 {
 }
 .job-circular-head .news-top h1.job-circular-title {
     background: #5EACD5;
-    padding: 10px;
+    padding: 10px 45px 10px 20px;
     color: #fff;
     text-transform: uppercase;
     font-size:  28px;
     border-radius: 0 25px 25px 0;
-    padding-right:  15px;
 }
 
 /*css for circular details page*/
@@ -771,6 +770,7 @@ ul.address-list{
     font-size: 24px;
     color: #9f9898;
     text-transform:  uppercase;
+    margin-bottom: 20px;
 }
 .table .thead-dark th {
     background-color: #a6a6a6;
@@ -840,6 +840,12 @@ p{
 }
 .table th, .table td{
     padding: 0.55rem !important;
+}
+
+.imp-address-filter .btn {
+    background: #EC2227;
+    color: #fff;
+    margin-top: 20px;
 }
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/

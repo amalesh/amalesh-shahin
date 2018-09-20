@@ -50,7 +50,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $AllBrands[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
-                        <h3>Presentation</h3>
+                        <h4>Presentation</h4>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
