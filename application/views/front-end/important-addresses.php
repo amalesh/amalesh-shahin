@@ -13,10 +13,30 @@
                 <div class="row">
                     <div class="col-md-4 filter-address">
                         <h1>Important address</h1>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">City</label>
+                            <select class="form-control" id="addressCity">
+                                <option value="0">Search Cities</option>
+                                <?php
+                                foreach ($Cities AS $city) {
+                                    echo '<option value="'.$city['Name'].'">'.$city['Name'].'</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Area</label>
+                            <input type="text" class="form-control" id="addressArea" placeholder="Search Area">
+                            <input type="button" value="Search" onclick="addressObject.getLocationWiseAddresses()">
+                        </div>
                         <ul class="requirement-list address-list">
                             <?php
                             foreach ($AllAddressCategory AS $category) {
-                                echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</li>';
+                                if ($category['ID'] == $AddressCategoryID) {
+                                    echo '<li class="address-category-'.$category['ID'].' highlight"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
+                                } else {
+                                    echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
+                                }
                             }
                             ?>
                         </ul>
@@ -44,11 +64,11 @@
                                 </tbody>
                             </table>
                         </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination" id="address-pagination"></ul>
+                        </nav>
                     </div>
                 </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination" id="address-pagination"></ul>
-                </nav>
             </div>
             <div class="col-md-4 sidebar">
                 <div class="product-add-2">

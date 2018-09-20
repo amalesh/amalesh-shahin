@@ -77,12 +77,14 @@ class AddressInformation_model extends GeneralData_model {
         return $all_existing_location;
     }
 
-    public function getAllActiveAddressInformation() {
+    public function getAllActiveAddressInformation($addressCategoryID) {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->db->select('a.ID, a.Name, a.AddressCategoryID, a.Address, a.ContactNumber, a.IsActive');
         $this->db->from('addressinformation AS a');
         $this->db->where('a.IsActive', 1);
-        $this->db->order_by('a.Name');
+        if (!empty($addressCategoryID)) {
+            $this->db->where('a.AddressCategoryID', $addressCategoryID);
+        }$this->db->order_by('a.Name');
         $this->db->limit(config_item('per_page_address_information_number'));
         $all_address_information = $this->db->get()->result_array();
 //        echo $this->db->last_query();
@@ -101,13 +103,25 @@ class AddressInformation_model extends GeneralData_model {
     public function getAddressForFrontend() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $address_category_id = $this->input->get('AddressCategoryID');
+        $address_city = $this->input->get('AddressCity');
+        $address_area = $this->input->get('AddressArea');
         $page_no = $this->input->get('PageNo');
         $page_no = empty($page_no) ? 1 : $page_no;
         $this->db->select('a.ID, a.Name, a.AddressCategoryID, a.Address, a.ContactNumber, a.IsActive');
         $this->db->from('addressinformation AS a');
+
         if (!empty($address_category_id)) {
             $this->db->where('a.AddressCategoryID', $address_category_id);
         }
+
+        if (!empty($address_city)) {
+            $this->db->like('LOWER(a.Address)', strtolower($address_city));
+        }
+
+        if (!empty($address_area)) {
+            $this->db->like('LOWER(a.Address)', strtolower($address_area));
+        }
+
         $this->db->where('a.IsActive', 1);
         $this->db->order_by('a.Name');
         $this->db->limit(config_item('per_page_address_information_number'), ($page_no - 1) * config_item('per_page_address_information_number'));
@@ -115,11 +129,20 @@ class AddressInformation_model extends GeneralData_model {
 
         $this->db->select('a.ID');
         $this->db->from('addressinformation AS a');
+
         if (!empty($address_category_id)) {
             $this->db->where('a.AddressCategoryID', $address_category_id);
         }
+
+        if (!empty($address_city)) {
+            $this->db->like('LOWER(a.Address)', strtolower($address_city));
+        }
+
+        if (!empty($address_area)) {
+            $this->db->like('LOWER(a.Address)', strtolower($address_area));
+        }
+
         $this->db->where('a.IsActive', 1);
-        $this->db->order_by('a.Name');
         $all_information = $this->db->get()->result_array();
 //        echo $this->db->last_query();
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
