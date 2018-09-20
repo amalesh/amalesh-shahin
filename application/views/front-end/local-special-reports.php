@@ -28,7 +28,7 @@
                         echo '<div class="media">
                         <img class="mr-3" src="'.base_url('SpecialReportImages/'.$report['ImagePath']).'" alt="image">
                         <div class="media-body">
-                        <h5 class="mt-0"><a href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a></h5>
+                        <a href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a>
                         </div>
                         </div>';
                     }

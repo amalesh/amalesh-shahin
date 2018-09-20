@@ -28,31 +28,37 @@
                                 <h5 class="sub-title">
                                     New Products
                                 </h5>
-                                <ul class="list-inline float-left"></ul>
-                                <ul class="list-inline float-right"></ul>
-                                <a href="<?php echo site_url('Brand/showAllNewProducts')?>" class="btn btn-s float-right">
+                                <div class="row">
+                                    <div class="col-md-6"><ul class="list-inline float-left"></ul></div>
+                                    <div class="col-md-6"><ul class="list-inline float-right"></ul></div>
+                                </div>
+                                <div class="clearfix"><a href="<?php echo site_url('Brand/showAllNewProducts')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
-                                </a>
+                                </a></div>
                             </div>
                             <div class="clearfix new-brand-ul">
                                 <h5 class="sub-title">
                                     New Brands
                                 </h5>
-                                <ul class="list-inline float-left"></ul>
-                                <ul class="list-inline float-right"></ul>
-                                <a href="<?php echo site_url('Brand/showAllNewBrands')?>" class="btn btn-s float-right">
+                                <div class="row">
+                                    <div class="col-md-6"><ul class="list-inline float-left"></ul></div>
+                                    <div class="col-md-6"><ul class="list-inline float-right"></ul></div>
+                                </div>
+                                <div class="clearfix"> <a href="<?php echo site_url('Brand/showAllNewBrands')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
-                                </a>
+                                    </a></div>
                             </div>
                             <div class="clearfix new-presentation-ul">
                                 <h5 class="sub-title">
                                     New Presentation
                                 </h5>
-                                <ul class="list-inline float-left"></ul>
-                                <ul class="list-inline float-right"></ul>
-                                <a href="<?php echo site_url('Brand/showAllNewPresentations')?>" class="btn btn-s float-right">
+                                <div class="row">
+                                    <div class="col-md-6"><ul class="list-inline float-left"></ul></div>
+                                    <div class="col-md-6"><ul class="list-inline float-right"></ul></div>
+                                </div>
+                                <div class="clearfix"><a href="<?php echo site_url('Brand/showAllNewPresentations')?>" class="btn btn-s float-right">
                                     <i class="fas fa-chevron-right"></i> see more
-                                </a>
+                                    </a></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>

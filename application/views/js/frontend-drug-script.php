@@ -186,7 +186,7 @@
             drugObject.searchOptionType = searchOption;
             var search_options = [];
             $('.search_option_type').css('color', '#1996C0');
-            $('.search_by_'+searchOption).css('color', 'blue');
+            $('.search_by_'+searchOption).css('color', 'red');
             switch (searchOption) {
                 case 'brand':
                     search_options = drugObject.searchOptionForBrand;

@@ -254,13 +254,20 @@ a.btn.btn-s.float-right {
     margin: 0 0 15px;
 }
 
-.speacial-reports h5 a {
-    color: #1D1D1B;
+.speacial-reports a, .special-reports-sidebar a {
+    color: #1996C0 !important;
     text-decoration: none;
-    font-size: 18px;
-
+}
+.special-reports-sidebar h3{
+    padding-bottom: 25px;
 }
 
+a.btn.btn-s.float-right:hover{
+    color: red !important;
+}
+.speacial-reports a, .special-reports-sidebar a:hover{
+    color: red !important;
+}
 .speacial-reports h5 a:hover {
     color: #EC1C24;
 }
@@ -542,7 +549,7 @@ span.separator-2 {
 }
 
 .job p {
-    font-weight: 600;
+    /*font-weight: 600;*/
     color: #555;
 }
 .job .see-more {
@@ -801,7 +808,9 @@ td .link{
     color: red;
     display: none;
 }
-
+.brand-generic-detail p{
+    text-align: justify;
+}
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/
     /*margin: 5px auto;*/
