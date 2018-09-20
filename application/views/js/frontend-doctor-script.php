@@ -4,13 +4,15 @@
         doctorSearchBy: '',
         doctorLocation: '',
         doctorGender: '',
+        doctorArea: '',
         totalDoctor: '',
         perPageInformationNumber: <?php echo config_item('per_page_doctor_information_number');?>,
         searchDoctor: function (pageNo) {
             doctorObject.doctorSearchBy = $('#doctorSearchBy').val();
             doctorObject.doctorLocation = $('#doctorLocation').val();
             doctorObject.doctorGender = $('#doctorGender').val();
-            var formURL = "<?php echo site_url('Doctor/search')?>"+'?doctorSearchBy='+doctorObject.doctorSearchBy+'&doctorLocation='+doctorObject.doctorLocation+'&doctorGender='+doctorObject.doctorGender+'&PageNo='+pageNo;
+            doctorObject.doctorArea = $('#doctorArea').val();
+            var formURL = "<?php echo site_url('Doctor/search')?>"+'?doctorSearchBy='+doctorObject.doctorSearchBy+'&doctorLocation='+doctorObject.doctorLocation+'&doctorGender='+doctorObject.doctorGender+'&doctorArea='+doctorObject.doctorArea+'&PageNo='+pageNo;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'doctorObject.searchDoctor', function(response){
                 var doctorData = response.AllDoctors;
                 if (response.TotalDoctor != doctorObject.totalDoctor) {

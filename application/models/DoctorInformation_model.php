@@ -314,13 +314,37 @@ class DoctorInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
     }
 
-    public function search($doctorSearchBy, $doctorLocation, $doctorGender) {
+    public function search($doctorSearchBy, $doctorLocation, $doctorGender, $doctorArea) {
         $page_no = $this->input->get('PageNo');
         $page_no = empty($page_no) ? 1 : $page_no;
-        $this->db->select('d.ID, d.Name, d.Specialization, d.ProfessionDegree, d.Gender, d.ImagePath, d.PhoneNo, d.MobileNo1, d.MobileNo2, d.MobileNo3, d.Hotline, cl.Address AS ChamberAddress, hl.Address AS HomeAddress');
+        $this->db->select("d.ID");
+        $this->db->select("d.Name");
+        $this->db->select("d.Specialization");
+        $this->db->select("d.ProfessionDegree");
+        $this->db->select("d.Gender");
+        $this->db->select("d.ImagePath");
+        $this->db->select("d.PhoneNo");
+        $this->db->select("d.MobileNo1");
+        $this->db->select("d.MobileNo2");
+        $this->db->select("d.MobileNo3");
+        $this->db->select("d.Hotline");
+        $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
+        $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
+        $this->db->select("cc.Name AS cCountryName");
+        $this->db->select("cs.Name AS sStateName");
+        $this->db->select("cci.Name AS cCityName");
+        $this->db->select("hc.Name AS hCountryName");
+        $this->db->select("hs.Name AS hStateName");
+        $this->db->select("hci.Name AS hCityName");
         $this->db->from('doctorinformation AS d');
         $this->db->join('location AS cl', 'cl.ID = d.ChamberAddressID', 'left');
+        $this->db->join('country AS cc', 'cl.CountryID = cc.ID', 'left');
+        $this->db->join('state AS cs', 'cl.StateID = cs.ID', 'left');
+        $this->db->join('city AS cci', 'cl.CityID = cci.ID', 'left');
         $this->db->join('location AS hl', 'hl.ID = d.HomeAddressID', 'left');
+        $this->db->join('country AS hc', 'hl.CountryID = hc.ID', 'left');
+        $this->db->join('state AS hs', 'hl.StateID = hs.ID', 'left');
+        $this->db->join('city AS hci', 'hl.CityID = hci.ID', 'left');
         $this->db->where('d.IsActive', 1);
         if ($doctorGender) {
             $this->db->where('d.Gender', $doctorGender);
@@ -328,6 +352,10 @@ class DoctorInformation_model extends GeneralData_model {
 
         if ($doctorLocation) {
             $this->db->where('cl.CityID', $doctorLocation);
+        }
+
+        if ($doctorArea) {
+            $this->db->like('LOWER(cl.Address)', strtolower($doctorArea));
         }
 
         if ($doctorSearchBy) {

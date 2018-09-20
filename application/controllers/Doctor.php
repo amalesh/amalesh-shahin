@@ -31,9 +31,10 @@ class Doctor extends CI_Controller {
         $doctorSearchBy = $this->input->get('doctorSearchBy');
         $doctorLocation = $this->input->get('doctorLocation');
         $doctorGender = $this->input->get('doctorGender');
+        $doctorArea = $this->input->get('doctorArea');
 
         $data = array();
-        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->search($doctorSearchBy, $doctorLocation, $doctorGender);
+        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->search($doctorSearchBy, $doctorLocation, $doctorGender, $doctorArea);
         $this->sendRestAPIResponse($data);
     }
 

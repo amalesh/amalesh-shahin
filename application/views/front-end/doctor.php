@@ -45,6 +45,15 @@
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Area</label>
+                                <input class="form-control" id="doctorArea" placeholder="Area">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
                             <button class="btn" onclick="doctorObject.searchDoctor(1)"><i class="fas fa-search"></i> Search</button>
                         </div>
                     </div>
