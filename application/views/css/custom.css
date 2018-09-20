@@ -211,6 +211,7 @@ a.btn.btn-s.float-right {
     font-size: 20px;
     margin-bottom: 25px;
     color: #000;
+    border-bottom: 1px solid #dddbdb;
 }
 
 .sidebar-news li a {
@@ -259,11 +260,10 @@ a.btn.btn-s.float-right {
 }
 
 .speacial-reports h3 {
-    font-size: 24px;
-    margin: 0;
+    font-size: 20px;
     border-bottom: 1px solid #DBDCDD;
-    padding: 0 0 25px;
-    margin: 0 0 15px;
+    margin: 0 0 35px;
+    text-transform: uppercase;
 }
 
 .speacial-reports a, .special-reports-sidebar a {
@@ -271,7 +271,10 @@ a.btn.btn-s.float-right {
     text-decoration: none;
 }
 .special-reports-sidebar h3{
-    padding-bottom: 25px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-bottom: 1px solid #dddbdb;
+    text-transform: uppercase;
 }
 
 a.btn.btn-s.float-right:hover, .special-reports-sidebar a:hover{
@@ -426,6 +429,9 @@ section.visitor {
 
 .presentation-table .pagination {
     margin: 30px 0;
+}
+.presentation-table h1{
+    font-size: 1.5rem;
 }
 
 .a-pag {
@@ -843,9 +849,24 @@ p{
 }
 
 .imp-address-filter .btn {
-    background: #EC2227;
+    background-color: #EC2227;
     color: #fff;
     margin-top: 20px;
+}
+ul.alpha-list{
+    margin: 15px 0px 15px -6px;
+}
+ul.alpha-list li{
+    padding-left: 7px;
+}
+ul.alpha-list li a:hover{
+    color: red !important;
+}
+.list-inline-item:not(:last-child){
+    margin-right: 0.3rem;
+}
+ul.alpha-list span.separator{
+    border-right: 1px solid #A6A8AB;
 }
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/

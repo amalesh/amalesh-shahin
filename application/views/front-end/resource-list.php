@@ -22,7 +22,7 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="search-bar" style="border: none;margin-bottom: 0;padding-top: 0;">Resources</div>
+                <h2 style="border-bottom:1px solid #dfdfdf;">Resources</h2>
                 <div class="product-details" style="border: 0;padding-left: 0;">
                     <?php
                     foreach ($AllResources As $resource) {

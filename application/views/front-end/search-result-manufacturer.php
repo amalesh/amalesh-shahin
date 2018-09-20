@@ -39,7 +39,7 @@
                 </div>
                 <div class="presentation">
                     <h4>Brand of <?php echo $Manufacturer;?></h4>
-                    <ul class="list-inline text-center">
+                    <ul class="list-inline text-center alpha-list">
                         <li class="list-inline-item search-manufacturer-option search-manufacturer-option-a"><a onclick="drugObject.getManufacturerBrand('a')">A</a></li>
                         <span class="separator"></span>
                         <li class="list-inline-item search-manufacturer-option search-manufacturer-option-b"><a onclick="drugObject.getManufacturerBrand('b')">B</a></li>
