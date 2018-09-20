@@ -114,12 +114,12 @@
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
                     for (var i = 0; i < home_page_new_item_limit / 2; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-products-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-products-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
 
                     for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-products-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-products-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
             });
@@ -134,12 +134,12 @@
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
                     for (var i = 0; i < home_page_new_item_limit / 2; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-presentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-presentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
 
                     for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-presentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-presentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
             });
@@ -153,12 +153,12 @@
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
                     for (var i = 0; i < home_page_new_item_limit / 2; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-brand-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-brand-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
 
                     for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-brand-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData[i].ID+'">'+drugData[i].Name+'</a></li>');
+                        $('div.new-brand-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
                     }
                 }
             });
@@ -240,6 +240,10 @@
             console.log('Method Name: drugObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = drugObject.perPageInformationNumber;
             var total_page = Math.ceil(drugObject.totalDrug / per_page_information_number);
+
+            if (populateList === true) drugObject.getSearchResult(pageNo);
+            if (total_page == 1) return;
+
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
@@ -281,8 +285,6 @@
                     '                                    </a>' +
                     '                                </li>');
             }
-
-            if (populateList === true) drugObject.getSearchResult(pageNo);
         }
     }
 

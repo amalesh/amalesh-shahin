@@ -11,12 +11,14 @@ class Doctor extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('DoctorInformation_model');
+        $this->load->model('Location_model');
     }
 
     public function getAllDoctorInformation()
     {
         $data = array();
         list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->getAllActiveDoctorInformation();
+        $data['Cities'] = $this->Location_model->getAllActiveCities();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
@@ -29,9 +31,10 @@ class Doctor extends CI_Controller {
         $doctorSearchBy = $this->input->get('doctorSearchBy');
         $doctorLocation = $this->input->get('doctorLocation');
         $doctorGender = $this->input->get('doctorGender');
+        $doctorArea = $this->input->get('doctorArea');
 
         $data = array();
-        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->search($doctorSearchBy, $doctorLocation, $doctorGender);
+        list($data['AllDoctors'], $data['TotalDoctor']) = $this->DoctorInformation_model->search($doctorSearchBy, $doctorLocation, $doctorGender, $doctorArea);
         $this->sendRestAPIResponse($data);
     }
 

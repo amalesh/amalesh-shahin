@@ -4,13 +4,15 @@
         doctorSearchBy: '',
         doctorLocation: '',
         doctorGender: '',
+        doctorArea: '',
         totalDoctor: '',
         perPageInformationNumber: <?php echo config_item('per_page_doctor_information_number');?>,
         searchDoctor: function (pageNo) {
             doctorObject.doctorSearchBy = $('#doctorSearchBy').val();
             doctorObject.doctorLocation = $('#doctorLocation').val();
             doctorObject.doctorGender = $('#doctorGender').val();
-            var formURL = "<?php echo site_url('Doctor/search')?>"+'?doctorSearchBy='+doctorObject.doctorSearchBy+'&doctorLocation='+doctorObject.doctorLocation+'&doctorGender='+doctorObject.doctorGender+'&PageNo='+pageNo;
+            doctorObject.doctorArea = $('#doctorArea').val();
+            var formURL = "<?php echo site_url('Doctor/search')?>"+'?doctorSearchBy='+doctorObject.doctorSearchBy+'&doctorLocation='+doctorObject.doctorLocation+'&doctorGender='+doctorObject.doctorGender+'&doctorArea='+doctorObject.doctorArea+'&PageNo='+pageNo;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'doctorObject.searchDoctor', function(response){
                 var doctorData = response.AllDoctors;
                 if (response.TotalDoctor != doctorObject.totalDoctor) {
@@ -61,6 +63,10 @@
             console.log('Method Name: doctorObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = doctorObject.perPageInformationNumber;
             var total_page = Math.ceil(doctorObject.totalDoctor / per_page_information_number);
+
+            if (populateList === true) doctorObject.searchDoctor(pageNo);
+            if (total_page == 1) return;
+
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
@@ -102,8 +108,6 @@
                     '                                    </a>' +
                     '                                </li>');
             }
-
-            if (populateList === true) doctorObject.searchDoctor(pageNo);
         }
     }
 </script>
