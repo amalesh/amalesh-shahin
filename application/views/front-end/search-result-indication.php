@@ -28,18 +28,14 @@
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
-                                <th scope="col" style="width: 150px;">Brand Name</th>
                                 <th scope="col">Generic Name</th>
-                                <th scope="col">Manufacturer Name</th>
                             </tr>
                             </thead>
                             <tbody class="indication-list">
                             <?php
                             foreach ($AllIndications AS $brand) {
                                 echo '<tr>';
-                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
-                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value='.$brand['GenericName']).'">'.$brand['GenericName'].'</a></td>';
-                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=manufacturer&Value='.$brand['ManufacturerName']).'">'.$brand['ManufacturerName'].'</a></td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
                                 echo '</tr>';
                             }
                             ?>

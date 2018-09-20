@@ -35,6 +35,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $GenericData[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
+                        <h1>Brand of <?php echo $GenericData[0]['Name'];?></h1>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>

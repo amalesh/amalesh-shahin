@@ -630,18 +630,11 @@ class BrandInformation_model extends GeneralData_model {
                 $all_new_information = $this->db->get()->result_array();
                 break;
             case 'indication':
-                $this->db->select('b.Name');
-                $this->db->select('m.Name AS ManufacturerName');
-                $this->db->select('g.Name AS GenericName');
-                $this->db->from('brandinformation AS b');
-                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
-                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
-                $this->db->where('b.IsActive', 1);
+                $this->db->select('g.Name');
+                $this->db->from('genericinformation AS g');
                 $this->db->where('g.IsActive', 1);
-                $this->db->where('m.IsActive', 1);
                 $this->db->like('LOWER(g.Indication)', strtolower($option_value));
-                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
-                $this->db->order_by('b.Name', 'g.Name', 'm.Name');
+                $this->db->order_by('g.Name');
                 $this->db->limit(config_item('per_page_information_number_for_indication_search'), ($page_no - 1) * config_item('per_page_information_number_for_indication_search'));
                 $all_new_information = $this->db->get()->result_array();
                 break;
@@ -699,7 +692,6 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('s.IsActive', 1);
                 $this->db->where('ps.IsActive', 1);
                 $this->db->where('LOWER(b.Name)', strtolower($option_value));
-                $this->db->order_by('b.Name');
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
@@ -730,7 +722,6 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('s.IsActive', 1);
                 $this->db->where('ps.IsActive', 1);
                 $this->db->like('LOWER(b.Name)', $option_value, 'after');
-                $this->db->order_by('b.Name');
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
@@ -745,7 +736,6 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('m.IsActive', 1);
                 $this->db->where('LOWER(g.Name)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "m.Name"));
-                $this->db->order_by('b.Name', 'm.Name');
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
@@ -761,23 +751,14 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('m.IsActive', 1);
                 $this->db->like('LOWER(g.Name)', $option_value, 'after');
                 $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
-                $this->db->order_by("b.Name", "g.Name", "m.Name");
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
             case 'indication':
-                $this->db->select('b.Name');
-                $this->db->select('m.Name AS ManufacturerName');
-                $this->db->select('g.Name AS GenericName');
-                $this->db->from('brandinformation AS b');
-                $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
-                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
-                $this->db->where('b.IsActive', 1);
+                $this->db->select('g.Name');
+                $this->db->from('genericinformation AS g');
                 $this->db->where('g.IsActive', 1);
-                $this->db->where('m.IsActive', 1);
                 $this->db->like('LOWER(g.Indication)', strtolower($option_value));
-                $this->db->group_by(array("b.Name", "g.Name", "m.Name"));
-                $this->db->order_by('b.Name', 'g.Name', 'm.Name');
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
@@ -792,7 +773,6 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('m.IsActive', 1);
                 $this->db->where('LOWER(m.Name)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "g.Name"));
-                $this->db->order_by('b.Name', 'g.Name');
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;
