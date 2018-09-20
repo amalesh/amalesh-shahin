@@ -901,6 +901,7 @@ class BrandInformation_model extends GeneralData_model {
                 $data = $this->db->get()->result_array();
                 break;
             case 'manufacturer':
+                $manufacturer_brand_option = $this->input->get('ManufacturerBrandOption');
                 $this->db->select('b.Name');
                 $this->db->select('g.Name AS GenericName');
                 $this->db->from('brandinformation AS b');
@@ -909,6 +910,9 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->where('b.IsActive', 1);
                 $this->db->where('g.IsActive', 1);
                 $this->db->where('m.IsActive', 1);
+                if (!empty($manufacturer_brand_option)) {
+                    $this->db->like('LOWER(b.Name)', $manufacturer_brand_option, 'after');
+                }
                 $this->db->where('LOWER(m.Name)', strtolower($option_value));
                 $this->db->group_by(array("b.Name", "g.Name"));
                 $this->db->order_by('b.Name', 'g.Name');
@@ -921,5 +925,24 @@ class BrandInformation_model extends GeneralData_model {
 
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $data;
+    }
+
+    public function getTotalManufacturerBrand() {
+        $manufacturer = $this->input->get('Manufacturer');
+        $manufacturer_brand_option = $this->input->get('ManufacturerBrandOption');
+        $this->db->select('b.Name');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->where('b.IsActive', 1);
+        $this->db->where('g.IsActive', 1);
+        $this->db->where('m.IsActive', 1);
+        if (!empty($manufacturer_brand_option)) {
+            $this->db->like('LOWER(b.Name)', $manufacturer_brand_option, 'after');
+        }
+        $this->db->where('LOWER(m.Name)', strtolower($manufacturer));
+        $this->db->group_by(array("b.Name", "g.Name"));
+        $data = $this->db->get()->result_array();
+        return count($data);
     }
 }

@@ -24,6 +24,61 @@
             <div class="col-md-8">
                 <div class="presentation">
                     <h4>Brand of <?php echo $Manufacturer;?></h4>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-a"><a onclick="drugObject.getManufacturerBrand('a')">A</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-b"><a onclick="drugObject.getManufacturerBrand('b')">B</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-c"><a onclick="drugObject.getManufacturerBrand('c')">C</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-d"><a onclick="drugObject.getManufacturerBrand('d')">D</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-e"><a onclick="drugObject.getManufacturerBrand('e')">E</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-f"><a onclick="drugObject.getManufacturerBrand('f')">F</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-g"><a onclick="drugObject.getManufacturerBrand('g')">G</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-h"><a onclick="drugObject.getManufacturerBrand('h')">H</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-i"><a onclick="drugObject.getManufacturerBrand('i')">I</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-j"><a onclick="drugObject.getManufacturerBrand('j')">J</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-k"><a onclick="drugObject.getManufacturerBrand('k')">K</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-l"><a onclick="drugObject.getManufacturerBrand('l')">L</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-m"><a onclick="drugObject.getManufacturerBrand('m')">M</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-n"><a onclick="drugObject.getManufacturerBrand('n')">N</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-o"><a onclick="drugObject.getManufacturerBrand('o')">O</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-p"><a onclick="drugObject.getManufacturerBrand('p')">P</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-q"><a onclick="drugObject.getManufacturerBrand('q')">Q</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-r"><a onclick="drugObject.getManufacturerBrand('r')">R</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-s"><a onclick="drugObject.getManufacturerBrand('s')">S</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-t"><a onclick="drugObject.getManufacturerBrand('t')">T</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-u"><a onclick="drugObject.getManufacturerBrand('u')">U</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-v"><a onclick="drugObject.getManufacturerBrand('v')">V</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-w"><a onclick="drugObject.getManufacturerBrand('w')">W</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-x"><a onclick="drugObject.getManufacturerBrand('x')">X</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-y"><a onclick="drugObject.getManufacturerBrand('y')">Y</a></li>
+                        <span class="separator"></span>
+                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-z"><a onclick="drugObject.getManufacturerBrand('z')">Z</a></li>
+                        <span class="separator"></span>
+
+                    </ul>
                     <div class="presentation-table">
                         <table class="table" id="product-list">
                             <thead>
