@@ -22,13 +22,10 @@
         </div>
         <div class="row">
             <div class="col-md-8">
-                <div class="search-bar">
+                <div class="search-bar search-bar-inner">
                     <div class="row">
-                        <div class="col-md-3">
-                            <img src="<?php echo base_url().'application/views/';?>img/img-1.png" alt="search" class="img-fluid">
-                        </div>
-                        <div class="col-md-9">
-                            <ul class="list-inline text-center">
+                        <div class="col-md-12">
+                            <ul class="list-inline">
                                 <li class="list-inline-item"><a class="search_option_type search_by_brand" onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
                                 <li class="list-inline-item"><a class="search_option_type search_by_generic" onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
                                 <li class="list-inline-item"><a class="search_option_type search_by_indication" onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
@@ -53,7 +50,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $AllBrands[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
-                        <h1>Presentation</h1>
+                        <h3>Presentation</h3>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>

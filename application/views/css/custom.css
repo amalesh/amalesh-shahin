@@ -97,7 +97,20 @@ li {
     padding: 20px 0;
     margin-bottom: 25px;
 }
+.search-bar-inner{
+    border: 1px solid #BBBDBF;
+    padding: 20px 0;
+    margin-bottom: 25px;
+    padding-left: 30px;
+}
 
+.search-bar-inner a.search-btn{
+    top: 45px;
+}
+
+.search-bar-inner ul {
+    margin: 0px 0px 15px 0 !important;
+}
 .search-bar a:hover {
     color: #EC1C24;
 }
@@ -389,7 +402,7 @@ section.visitor {
 .presentation .table td,
 .table th {
 
-    border: 1px solid #B9BABD;
+    border: 1px solid #E0E0E0;
 
 }
 
@@ -815,6 +828,9 @@ td .link{
 .error_message {
     color: red;
     display: none;
+}
+.brand-generic-detail{
+    margin-bottom: 35px;
 }
 .brand-generic-detail p{
     text-align: justify;
