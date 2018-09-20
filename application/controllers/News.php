@@ -30,10 +30,9 @@ class News extends CI_Controller {
     }
 
     public function showIndividualNewsDetail() {
-        $news_information = $this->NewsInformation_model->getIndividualNewsDetail();
-        $all_active_local_news = $this->NewsInformation_model->getAllActiveNewsInformation();
         $data = array();
-        $data['AllNews'] = $all_active_local_news;
+        $news_information = $this->NewsInformation_model->getIndividualNewsDetail();
+        list($data['AllNews'], $data['TotalNews']) = $this->NewsInformation_model->getAllActiveNewsInformation();
         $data['NewsInfo'] = $news_information;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');

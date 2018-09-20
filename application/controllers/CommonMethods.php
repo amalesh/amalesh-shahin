@@ -12,7 +12,7 @@ class CommonMethods extends CI_Controller {
         parent::__construct();
         $this->load->model('JobInformation_model');
         $this->load->model('NewsInformation_model');
-        $this->load->model('AddressInformation_model');
+        $this->load->model('AddressCategory_model');
         $this->load->model('SpecialReports_model');
     }
 
@@ -21,7 +21,7 @@ class CommonMethods extends CI_Controller {
         $side_bar_information = array();
         $all_jobs = $this->JobInformation_model->getJobInformationForSidebar();
         $all_news = $this->NewsInformation_model->getNewsInformationForSidebar();
-        $all_address = $this->AddressInformation_model->getAddressInformationForSidebar();
+        $all_address = $this->AddressCategory_model->getAllActiveAddressCategoryForSideBar();
         $all_special_reports = $this->SpecialReports_model->getSpecialReportsForSidebar();
         $side_bar_information['AllJobs'] = $all_jobs;
         $side_bar_information['AllAddress'] = $all_address;

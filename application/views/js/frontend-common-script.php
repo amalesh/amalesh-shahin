@@ -24,7 +24,7 @@
                     }
 
                     for(var i = 0; i < all_address.length; i++) {
-                        $('ul.sidebar-assress').append('<li><a href="<?php echo site_url('Address/showIndividualAddressDetail?AddressID=')?>'+all_address[i].ID+'">'+all_address[i].Name+'</a></li>');
+                        $('ul.sidebar-assress').append('<li><a href="<?php echo site_url('Address/getAllImportantAddress?AddressCategoryID=')?>'+all_address[i].ID+'">'+all_address[i].Name+'</a></li>');
                     }
 
                     for(var i = 0; i < all_news.length; i++) {

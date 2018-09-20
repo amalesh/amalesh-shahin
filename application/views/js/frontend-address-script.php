@@ -3,15 +3,24 @@
     var addressObject = {
         totalAddress: 0,
         selectedCategoryID: '',
+        selectedCity: '',
+        selectedArea: '',
         perPageInformationNumber: <?php echo config_item('per_page_address_information_number');?>,
         getCategoryWiseAddresses: function(categoryID) {
             $('ul.address-list li').removeClass('highlight');
             $('li.address-category-'+categoryID).addClass('highlight');
             addressObject.selectedCategoryID = categoryID;
             addressObject.getSearchResult(1);
+            addressObject.selectedCity = $('#addressCity').val();
+            addressObject.selectedArea = $('#addressArea').val();
+        },
+        getLocationWiseAddresses: function() {
+            addressObject.selectedCity = $('#addressCity').val();
+            addressObject.selectedArea = $('#addressArea').val();
+            addressObject.getSearchResult(1);
         },
         getSearchResult: function(pageNo) {
-            var formURL = "<?php echo site_url('Address/getAddressForFrontend?PageNo=')?>"+pageNo+'&AddressCategoryID='+addressObject.selectedCategoryID;
+            var formURL = "<?php echo site_url('Address/getAddressForFrontend?PageNo=')?>"+pageNo+'&AddressCategoryID='+addressObject.selectedCategoryID+'&AddressCity='+addressObject.selectedCity+'&AddressArea='+addressObject.selectedArea;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'addressObject.getFeatureProducts', function(response){
                 var addressData = response.AllAddress;
                 if (addressObject.totalAddress == response.TotalAddress) {
@@ -33,13 +42,15 @@
             console.log('Method Name: addressObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = addressObject.perPageInformationNumber;
             var total_page = Math.ceil(addressObject.totalAddress / per_page_information_number);
+
             if (populateList === true) addressObject.getSearchResult(pageNo);
             if (total_page == 1) return;
+            // console.log('addressObject.totalAddress: '+addressObject.totalAddress+' per_page_information_number: '+per_page_information_number);
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
             var pagination_li_text;
-            console.log('per_page_information_number: '+per_page_information_number+' total_page: '+total_page+' total_pagination: '+total_pagination+' start_page_no: '+start_page_no);
+            // console.log('per_page_information_number: '+per_page_information_number+' total_page: '+total_page+' total_pagination: '+total_pagination+' start_page_no: '+start_page_no);
             $('ul#address-pagination').html('');
             if (pageNo > 1) {
                 var previous_page_no = pageNo - 1;
@@ -64,7 +75,7 @@
                 }
                 $('ul#address-pagination').append(pagination_li_text);
                 page_counter++;
-                console.log('page_counter: '+page_counter+' total_pagination: '+total_pagination+' total_page: '+total_page);
+                // console.log('page_counter: '+page_counter+' total_pagination: '+total_pagination+' total_page: '+total_page);
             }
 
             if (total_page > pageNo) {

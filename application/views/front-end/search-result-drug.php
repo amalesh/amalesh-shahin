@@ -22,6 +22,24 @@
         </div>
         <div class="row">
             <div class="col-md-8">
+                <div class="search-bar">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="<?php echo base_url().'application/views/';?>img/img-1.png" alt="search" class="img-fluid">
+                        </div>
+                        <div class="col-md-9">
+                            <ul class="list-inline text-center">
+                                <li class="list-inline-item"><a class="search_option_type search_by_brand" onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_generic" onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_indication" onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
+                                <li class="list-inline-item"><a class="search_option_type search_by_manufacturer" onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
+                            </ul>
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
+                            <a onclick="drugObject.searchBrandInformation()" id="searchInformation" class="search-btn"><i class="fas fa-search"></i></a>
+                            <span class="error_message invalid-search-option-error">Please enter a valid search option.</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="presentation">
                     <h4><?php echo $AllBrands[0]['Name'];?></h4>
                     <div class="brand-generic-detail">
@@ -35,6 +53,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $AllBrands[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
+                        <h1>Presentation</h1>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
@@ -134,4 +153,6 @@
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
     drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
     drugObject.populatePagination('search-drug-pagination', 1);
+    drugObject.getAllDrugInfoForAutoComplete();
+    drugObject.changeSearchOption('brand');
 </script>

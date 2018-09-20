@@ -24,6 +24,7 @@
             <div class="col-md-8">
                 <div class="presentation">
                     <div class="presentation-table">
+                        <h1><?php echo $PageTitle;?></h1>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
@@ -37,9 +38,9 @@
                             <?php
                             foreach ($AllBrands AS $brand) {
                                 echo '<tr>';
-                                echo '<td><a href="'.site_url('Brand/showBrandDetail').'?BrandID='.$brand['ID'].'">'.$brand['Name'].'</a></td>';
-                                echo '<td><a href="'.site_url('Manufacturer/getManufacturerDetail').'?ManufacturerID='.$brand['ManufacturerID'].'">'.$brand['ManufacturerName'].'</a></td>';
-                                echo '<td><a href="'.site_url('Generic/showGenericDetail').'?GenericID='.$brand['GenericID'].'">'.$brand['GenericName'].'</a></td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value=').$brand['Name'].'">'.$brand['Name'].'</a></td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=manufacturer&Value=').$brand['ManufacturerName'].'">'.$brand['ManufacturerName'].'</a></td>';
+                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value=').$brand['GenericName'].'">'.$brand['GenericName'].'</a></td>';
                                 echo '<td>'.$brand['PriceInBDT'].' Tk</td>';
                                 echo '</tr>';
                             }

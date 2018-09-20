@@ -17,8 +17,11 @@ class Address extends CI_Controller {
 
     public function getAllImportantAddress() {
         $data = array();
-        list($data['AllAddress'], $data['TotalAddress']) = $this->AddressInformation_model->getAllActiveAddressInformation();
+        $address_category_id = $this->input->get('AddressCategoryID');
+        $data['AddressCategoryID'] = empty($address_category_id) ? '' : $address_category_id;
+        list($data['AllAddress'], $data['TotalAddress']) = $this->AddressInformation_model->getAllActiveAddressInformation($address_category_id);
         $data['AllAddressCategory'] = $this->AddressCategory_model->getAllActiveAddressCategory();
+        $data['Cities'] = $this->Location_model->getAllActiveCities();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/main-menu');
