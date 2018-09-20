@@ -23,6 +23,10 @@
             console.log('Method Name: specialReportObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = specialReportObject.perPageInformationNumber;
             var total_page = Math.ceil(specialReportObject.totalSpecialReport / per_page_information_number);
+
+            if (populateList === true) specialReportObject.getSearchResult(pageNo);
+            if (total_page == 1) return;
+
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
@@ -64,8 +68,6 @@
                     '                                    </a>' +
                     '                                </li>');
             }
-
-            if (populateList === true) specialReportObject.getSearchResult(pageNo);
         }
     }
 </script>

@@ -61,6 +61,10 @@
             console.log('Method Name: doctorObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
             var per_page_information_number = doctorObject.perPageInformationNumber;
             var total_page = Math.ceil(doctorObject.totalDoctor / per_page_information_number);
+
+            if (populateList === true) doctorObject.searchDoctor(pageNo);
+            if (total_page == 1) return;
+
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
             var page_counter = 0;
@@ -102,8 +106,6 @@
                     '                                    </a>' +
                     '                                </li>');
             }
-
-            if (populateList === true) doctorObject.searchDoctor(pageNo);
         }
     }
 </script>
