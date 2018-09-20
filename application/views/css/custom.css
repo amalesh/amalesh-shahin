@@ -174,17 +174,16 @@ a.btn.btn-s.float-right {
 .product-detail h4 {
     color: #000;
     font-size: 18px;
-    margin: 0;
+    margin: 0 0 10px 0;
     font-weight: 600;
 }
 
 .product-detail .info {
     font-size: 14px;
-    margin-bottom: 30px;
 }
 
 .product-detail {
-    padding: 60px 30px;
+    padding: 30px;
 }
 
 .product-detail a {
@@ -262,10 +261,7 @@ a.btn.btn-s.float-right {
     padding-bottom: 25px;
 }
 
-a.btn.btn-s.float-right:hover{
-    color: red !important;
-}
-.speacial-reports a, .special-reports-sidebar a:hover{
+a.btn.btn-s.float-right:hover, .special-reports-sidebar a:hover{
     color: red !important;
 }
 .speacial-reports h5 a:hover {
@@ -449,7 +445,6 @@ section.visitor {
 .find-doctor .btn {
     background: #EC2227;
     color: #fff;
-    position: absolute;
     top: 37%;
     width: 50%;
 }
@@ -648,10 +643,9 @@ span.separator-2 {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
-    padding-top: 50px;
+    padding: 30px 0;
     align-items:  center;
     border-bottom: 1px solid #decbcb;
-    padding-bottom:  50px;
 }
 .news-top.padding-bottom-10 {
     padding-bottom: 10px;
@@ -809,6 +803,9 @@ td .link{
     display: none;
 }
 .brand-generic-detail p{
+    text-align: justify;
+}
+p{
     text-align: justify;
 }
 /*div.add-home-page-top-right-305x355,*/
