@@ -97,7 +97,20 @@ li {
     padding: 20px 0;
     margin-bottom: 25px;
 }
+.search-bar-inner{
+    border: 1px solid #BBBDBF;
+    padding: 20px 0;
+    margin-bottom: 25px;
+    padding-left: 30px;
+}
 
+.search-bar-inner a.search-btn{
+    top: 45px;
+}
+
+.search-bar-inner ul {
+    margin: 0px 0px 15px 0 !important;
+}
 .search-bar a:hover {
     color: #EC1C24;
 }
@@ -224,10 +237,10 @@ a.btn.btn-s.float-right {
     margin-bottom: 50px;
 }
 .add-inner-page-right-523x52{
-    margin: 60px 0;
+    margin: 40px 0;
 }
 .add-inner-page-left-523x52{
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
 .add-bottom-left-823x115{
@@ -389,7 +402,7 @@ section.visitor {
 .presentation .table td,
 .table th {
 
-    border: 1px solid #B9BABD;
+    border: 1px solid #E0E0E0;
 
 }
 
@@ -617,7 +630,7 @@ span.separator-2 {
     list-style: none;
 }
 .requirement-list {
-    font-size: 16px;
+    font-size: 14px;
     color: #3e3b3b;
     padding-top:  30px;
 }
@@ -632,7 +645,21 @@ span.separator-2 {
     padding-right:  15px;
     font-size:  15px;
 }
-
+ul.address-list{
+    list-style-position: outside;
+}
+.address-list li{
+    list-style-position: outside;
+    overflow: hidden;
+}
+.address-list li i{
+    float: left;
+    width: 10%;
+}
+.address-list li a{
+    float: left;
+    width: 90%;
+}
 
 .job-circular-img {
     padding-top: 25px;
@@ -802,11 +829,17 @@ td .link{
     color: red;
     display: none;
 }
+.brand-generic-detail{
+    margin-bottom: 35px;
+}
 .brand-generic-detail p{
     text-align: justify;
 }
 p{
     text-align: justify;
+}
+.table th, .table td{
+    padding: 0.55rem !important;
 }
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/
