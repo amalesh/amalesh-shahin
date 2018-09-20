@@ -15,7 +15,7 @@ $job_application_deadline = !empty($JobInfo['ApplicationDeadline']) ? '<li><i cl
 $job_salary = !empty($JobInfo['Salary']) ? '<li><i class="fas fa-chevron-right"></i>Salary: '.$JobInfo['Salary'].'</li>' : '';
 $job_educational_requirement = !empty($JobInfo['EducationalRequirement']) ? '<li><i class="fas fa-chevron-right"></i>Educational Requirement: '.$JobInfo['EducationalRequirement'].'</li>' : '';
 $job_experience_requirement = !empty($JobInfo['ExperienceRequirement']) ? '<li><i class="fas fa-chevron-right"></i>Experience Requirement: '.$JobInfo['ExperienceRequirement'].'</li>' : '';
-$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? '<li><i class="fas fa-chevron-right"></i>Number Of Vacancy: '.$JobInfo['NumberOfVacancy'].'</li>' : '';
+$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? '<li><i class="fas fa-chevron-right"></i>Number of Vacancy: '.$JobInfo['NumberOfVacancy'].'</li>' : '';
 $job_age_limit = !empty($JobInfo['AgeLimit']) ? '<li><i class="fas fa-chevron-right"></i>Age Limit: '.$JobInfo['AgeLimit'].'</li>' : '';
 $job_location = !empty($JobInfo['Location']) ? '<li><i class="fas fa-chevron-right"></i>Location: '.$JobInfo['Location'].'</li>' : '';
 $job_source = !empty($JobInfo['JobSource']) ? '<li><i class="fas fa-chevron-right"></i>Job Source: '.$JobInfo['JobSource'].'</li>' : '';

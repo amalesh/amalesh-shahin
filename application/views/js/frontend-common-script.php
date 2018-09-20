@@ -37,7 +37,7 @@
                             $('div.speacial-reports').append('<div class="media">' +
                                 '<img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">'+
                                 '<div class="media-body">'+
-                                '<h5 class="mt-0"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a></h5>'+
+                                '<a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a>'+
                                 '</div>'+
                                 '</div>');
                         }
@@ -49,12 +49,12 @@
                             $('div.special-reports-sidebar').append('<div class="media">' +
                                 '                        <img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">' +
                                 '                        <div class="media-body">' +
-                                '                            <h5 class="mt-0"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a></h5>' +
+                                '                            <a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a>' +
                                 '                        </div>' +
                                 '                    </div>');
                         }
 
-                        $('div.special-reports-sidebar').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right" style="margin-right: 26%;">' +
+                        $('div.special-reports-sidebar').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right">' +
                             '                        <i class="fas fa-chevron-right"></i> see more' +
                             '                    </a>' +
                             '                    <div class="clearfix"></div>');
