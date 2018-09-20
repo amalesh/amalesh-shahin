@@ -164,4 +164,6 @@
     frontendCommonMethods.getSideBarData();
     doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
     doctorObject.populatePagination(1);
+    $('ul#main-menu li').removeClass('active');
+    $('ul#main-menu li#main-menu-doctor').addClass('active');
 </script>

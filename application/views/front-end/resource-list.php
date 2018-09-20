@@ -92,4 +92,6 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    $('ul#main-menu li').removeClass('active');
+    $('ul#main-menu li#main-menu-resource').addClass('active');
 </script>

@@ -25,3 +25,7 @@
         </div>
     </div>
 </section>
+<script>
+    $('ul#main-menu li').removeClass('active');
+    $('ul#main-menu li#main-menu-about-us').addClass('active');
+</script>

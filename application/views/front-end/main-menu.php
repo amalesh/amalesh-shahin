@@ -27,13 +27,13 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                    <ul id="main-menu" class="navbar-nav mr-auto">
+                        <li id="main-menu-home" class="nav-item active">
                             <a class="nav-link" href="<?php echo site_url();?>">HOME <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Doctor/getAllDoctorInformation');?>">DOCTOR</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('Resource/getAllActiveResourceInformation');?>">RESOURCES</a></li>
-                        <li class="nav-item"><a class="nav-link" href="<?php echo site_url('StaticInfo/showAboutUs');?>">ABOUT US</a></li>
+                        <li id="main-menu-doctor" class="nav-item"><a class="nav-link" href="<?php echo site_url('Doctor/getAllDoctorInformation');?>">DOCTOR</a></li>
+                        <li id="main-menu-resource" class="nav-item"><a class="nav-link" href="<?php echo site_url('Resource/getAllActiveResourceInformation');?>">RESOURCES</a></li>
+                        <li id="main-menu-about-us" class="nav-item"><a class="nav-link" href="<?php echo site_url('StaticInfo/showAboutUs');?>">ABOUT US</a></li>
                     </ul>
                 </div>
             </div>

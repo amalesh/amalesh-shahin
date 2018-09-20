@@ -47,7 +47,7 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
                     <h4 class="date"><?php echo $job_publish_date;?></h4>
                     <p><?php echo $job_description;?></p>
                     <?php
-                    echo '<ul class="requirement-list">'.$job_description.
+                    echo '<ul class="requirement-list">'.
                         $job_position.
                         $job_application_deadline.
                         $job_salary.
