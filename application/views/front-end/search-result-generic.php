@@ -35,6 +35,7 @@
                         <p><b>Use in Pregnancy & Lactation: </b><?php echo $GenericData[0]['PregnancyLactation'];?></p>
                     </div>
                     <div class="presentation-table">
+                        <h1>Brand of <?php echo $GenericData[0]['Name'];?></h1>
                         <table class="table" id="product-list">
                             <thead>
                             <tr>
@@ -128,4 +129,6 @@
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
     drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
     drugObject.populatePagination('search-genetic-pagination', 1);
+    drugObject.getAllDrugInfoForAutoComplete();
+    drugObject.changeSearchOption('brand');
 </script>
