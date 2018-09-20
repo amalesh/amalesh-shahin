@@ -224,10 +224,10 @@ a.btn.btn-s.float-right {
     margin-bottom: 50px;
 }
 .add-inner-page-right-523x52{
-    margin: 60px 0;
+    margin: 40px 0;
 }
 .add-inner-page-left-523x52{
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
 .add-bottom-left-823x115{
@@ -617,7 +617,7 @@ span.separator-2 {
     list-style: none;
 }
 .requirement-list {
-    font-size: 16px;
+    font-size: 14px;
     color: #3e3b3b;
     padding-top:  30px;
 }
@@ -632,7 +632,21 @@ span.separator-2 {
     padding-right:  15px;
     font-size:  15px;
 }
-
+ul.address-list{
+    list-style-position: outside;
+}
+.address-list li{
+    list-style-position: outside;
+    overflow: hidden;
+}
+.address-list li i{
+    float: left;
+    width: 10%;
+}
+.address-list li a{
+    float: left;
+    width: 90%;
+}
 
 .job-circular-img {
     padding-top: 25px;
@@ -807,6 +821,9 @@ td .link{
 }
 p{
     text-align: justify;
+}
+.table th, .table td{
+    padding: 0.55rem !important;
 }
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/

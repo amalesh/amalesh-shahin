@@ -16,7 +16,7 @@
                         <ul class="requirement-list address-list">
                             <?php
                             foreach ($AllAddressCategory AS $category) {
-                                echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</li>';
+                                echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
                             }
                             ?>
                         </ul>
