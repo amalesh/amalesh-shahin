@@ -20,7 +20,7 @@
                     $('ul.sidebar-address').html('');
 
                     for(var i = 0; i < all_jobs.length; i++) {
-                        $('ul.sidebar-jobs').append('<li><a href="<?php echo site_url('Job/showIndividualJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+all_jobs[i].Title+'</a></li>');
+                        $('ul.sidebar-jobs').append('<li><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+all_jobs[i].Title+'</a></li>');
                     }
 
                     for(var i = 0; i < all_address.length; i++) {
