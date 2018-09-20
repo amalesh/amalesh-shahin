@@ -135,6 +135,7 @@
 
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-home-page-top-right-305x355', 'add-bottom-left-823x115']);
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);

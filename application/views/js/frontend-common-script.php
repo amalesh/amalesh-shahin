@@ -98,82 +98,33 @@
             });
             frontendCommonMethods.populatePagination('generic', pageNo);
         },
-        populatePagination: function (searchBy, pageNo) {
-            console.log('Method Name: frontendCommonMethods.populatePagination Param: searchBy, pageNo Value: '+[searchBy, pageNo].toString());
-            var per_page_information_number = <?php echo config_item('per_page_information_number');?>;
-            var total_page = Math.ceil(frontendCommonMethods.totalDrug / per_page_information_number);
-            var total_pagination = <?php echo config_item('total_page');?>;
-            var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
-            var page_counter = 0;
-            var pagination_li_text = '';
-            $('ul#drug-pagination').html('');
-            if (pageNo > 1) {
-                var previous_page_no = pageNo - 1;
-                var anchor_text = '';
-                switch (searchBy) {
-                    case 'brand':
-                        anchor_text = '<a class="page-link" aria-label="Previous" onclick="frontendCommonMethods.searchBrandAlphabetically(\''+frontendCommonMethods.activeBrandAlphabet+'\','+previous_page_no+')>';
-                        break;
-                    case 'generic':
-                        anchor_text = '<a class="page-link" aria-label="Previous" onclick="frontendCommonMethods.searchGenericAlphabetically(\''+frontendCommonMethods.activeGenericAlphabet+'\','+previous_page_no+')>';
-                        break;
-                    default:
-                        break;
-                }
-                $('ul#drug-pagination').html('<li class="page-item">' +
-                    anchor_text +
-                    '                                        <span>&laquo;</span>' +
-                    '                                        <span class="sr-only">Previous</span>' +
-                    '                                    </a>' +
-                    '                                </li>' +
-                    '                                ');
-            }
+        getAdvertisement: function (classNames) {
+            console.log('Method Name: frontendCommonMethods.populatePagination Param: classNames Value: '+[classNames].toString());
+            for (var class_no = 0; class_no < classNames.length; class_no++) {
+                var class_name = classNames[class_no];
+                var formURL = "<?php echo site_url('Advertisement/getAdvertisement?ClassName=')?>"+class_name;
+                mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getAdvertisement', function(advertisementData){
+                    if (advertisementData.length) {
+                        $('div.'+class_name).html('');
+                        for (var advertisement_no = 0; advertisement_no < advertisementData.length; advertisement_no++) {
+                            if (advertisementData[advertisement_no].LinkURL) {
+                                $('div.'+class_name).append('<div><a href="'+advertisementData[advertisement_no].LinkURL+'" terget="_blank"><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></a></div>');
+                            } else {
+                                $('div.'+class_name).append('<div><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></div>');
+                            }
+                        }
 
-            for(var i = start_page_no; ; i++) {
-                pagination_li_text = '';
-                var anchor_text = '';
-                switch (searchBy) {
-                    case 'brand':
-                        anchor_text = '<li class="page-item"><a class="page-link" onclick="frontendCommonMethods.searchBrandAlphabetically(\''+frontendCommonMethods.activeBrandAlphabet+'\','+i+')"></a></li>';
-                        break;
-                    case 'generic':
-                        anchor_text = '<li class="page-item"><a class="page-link" onclick="frontendCommonMethods.searchGenericAlphabetically(\''+frontendCommonMethods.activeGenericAlphabet+'\','+i+')"></a></li>';
-                        break;
-                    default:
-                        break;
-                }
-                if (i == pageNo) {
-                    pagination_li_text = '<li class="page-item active"><a class="page-link" href="#">'+i+'</a></li>';
-                } else {
-                    pagination_li_text = anchor_text;
-                }
-                $('ul#drug-pagination').append(pagination_li_text);
-                page_counter++;
-                if (page_counter == total_pagination || page_counter > total_page) {
-                    break;
-                }
-                console.log('page_counter: '+page_counter+' total_pagination: '+total_pagination+' total_page: '+total_page);
-            }
-
-            if (total_page > pageNo) {
-                var next_page_no = pageNo + 1;
-                var anchor_text = '';
-                switch (searchBy) {
-                    case 'brand':
-                        anchor_text = '<a class="page-link" aria-label="Next" onclick="frontendCommonMethods.searchBrandAlphabetically(\''+frontendCommonMethods.activeBrandAlphabet+'\','+next_page_no+')>';
-                        break;
-                    case 'generic':
-                        anchor_text = '<a class="page-link" aria-label="Next" onclick="frontendCommonMethods.searchGenericAlphabetically(\''+frontendCommonMethods.activeGenericAlphabet+'\','+next_page_no+')>';
-                        break;
-                    default:
-                        break;
-                }
-                $('ul#drug-pagination').append('<li class="page-item">' +
-                    anchor_text +
-                    '                                        <span>&raquo;</span>' +
-                    '                                        <span class="sr-only">Next</span>' +
-                    '                                    </a>' +
-                    '                                </li>');
+                        $('div.'+class_name+" > div:gt(0)").hide();
+                        setInterval(function() {
+                            $('div.'+class_name+' > div:first')
+                                .fadeOut(1000)
+                                .next()
+                                .fadeIn(1000)
+                                .end()
+                                .appendTo('#slideshow');
+                        },  advertisementData[0].Interval * 1000);
+                    }
+                });
             }
         },
         inArrayCaseInsensitive: function (value, dataArray) {

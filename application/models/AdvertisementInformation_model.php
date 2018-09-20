@@ -212,4 +212,36 @@ class AdvertisementInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
         return $advertisements;
     }
+
+    public function getAdvertisement() {
+        log_message('debug', __METHOD__ . ' Method Start with Arguments: ' . print_r(func_get_args(), true));
+        $class_name = $this->input->get('ClassName');
+        $data = array();
+        $this->db->select('ap.ID, ap.Interval, ap.NumberOfAdvertisement');
+        $this->db->from('advertisementpositioninformation AS ap');
+        $this->db->where('ap.ClassName', $class_name);
+        $this->db->where('ap.IsActive', 1);
+        $this->db->limit(1);
+        $advertisement_position_information = $this->db->get()->result_array();
+
+        if (isset($advertisement_position_information[0]['ID'])) {
+            $this->db->select('a.Title');
+            $this->db->select('a.BodyText');
+            $this->db->select('a.LinkURL');
+            $this->db->select('a.ImagePath');
+            $this->db->select('p.Interval');
+            $this->db->from('advertisementinformation AS a');
+            $this->db->join('advertisementpositioninformation AS p', 'a.AdvertisementPositionID = p.ID', 'inner');
+            $this->db->where('a.PublishDate <=', date('Y-m-d'));
+            $this->db->where('a.UnpublishedDate >=', date('Y-m-d'));
+            $this->db->where('a.IsActive', 1);
+            $this->db->where('a.ImagePath <>', '');
+            $this->db->where('p.ID', $advertisement_position_information[0]['ID'], false);
+            $this->db->limit($advertisement_position_information[0]['NumberOfAdvertisement']);
+            $data = $this->db->get()->result_array();
+//            echo $this->db->last_query();
+        }
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $data;
+    }
 }

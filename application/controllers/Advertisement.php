@@ -14,6 +14,11 @@ class Advertisement extends CI_Controller {
         $this->load->model('AdvertisementPositionInformation_model');
     }
 
+    public function getAdvertisement() {
+        $all_advertisement = $this->AdvertisementInformation_model->getAdvertisement();
+        $this->sendRestAPIResponse($all_advertisement);
+    }
+
     public function getAdvertisementListForAdmin() {
         $this->load->model('User_model');
         list($user_id, $user_role) = $this->User_model->getLoggedInUser();
