@@ -114,21 +114,7 @@
                 <div class="add-doctor-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline">
-                        <li><a href="">Sales Representative - Square Pharma</a></li>
-                        <li><a href="">Area Manager - Navana Pharma</a></li>
-                        <li><a href="">Accounts Officer - AristoPharma </a></li>
-                        <li><a href="">Sales Representative - Square Pharma</a></li>
-                        <li><a href="">Area Manager - Navana Pharma</a></li>
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-doctors"></ul>
+                    <ul class="list-inline sidebar-jobs"></ul>
                     <ul class="list-inline">
                         <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more
