@@ -9,6 +9,14 @@
 <section class="product brand">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="add-doctor-page-inner-left-523x52"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="add-doctor-page-inner-right-523x52"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="find-doctor">
                     <h2 class="title">Find a Doctor</h2>
@@ -96,14 +104,14 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination" id="doctor-pagination"></ul>
                 </nav>
-                <div class="add-bottom-left-823x115" style="position: relative;">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-13.png" alt="" class="img-fluid"></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-doctor-page-bottom-left-823x115"></div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="add-inner-page-top-right-340x350">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-18.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-doctor-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline">
@@ -175,6 +183,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-doctor-page-top-right-305x355', 'add-doctor-page-bottom-left-823x115', 'add-doctor-page-inner-left-523x52', 'add-doctor-page-inner-right-523x52']);
     doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
     doctorObject.populatePagination(1);
     $('ul#main-menu li').removeClass('active');

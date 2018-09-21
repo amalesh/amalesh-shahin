@@ -230,6 +230,7 @@ class AdvertisementInformation_model extends GeneralData_model {
             $this->db->select('a.LinkURL');
             $this->db->select('a.ImagePath');
             $this->db->select('p.Interval');
+            $this->db->select('p.ClassName');
             $this->db->from('advertisementinformation AS a');
             $this->db->join('advertisementpositioninformation AS p', 'a.AdvertisementPositionID = p.ID', 'inner');
             $this->db->where('a.PublishDate <=', date('Y-m-d'));

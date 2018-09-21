@@ -36,6 +36,14 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
 <section class="product">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="add-job-page-inner-left-523x52"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="add-job-page-inner-right-523x52"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="job-circular-head">
                     <div class="news-top">
@@ -63,11 +71,14 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
                         $job_applying_procedure.'</ul>'.$job_image;
                     ?>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-job-page-bottom-left-823x115"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-job-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -105,4 +116,5 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-305x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
 </script>

@@ -10,6 +10,14 @@
 <section class="product">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="add-news-page-inner-left-523x52"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="add-news-page-inner-right-523x52"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="news-top no-border padding-bottom-10">
                     <h1>Local <br> farma <br> <b>news</b> </h1>
@@ -36,11 +44,14 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination" id="news-pagination"></ul>
                 </nav>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-news-page-bottom-left-823x115"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4 sidebar">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-news-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -78,6 +89,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-news-page-top-right-340x355', 'add-news-page-bottom-left-823x115', 'add-news-page-inner-left-523x52', 'add-news-page-inner-right-523x52']);
     newsObject.totalNews = <?php echo isset($TotalNews) ? $TotalNews : 0;?>;
     newsObject.perPageInformationNumber = <?php echo config_item('per_page_news_information_number');?>;
     newsObject.populatePagination(1);

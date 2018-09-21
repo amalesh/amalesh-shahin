@@ -10,14 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="add-inner-page-left-523x52">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-14.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-resource-page-inner-left-523x52"></div>
             </div>
             <div class="col-md-6">
-                <div class="add-inner-page-right-523x52">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-15.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-resource-page-inner-right-523x52"></div>
             </div>
         </div>
         <div class="row">
@@ -30,11 +26,14 @@
                     }
                     ?>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-resource-page-bottom-left-823x115"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-resource-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -92,6 +91,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-resource-page-top-right-340x355', 'add-resource-page-bottom-left-823x115', 'add-resource-page-inner-left-523x52', 'add-resource-page-inner-right-523x52']);
     $('ul#main-menu li').removeClass('active');
     $('ul#main-menu li#main-menu-resource').addClass('active');
 </script>

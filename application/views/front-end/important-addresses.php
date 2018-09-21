@@ -9,6 +9,14 @@
 <section class="product">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="add-address-page-inner-left-523x52"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="add-address-page-inner-right-523x52"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4 filter-address">
@@ -70,11 +78,14 @@
                         </nav>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-address-page-bottom-left-823x115"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4 sidebar">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-address-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -112,6 +123,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-address-page-top-right-305x355', 'add-address-page-bottom-left-823x115', 'add-address-page-inner-left-523x52', 'add-address-page-inner-right-523x52']);
     addressObject.totalAddress = <?php echo isset($TotalAddress) ? $TotalAddress : 0;?>;
     addressObject.populatePagination(1);
 </script>

@@ -98,31 +98,37 @@
             });
             frontendCommonMethods.populatePagination('generic', pageNo);
         },
+        setAdvertisementInterval: function(className) {
+            $('div.'+className+' > div:first')
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo('#slideshow');
+        },
         getAdvertisement: function (classNames) {
             console.log('Method Name: frontendCommonMethods.populatePagination Param: classNames Value: '+[classNames].toString());
             for (var class_no = 0; class_no < classNames.length; class_no++) {
                 var class_name = classNames[class_no];
+                $('.'+class_name).hide();
                 var formURL = "<?php echo site_url('Advertisement/getAdvertisement?ClassName=')?>"+class_name;
                 mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getAdvertisement', function(advertisementData){
                     if (advertisementData.length) {
-                        $('div.'+class_name).html('');
+                        var position_class_name = advertisementData[0].ClassName;
+                        var interval = advertisementData[0].Interval;
+                        console.log('Class Name: '+position_class_name);
+                        $('.'+position_class_name).show();
+                        $('div.'+position_class_name).html('');
                         for (var advertisement_no = 0; advertisement_no < advertisementData.length; advertisement_no++) {
                             if (advertisementData[advertisement_no].LinkURL) {
-                                $('div.'+class_name).append('<div><a href="'+advertisementData[advertisement_no].LinkURL+'" terget="_blank"><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></a></div>');
+                                $('div.'+position_class_name).append('<div><a href="'+advertisementData[advertisement_no].LinkURL+'" terget="_blank"><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></a></div>');
                             } else {
-                                $('div.'+class_name).append('<div><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></div>');
+                                $('div.'+position_class_name).append('<div><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></div>');
                             }
                         }
 
-                        $('div.'+class_name+" > div:gt(0)").hide();
-                        setInterval(function() {
-                            $('div.'+class_name+' > div:first')
-                                .fadeOut(1000)
-                                .next()
-                                .fadeIn(1000)
-                                .end()
-                                .appendTo('#slideshow');
-                        },  advertisementData[0].Interval * 1000);
+                        $('div.'+position_class_name+" > div:gt(0)").hide();
+                        setInterval(frontendCommonMethods.setAdvertisementInterval, interval * 1000, position_class_name);
                     }
                 });
             }

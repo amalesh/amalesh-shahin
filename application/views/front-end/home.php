@@ -1,6 +1,14 @@
 <section class="all-product">
     <div class="container">
         <div class="row">
+            <div class="col-md-6">
+                <div class="add-home-page-inner-left-523x52"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="add-home-page-inner-right-523x52"></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-9">
                 <div class="search-bar">
                     <div class="row">
@@ -69,9 +77,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="add-bottom-left-823x115">
-                            <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-5.png" alt="add" class="img-fluid"></a>
-                        </div>
+                        <div class="add-home-page-bottom-left-823x115"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -85,9 +91,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="add-home-page-top-right-305x355">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-2.png" alt="add"></a>
-                </div>
+                <div class="add-home-page-top-right-305x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -141,7 +145,7 @@
 
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-home-page-top-right-305x355', 'add-bottom-left-823x115']);
+    frontendCommonMethods.getAdvertisement(['add-home-page-top-right-305x355', 'add-home-page-bottom-left-823x115', 'add-home-page-inner-left-523x52', 'add-home-page-inner-right-523x52']);
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);

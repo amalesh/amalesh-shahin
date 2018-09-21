@@ -231,22 +231,60 @@ a.btn.btn-s.float-right {
 
 /* Advertisements Classes*/
 
-.add-home-page-top-right-305x355{
+.add-home-page-top-right-305x355,
+.add-brand-page-top-right-340x355,
+.add-generic-page-top-right-340x355,
+.add-indication-page-top-right-340x355,
+.add-manufacturer-page-top-right-340x355,
+.add-resource-page-top-right-340x355,
+.add-special-report-page-top-right-340x355,
+.add-news-page-top-right-340x355,
+.add-job-page-top-right-340x355,
+.add-address-page-top-right-340x355,
+.add-doctor-page-top-right-340x355,
+.add-about-us-page-top-right-340x355 {
     margin-bottom: 50px;
 }
-.add-inner-page-top-right-340x350{
-    margin-bottom: 50px;
-}
-.add-inner-page-right-523x52{
-    margin: 40px 0;
-}
-.add-inner-page-left-523x52{
+
+.add-home-page-inner-left-523x52,
+.add-home-page-inner-right-523x52,
+.add-generic-page-inner-left-523x52,
+.add-generic-page-inner-right-523x52,
+.add-indication-page-inner-left-523x52,
+.add-indication-page-inner-right-523x52,
+.add-manufacturer-page-inner-left-523x52,
+.add-manufacturer-page-inner-right-523x52,
+.add-resource-page-inner-left-523x52,
+.add-resource-page-inner-right-523x52,
+.add-special-report-page-inner-left-523x52,
+.add-special-report-page-inner-right-523x52,
+.add-news-page-inner-left-523x52,
+.add-news-page-inner-right-523x52,
+.add-job-page-inner-left-523x52,
+.add-job-page-inner-right-523x52,
+.add-address-page-inner-left-523x52,
+.add-address-page-inner-right-523x52,
+.add-doctor-page-inner-left-523x52,
+.add-doctor-page-inner-right-523x52,
+.add-about-us-page-inner-left-523x52,
+.add-about-us-page-inner-right-523x52 {
     margin: 40px 0;
 }
 
-.add-bottom-left-823x115{
+.add-home-page-bottom-left-823x115,
+.add-brand-page-bottom-left-823x115,
+.add-generic-page-bottom-left-823x115,
+.add-indication-page-bottom-left-823x115,
+.add-manufacturer-page-bottom-left-823x115,
+.add-resource-page-bottom-left-823x115,
+.add-special-report-page-bottom-left-823x115,
+.add-job-page-bottom-left-823x115,
+.add-address-page-bottom-left-823x115,
+.add-doctor-page-bottom-left-823x115,
+.add-about-us-page-bottom-left-823x115 {
     margin: 60px 0;
 }
+
 .product-add-2 {
     margin-bottom: 50px;
 }

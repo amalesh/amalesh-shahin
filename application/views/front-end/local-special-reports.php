@@ -10,14 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="add-inner-page-left-523x52">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-14.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-special-report-page-inner-left-523x52"></div>
             </div>
             <div class="col-md-6">
-                <div class="add-inner-page-right-523x52">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-15.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-special-report-page-inner-right-523x52"></div>
             </div>
         </div>
         <div class="row">
@@ -39,11 +35,14 @@
                 <nav aria-label="Page navigation example">
                     <ul class="pagination" id="special-report-pagination"></ul>
                 </nav>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-special-report-page-bottom-left-823x115"></div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-special-report-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -101,6 +100,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-special-report-page-top-right-340x355', 'add-special-report-page-bottom-left-823x115', 'add-special-report-page-inner-left-523x52', 'add-special-report-page-inner-right-523x52']);
     specialReportObject.totalSpecialReport = <?php echo isset($TotalSpecialReport) ? $TotalSpecialReport : 0;?>;
     specialReportObject.perPageInformationNumber = <?php echo config_item('per_page_special_report_number');?>;
     specialReportObject.populatePagination(1);

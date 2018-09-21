@@ -10,14 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="product-add-3">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-14.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-generic-page-inner-left-523x52"></div>
             </div>
             <div class="col-md-6">
-                <div class="product-add-4">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-15.png" alt="" class="img-fluid"></a>
-                </div>
+                <div class="add-generic-page-inner-right-523x52"></div>
             </div>
         </div>
         <div class="row">
@@ -74,14 +70,14 @@
                         </nav>
                     </div>
                 </div>
-                <div class="product-add-5" style="position: relative;">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-16.png" alt="" class="img-fluid"></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-generic-page-bottom-left-823x115"></div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="product-add-2">
-                    <a href=""><img src="<?php echo base_url().'application/views/';?>img/img-17.png" alt="add" class="img-fluid"></a>
-                </div>
+                <div class="add-generic-page-top-right-340x355"></div>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>
@@ -139,6 +135,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
+    frontendCommonMethods.getAdvertisement(['add-generic-page-top-right-340x355', 'add-generic-page-bottom-left-823x115', 'add-generic-page-inner-left-523x52', 'add-generic-page-inner-right-523x52']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
