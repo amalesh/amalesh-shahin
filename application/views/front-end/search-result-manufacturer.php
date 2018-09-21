@@ -189,5 +189,5 @@
     drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
     drugObject.populatePagination('search-manufacturer-pagination', 1);
     drugObject.getAllDrugInfoForAutoComplete();
-    drugObject.changeSearchOption('brand');
+    drugObject.changeSearchOption('manufacturer');
 </script>
