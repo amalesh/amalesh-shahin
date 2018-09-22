@@ -223,6 +223,7 @@ class AdvertisementInformation_model extends GeneralData_model {
         $this->db->where('ap.IsActive', 1);
         $this->db->limit(1);
         $advertisement_position_information = $this->db->get()->result_array();
+//        echo $this->db->last_query();
 
         if (isset($advertisement_position_information[0]['ID'])) {
             $this->db->select('a.Title');

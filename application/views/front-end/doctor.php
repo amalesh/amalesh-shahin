@@ -169,7 +169,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-doctor-page-top-right-305x355', 'add-doctor-page-bottom-left-823x115', 'add-doctor-page-inner-left-523x52', 'add-doctor-page-inner-right-523x52']);
+    frontendCommonMethods.getAdvertisement(['add-doctor-page-top-right-340x355', 'add-doctor-page-bottom-left-823x115', 'add-doctor-page-inner-left-523x52', 'add-doctor-page-inner-right-523x52']);
     doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
     doctorObject.populatePagination(1);
     $('ul#main-menu li').removeClass('active');

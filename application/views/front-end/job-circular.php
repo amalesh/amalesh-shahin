@@ -87,7 +87,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-305x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
+    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-340x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
     jobObject.totalJob = <?php echo isset($TotalJob) ? $TotalJob : 0;?>;
     jobObject.perPageInformationNumber = <?php echo config_item('per_page_job_information_number');?>;
     jobObject.populatePagination(1);

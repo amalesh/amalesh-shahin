@@ -123,7 +123,7 @@
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-address-page-top-right-305x355', 'add-address-page-bottom-left-823x115', 'add-address-page-inner-left-523x52', 'add-address-page-inner-right-523x52']);
+    frontendCommonMethods.getAdvertisement(['add-address-page-top-right-340x355', 'add-address-page-bottom-left-823x115', 'add-address-page-inner-left-523x52', 'add-address-page-inner-right-523x52']);
     addressObject.totalAddress = <?php echo isset($TotalAddress) ? $TotalAddress : 0;?>;
     addressObject.populatePagination(1);
 </script>

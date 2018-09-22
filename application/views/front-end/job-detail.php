@@ -116,5 +116,5 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
 </section>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-305x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
+    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-340x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
 </script>
