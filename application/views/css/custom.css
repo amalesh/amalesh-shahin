@@ -243,7 +243,7 @@ a.btn.btn-s.float-right {
 .add-address-page-top-right-340x355,
 .add-doctor-page-top-right-340x355,
 .add-about-us-page-top-right-340x355 {
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
 }
 
 .add-home-page-inner-left-523x52,
@@ -300,7 +300,7 @@ a.btn.btn-s.float-right {
 .speacial-reports h3 {
     font-size: 20px;
     border-bottom: 1px solid #DBDCDD;
-    margin: 0 0 35px;
+    margin: 50px 0 35px;
     text-transform: uppercase;
 }
 
