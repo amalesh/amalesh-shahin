@@ -22,7 +22,6 @@ class JobInformationEntity extends GeneralDataEntity
     public $JobNature;
     public $ApplyingProcedure;
     public $PublishDate;
-    public $JobCircularImagePath;
 
     function __construct ($data) {
         parent::__construct($data);
@@ -45,7 +44,6 @@ class JobInformationEntity extends GeneralDataEntity
             $this->JobNature = $data['JobNature'];
             $this->ApplyingProcedure = $data['ApplyingProcedure'];
             $this->PublishDate = $data['PublishDate'];
-            $this->JobCircularImagePath = $data['JobCircularImagePath'];
         }
     }
 
@@ -69,7 +67,6 @@ class JobInformationEntity extends GeneralDataEntity
         $job_data['JobNature'] = addslashes($this->JobNature);
         $job_data['ApplyingProcedure'] = (string)$this->ApplyingProcedure;
         $job_data['PublishDate'] = (string)$this->PublishDate;
-        $job_data['JobCircularImagePath'] = addslashes($this->JobCircularImagePath);
 
         return $job_data;
     }
@@ -93,7 +90,6 @@ class JobInformationEntity extends GeneralDataEntity
         $job_data['JobNature'] = addslashes($this->JobNature);
         $job_data['ApplyingProcedure'] = (string)$this->ApplyingProcedure;
         $job_data['PublishDate'] = (string)$this->PublishDate;
-        $job_data['JobCircularImagePath'] = addslashes($this->JobCircularImagePath);
         return $job_data;
     }
 
@@ -116,7 +112,6 @@ class JobInformationEntity extends GeneralDataEntity
         $job_data['JobNature'] = addslashes($this->JobNature);
         $job_data['ApplyingProcedure'] = (string)$this->ApplyingProcedure;
         $job_data['PublishDate'] = (string)$this->PublishDate;
-        $job_data['JobCircularImagePath'] = addslashes($this->JobCircularImagePath);
         return $job_data;
     }
 }

@@ -97,11 +97,11 @@ class JobInformation_model extends GeneralData_model {
         $data['JobNature'] = $this->input->post('JobNature');
         $data['ApplicationDeadline'] = $this->input->post('ApplicationDeadline');
         $data['PublishDate'] = $this->input->post('PublishDate');
-        $data['JobCircularImagePath'] = $this->input->post('JobCircularImagePath');
         $data['ApplyingProcedure'] = $this->input->post('ApplyingProcedure');
         $data['CreatedBy'] = $userID;
         $job_information_entity = new JobInformationEntity($data);
         $job_information_data = $job_information_entity->getJobEntityForCreate();
+        $job_information_data['IsActive'] = $this->input->post('IsActive');
 
         if (empty($job_information_data)) {
             return $this->prepareErrorResponse(ERROR_INVALID_EMAIL_ID);
@@ -223,7 +223,6 @@ class JobInformation_model extends GeneralData_model {
         $data['JobNature'] = $this->input->post('JobNature');
         $data['ApplicationDeadline'] = $this->input->post('ApplicationDeadline');
         $data['PublishDate'] = $this->input->post('PublishDate');
-        $data['JobCircularImagePath'] = 'JobCircularImagePath';
         $data['ApplyingProcedure'] = $this->input->post('ApplyingProcedure');
         $data['CreatedBy'] = $userID;
 
@@ -234,8 +233,8 @@ class JobInformation_model extends GeneralData_model {
         }
 
         $job_information_entity = new JobInformationEntity($data);
-
         $job_information_data = $job_information_entity->getJobEntityForUpdate();
+        $job_information_data['IsActive'] = $this->input->post('IsActive');
 
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
 
