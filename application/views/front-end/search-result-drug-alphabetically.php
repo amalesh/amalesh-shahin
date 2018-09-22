@@ -10,10 +10,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="add-brand-page-inner-left-523x52"></div>
+                <ul class="rslides add-brand-page-inner-left-523x52"></ul>
             </div>
             <div class="col-md-6">
-                <div class="add-brand-page-inner-right-523x52"></div>
+                <ul class="rslides add-brand-page-inner-right-523x52"></ul>
             </div>
         </div>
         <div class="row">

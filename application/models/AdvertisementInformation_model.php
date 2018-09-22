@@ -36,6 +36,7 @@ class AdvertisementInformation_model extends GeneralData_model {
         $data['CreatedBy'] = $userID;
         $advertisement_information_entity = new AdvertisementInformationEntity($data);
         $advertisement_information_data = $advertisement_information_entity->getAdvertisementInformationEntityForCreate();
+        $advertisement_information_data['IsActive'] = $this->input->post('IsActive');
 
         if (empty($advertisement_information_data)) {
             return $this->prepareErrorResponse(ERROR_INVALID_EMAIL_ID);
@@ -47,9 +48,9 @@ class AdvertisementInformation_model extends GeneralData_model {
             $this->load->model('AdvertisementPositionInformation_model');
             $advertisement_position_detail = $this->AdvertisementPositionInformation_model->getAdvertisementPositionDetail($data['AdvertisementPositionID']);
             if (isset($_FILES["ImagePath"]) && $_FILES["ImagePath"]['tmp_name'] && $advertisement_position_detail['ID']){
-                $max_width = $advertisement_position_detail['ImageWidth'];
-                $max_height = $advertisement_position_detail['ImageHeight'];
-                $upload_data = $this->util->upload('AdvertisementImages', 'ImagePath', $max_width, $max_height, 0);
+//                $max_width = $advertisement_position_detail['ImageWidth'];
+//                $max_height = $advertisement_position_detail['ImageHeight'];
+                $upload_data = $this->util->upload('AdvertisementImages', 'ImagePath', 0, 0, 0);
                 if ($upload_data) {
                     $data = array();
                     $data['ImagePath'] = $upload_data['file_name'];
@@ -114,7 +115,7 @@ class AdvertisementInformation_model extends GeneralData_model {
         return $this->prepareErrorResponse(ERROR_INVALID_REQUEST);
     }
 
-    public function updateInformation() {
+    public function updateAdvertisementInformation($userID) {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $advertisement_id = $this->input->get('AdvertisementID');
         if (empty($advertisement_id)) {
@@ -132,6 +133,7 @@ class AdvertisementInformation_model extends GeneralData_model {
         $data['ContactPerson'] = $this->input->post('ContactPerson');
         $data['EmailID'] = $this->input->post('EmailID');
         $data['MobileNo'] = $this->input->post('MobileNo');
+        $data['CreatedBy'] = $userID;
 
         $require_fields = array('Organization', 'PublishDate', 'UnpublishedDate', 'AdvertisementPositionID');
         $check_require_field_erro = $this->checkRequireFilds($require_fields, 'post');
@@ -140,8 +142,8 @@ class AdvertisementInformation_model extends GeneralData_model {
         }
 
         $advertisement_information_entity = new AdvertisementInformationEntity($data);
-
         $advertisement_information_data = $advertisement_information_entity->getAdvertisementInformationEntityForUpdate();
+        $advertisement_information_data['IsActive'] = $this->input->post('IsActive');
 
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
 
@@ -151,9 +153,9 @@ class AdvertisementInformation_model extends GeneralData_model {
             $this->load->model('AdvertisementPositionInformation_model');
             $advertisement_position_detail = $this->AdvertisementPositionInformation_model->getAdvertisementPositionDetail($data['AdvertisementPositionID']);
             if (isset($_FILES["ImagePath"]) && $_FILES["ImagePath"]['tmp_name'] && $advertisement_position_detail['ID']){
-                $max_width = $advertisement_position_detail['ImageWidth'];
-                $max_height = $advertisement_position_detail['ImageHeight'];
-                $upload_data = $this->util->upload('AdvertisementImages', 'ImagePath', $max_width, $max_height, 0);
+//                $max_width = $advertisement_position_detail['ImageWidth'];
+//                $max_height = $advertisement_position_detail['ImageHeight'];
+                $upload_data = $this->util->upload('AdvertisementImages', 'ImagePath', 0, 0, 0);
                 if ($upload_data) {
                     $data = array();
                     $data['ImagePath'] = $upload_data['file_name'];

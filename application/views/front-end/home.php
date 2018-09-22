@@ -2,10 +2,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="add-home-page-inner-left-523x52"></div>
+                <ul class="rslides add-home-page-inner-left-523x52"></ul>
             </div>
             <div class="col-md-6">
-                <div class="add-home-page-inner-right-523x52"></div>
+                <ul class="rslides add-home-page-inner-right-523x52"></ul>
             </div>
         </div>
         <div class="row">
@@ -77,7 +77,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="add-home-page-bottom-left-823x115"></div>
+                        <ul class="rslides add-home-page-bottom-left-823x115"></ul>
                     </div>
                 </div>
                 <div class="row">
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="add-home-page-top-right-305x355"></div>
+                <ul class="rslides add-home-page-top-right-305x355"></ul>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>

@@ -37,10 +37,10 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="add-job-page-inner-left-523x52"></div>
+                <ul class="rslides add-job-page-inner-left-523x52"></ul>
             </div>
             <div class="col-md-6">
-                <div class="add-job-page-inner-right-523x52"></div>
+                <ul class="rslides add-job-page-inner-right-523x52"></ul>
             </div>
         </div>
         <div class="row">
@@ -73,12 +73,12 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-ne
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="add-job-page-bottom-left-823x115"></div>
+                        <ul class="rslides add-job-page-bottom-left-823x115"></ul>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="add-job-page-top-right-340x355"></div>
+                <ul class="rslides add-job-page-top-right-340x355"></ul>
                 <div class="sidebar-news">
                     <h4 class="title">JOB CIRCULAR</h4>
                     <ul class="list-inline sidebar-jobs"></ul>

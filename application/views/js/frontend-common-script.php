@@ -116,19 +116,17 @@
                     if (advertisementData.length) {
                         var position_class_name = advertisementData[0].ClassName;
                         var interval = advertisementData[0].Interval;
-                        console.log('Class Name: '+position_class_name);
-                        $('.'+position_class_name).show();
-                        $('div.'+position_class_name).html('');
+                        $("ul."+position_class_name).html('');
                         for (var advertisement_no = 0; advertisement_no < advertisementData.length; advertisement_no++) {
-                            if (advertisementData[advertisement_no].LinkURL) {
-                                $('div.'+position_class_name).append('<div><a href="'+advertisementData[advertisement_no].LinkURL+'" terget="_blank"><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></a></div>');
-                            } else {
-                                $('div.'+position_class_name).append('<div><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'"></div>');
-                            }
+                            $('ul.'+position_class_name).append('<li><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'" alt=""></li>');
                         }
 
-                        $('div.'+position_class_name+" > div:gt(0)").hide();
-                        setInterval(frontendCommonMethods.setAdvertisementInterval, interval * 1000, position_class_name);
+                        $("ul."+position_class_name).responsiveSlides({
+                            auto: true,
+                            timeout: interval * 1000
+                        });
+
+                        $('ul.'+position_class_name).show();
                     }
                 });
             }

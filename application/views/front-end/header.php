@@ -38,7 +38,8 @@
     <script src="<?php echo base_url().'application/views/';?>js/common-script.js"></script>
     <script src="<?php echo base_url().'application/views/';?>js/popup-script.js"></script>
     <script src="<?php echo base_url().'application/views/';?>js/ajax-call.js"></script>
-
+    <link rel="stylesheet" href="<?php echo base_url().'application/views/plugins/responsive_slides/responsiveslides.css';?>">
+    <script src="<?php echo base_url().'application/views/plugins/responsive_slides/responsiveslides.min.js';?>"></script>
 </head>
 <body>
 
