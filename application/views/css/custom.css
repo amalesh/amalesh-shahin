@@ -268,7 +268,7 @@ a.btn.btn-s.float-right {
 .add-doctor-page-inner-right-523x52,
 .add-about-us-page-inner-left-523x52,
 .add-about-us-page-inner-right-523x52 {
-    margin: 40px 0;
+    margin: 40px 0 !important;
 }
 
 .add-home-page-bottom-left-823x115,
@@ -282,7 +282,7 @@ a.btn.btn-s.float-right {
 .add-address-page-bottom-left-823x115,
 .add-doctor-page-bottom-left-823x115,
 .add-about-us-page-bottom-left-823x115 {
-    margin: 60px 0;
+    margin: 60px 0 !important;
 }
 
 .product-add-2 {
@@ -905,6 +905,10 @@ ul.alpha-list li a:hover{
 }
 ul.alpha-list span.separator{
     border-right: 1px solid #A6A8AB;
+}
+.news-list .job .see-more img{
+    width: 100px;
+    height: 75px;
 }
 /*div.add-home-page-top-right-305x355,*/
 /*div.add-bottom-left-823x115 {*/
