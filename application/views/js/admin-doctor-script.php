@@ -254,6 +254,9 @@
                 return false;
             }
 
+            var new_location_added = false;
+            if ($('#ChamberAddressID') == '') new_location_added = true;
+            if ($('#HomeAddressID') == '') new_location_added = true;
             $.ajax({
                 url         : formURL,
                 data        : postData,
@@ -267,6 +270,9 @@
                 },
                 success:function(serverResponse, textStatus, jqXHR)
                 {
+                    if (new_location_added) {
+                        doctorObject.getAllLocationDate();
+                    }
                     var data = serverResponse.response;
                     if (data) {
                         if (data.error_msg != ''){

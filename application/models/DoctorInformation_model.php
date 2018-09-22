@@ -27,7 +27,7 @@ class DoctorInformation_model extends GeneralData_model {
         $data['Specialization'] = $this->input->post('Specialization');
         $data['ProfessionDegree'] = $this->input->post('ProfessionDegree');
         $data['Gender'] = $this->input->post('Gender');
-        $data['ImagePath'] = $this->input->post('ImagePath');
+//        $data['ImagePath'] = $this->input->post('ImagePath');
         $data['HomeAddressID'] = $this->input->post('HomeAddressID');
         if (empty($data['HomeAddressID'])) {
             $location_data = array();
@@ -66,6 +66,7 @@ class DoctorInformation_model extends GeneralData_model {
         $data['CreatedBy'] = $userID;
         $doctor_information_entity = new DoctorInformationEntity($data);
         $doctor_information_data = $doctor_information_entity->getDoctorEntityForCreate();
+        $doctor_information_data['IsActive'] = $this->input->post('IsActive');
 
         log_message('debug', __METHOD__.'#'.__LINE__.' Doctor Data: '.print_r($data, true));
         if($this->db->insert('doctorinformation', $doctor_information_data)) {
@@ -106,6 +107,7 @@ class DoctorInformation_model extends GeneralData_model {
         $this->db->select("d.MobileNo2");
         $this->db->select("d.MobileNo3");
         $this->db->select("d.Hotline");
+        $this->db->select("d.IsActive");
         $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
         $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
         $this->db->select("cc.Name AS cCountryName");
@@ -143,6 +145,7 @@ class DoctorInformation_model extends GeneralData_model {
         $this->db->select("d.MobileNo2");
         $this->db->select("d.MobileNo3");
         $this->db->select("d.Hotline");
+        $this->db->select("d.IsActive");
         $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
         $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
         $this->db->select("cc.Name AS cCountryName");
@@ -198,6 +201,7 @@ class DoctorInformation_model extends GeneralData_model {
             $this->db->select("d.Hotline");
             $this->db->select("d.ChamberAddressID");
             $this->db->select("d.HomeAddressID");
+            $this->db->select("d.IsActive");
             $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
             $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
             $this->db->select("cc.Name AS cCountryName");
@@ -237,7 +241,8 @@ class DoctorInformation_model extends GeneralData_model {
         $data['Specialization'] = $this->input->post('Specialization');
         $data['ProfessionDegree'] = $this->input->post('ProfessionDegree');
         $data['Gender'] = $this->input->post('Gender');
-        $data['ImagePath'] = $this->input->post('ImagePath');
+//        $data['ImagePath'] = $this->input->post('ImagePath');
+        $data['HomeAddressID'] = $this->input->post('HomeAddressID');
         if (empty($data['HomeAddressID'])) {
             $location_data = array();
             $location_data['CountryID'] = $this->input->post('HomeCountryID');
@@ -282,7 +287,7 @@ class DoctorInformation_model extends GeneralData_model {
 
         $doctor_information_entity = new DoctorInformationEntity($data);
         $doctor_information_data = $doctor_information_entity->getDoctorEntityForUpdate();
-
+        $doctor_information_data['IsActive'] = $this->input->post('IsActive');
         $this->db->set($doctor_information_data);
         $this->db->where('ID', $doctor_id);
         if($this->db->update('doctorinformation')) {
@@ -332,6 +337,7 @@ class DoctorInformation_model extends GeneralData_model {
         $this->db->select("d.MobileNo2");
         $this->db->select("d.MobileNo3");
         $this->db->select("d.Hotline");
+        $this->db->select("d.IsActive");
         $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
         $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
         $this->db->select("cc.Name AS cCountryName");

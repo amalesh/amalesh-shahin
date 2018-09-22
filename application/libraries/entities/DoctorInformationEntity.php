@@ -9,7 +9,6 @@ class DoctorInformationEntity extends GeneralDataEntity
     public $Specialization;
     public $ProfessionDegree;
     public $Gender;
-    public $ImagePath;
     public $HomeAddressID;
     public $ChamberAddressID;
     public $PhoneNo;
@@ -26,7 +25,6 @@ class DoctorInformationEntity extends GeneralDataEntity
             $this->Specialization = $data['Specialization'];
             $this->ProfessionDegree = $data['ProfessionDegree'];
             $this->Gender = $data['Gender'];
-            $this->ImagePath = $data['ImagePath'];
             $this->HomeAddressID = $data['HomeAddressID'];
             $this->ChamberAddressID = $data['ChamberAddressID'];
             $this->PhoneNo = $data['PhoneNo'];
@@ -44,7 +42,6 @@ class DoctorInformationEntity extends GeneralDataEntity
         $doctor_data['Specialization'] = addslashes($this->Specialization);
         $doctor_data['ProfessionDegree'] = addslashes($this->ProfessionDegree);
         $doctor_data['Gender'] = (string)$this->Gender;
-        $doctor_data['ImagePath'] = (string)$this->ImagePath;
         $doctor_data['HomeAddressID'] = intval($this->HomeAddressID);
         $doctor_data['ChamberAddressID'] = intval($this->ChamberAddressID);
         $doctor_data['PhoneNo'] = (string)$this->PhoneNo;
@@ -62,7 +59,6 @@ class DoctorInformationEntity extends GeneralDataEntity
         $doctor_data['Specialization'] = addslashes($this->Specialization);
         $doctor_data['ProfessionDegree'] = addslashes($this->ProfessionDegree);
         $doctor_data['Gender'] = (string)$this->Gender;
-        $doctor_data['ImagePath'] = (string)$this->ImagePath;
         $doctor_data['HomeAddressID'] = intval($this->HomeAddressID);
         $doctor_data['ChamberAddressID'] = intval($this->ChamberAddressID);
         $doctor_data['PhoneNo'] = (string)$this->PhoneNo;
@@ -79,7 +75,6 @@ class DoctorInformationEntity extends GeneralDataEntity
         $doctor_data['Specialization'] = addslashes($this->Specialization);
         $doctor_data['ProfessionDegree'] = addslashes($this->ProfessionDegree);
         $doctor_data['Gender'] = (string)$this->Gender;
-        $doctor_data['ImagePath'] = (string)$this->ImagePath;
         $doctor_data['HomeAddressID'] = intval($this->HomeAddressID);
         $doctor_data['ChamberAddressID'] = intval($this->ChamberAddressID);
         $doctor_data['PhoneNo'] = (string)$this->PhoneNo;
