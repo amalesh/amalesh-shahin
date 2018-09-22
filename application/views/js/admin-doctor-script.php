@@ -194,7 +194,7 @@
         showDoctorEditModal: function (doctorID) {
             console.log('Method Name: doctorObject.showDoctorEditModal');
             doctorObject.activebDoctorID = doctorID;
-            var formURL = "<?php echo site_url('Doctor/getDoctorInformation')?>?DoctorID="+doctorID;
+            var formURL = "<?php echo site_url('Doctor/getDoctorDetailInformation')?>?DoctorID="+doctorID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'doctorObject.showDoctorEditModal', function(doctorData){
                 $('#DoctorName').val(doctorData.Name);
                 $('#Specialization').val(doctorData.Specialization);
@@ -208,7 +208,7 @@
                 $('#HomeAddress').val('');
                 $('#HomeLongitude').val('');
                 $('#HomeLatitude').val('');
-                $('#ChamberAddressDetail').val('');
+                $('#ChamberAddressID').val(doctorData.ChamberAddressID);
                 $('#ChamberCountryID').val('');
                 $('#ChamberStateID').val('');
                 $('#ChamberCityID').val('');

@@ -206,7 +206,7 @@ class NewsInformation_model extends GeneralData_model {
         $data['ImagePath'] = $this->input->post('NewsImagePath');
         $data['CreatedBy'] = $userID;
 
-        $require_fields = array('Title', 'Description', 'Organization', 'Position', 'UnpublishedDateTime', 'PublishDateTime');
+        $require_fields = array('Title', 'Description');
         $check_require_field_erro = $this->checkRequireFilds($require_fields, 'post');
         if ($check_require_field_erro != NO_ERROR) {
             return $this->prepareErrorResponse($check_require_field_erro);

@@ -192,9 +192,11 @@
                 for(var i = 0; i < manufacturerData.length; i++) {
                     manufacturer_tr_text = '<tr class="table-row">' +
                         '<td><a class="link" onclick="manufacturerObject.showManufacturerEditModal('+manufacturerData[i].ID+')">'+manufacturerData[i].Name+'</a></td>' +
+                        '<td>'+manufacturerData[i].EmailID+'</a></td>' +
+                        '<td>'+manufacturerData[i].PhoneNo+'</a></td>' +
                         '<td>' +
                         '<div class="actions">' +
-                        '<a onclick="manufacturerObject.showManufacturerEditModal('+manufacturerData[i].ID+',\''+manufacturerData[i].Name+'\')"><img src="<?php echo base_url();?>application/views/images/svg/edit-regular.svg"></a>' +
+                        '<a onclick="manufacturerObject.showManufacturerEditModal('+manufacturerData[i].ID+')"><img src="<?php echo base_url();?>application/views/images/svg/edit-regular.svg"></a>' +
                         '<a onclick="manufacturerObject.deleteManufacturer('+manufacturerData[i].ID+')" class="delete"><img src="<?php echo base_url();?>application/views/images/svg/trash-alt-regular.svg"></a>' +
                         '</div>' +
                         '</td>' +

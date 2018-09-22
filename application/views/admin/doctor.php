@@ -164,7 +164,7 @@
                             <span>Address</span>
                         </label>
                         <div class="col-md-6">
-                            <textarea id="HomeAddress" rows="6" class="form-control" type="text" maxlength="500" name="Address"></textarea>
+                            <textarea id="HomeAddress" rows="6" class="form-control" type="text" maxlength="500" name="HomeAddress"></textarea>
                         </div>
                     </div>
                     <div class="form-group home-new-address">
@@ -228,7 +228,7 @@
                             <span>Address</span>
                         </label>
                         <div class="col-md-6">
-                            <textarea id="ChamberAddress" rows="6" class="form-control" type="text" maxlength="500" name="Address"></textarea>
+                            <textarea id="ChamberAddress" rows="6" class="form-control" type="text" maxlength="500" name="ChamberAddress"></textarea>
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">

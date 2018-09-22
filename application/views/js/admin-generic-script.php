@@ -23,7 +23,7 @@
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'genericObject.showGenericEditModal', function(genericData){
                 $('#GenericName').val(genericData.Name);
                 $('#Classification').val(genericData.Classification);
-                $('#SafetyRemark').val(drugData.SafetyRemark);
+                $('#SafetyRemark').val(genericData.SafetyRemark);
                 $('#Indication').val(genericData.Indication);
                 $('#DosageAdministration').val(genericData.DosageAdministration);
                 $('#ContraindicationPrecaution').val(genericData.ContraindicationPrecaution);

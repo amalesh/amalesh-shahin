@@ -196,6 +196,8 @@ class DoctorInformation_model extends GeneralData_model {
             $this->db->select("d.MobileNo2");
             $this->db->select("d.MobileNo3");
             $this->db->select("d.Hotline");
+            $this->db->select("d.ChamberAddressID");
+            $this->db->select("d.HomeAddressID");
             $this->db->select("CONCAT(cl.Address, ', City: ', cci.Name, ', State: ', cs.Name, ', Country:', cc.Name) AS ChamberAddress");
             $this->db->select("CONCAT(hl.Address, ', City: ', hci.Name, ', State: ', hs.Name, ', Country:', hc.Name) AS HomeAddress");
             $this->db->select("cc.Name AS cCountryName");
@@ -213,8 +215,10 @@ class DoctorInformation_model extends GeneralData_model {
             $this->db->join('country AS hc', 'hl.CountryID = hc.ID', 'left');
             $this->db->join('state AS hs', 'hl.StateID = hs.ID', 'left');
             $this->db->join('city AS hci', 'hl.CityID = hci.ID', 'left');
+            $this->db->where('d.ID', $doctor_id);
             $this->db->limit(1);
             $doctor_information = $this->db->get()->result_array();
+//            echo $this->db->last_query();
             return isset($doctor_information[0]['ID']) ? $doctor_information[0] : array();
         }
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
