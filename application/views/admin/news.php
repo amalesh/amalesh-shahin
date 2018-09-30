@@ -74,30 +74,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="NewsTitle" name="Title" required>
+                            <span class="news-title-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Description </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <textarea id="NewsDescription" name="Description" rows="6" class="form-control" type="text" maxlength="500"></textarea>
+                            <span class="news-description-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Publish Date </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="NewsPublishDate" name="PublishDate" required class="date-field">
+                            <span class="news-publish-date-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Unpublished Date </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="NewsUnpublishedDate" name="UnpublishedDate" required class="date-field">
+                            <span class="news-unpublished-date-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -107,6 +114,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="NewsImagePath" name="NewsImagePath" type="file" onchange="newsObject.setNewsImagePathThumbnail(this, 'NewsImagePathThumbnail')" />
+                            <span class="news-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

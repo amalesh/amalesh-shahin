@@ -73,6 +73,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="GenericName" name="GenericName" required>
+                            <span class="generic-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -81,7 +82,8 @@
                             <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
-                            <input id="Classification" name="Classification" required maxlength="100"></input>
+                            <input id="Classification" name="Classification" required maxlength="100">
+                            <span class="classification-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -90,7 +92,8 @@
                             <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
-                            <input id="SafetyRemark" name="SafetyRemark" required maxlength="100"></input>
+                            <input id="SafetyRemark" name="SafetyRemark" required maxlength="100">
+                            <span class="safety-remark-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

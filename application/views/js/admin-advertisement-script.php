@@ -3,6 +3,36 @@
     var advertisementObject = {
         activebAdvertisementID: '',
         allExistingPosition: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#AdvertisementOrganization').val()) {
+                is_valid = false;
+                $('.advertisement-organization-require-message').show();
+            }
+            if ($('#AdvertisementPositionID').val()) {
+                is_valid = false;
+                $('.advertisement-position-require-message').show();
+            }
+            if ($('#AdvertisementImagePath').val()) {
+                is_valid = false;
+                $('.advertisement-image-path-require-message').show();
+            }
+            if ($('#AdvertisementTitle').val()) {
+                is_valid = false;
+                $('.advertisement-title-require-message').show();
+            }
+            if ($('#AdvertisementPublishDate').val()) {
+                is_valid = false;
+                $('.advertisement-publish-date-require-message').show();
+            }
+            if ($('#AdvertisementUnpublishedDate').val()) {
+                is_valid = false;
+                $('.advertisement-unpublished-date-require-message').show();
+            }
+
+            return is_valid;
+        },
         initAdvertisementPage: function() {
             var today = new Date((new Date()).setHours(0, 0, 0, 0));
             $('.date-field').datepicker({
@@ -65,6 +95,7 @@
         },
         showAdvertisementCreateModal: function () {
             advertisementObject.activebAdvertisementID = '';
+            $('.error-message').hide();
             $('#advertisement_modal').html('Create');
             $('#AdvertisementOrganization').val('');
             $('#AdvertisementPositionID').val('');
@@ -83,10 +114,29 @@
             advertisementObject.changeAdvertisementPosition('');
             $('#addAdvertisementModal').modal('show');
         },
-        showAdvertisementEditModal: function (advertisementID, advertisementName) {
+        showAdvertisementEditModal: function (advertisementID) {
             advertisementObject.activebAdvertisementID = advertisementID;
+            $('.error-message').hide();
             $('#advertisement_modal').html('Update');
-            $('#AdvertisementName').val(advertisementName);
+            addressObject.activebAddressID = addressID;
+            var formURL = "<?php echo site_url('Advertisement/getAdvertisementDetailInformation')?>?AdvertisementID="+advertisementID;
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'advertisementObject.showAdvertisementEditModal', function(advertisementData){
+                $('#AdvertisementOrganization').val(advertisementData.Organization);
+                $('#AdvertisementPositionID').val(advertisementData.AdvertisementPositionID);
+                $('#AdvertisementImagePath').val(advertisementData.ImagePath);
+                $('#AdvertisementImagePathThumbnail').attr('src', '<?php echo base_url();?>AdvertisementImages/'+advertisementData.ImagePath);
+                $('#AdvertisementTitle').val(advertisementData.Title);
+                $('#AdvertisementBodyText').val(advertisementData.BodyText);
+                $('#AdvertisementLinkURL').val(advertisementData.LinkURL);
+                $('#AdvertisementPublishDate').val(advertisementData.PublishDate);
+                $('#AdvertisementUnpublishedDate').val(advertisementData.UnpublishedDate);
+                $('#AdvertisementContactPerson').val(advertisementData.ContactPerson);
+                $('#AdvertisementEmailID').val(advertisementData.EmailID);
+                $('#AdvertisementMobileNo').val(advertisementData.MobileNo);
+                $("#AdvertisementIsActiveNo").prop("checked", true);
+                advertisementObject.changeAdvertisementPosition(advertisementData.AdvertisementPositionID);
+            });
+
             $('#addAdvertisementModal').modal('show');
         },
         deleteAdvertisement: function (advertisementID) {
@@ -103,6 +153,8 @@
             });
         },
         submitAdvertisementModal: function () {
+            var is_valid = advertisementObject.validateForm();
+            if (!is_valid) return;
             $('#addAdvertisementModal').modal('hide');
             var formURL = advertisementObject.activebAdvertisementID == '' ? "<?php echo site_url('Advertisement/addAdvertisement');?>" : "<?php echo site_url('Advertisement/updateAdvertisement');?>?AdvertisementID="+advertisementObject.activebAdvertisementID;
             var form = $('form#addNewAdvertisement');

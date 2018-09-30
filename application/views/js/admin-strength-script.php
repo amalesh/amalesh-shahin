@@ -2,14 +2,20 @@
 <script>
     var strengthObject = {
         activebStrengthID: '',
+        validateForm: function() {
+            var is_valid = true;
+            return is_valid;
+        },
         showStrengthCreateModal: function () {
             strengthObject.activebStrengthID = '';
+            $('.error-message').hide();
             $('#strength_modal').html('Create');
             $('#StrengthName').val('');
             $('#addStrengthModal').modal('show');
         },
         showStrengthEditModal: function (strengthID, strengthName) {
             strengthObject.activebStrengthID = strengthID;
+            $('.error-message').hide();
             $('#strength_modal').html('Update');
             $('#StrengthName').val(strengthName);
             $('#addStrengthModal').modal('show');
@@ -28,6 +34,8 @@
             });
         },
         submitStrengthModal: function () {
+            var is_valid = strengthObject.validateForm();
+            if (!is_valid) return;
             $('#addStrengthModal').modal('hide');
             var formURL = strengthObject.activebStrengthID == '' ? "<?php echo site_url('Strength/addStrength');?>" : "<?php echo site_url('Strength/updateStrength');?>?StrengthID="+strengthObject.activebStrengthID;
             var postData = $('form#addNewStrength').serializeArray();

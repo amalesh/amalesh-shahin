@@ -78,6 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="JobTitle" name="Title" required>
+                            <span class="job-title-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,38 +88,47 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="JobOrganization" name="Organization" required>
+                            <span class="job-organization-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Description </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <textarea id="JobDescription" name="Description" rows="6" class="form-control" type="text" maxlength="500"></textarea>
+                            <span class="job-description-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Position </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="JobPosition" name="Position" required>
+                            <span class="job-position-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Application Deadline </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="JobApplicationDeadline" name="ApplicationDeadline" required class="date-field">
+                            <span class="job-application-deadline-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Publish Date </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="JobPublishDate" name="PublishDate" required class="date-field">
+                            <span class="job-publish-date-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -128,6 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="JobCircularImagePath" name="JobCircularImagePath" type="file" onchange="jobObject.setJobImagePathThumbnail(this, 'JobCircularImagePathThumbnail')" />
+                            <span class="job-circular-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -141,7 +152,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Salary </span>
-                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="JobSalary" name="Salary" required class="date-field">
@@ -150,7 +160,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Educational Requirement </span>
-                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <textarea id="JobEducationalRequirement" name="EducationalRequirement" rows="6" class="form-control" type="text" maxlength="500"></textarea>

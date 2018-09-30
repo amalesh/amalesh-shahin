@@ -2,14 +2,26 @@
 <script>
     var safetyRemarksObject = {
         activebSafetyRemarksID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#SafetyRemark').val()) {
+                is_valid = false;
+                $('.safety-remark-require-message').show();
+            }
+
+            return is_valid;
+        },
         showSafetyRemarksCreateModal: function () {
             safetyRemarksObject.activebSafetyRemarksID = '';
+            $('.error-message').hide();
             $('#safetyremarks_modal').html('Create');
             $('#SafetyRemark').val('');
             $('#addSafetyRemarksModal').modal('show');
         },
         showSafetyRemarksEditModal: function (safetyremarksID, safetyremark) {
             safetyRemarksObject.activebSafetyRemarksID = safetyremarksID;
+            $('.error-message').hide();
             $('#safetyremarks_modal').html('Update');
             $('#SafetyRemark').val(safetyremark);
             $('#addSafetyRemarksModal').modal('show');
@@ -28,6 +40,8 @@
             });
         },
         submitSafetyRemarksModal: function () {
+            var is_valid = safetyRemarksObject.validateForm();
+            if (!is_valid) return;
             $('#addSafetyRemarksModal').modal('hide');
             var formURL = safetyRemarksObject.activebSafetyRemarksID == '' ? "<?php echo site_url('SafetyRemarks/addSafetyRemarks');?>" : "<?php echo site_url('SafetyRemarks/updateSafetyRemarks');?>?SafetyRemarksID="+safetyRemarksObject.activebSafetyRemarksID;
             var postData = $('form#addNewSafetyRemarks').serializeArray();

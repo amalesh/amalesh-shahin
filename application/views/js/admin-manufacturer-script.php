@@ -3,6 +3,35 @@
     var manufacturerObject = {
         activeManufacturerID: '',
         allExistingLocation: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#ManufacturerName').val()) {
+                is_valid = false;
+                $('.manufacturer-name-require-message').show();
+            }
+
+            if($('#ManufacturerAddressID').val() == '') {
+                if ($('#ManufacturerCountryID').val()) {
+                    is_valid = false;
+                    $('.manufacturer-country-require-message').show();
+                }
+                if ($('#ManufacturerStateID').val()) {
+                    is_valid = false;
+                    $('.manufacturer-state-require-message').show();
+                }
+                if ($('#ManufacturerCityID').val()) {
+                    is_valid = false;
+                    $('.manufacturer-city-require-message').show();
+                }
+                if ($('#ManufacturerAddress').val()) {
+                    is_valid = false;
+                    $('.manufacturer-address-require-message').show();
+                }
+            }
+
+            return is_valid;
+        },
         initManufacturerAdminPage: function() {
             console.log('Method Name: manufacturerObject.initManufacturerAdminPage');
             manufacturerObject.getAllExistingLocation();
@@ -103,6 +132,7 @@
         },
         showManufacturerCreateModal: function () {
             console.log('Method Name: manufacturerObject.showManufacturerCreateModal');
+            $('.error-message').hide();
             manufacturerObject.activebManufacturerID = '';
             $('#manufacturer_modal').html('Create');
             $('#ManufacturerName').val('');
@@ -124,6 +154,7 @@
         },
         showManufacturerEditModal: function (manufacturerID) {
             console.log('Method Name: manufacturerObject.showManufacturerEditModal');
+            $('.error-message').hide();
             manufacturerObject.activebManufacturerID = manufacturerID;
             var formURL = "<?php echo site_url('Manufacturer/getManufacturerInformation')?>?ManufacturerInformationID="+manufacturerID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'manufacturerObject.showManufacturerEditModal', function(manufacturerData){
@@ -165,6 +196,8 @@
         },
         submitManufacturerModal: function () {
             console.log('Method Name: manufacturerObject.submitManufacturerModal');
+            var is_valid = manufacturerObject.validateForm();
+            if (!is_valid) return;
             $('#addManufacturerModal').modal('hide');
             var formURL = manufacturerObject.activebManufacturerID == '' ? "<?php echo site_url('Manufacturer/addManufacturer');?>" : "<?php echo site_url('Manufacturer/updateManufacturer');?>?ManufacturerID="+manufacturerObject.activebManufacturerID;
             var postData = $('form#addNewManufacturer').serializeArray();

@@ -2,14 +2,26 @@
 <script>
     var packSizeObject = {
         activebPackSizeID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#PackSizeName').val()) {
+                is_valid = false;
+                $('.pack-size-name-require-message').show();
+            }
+
+            return is_valid;
+        },
         showPackSizeCreateModal: function () {
             packSizeObject.activebPackSizeID = '';
+            $('.error-message').hide();
             $('#packsize_modal').html('Create');
             $('#PackSizeName').val('');
             $('#addPackSizeModal').modal('show');
         },
         showPackSizeEditModal: function (packsizeID, packsizeName) {
             packSizeObject.activebPackSizeID = packsizeID;
+            $('.error-message').hide();
             $('#packsize_modal').html('Update');
             $('#PackSizeName').val(packsizeName);
             $('#addPackSizeModal').modal('show');
@@ -28,6 +40,8 @@
             });
         },
         submitPackSizeModal: function () {
+            var is_valid = packSizeObject.validateForm();
+            if (!is_valid) return;
             $('#addPackSizeModal').modal('hide');
             var formURL = packSizeObject.activebPackSizeID == '' ? "<?php echo site_url('PackSize/addPackSize');?>" : "<?php echo site_url('PackSize/updatePackSize');?>?PackSizeID="+packSizeObject.activebPackSizeID;
             var postData = $('form#addNewPackSize').serializeArray();

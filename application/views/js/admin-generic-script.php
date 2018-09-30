@@ -2,8 +2,27 @@
 <script>
     var genericObject = {
         activebGenericID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#GenericName').val()) {
+                is_valid = false;
+                $('.generic-name-require-message').show();
+            }
+            if ($('#Classification').val()) {
+                is_valid = false;
+                $('.classification-require-message').show();
+            }
+            if ($('#SafetyRemark').val()) {
+                is_valid = false;
+                $('.safety-remark-require-message').show();
+            }
+
+            return is_valid;
+        },
         showGenericCreateModal: function () {
             genericObject.activebGenericID = '';
+            $('.error-message').hide();
             $('#generic_modal').html('Create');
             $('#GenericName').val('');
             $('#Classification').val('');
@@ -17,6 +36,7 @@
         },
         showGenericEditModal: function (genericID, genericName) {
             console.log('Method Name: productObject.showProductEditModal');
+            $('.error-message').hide();
             genericObject.activebGenericID = genericID;
             $('#generic_modal').html('Update');
             var formURL = "<?php echo site_url('Generic/getGenericDetail')?>?GenericID="+genericID;
@@ -46,6 +66,8 @@
             });
         },
         submitGenericModal: function () {
+            var is_valid = genericObject.validateForm();
+            if (!is_valid) return;
             $('#addGenericModal').modal('hide');
             var formURL = genericObject.activebGenericID == '' ? "<?php echo site_url('Generic/addGeneric');?>" : "<?php echo site_url('Generic/updateGeneric');?>?GenericID="+genericObject.activebGenericID;
             var postData = $('form#addNewGeneric').serializeArray();

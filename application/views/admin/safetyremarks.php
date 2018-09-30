@@ -68,6 +68,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="SafetyRemark" name="SafetyRemark" required>
+                            <span class="safety-remark-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

@@ -2,14 +2,26 @@
 <script>
     var dosageFormObject = {
         activebDosageFormID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#DosageFormName').val()) {
+                is_valid = false;
+                $('.dosage-form-name-require-message').show();
+            }
+
+            return is_valid;
+        },
         showDosageFormCreateModal: function () {
             dosageFormObject.activebDosageFormID = '';
+            $('.error-message').hide();
             $('#dosageform_modal').html('Create');
             $('#DosageFormName').val('');
             $('#addDosageFormModal').modal('show');
         },
         showDosageFormEditModal: function (dosageformID, dosageformName) {
             dosageFormObject.activebDosageFormID = dosageformID;
+            $('.error-message').hide();
             $('#dosageform_modal').html('Update');
             $('#DosageFormName').val(dosageformName);
             $('#addDosageFormModal').modal('show');
@@ -28,6 +40,8 @@
             });
         },
         submitDosageFormModal: function () {
+            var is_valid = dosageFormObject.validateForm();
+            if (!is_valid) return;
             $('#addDosageFormModal').modal('hide');
             var formURL = dosageFormObject.activebDosageFormID == '' ? "<?php echo site_url('DosageForm/addDosageForm');?>" : "<?php echo site_url('DosageForm/updateDosageForm');?>?DosageFormID="+dosageFormObject.activebDosageFormID;
             var postData = $('form#addNewDosageForm').serializeArray();

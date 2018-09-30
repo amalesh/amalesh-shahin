@@ -69,6 +69,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="DosageFormName" name="DosageFormName" required>
+                            <span class="dosage-form-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

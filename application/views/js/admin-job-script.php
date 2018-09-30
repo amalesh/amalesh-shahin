@@ -3,6 +3,40 @@
     var jobObject = {
         activebJobID: '',
         allExistingPosition: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#JobTitle').val()) {
+                is_valid = false;
+                $('.job-title-require-message').show();
+            }
+            if ($('#JobOrganization').val()) {
+                is_valid = false;
+                $('.job-organization-require-message').show();
+            }
+            if ($('#JobDescription').val()) {
+                is_valid = false;
+                $('.job-description-require-message').show();
+            }
+            if ($('#JobPosition').val()) {
+                is_valid = false;
+                $('.job-position-require-message').show();
+            }
+            if ($('#JobApplicationDeadline').val()) {
+                is_valid = false;
+                $('.job-application-deadline-require-message').show();
+            }
+            if ($('#JobPublishDate').val()) {
+                is_valid = false;
+                $('.job-publish-date-require-message').show();
+            }
+            if ($('#JobCircularImagePath').val()) {
+                is_valid = false;
+                $('.job-circular-image-path-require-message').show();
+            }
+
+            return is_valid;
+        },
         initJobPage: function() {
             var today = new Date((new Date()).setHours(0, 0, 0, 0));
             $('.date-field').datepicker({
@@ -15,6 +49,7 @@
         },
         showJobCreateModal: function () {
             jobObject.activebJobID = '';
+            $('.error-message').hide();
             $('#job_modal').html('Create');
             $('#JobTitle').val('');
             $('#JobOrganization').val('');
@@ -51,6 +86,8 @@
             });
         },
         submitJobModal: function () {
+            var is_valid = jobObject.validateForm();
+            if (!is_valid) return;
             $('#addJobModal').modal('hide');
             var formURL = jobObject.activebJobID == '' ? "<?php echo site_url('Job/addJob');?>" : "<?php echo site_url('Job/updateJob');?>?JobID="+jobObject.activebJobID;
             var form = $('form#addNewJob');
@@ -122,6 +159,7 @@
         },
         showJobEditModal: function (jobID) {
             console.log('Method Name: jobObject.showJobEditModal');
+            $('.error-message').hide();
             jobObject.activebJobID = jobID;
             var formURL = "<?php echo site_url('Job/getJobDetailInformation')?>?JobID="+jobID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'jobObject.showJobEditModal', function(jobData){

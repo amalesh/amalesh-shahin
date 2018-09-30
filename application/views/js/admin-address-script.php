@@ -3,6 +3,24 @@
     var addressObject = {
         activeAddressID: '',
         allAddressCategories: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#AddressName').val() == '') {
+                $('.address-name-require-message').show();
+                is_valid = false;
+            }
+            if ($('#AddressCategoryID').val() == '') {
+                $('.address-category-require-message').show();
+                is_valid = false;
+            }
+            if ($('#Address').val() == '') {
+                $('.address-detail-require-message').show();
+                is_valid = false;
+            }
+
+            return is_valid;
+        },
         initAddressAdminPage: function() {
             console.log('Method Name: addressObject.initAddressAdminPage');
             addressObject.getAllAddressCategories('');
@@ -27,6 +45,7 @@
         },
         showAddressCreateModal: function () {
             console.log('Method Name: addressObject.showAddressCreateModal');
+            $('.error-message').hide();
             addressObject.activebAddressID = '';
             $('#address_modal').html('Create');
             $('#AddressName').val('');
@@ -38,6 +57,7 @@
         },
         showAddressEditModal: function (addressID) {
             console.log('Method Name: addressObject.showAddressEditModal');
+            $('.error-message').hide();
             addressObject.activebAddressID = addressID;
             var formURL = "<?php echo site_url('Address/getAddressDetail')?>?AddressID="+addressID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'addressObject.showAddressEditModal', function(addressData){
@@ -69,6 +89,8 @@
         },
         submitAddressModal: function () {
             console.log('Method Name: addressObject.submitAddressModal');
+            var is_valid = addressObject.validateForm();
+            if (!is_valid) return;
             $('#addAddressModal').modal('hide');
             var formURL = addressObject.activebAddressID == '' ? "<?php echo site_url('Address/addAddress');?>" : "<?php echo site_url('Address/updateAddress');?>?AddressID="+addressObject.activebAddressID;
             var postData = $('form#addNewAddress').serializeArray();

@@ -2,6 +2,24 @@
 <script>
     var specialReportsObject = {
         activebSpecialReportsID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#SpecialReportsTitle').val()) {
+                is_valid = false;
+                $('.special-reports-title-require-message').show();
+            }
+            if ($('#SpecialReportsLinkAddress').val()) {
+                is_valid = false;
+                $('.special-reports-link-address-require-message').show();
+            }
+            if ($('#SpecialReportsImagePath').val()) {
+                is_valid = false;
+                $('.special-reports-image-path-require-message').show();
+            }
+
+            return is_valid;
+        },
         initSpecialReportsPage: function() {
             var today = new Date((new Date()).setHours(0, 0, 0, 0));
             $('.date-field').datepicker({
@@ -14,6 +32,7 @@
         },
         showSpecialReportsCreateModal: function () {
             specialReportsObject.activebSpecialReportsID = '';
+            $('.error-message').hide();
             $('#specialreports_modal').html('Create');
             $('#SpecialReportsTitle').val('');
             $('#SpecialReportsLinkAddress').val('');
@@ -35,6 +54,8 @@
             });
         },
         submitSpecialReportsModal: function () {
+            var is_valid = specialReportsObject.validateForm();
+            if (!is_valid) return;
             $('#addSpecialReportsModal').modal('hide');
             var formURL = specialReportsObject.activebSpecialReportsID == '' ? "<?php echo site_url('SpecialReports/addSpecialReports');?>" : "<?php echo site_url('SpecialReports/updateSpecialReports');?>?SpecialReportsID="+specialReportsObject.activebSpecialReportsID;
             var form = $('form#addNewSpecialReports');
@@ -103,6 +124,7 @@
         },
         showSpecialReportsEditModal: function (specialreportsID) {
             console.log('Method Name: specialReportsObject.showSpecialReportsEditModal');
+            $('.error-message').hide();
             specialReportsObject.activebSpecialReportsID = specialreportsID;
             var formURL = "<?php echo site_url('SpecialReports/getSpecialReportsDetailInformation')?>?SpecialReportsID="+specialreportsID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'specialReportsObject.showSpecialReportsEditModal', function(specialreportsData){

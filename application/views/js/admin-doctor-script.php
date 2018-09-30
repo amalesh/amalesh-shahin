@@ -3,6 +3,66 @@
     var doctorObject = {
         activeDoctorID: '',
         allExistingLocation: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#DoctorName').val()) {
+                is_valid = false;
+                $('.doctor-name-require-message').show();
+            }
+            if ($('#Specialization').val()) {
+                is_valid = false;
+                $('.specialization-require-message').show();
+            }
+            if ($('#ProfessionDegree').val()) {
+                is_valid = false;
+                $('.profession-degree-require-message').show();
+            }
+            if ($('#DoctorGender').val()) {
+                is_valid = false;
+                $('.doctor-gender-require-message').show();
+            }
+
+            if($('#HomeAddressID').val() == '') {
+                if ($('#HomeCountryID').val()) {
+                    is_valid = false;
+                    $('.home-country-require-message').show();
+                }
+                if ($('#HomeStateID').val()) {
+                    is_valid = false;
+                    $('.home-state-require-message').show();
+                }
+                if ($('#HomeCity').val()) {
+                    is_valid = false;
+                    $('.home-city-require-message').show();
+                }
+                if ($('#HomeAddress').val()) {
+                    is_valid = false;
+                    $('.home-address-require-message').show();
+                }
+            }
+
+            if($('#ChamberAddressID').val() == '') {
+                if ($('#ChamberCountryID').val()) {
+                    is_valid = false;
+                    $('.chamber-country-require-message').show();
+                }
+                if ($('#ChamberStateID').val()) {
+                    is_valid = false;
+                    $('.chamber-state-require-message').show();
+                }
+                if ($('#ChamberCityID').val()) {
+                    is_valid = false;
+                    $('.chamber-city-require-message').show();
+                }
+                if ($('#ChamberAddress').val()) {
+                    is_valid = false;
+                    $('.chamber-address-require-message').show();
+                }
+            }
+
+            return is_valid;
+        },
         initDoctorAdminPage: function() {
             console.log('Method Name: doctorObject.initDoctorAdminPage');
             doctorObject.getAllExistingLocation();
@@ -158,6 +218,7 @@
         },
         showDoctorCreateModal: function () {
             console.log('Method Name: doctorObject.showDoctorCreateModal');
+            $('.error-message').hide();
             doctorObject.activebDoctorID = '';
             $('#doctor_modal').html('Create');
             $('#DoctorName').val('');
@@ -193,6 +254,7 @@
         },
         showDoctorEditModal: function (doctorID) {
             console.log('Method Name: doctorObject.showDoctorEditModal');
+            $('.error-message').hide();
             doctorObject.activebDoctorID = doctorID;
             var formURL = "<?php echo site_url('Doctor/getDoctorDetailInformation')?>?DoctorID="+doctorID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'doctorObject.showDoctorEditModal', function(doctorData){
@@ -245,6 +307,8 @@
             });
         },
         submitDoctorModal: function () {
+            var is_valid = doctorObject.validateForm();
+            if (!is_valid) return;
             $('#addDoctorModal').modal('hide');
             var formURL = doctorObject.activebDoctorID == '' ? "<?php echo site_url('Doctor/addDoctor');?>" : "<?php echo site_url('Doctor/updateDoctor');?>?DoctorID="+doctorObject.activebDoctorID;
             var form = $('form#addNewDoctor');

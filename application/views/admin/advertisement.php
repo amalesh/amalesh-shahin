@@ -78,6 +78,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="AdvertisementOrganization" name="Organization" required>
+                            <span class="advertisement-organization-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,6 +88,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <select id="AdvertisementPositionID" name="AdvertisementPositionID" required onclick="advertisementObject.changeAdvertisementPosition(this.value)"></select>
+                            <span class="advertisement-position-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group advertisement-position-detail" style="display: none">
@@ -102,6 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="AdvertisementImagePath" name="ImagePath" type="file" onchange="advertisementObject.setAdvertisementImagePathThumbnail(this, 'AdvertisementImagePathThumbnail')" />
+                            <span class="advertisement-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -118,6 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="AdvertisementTitle" name="Title">
+                            <span class="advertisement-title-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -143,6 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="AdvertisementPublishDate" name="PublishDate" required class="date-field">
+                            <span class="advertisement-publish-date-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -152,6 +157,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="AdvertisementUnpublishedDate" name="UnpublishedDate" required class="date-field">
+                            <span class="advertisement-unpublished-date-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

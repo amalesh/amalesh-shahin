@@ -75,6 +75,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="BrandName" name="BrandName" required>
+                            <span class="brand-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -84,6 +85,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="GenericID" name="GenericID" required></select>
+                            <span class="generic-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -93,6 +95,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="ManufacturerID" name="ManufacturerID" required></select>
+                            <span class="manufacturer-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -102,6 +105,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="DosageFormID" name="DosageFormID" required></select>
+                            <span class="dosage-form-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -111,6 +115,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="StrengthID" name="StrengthID" required></select>
+                            <span class="strength-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -120,6 +125,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="PackSizeID" name="PackSizeID" required></select>
+                            <span class="pack-size-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -129,6 +135,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="PriceInBDT" name="PriceInBDT" max="10" required>
+                            <span class="price-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -138,6 +145,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="BrandImagePath" name="ImagePath" type="file" onchange="brandObject.setBrandImagePathThumbnail(this, 'BrandImagePathThumbnail')" />
+                            <span class="brand-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

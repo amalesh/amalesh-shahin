@@ -2,6 +2,32 @@
 <script>
     var newsObject = {
         activebNewsID: '',
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#NewsTitle').val()) {
+                is_valid = false;
+                $('.news-title-require-message').show();
+            }
+            if ($('#NewsDescription').val()) {
+                is_valid = false;
+                $('.news-description-require-message').show();
+            }
+            if ($('#NewsPublishDate').val()) {
+                is_valid = false;
+                $('.news-publish-date-require-message').show();
+            }
+            if ($('#NewsUnpublishedDate').val()) {
+                is_valid = false;
+                $('.news-unpublished-date-require-message').show();
+            }
+            if ($('#NewsImagePath').val()) {
+                is_valid = false;
+                $('.news-image-path-require-message').show();
+            }
+
+            return is_valid;
+        },
         initNewsPage: function() {
             var today = new Date((new Date()).setHours(0, 0, 0, 0));
             $('.date-field').datepicker({
@@ -14,6 +40,7 @@
         },
         showNewsCreateModal: function () {
             newsObject.activebNewsID = '';
+            $('.error-message').hide();
             $('#news_modal').html('Create');
             $('#NewsTitle').val('');
             $('#NewsDescription').val('');
@@ -37,6 +64,8 @@
             });
         },
         submitNewsModal: function () {
+            var is_valid = newsObject.validateForm();
+            if (!is_valid) return;
             $('#addNewsModal').modal('hide');
             var formURL = newsObject.activebNewsID == '' ? "<?php echo site_url('News/addNews');?>" : "<?php echo site_url('News/updateNews');?>?NewsID="+newsObject.activebNewsID;
             var form = $('form#addNewNews');
@@ -106,6 +135,7 @@
         },
         showNewsEditModal: function (newsID) {
             console.log('Method Name: newsObject.showNewsEditModal');
+            $('.error-message').hide();
             newsObject.activebNewsID = newsID;
             var formURL = "<?php echo site_url('News/getNewsDetailInformation')?>?NewsID="+newsID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'newsObject.showNewsEditModal', function(newsData){

@@ -71,6 +71,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="DoctorName" name="DoctorName" required>
+                            <span class="doctor-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -80,6 +81,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="Specialization" name="Specialization" required>
+                            <span class="specialization-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -89,6 +91,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="ProfessionDegree" name="ProfessionDegree" required>
+                            <span class="profession-degree-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -101,6 +104,7 @@
                                 <option value="1">Male</option>
                                 <option value="2">Female</option>
                             </select>
+                            <span class="doctor-gender-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -138,33 +142,41 @@
                     <div class="form-group home-new-address">
                         <label class="control-label col-md-4">
                             <span>Country </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="HomeCountryID" name="HomeCountryID"></select>
+                            <span class="home-country-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group home-new-address">
                         <label class="control-label col-md-4">
                             <span>State </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="HomeStateID" name="HomeStateID"></select>
+                            <span class="home-state-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group home-new-address">
                         <label class="control-label col-md-4">
                             <span>City </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="HomeCityID" name="HomeCityID"></select>
+                            <span class="home-city-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group home-new-address">
                         <label class="control-label col-md-4">
                             <span>Address</span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <textarea id="HomeAddress" rows="6" class="form-control" type="text" maxlength="500" name="HomeAddress"></textarea>
+                            <span class="home-address-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group home-new-address">
@@ -202,33 +214,41 @@
                     <div class="form-group chamber-new-address">
                         <label class="control-label col-md-4">
                             <span>Country </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="ChamberCountryID" name="ChamberCountryID"></select>
+                            <span class="chamber-country-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
                         <label class="control-label col-md-4">
                             <span>State </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="ChamberStateID" name="ChamberStateID"></select>
+                            <span class="chamber-state-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
                         <label class="control-label col-md-4">
                             <span>City </span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <select id="ChamberCityID" name="ChamberCityID"></select>
+                            <span class="chamber-city-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">
                         <label class="control-label col-md-4">
                             <span>Address</span>
+                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <textarea id="ChamberAddress" rows="6" class="form-control" type="text" maxlength="500" name="ChamberAddress"></textarea>
+                            <span class="chamber-address-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group chamber-new-address">

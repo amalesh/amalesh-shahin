@@ -7,6 +7,44 @@
         allDosageFormInfo: [],
         allStrengthInfo: [],
         allPackSizeInfo: [],
+        validateForm: function() {
+            $('.error-message').hide();
+            var is_valid = true;
+            if ($('#BrandName').val()) {
+                is_valid = false;
+                $('.brand-name-require-message').show();
+            }
+            if ($('#GenericID').val()) {
+                is_valid = false;
+                $('.generic-require-message').show();
+            }
+            if ($('#ManufacturerID').val()) {
+                is_valid = false;
+                $('.manufacturer-require-message').show();
+            }
+            if ($('#DosageFormID').val()) {
+                is_valid = false;
+                $('.dosage-form-require-message').show();
+            }
+            if ($('#StrengthID').val()) {
+                is_valid = false;
+                $('.strength-require-message').show();
+            }
+            if ($('#PackSizeID').val()) {
+                is_valid = false;
+                $('.pack-size-require-message').show();
+            }
+            if ($('#PriceInBDT').val()) {
+                is_valid = false;
+                $('.price-require-message').show();
+            }
+            if ($('#BrandImagePath').val()) {
+                is_valid = false;
+                $('.brand-image-path-require-message').show();
+            }
+
+            return is_valid;
+        },
         initBrandPage: function() {
             brandObject.activeBrandID = '';
             var formURL = "<?php echo site_url('Brand/getAllGeneralInformation')?>";
@@ -71,6 +109,7 @@
         },
         showBrandCreateModal: function () {
             brandObject.activeBrandID = '';
+            $('.error-message').hide();
             $('#brand_modal').html('Create');
             $('#BrandName').val('');
             $('#GenericID').val('');
@@ -87,6 +126,7 @@
         },
         showBrandEditModal: function (brandID) {
             console.log('Method Name: brandObject.showBrandEditModal');
+            $('.error-message').hide();
             brandObject.activeBrandID = brandID;
             var formURL = "<?php echo site_url('Brand/getBrandDetail')?>?BrandID="+brandID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'brandObject.showBrandEditModal', function(brandData){
@@ -133,6 +173,8 @@
             });
         },
         submitBrandModal: function () {
+            var is_valid = brandObject.validateForm();
+            if (!is_valid) return;
             $('#addBrandModal').modal('hide');
             var formURL = brandObject.activeBrandID == '' ? "<?php echo site_url('Brand/addBrand');?>" : "<?php echo site_url('Brand/updateBrand');?>?BrandID="+brandObject.activeBrandID;
             var form = $('form#addNewBrand');

@@ -69,6 +69,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="PackSizeName" name="PackSizeName" required>
+                            <span class="pack-size-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">

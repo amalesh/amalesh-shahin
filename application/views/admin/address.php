@@ -73,6 +73,7 @@
                         </label>
                         <div class="col-md-6">
                             <input id="AddressName" name="AddressName" required>
+                            <span class="address-name-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -82,6 +83,7 @@
                         </label>
                         <div class="col-md-6">
                             <select id="AddressCategoryID" name="AddressCategoryID" required></select>
+                            <span class="address-category-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -91,12 +93,12 @@
                         </label>
                         <div class="col-md-6">
                             <textarea id="Address" name="Address" rows="6" class="form-control" type="text" maxlength="500" required></textarea>
+                            <span class="address-detail-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Contact Number </span>
-                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="ContactNumber" name="ContactNumber">
@@ -106,8 +108,7 @@
                         <label class="control-label col-md-4">Is Active</label>
                         <div class="col-md-6">
                             <div class="radio">
-                                <label>
-                                    <input checked="checked" type="radio" name="IsActive" id="AddressIsActiveYes" value="1">Yes</label>
+                                <label><input checked="checked" type="radio" name="IsActive" id="AddressIsActiveYes" value="1">Yes</label>
                             </div>
                             <div class="radio">
                                 <label>

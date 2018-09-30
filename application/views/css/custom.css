@@ -926,3 +926,12 @@ ul.alpha-list span.separator{
     /*right: 10px;*/
     /*bottom: 10px;*/
 /*}*/
+
+.error, .required-field {
+    color: red;
+}
+
+.error-message {
+    border-radius: 100px;
+    border: 1px solid #ff0000;
+}

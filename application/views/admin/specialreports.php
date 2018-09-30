@@ -72,6 +72,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="SpecialReportsTitle" name="Title" required>
+                            <span class="special-reports-title-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -80,6 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="SpecialReportsLinkAddress" name="LinkAddress" maxlength="300">
+                            <span class="special-reports-link-address-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
@@ -89,6 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </label>
                         <div class="col-md-6">
                             <input id="SpecialReportsImagePath" name="SpecialReportsImagePath" type="file" onchange="specialReportsObject.setSpecialReportsImagePathThumbnail(this, 'SpecialReportsImagePathThumbnail')" />
+                            <span class="special-reports-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>
                     <div class="form-group">
