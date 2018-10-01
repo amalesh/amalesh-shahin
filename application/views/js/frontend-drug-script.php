@@ -223,7 +223,7 @@
             });
         },
         changeSearchOption: function(searchOption) {
-            console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
+            console.log('Method Name: drugObject.changeSearchOption Param: searchOption  Value: '+[searchOption].toString());
             drugObject.searchOptionType = searchOption;
             var search_options = [];
             $('.search_option_type').css('color', '#1996C0');
@@ -274,7 +274,6 @@
                 drugObject.searchOptionForGeneric = drugData.Generic;
                 drugObject.searchOptionForIndication = drugData.Indication;
                 drugObject.searchOptionForManufacturer = drugData.Manufacturer;
-                drugObject.changeSearchOption('brand');
             });
         },
         populatePagination: function (objectID, pageNo, populateList) {

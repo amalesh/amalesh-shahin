@@ -153,4 +153,5 @@
     drugObject.getAllDrugInfoForAutoComplete();
     $('ul#main-menu li').removeClass('active');
     $('ul#main-menu li#main-menu-home').addClass('active');
+    drugObject.changeSearchOption('brand');
 </script>
