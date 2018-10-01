@@ -417,14 +417,14 @@ class BrandInformation_model extends GeneralData_model {
             $generic_information[] = $data['Name'];
         }
 
-        $this->db->select('Indication');
+        $this->db->select('IndicationTags');
         $this->db->distinct();
         $this->db->from('genericinformation');
         $this->db->where('IsActive', 1);
         $result = $this->db->get()->result_array();
         $indication_information = array();
         foreach ($result AS $data) {
-            $indication_information[] = $data['Indication'];
+            $indication_information = array_merge($indication_information, explode(',',$data['IndicationTags']));
         }
 
         $this->db->select('Name');
@@ -633,7 +633,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->select('g.Name');
                 $this->db->from('genericinformation AS g');
                 $this->db->where('g.IsActive', 1);
-                $this->db->like('LOWER(g.Indication)', strtolower($option_value));
+                $this->db->like('LOWER(g.IndicationTags)', strtolower($option_value));
                 $this->db->order_by('g.Name');
                 $this->db->limit(config_item('per_page_information_number_for_indication_search'), ($page_no - 1) * config_item('per_page_information_number_for_indication_search'));
                 $all_new_information = $this->db->get()->result_array();
@@ -758,7 +758,7 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->select('g.Name');
                 $this->db->from('genericinformation AS g');
                 $this->db->where('g.IsActive', 1);
-                $this->db->like('LOWER(g.Indication)', strtolower($option_value));
+                $this->db->like('LOWER(g.IndicationTags)', strtolower($option_value));
                 $data = $this->db->get()->result_array();
                 $total = count($data);
                 break;

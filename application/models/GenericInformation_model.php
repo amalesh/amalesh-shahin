@@ -27,6 +27,7 @@ class GenericInformation_model extends GeneralData_model {
         $data['Classification'] = $this->input->post('Classification');
         $data['SafetyRemark'] = $this->input->post('SafetyRemark');
         $data['Indication'] = $this->input->post('Indication');
+        $data['IndicationTags'] = $this->input->post('IndicationTags');
         $data['DosageAdministration'] = $this->input->post('DosageAdministration');
         $data['ContraindicationPrecaution'] = $this->input->post('ContraindicationPrecaution');
         $data['SideEffect'] = $this->input->post('SideEffect');
@@ -100,6 +101,7 @@ class GenericInformation_model extends GeneralData_model {
         $data['Classification'] = $this->input->post('Classification');
         $data['SafetyRemark'] = $this->input->post('SafetyRemark');
         $data['Indication'] = $this->input->post('Indication');
+        $data['IndicationTags'] = $this->input->post('IndicationTags');
         $data['DosageAdministration'] = $this->input->post('DosageAdministration');
         $data['ContraindicationPrecaution'] = $this->input->post('ContraindicationPrecaution');
         $data['SideEffect'] = $this->input->post('SideEffect');
@@ -140,6 +142,7 @@ class GenericInformation_model extends GeneralData_model {
         $this->db->select('g.Classification');
         $this->db->select('g.SafetyRemark');
         $this->db->select('g.Indication');
+        $this->db->select('g.IndicationTags');
         $this->db->select('g.DosageAdministration');
         $this->db->select('g.ContraindicationPrecaution');
         $this->db->select('g.SideEffect');
@@ -162,6 +165,7 @@ class GenericInformation_model extends GeneralData_model {
             $this->db->select('g.Classification');
             $this->db->select('g.SafetyRemark');
             $this->db->select('g.Indication');
+            $this->db->select('g.IndicationTags');
             $this->db->select('g.DosageAdministration');
             $this->db->select('g.ContraindicationPrecaution');
             $this->db->select('g.SideEffect');

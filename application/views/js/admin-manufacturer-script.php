@@ -6,25 +6,25 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#ManufacturerName').val()) {
+            if ($('#ManufacturerName').val() == '') {
                 is_valid = false;
                 $('.manufacturer-name-require-message').show();
             }
 
             if($('#ManufacturerAddressID').val() == '') {
-                if ($('#ManufacturerCountryID').val()) {
+                if ($('#ManufacturerCountryID').val() == '') {
                     is_valid = false;
                     $('.manufacturer-country-require-message').show();
                 }
-                if ($('#ManufacturerStateID').val()) {
+                if ($('#ManufacturerStateID').val() == '') {
                     is_valid = false;
                     $('.manufacturer-state-require-message').show();
                 }
-                if ($('#ManufacturerCityID').val()) {
+                if ($('#ManufacturerCityID').val() == '') {
                     is_valid = false;
                     $('.manufacturer-city-require-message').show();
                 }
-                if ($('#ManufacturerAddress').val()) {
+                if ($('#ManufacturerAddress').val() == '') {
                     is_valid = false;
                     $('.manufacturer-address-require-message').show();
                 }

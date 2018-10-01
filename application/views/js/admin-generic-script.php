@@ -5,15 +5,15 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#GenericName').val()) {
+            if ($('#GenericName').val() == '') {
                 is_valid = false;
                 $('.generic-name-require-message').show();
             }
-            if ($('#Classification').val()) {
+            if ($('#Classification').val() == '') {
                 is_valid = false;
                 $('.classification-require-message').show();
             }
-            if ($('#SafetyRemark').val()) {
+            if ($('#SafetyRemark').val() == '') {
                 is_valid = false;
                 $('.safety-remark-require-message').show();
             }
@@ -28,6 +28,7 @@
             $('#Classification').val('');
             $('#SafetyRemark').val('');
             $('#Indication').val('');
+            $('#IndicationTags').val('');
             $('#DosageAdministration').val('');
             $('#ContraindicationPrecaution').val('');
             $('#SideEffect').val('');
@@ -45,6 +46,7 @@
                 $('#Classification').val(genericData.Classification);
                 $('#SafetyRemark').val(genericData.SafetyRemark);
                 $('#Indication').val(genericData.Indication);
+                $('#IndicationTags').val(genericData.IndicationTags);
                 $('#DosageAdministration').val(genericData.DosageAdministration);
                 $('#ContraindicationPrecaution').val(genericData.ContraindicationPrecaution);
                 $('#SideEffect').val(genericData.SideEffect);
@@ -84,13 +86,14 @@
             });
         },
         populateGenericList: function() {
-            var formURL = "<?php echo site_url('Generic/getAllActiveGenericInformation')?>";
+            var formURL = "<?php echo site_url('Generic/getAllGenericInformation')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'genericObject.getGenericList', function(genericData){
                 var generic_tr_text = '';
                 $('tbody.generic-list').html('');
                 for(var i = 0; i < genericData.length; i++) {
                     generic_tr_text = '<tr class="table-row">' +
                         '<td><a class="link" onclick="genericObject.showGenericEditModal('+genericData[i].ID+')">'+genericData[i].Name+'</a></td>' +
+                        '<td>'+genericData[i].IndicationTags+'</td>' +
                         '<td>'+genericData[i].Classification+'</td>' +
                         '<td>'+genericData[i].SafetyRemark+'</td>' +
                         '<td>' +

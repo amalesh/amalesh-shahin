@@ -5,23 +5,23 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#NewsTitle').val()) {
+            if ($('#NewsTitle').val() == '') {
                 is_valid = false;
                 $('.news-title-require-message').show();
             }
-            if ($('#NewsDescription').val()) {
+            if ($('#NewsDescription').val() == '') {
                 is_valid = false;
                 $('.news-description-require-message').show();
             }
-            if ($('#NewsPublishDate').val()) {
+            if ($('#NewsPublishDate').val() == '') {
                 is_valid = false;
                 $('.news-publish-date-require-message').show();
             }
-            if ($('#NewsUnpublishedDate').val()) {
+            if ($('#NewsUnpublishedDate').val() == '') {
                 is_valid = false;
                 $('.news-unpublished-date-require-message').show();
             }
-            if ($('#NewsImagePath').val()) {
+            if ($('#NewsImagePath').val() == '') {
                 is_valid = false;
                 $('.news-image-path-require-message').show();
             }

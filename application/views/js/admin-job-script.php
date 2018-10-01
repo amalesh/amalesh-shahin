@@ -6,31 +6,31 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#JobTitle').val()) {
+            if ($('#JobTitle').val() == '') {
                 is_valid = false;
                 $('.job-title-require-message').show();
             }
-            if ($('#JobOrganization').val()) {
+            if ($('#JobOrganization').val() == '') {
                 is_valid = false;
                 $('.job-organization-require-message').show();
             }
-            if ($('#JobDescription').val()) {
+            if ($('#JobDescription').val() == '') {
                 is_valid = false;
                 $('.job-description-require-message').show();
             }
-            if ($('#JobPosition').val()) {
+            if ($('#JobPosition').val() == '') {
                 is_valid = false;
                 $('.job-position-require-message').show();
             }
-            if ($('#JobApplicationDeadline').val()) {
+            if ($('#JobApplicationDeadline').val() == '') {
                 is_valid = false;
                 $('.job-application-deadline-require-message').show();
             }
-            if ($('#JobPublishDate').val()) {
+            if ($('#JobPublishDate').val() == '') {
                 is_valid = false;
                 $('.job-publish-date-require-message').show();
             }
-            if ($('#JobCircularImagePath').val()) {
+            if ($('#JobCircularImagePath').val() == '') {
                 is_valid = false;
                 $('.job-circular-image-path-require-message').show();
             }

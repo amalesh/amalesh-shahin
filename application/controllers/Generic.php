@@ -20,7 +20,7 @@ class Generic extends CI_Controller {
             redirect('User/login');
             return;
         }
-        $all_generic_information = $this->GenericInformation_model->getAllActiveGenericInformation();
+        $all_generic_information = $this->GenericInformation_model->getAllGenericInformation();
         $data = array();
         $data['AllGeneric'] = $all_generic_information;
         $this->load->view('admin/header');
@@ -74,6 +74,11 @@ class Generic extends CI_Controller {
 
     public function getAllActiveGenericInformation() {
         $all_generic_information = $this->GenericInformation_model->getAllActiveGenericInformation();
+        $this->sendRestAPIResponse($all_generic_information);
+    }
+
+    public function getAllGenericInformation() {
+        $all_generic_information = $this->GenericInformation_model->getAllGenericInformation();
         $this->sendRestAPIResponse($all_generic_information);
     }
 

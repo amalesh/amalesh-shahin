@@ -22,6 +22,7 @@
                                 <thead>
                                 <tr>
                                     <th>Generic Name</th>
+                                    <th>Indication Tags</th>
                                     <th>Classification</th>
                                     <th>Safety Remark</th>
                                     <th>Action</th>
@@ -32,6 +33,7 @@
                                 foreach ($AllGeneric AS $generic) {
                                     echo '<tr class="table-row">
                                     <td><a class="link" onclick="genericObject.showGenericEditModal('.$generic['ID'].')">'.$generic['Name'].'</a></td>
+                                    <td>'.$generic['IndicationTags'].'</td>
                                     <td>'.$generic['Classification'].'</td>
                                     <td>'.$generic['SafetyRemark'].'</td>
                                     <td>
@@ -100,6 +102,14 @@
                         <label class="control-label col-md-4">Indication</label>
                         <div class="col-md-6">
                             <textarea id="Indication" name="Indication" rows="6" class="form-control" type="text" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">
+                            <span>Indication Tags </span>
+                        </label>
+                        <div class="col-md-6">
+                            <input id="IndicationTags" name="IndicationTags" required>
                         </div>
                     </div>
                     <div class="form-group">

@@ -6,56 +6,56 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#DoctorName').val()) {
+            if ($('#DoctorName').val() == '') {
                 is_valid = false;
                 $('.doctor-name-require-message').show();
             }
-            if ($('#Specialization').val()) {
+            if ($('#Specialization').val() == '') {
                 is_valid = false;
                 $('.specialization-require-message').show();
             }
-            if ($('#ProfessionDegree').val()) {
+            if ($('#ProfessionDegree').val() == '') {
                 is_valid = false;
                 $('.profession-degree-require-message').show();
             }
-            if ($('#DoctorGender').val()) {
+            if ($('#DoctorGender').val() == '') {
                 is_valid = false;
                 $('.doctor-gender-require-message').show();
             }
 
             if($('#HomeAddressID').val() == '') {
-                if ($('#HomeCountryID').val()) {
+                if ($('#HomeCountryID').val() == '') {
                     is_valid = false;
                     $('.home-country-require-message').show();
                 }
-                if ($('#HomeStateID').val()) {
+                if ($('#HomeStateID').val() == '') {
                     is_valid = false;
                     $('.home-state-require-message').show();
                 }
-                if ($('#HomeCity').val()) {
+                if ($('#HomeCity').val() == '') {
                     is_valid = false;
                     $('.home-city-require-message').show();
                 }
-                if ($('#HomeAddress').val()) {
+                if ($('#HomeAddress').val() == '') {
                     is_valid = false;
                     $('.home-address-require-message').show();
                 }
             }
 
             if($('#ChamberAddressID').val() == '') {
-                if ($('#ChamberCountryID').val()) {
+                if ($('#ChamberCountryID').val() == '') {
                     is_valid = false;
                     $('.chamber-country-require-message').show();
                 }
-                if ($('#ChamberStateID').val()) {
+                if ($('#ChamberStateID').val() == '') {
                     is_valid = false;
                     $('.chamber-state-require-message').show();
                 }
-                if ($('#ChamberCityID').val()) {
+                if ($('#ChamberCityID').val() == '') {
                     is_valid = false;
                     $('.chamber-city-require-message').show();
                 }
-                if ($('#ChamberAddress').val()) {
+                if ($('#ChamberAddress').val() == '') {
                     is_valid = false;
                     $('.chamber-address-require-message').show();
                 }
