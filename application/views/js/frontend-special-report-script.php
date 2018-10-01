@@ -25,7 +25,7 @@
             var total_page = Math.ceil(specialReportObject.totalSpecialReport / per_page_information_number);
 
             if (populateList === true) specialReportObject.getSearchResult(pageNo);
-            if (total_page == 1) return;
+            if (total_page == 1) $('ul#special-report-pagination').hide();
 
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);

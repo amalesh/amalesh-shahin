@@ -45,7 +45,7 @@
             var total_page = Math.ceil(addressObject.totalAddress / per_page_information_number);
 
             if (populateList === true) addressObject.getSearchResult(pageNo);
-            if (total_page == 1) return;
+            if (total_page == 1) $('ul#address-pagination').hide();
             // console.log('addressObject.totalAddress: '+addressObject.totalAddress+' per_page_information_number: '+per_page_information_number);
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);
