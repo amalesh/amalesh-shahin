@@ -39,9 +39,11 @@
                         </div>
                         <ul class="requirement-list address-list">
                             <?php
+                            $selected_category_name = '';
                             foreach ($AllAddressCategory AS $category) {
                                 if ($category['ID'] == $AddressCategoryID) {
                                     echo '<li class="address-category-'.$category['ID'].' highlight"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
+                                    $selected_category_name = $category['Name'];
                                 } else {
                                     echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
                                 }
@@ -51,7 +53,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="addresses">
-                            <h4>Currently Selected Filter</h4>
+                            <h4 id="currently-selected-filter"><?php echo $selected_category_name;?></h4>
                             <table class="table addtess-detail">
                                 <thead class="thead-dark">
                                 <tr>

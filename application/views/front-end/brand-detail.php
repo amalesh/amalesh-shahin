@@ -42,7 +42,7 @@
                         <p><b>Price: </b><?php echo $BrandDetail['PriceInBDT'];?> Tk</p>
                         <p><b>Safety Remarks: </b><?php echo $BrandDetail['SafetyRemark'];?></p>
                         <p><b>Indications: </b><?php echo $BrandDetail['Indication'];?></p>
-                        <p><b>Dosage & Administration :</b><?php echo $BrandDetail['DosageForm'];?></p>
+                        <p><b>Dosage & Administration :</b><?php echo $BrandDetail['DosageAdministration'];?></p>
                         <p><b>Contraindication & Precaution :</b><?php echo $BrandDetail['ContraindicationPrecaution'];?></p>
                         <p><b>Side effect:</b><?php echo $BrandDetail['SideEffect'];?></p>
                         <p><b>Use in Pregnancy & Lactation :</b><?php echo $BrandDetail['PregnancyLactation'];?></p>

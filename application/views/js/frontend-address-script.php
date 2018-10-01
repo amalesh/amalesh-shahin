@@ -9,6 +9,7 @@
         getCategoryWiseAddresses: function(categoryID) {
             $('ul.address-list li').removeClass('highlight');
             $('li.address-category-'+categoryID).addClass('highlight');
+            $('#currently-selected-filter').html($('li.address-category-'+categoryID+' a').html());
             addressObject.selectedCategoryID = categoryID;
             addressObject.getSearchResult(1);
             addressObject.selectedCity = $('#addressCity').val();
