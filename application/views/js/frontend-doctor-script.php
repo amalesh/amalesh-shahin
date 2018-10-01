@@ -34,7 +34,7 @@
                             '<p class="title">'+doctor_info.Specialization+'</p>' +
                             '<p class="designation">'+doctor_info.ProfessionDegree+'</p>' +
                             '</div>' +
-                            '<div class="doctor-address  col-md-4">' +
+                            '<div class="doctor-address  col-md-3">' +
                             '<span class="icon float-left"><i class="fas fa-map-marker-alt"></i></span> ' +
                             '<strong>Chamber</strong><br><br>' +
                             '<address CLASS="clearfix">' +
@@ -42,10 +42,10 @@
                             '</address>' +
                             '<div class="clearfix"></div>' +
                             '</div>' +
-                            '<div class="doctor-phone  col-md-2">' +
+                            '<div class="doctor-phone  col-md-3">' +
                             '<span class="icon float-left"><i class="fas fa-mobile"></i></span> ' +
                             '<strong>Phone No.</strong><br><br>' +
-                            '<div class="float-right">' +
+                            '<div>' +
                             '<p class="number">'+doctor_info.PhoneNo+'</p>' +
                             '<p class="number">'+doctor_info.MobileNo1+'</p>' +
                             '<p class="number">'+doctor_info.MobileNo2+'</p>' +
