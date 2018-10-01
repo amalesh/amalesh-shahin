@@ -83,10 +83,6 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="speacial-reports"></div>
-                        <a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
                     </div>
                 </div>
             </div>

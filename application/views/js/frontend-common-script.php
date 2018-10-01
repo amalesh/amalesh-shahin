@@ -40,6 +40,13 @@
                                 '<a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a>'+
                                 '</div>'+
                                 '</div>');
+                            if (i == 4) break;
+                        }
+
+                        if (all_special_reports.length > 0) {
+                            $('div.speacial-reports').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right">'+
+'                            <i class="fas fa-chevron-right"></i> see more'+
+'                        </a>');
                         }
                     }
 
