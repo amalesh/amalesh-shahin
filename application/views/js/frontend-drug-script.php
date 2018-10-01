@@ -110,6 +110,9 @@
             var search_option = $('#searchDrugOption').val();
             drugObject.searchOptionValue = search_option;
             if (search_option == '') return false;
+            console.log('Search By:'+search_option+'Word');
+            search_option = $.trim(search_option);
+            console.log('Search By:'+search_option+'Word After trim');
             var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue;
             switch (drugObject.searchOptionType) {
                 case 'brand':
@@ -125,6 +128,10 @@
                     }
                     break;
                 case 'indication':
+                    if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForIndication) == -1) {
+                        $('.invalid-search-option-error').show();
+                        return false;
+                    }
                     break;
                 case 'manufacturer':
                     if (frontendCommonMethods.inArrayCaseInsensitive(search_option, drugObject.searchOptionForManufacturer) == -1) {
@@ -216,7 +223,7 @@
             });
         },
         changeSearchOption: function(searchOption) {
-            console.log('Method Name: drugObject.changeSearchOption Param:  Value: '+[].toString());
+            console.log('Method Name: drugObject.changeSearchOption Param: searchOption  Value: '+[searchOption].toString());
             drugObject.searchOptionType = searchOption;
             var search_options = [];
             $('.search_option_type').css('color', '#1996C0');
@@ -267,7 +274,6 @@
                 drugObject.searchOptionForGeneric = drugData.Generic;
                 drugObject.searchOptionForIndication = drugData.Indication;
                 drugObject.searchOptionForManufacturer = drugData.Manufacturer;
-                drugObject.changeSearchOption('brand');
             });
         },
         populatePagination: function (objectID, pageNo, populateList) {
