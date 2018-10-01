@@ -80,16 +80,16 @@
                                 <p class="title">'.$doctor['Specialization'].'</p>
                                 <p class="designation">'.$doctor['ProfessionDegree'].'</p>
                             </div>
-                            <div class="doctor-address  col-md-4">
+                            <div class="doctor-address  col-md-3">
                                 <span class="icon float-left"><i class="fas fa-map-marker-alt"></i></span> <strong>Chamber</strong><br><br>
                                 <address CLASS="clearfix">
                                 '.$doctor['ChamberAddress'].$hotline_info.'
                                 </address>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="doctor-phone  col-md-2">
+                            <div class="doctor-phone  col-md-3">
                                 <span class="icon float-left"><i class="fas fa-mobile"></i></span> <strong>Phone No.</strong><br><br>
-                                <div class="float-right">
+                                <div class="">
                                     <p class="number">'.$doctor['PhoneNo'].'</p>
                                     <p class="number">'.$doctor['MobileNo1'].'</p>
                                     <p class="number">'.$doctor['MobileNo2'].'</p>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline sidebar-news"></ul>
+                    <ul class="list-inline"></ul>
                     <ul class="list-inline">
                         <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more

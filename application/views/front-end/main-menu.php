@@ -13,7 +13,8 @@
         </div>
         <div class="sign-in float-right">
             <ul class="list-inline">
-                <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i>BANGLADESH</li>
+                <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i> <a href="#">Bangladesh</a></li>
+                <li class="list-inline-item"><i class="fas fa-user"></i> <a href="#">Sign In</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>
