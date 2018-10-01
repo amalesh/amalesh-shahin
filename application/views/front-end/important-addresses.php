@@ -55,7 +55,7 @@
                         <div class="addresses">
                             <h4 id="currently-selected-filter"><?php echo $selected_category_name;?></h4>
                             <table class="table addtess-detail">
-                                <thead class="thead-dark">
+                                <thead class="">
                                 <tr>
                                     <th scope="col">Name</th>
                                     <th scope="col">Address</th>
@@ -67,8 +67,8 @@
                                 foreach ($AllAddress AS $address) {
                                     echo '<tr>
                                     <td>'.$address['Name'].'</td>
-                                    <td class="border-left">'.$address['Address'].'</td>
-                                    <td class="border-left">'.$address['ContactNumber'].'</td>
+                                    <td>'.$address['Address'].'</td>
+                                    <td>'.$address['ContactNumber'].'</td>
                                 </tr>';
                                 }
                                 ?>
