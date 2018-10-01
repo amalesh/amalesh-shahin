@@ -105,6 +105,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo site_url('SpecialReports/getSpecialReportsListForAdmin')?>">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Special Reports</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo site_url('User/logout')?>">
                             <i class="fa fa-dashboard"></i>
                             <span>logout</span>

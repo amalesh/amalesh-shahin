@@ -5,15 +5,15 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#SpecialReportsTitle').val()) {
+            if ($('#SpecialReportsTitle').val() == '') {
                 is_valid = false;
                 $('.special-reports-title-require-message').show();
             }
-            if ($('#SpecialReportsLinkAddress').val()) {
+            if ($('#SpecialReportsLinkAddress').val() == '') {
                 is_valid = false;
                 $('.special-reports-link-address-require-message').show();
             }
-            if ($('#SpecialReportsImagePath').val()) {
+            if ($('#SpecialReportsImagePath').val() == '') {
                 is_valid = false;
                 $('.special-reports-image-path-require-message').show();
             }
@@ -130,7 +130,7 @@
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'specialReportsObject.showSpecialReportsEditModal', function(specialreportsData){
                 $('#SpecialReportsTitle').val(specialreportsData.Title);
                 $('#SpecialReportsLinkAddress').val(specialreportsData.LinkAddress);
-                $('#SpecialReportsImagePathThumbnail').attr('src', '<?php echo base_url()?>SpecialReportsImages/'+specialreportsData.ImagePath);
+                $('#SpecialReportsImagePathThumbnail').attr('src', '<?php echo base_url()?>SpecialReportImages/'+specialreportsData.ImagePath);
                 if (specialreportsData.IsActive) {
                     $("#SpecialReportsIsActiveYes").prop("checked", true);
                 } else {
