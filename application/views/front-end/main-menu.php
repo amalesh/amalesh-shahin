@@ -35,7 +35,6 @@
                         <li id="main-menu-doctor" class="nav-item"><a class="nav-link" href="<?php echo site_url('Doctor/getAllDoctorInformation');?>">DOCTOR</a></li>
                         <li id="main-menu-resource" class="nav-item"><a class="nav-link" href="<?php echo site_url('Resource/getAllActiveResourceInformation');?>">RESOURCES</a></li>
                         <li id="main-menu-about-us" class="nav-item"><a class="nav-link" href="<?php echo site_url('StaticInfo/showAboutUs');?>">ABOUT US</a></li>
-                        <li id="main-menu-about-us" class="nav-item log-in"><a class="nav-link" href="#">LOG IN</a></li>
                     </ul>
                 </div>
             </div>

@@ -69,7 +69,7 @@
                 </div>
                 <div class="sidebar-news">
                     <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline sidebar-news"></ul>
+                    <ul class="list-inline"></ul>
                     <ul class="list-inline">
                         <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
                             <i class="fas fa-chevron-right"></i> see more

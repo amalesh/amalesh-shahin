@@ -294,21 +294,25 @@ a.btn.btn-s.float-right {
     margin-bottom: 50px;
 }
 
-.sidebar-news {
+.sidebar-news, .special-reports-sidebar {
     margin-bottom: 30px;
     border: 1px solid #DBDCDD;
 }
 
-.sidebar-news ul{
+.sidebar-news ul,  .special-reports-sidebar ul{
     margin-left: 15px;
     font-weight: 600;
 }
 .product-add-1 {
     margin: 60px 0;
 }
-.sidebar-news h4{
+.sidebar-news h4,  .special-reports-sidebar h3{
     background-color: #DBDCDD;
     padding: 5px 15px 5px 15px;
+}
+
+.special-reports-sidebar .media{
+    margin: 0px 10px 10px 15px;
 }
 
 .speacial-reports{
@@ -424,7 +428,7 @@ section.visitor {
 
 .product-add-3,
 .product-add-4 {
-    margin-bottom: 70px;
+    margin-bottom: 45px;
 }
 
 .product-details .title {
@@ -535,13 +539,15 @@ section.visitor {
 .doctor-list {
     /*display: flex;*/
     justify-content: space-between;
-    align-items: center;
     border: 1px solid #B9BABD;
     border-radius: 12px;
     padding: 20px 0;
-    margin-bottom: 30px;
+    margin: 0px 0px 30px 0px;
    font-size: 13px;
    /* font-weight: 700;*/
+}
+.doctor-list .doctor-photo{
+    align-items: center;
 }
 
 td{
@@ -890,6 +896,14 @@ td .link{
     height: 30px;
     font-size: 12px;
 }
+.modal-body .form-group{
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 10px;
+}
+.form-horizontal .form-group{
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
 
 /*.modal-body input([type=radio]) {*/
     /*font-size: 14px;*/
@@ -958,6 +972,11 @@ ul.alpha-list span.separator{
 }
 
 .error-message {
-    border-radius: 100px;
-    border: 1px solid #ff0000;
+    font-size: 14px;
+}
+.modal-footer{
+    padding: 1.5rem 2rem;
+}
+.btn-info{
+    font-size: 15px;
 }
