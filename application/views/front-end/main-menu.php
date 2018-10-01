@@ -13,7 +13,8 @@
         </div>
         <div class="sign-in float-right">
             <ul class="list-inline">
-                <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i>BANGLADESH</li>
+                <li class="list-inline-item"><i class="fas fa-map-marker-alt"></i> <a href="#">Bangladesh</a></li>
+                <li class="list-inline-item"><i class="fas fa-user"></i> <a href="#">Sign In</a></li>
             </ul>
         </div>
         <div class="clearfix"></div>
@@ -34,6 +35,7 @@
                         <li id="main-menu-doctor" class="nav-item"><a class="nav-link" href="<?php echo site_url('Doctor/getAllDoctorInformation');?>">DOCTOR</a></li>
                         <li id="main-menu-resource" class="nav-item"><a class="nav-link" href="<?php echo site_url('Resource/getAllActiveResourceInformation');?>">RESOURCES</a></li>
                         <li id="main-menu-about-us" class="nav-item"><a class="nav-link" href="<?php echo site_url('StaticInfo/showAboutUs');?>">ABOUT US</a></li>
+                        <li id="main-menu-about-us" class="nav-item log-in"><a class="nav-link" href="#">LOG IN</a></li>
                     </ul>
                 </div>
             </div>

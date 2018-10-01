@@ -206,7 +206,7 @@
                         '<img src="<?php echo base_url()?>BrandImages/'+drugData.ImagePath+'" alt="product" class="img-fluid" style="padding: 79px 0;">' +
                         '                            <div class="product-detail">' +
                         '                                <h4 class="title">PRODUCT</h4>' +
-                        '                                <p class="info" style="color: #4C99D3;font-size: 20px;margin-bottom: 70px;"><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData.ID+'">'+drugData.Name+'</a></p>' +
+                        '                                <p class="info" style="color: #4C99D3;font-size: 15px;margin-bottom: 17px;"><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData.ID+'">'+drugData.Name+'</a></p>' +
                         '                                <h4 class="title">CONTENT</h4>' +
                         '                                <p class="info">('+drugData.StrengthName+')</p>' +
                         '                                <h4 class="title">INDICATIONS</h4>' +

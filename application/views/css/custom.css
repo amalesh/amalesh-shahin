@@ -60,6 +60,9 @@ li {
     text-decoration: none;
     color: #929497;
 }
+.sign-in ul li{
+    margin-left: 30px;
+}
 
 .menu {
     margin-top: 15px;
@@ -73,6 +76,8 @@ li {
 .menu .navbar-light .navbar-nav .nav-link {
     color: #fff;
 }
+
+
 
 .menu .nav-item.active {
     border-bottom: 5px solid #fff;
@@ -291,17 +296,38 @@ a.btn.btn-s.float-right {
 
 .sidebar-news {
     margin-bottom: 30px;
+    border: 1px solid #DBDCDD;
 }
 
+.sidebar-news ul{
+    margin-left: 15px;
+    font-weight: 600;
+}
 .product-add-1 {
     margin: 60px 0;
+}
+.sidebar-news h4{
+    background-color: #DBDCDD;
+    padding: 5px 15px 5px 15px;
+}
+
+.speacial-reports{
+    margin: 50px 0 0px 0px;
+    border: 1px solid #DBDCDD;
+    padding-bottom: 30px;
+}
+.speacial-reports .media{
+    margin-left: 15px;
+    font-weight: 600;
 }
 
 .speacial-reports h3 {
     font-size: 20px;
-    border-bottom: 1px solid #DBDCDD;
-    margin: 50px 0 35px;
+    /*margin: 50px 0 35px;*/
     text-transform: uppercase;
+    background-color: #DBDCDD;
+    padding: 5px 30px 10px 15px;
+    margin-bottom: 20px;
 }
 
 .speacial-reports a, .special-reports-sidebar a {
