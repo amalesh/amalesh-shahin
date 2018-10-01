@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="<?php echo base_url().'application/views/';?>css/custom.css">
 
     <script src="<?php echo base_url().'application/views/';?>plugins/jquery/jquery-2.0.3.js"></script>
-    <script src="<?php echo base_url().'application/views/';?>plugins/jquery/jquery-ui.js"></script>
+<!--    <script src="--><?php //echo base_url().'application/views/';?><!--plugins/jquery/jquery-ui.js"></script>-->
     <script src="<?php echo base_url().'application/views/';?>plugins/jquery/jquery-ui-1.9.2.custom.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="<?php echo base_url().'application/views/';?>plugins/bootstrap/dist/js/bootstrap.js"></script>
