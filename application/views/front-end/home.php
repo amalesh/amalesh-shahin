@@ -146,8 +146,7 @@
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);
     drugObject.getHighlightedBrands();
-    drugObject.getAllDrugInfoForAutoComplete();
+    drugObject.getAllDrugInfoForAutoComplete('brand');
     $('ul#main-menu li').removeClass('active');
     $('ul#main-menu li#main-menu-home').addClass('active');
-    drugObject.changeSearchOption('brand');
 </script>

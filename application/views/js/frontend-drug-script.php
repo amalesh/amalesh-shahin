@@ -266,7 +266,7 @@
             });
             drugObject.populatePagination(pageNo);
         },
-        getAllDrugInfoForAutoComplete: function() {
+        getAllDrugInfoForAutoComplete: function(searchOption) {
             console.log('Method Name: drugObject.getAllDrugInfoForAutoComplete Param: option Value: ');
             var formURL = "<?php echo site_url('Brand/getAllDrugInfoForAutoComplete')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getAllDrugInfoForAutoComplete', function(drugData){
@@ -274,6 +274,8 @@
                 drugObject.searchOptionForGeneric = drugData.Generic;
                 drugObject.searchOptionForIndication = drugData.Indication;
                 drugObject.searchOptionForManufacturer = drugData.Manufacturer;
+
+                drugObject.changeSearchOption(searchOption);
             });
         },
         populatePagination: function (objectID, pageNo, populateList) {
