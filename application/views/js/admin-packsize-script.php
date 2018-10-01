@@ -5,7 +5,7 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#PackSizeName').val()) {
+            if ($('#PackSizeName').val() == '') {
                 is_valid = false;
                 $('.pack-size-name-require-message').show();
             }

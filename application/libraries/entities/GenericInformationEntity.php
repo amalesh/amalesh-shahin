@@ -9,6 +9,7 @@ class GenericInformationEntity extends GeneralDataEntity
     public $Classification;
     public $SafetyRemark;
     public $Indication;
+    public $IndicationTags;
     public $DosageAdministration;
     public $ContraindicationPrecaution;
     public $SideEffect;
@@ -22,6 +23,7 @@ class GenericInformationEntity extends GeneralDataEntity
             $this->Classification = $data['Classification'];
             $this->SafetyRemark = $data['SafetyRemark'];
             $this->Indication = $data['Indication'];
+            $this->IndicationTags = $data['IndicationTags'];
             $this->DosageAdministration = $data['DosageAdministration'];
             $this->ContraindicationPrecaution = $data['ContraindicationPrecaution'];
             $this->SideEffect = $data['SideEffect'];
@@ -36,6 +38,7 @@ class GenericInformationEntity extends GeneralDataEntity
         $generic_data['Classification'] = addslashes($this->Classification);
         $generic_data['SafetyRemark'] = addslashes($this->SafetyRemark);
         $generic_data['Indication'] = addslashes($this->Indication);
+        $generic_data['IndicationTags'] = addslashes($this->IndicationTags);
         $generic_data['DosageAdministration'] = addslashes($this->DosageAdministration);
         $generic_data['ContraindicationPrecaution'] = addslashes($this->ContraindicationPrecaution);
         $generic_data['SideEffect'] = addslashes($this->SideEffect);
@@ -50,6 +53,7 @@ class GenericInformationEntity extends GeneralDataEntity
         $generic_data['Classification'] = addslashes($this->Classification);
         $generic_data['SafetyRemark'] = addslashes($this->SafetyRemark);
         $generic_data['Indication'] = addslashes($this->Indication);
+        $generic_data['IndicationTags'] = addslashes($this->IndicationTags);
         $generic_data['DosageAdministration'] = addslashes($this->DosageAdministration);
         $generic_data['ContraindicationPrecaution'] = addslashes($this->ContraindicationPrecaution);
         $generic_data['SideEffect'] = addslashes($this->SideEffect);
@@ -64,6 +68,7 @@ class GenericInformationEntity extends GeneralDataEntity
         $generic_data['Classification'] = addslashes($this->Classification);
         $generic_data['SafetyRemark'] = addslashes($this->SafetyRemark);
         $generic_data['Indication'] = addslashes($this->Indication);
+        $generic_data['IndicationTags'] = addslashes($this->IndicationTags);
         $generic_data['DosageAdministration'] = addslashes($this->DosageAdministration);
         $generic_data['ContraindicationPrecaution'] = addslashes($this->ContraindicationPrecaution);
         $generic_data['SideEffect'] = addslashes($this->SideEffect);

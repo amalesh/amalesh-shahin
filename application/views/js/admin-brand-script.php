@@ -10,37 +10,39 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#BrandName').val()) {
+            if ($('#BrandName').val() == '') {
                 is_valid = false;
                 $('.brand-name-require-message').show();
             }
-            if ($('#GenericID').val()) {
+            if ($('#GenericID').val() == '') {
                 is_valid = false;
                 $('.generic-require-message').show();
             }
-            if ($('#ManufacturerID').val()) {
+            if ($('#ManufacturerID').val() == '') {
                 is_valid = false;
                 $('.manufacturer-require-message').show();
             }
-            if ($('#DosageFormID').val()) {
+            if ($('#DosageFormID').val() == '') {
                 is_valid = false;
                 $('.dosage-form-require-message').show();
             }
-            if ($('#StrengthID').val()) {
+            if ($('#StrengthID').val() == '') {
                 is_valid = false;
                 $('.strength-require-message').show();
             }
-            if ($('#PackSizeID').val()) {
+            if ($('#PackSizeID').val() == '') {
                 is_valid = false;
                 $('.pack-size-require-message').show();
             }
-            if ($('#PriceInBDT').val()) {
+            if ($('#PriceInBDT').val() == '') {
                 is_valid = false;
                 $('.price-require-message').show();
             }
-            if ($('#BrandImagePath').val()) {
-                is_valid = false;
-                $('.brand-image-path-require-message').show();
+            if ($('#IsHighlightedYes').prop('checked')) {
+                if ($('#BrandImagePath').val() == '') {
+                    is_valid = false;
+                    $('.brand-image-path-require-message').show();
+                }
             }
 
             return is_valid;

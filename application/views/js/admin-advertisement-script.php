@@ -6,27 +6,27 @@
         validateForm: function() {
             $('.error-message').hide();
             var is_valid = true;
-            if ($('#AdvertisementOrganization').val()) {
+            if ($('#AdvertisementOrganization').val() == '') {
                 is_valid = false;
                 $('.advertisement-organization-require-message').show();
             }
-            if ($('#AdvertisementPositionID').val()) {
+            if ($('#AdvertisementPositionID').val() == '') {
                 is_valid = false;
                 $('.advertisement-position-require-message').show();
             }
-            if ($('#AdvertisementImagePath').val()) {
+            if ($('#AdvertisementImagePath').val() == '') {
                 is_valid = false;
                 $('.advertisement-image-path-require-message').show();
             }
-            if ($('#AdvertisementTitle').val()) {
+            if ($('#AdvertisementTitle').val() == '') {
                 is_valid = false;
                 $('.advertisement-title-require-message').show();
             }
-            if ($('#AdvertisementPublishDate').val()) {
+            if ($('#AdvertisementPublishDate').val() == '') {
                 is_valid = false;
                 $('.advertisement-publish-date-require-message').show();
             }
-            if ($('#AdvertisementUnpublishedDate').val()) {
+            if ($('#AdvertisementUnpublishedDate').val() == '') {
                 is_valid = false;
                 $('.advertisement-unpublished-date-require-message').show();
             }
