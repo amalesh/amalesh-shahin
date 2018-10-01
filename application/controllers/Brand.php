@@ -50,7 +50,7 @@ class Brand extends CI_Controller {
             redirect('User/login');
             return;
         }
-        $all_brand_information = $this->BrandInformation_model->getAllActiveBrandInformation();
+        $all_brand_information = $this->BrandInformation_model->getAllBrandInformation();
         $data = array();
         $data['AllBrand'] = $all_brand_information;
         $this->load->view('admin/header');

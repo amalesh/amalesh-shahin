@@ -87,6 +87,19 @@ class BrandInformation_model extends GeneralData_model {
         return $all_information;
     }
 
+    public function getAllBrandInformation() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $this->db->select('b.ID, b.Name, m.ID AS ManufacturerID, m.Name AS ManufacturerName, b.PriceInBDT, g.Name AS GenericName');
+        $this->db->from('brandinformation AS b');
+        $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+        $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
+        $this->db->order_by('b.Name');
+        $all_information = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $all_information;
+    }
+
     public function searchBrandAlphabetically() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $page_no = $this->input->get('PageNo');
