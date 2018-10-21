@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>About Us</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="icon" type="image/x-icon" href=""> -->
+
+	<!-- CDN -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<!-- 3rd Party Libraries -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/imageviewer.css">
+	<link rel="stylesheet" href="./fonts/fonts.min.css">
+	<!-- scripts -->
+	<script src="./js/imageviewer.min.js"></script>
+
+	<!-- Custom -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/base.css">
+
+	<!-- scripts -->
+	<script src="./js/ui.js"></script>
+</head>
+
+<body>
+	<!-- navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+			<button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarMenu"
+			 aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation" id="navbarMenuButton">
+				<i class="fas fa-bars"></i>
+			</button>
+	
+			<a class="navbar-brand-centered" href="#">
+				<img id="logo" src="./images/green-logo.png" alt="">
+			</a>
+	
+			<button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarSearch"
+			 aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation" id="navbarSearchButton">
+				 <i class="fas fa-search"></i>
+			</button>
+	
+			<div class="collapse navbar-collapse" id="navbarMenu">
+				<div class="container d-flex justify-content-between navbar-container">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link home-link active" href="./index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link doctor-link" href="./doctors.html">Doctor</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link resources-link" href="./resources.html">Resources</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link about-link" href="./about.html">About Us</a>
+						</li>
+					</ul>
+					<div class="left-links">
+						<a href="#" class="side-link"><i class="fab fa-facebook-square"></i></a>
+						<a href="#" class="side-link"><i class="fab fa-twitter-square"></i></a>
+						<a href="#" class="side-link"><i class="fab fa-linkedin"></i></a>
+						<a href="#" class="side-link"><i class="fab fa-google-plus-square"></i></a>
+					</div>
+					<div class="right-links">
+						<a href="#" class="side-link"><i class="fas fa-user-circle"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="navbarSearch">
+				<div class="navbar-search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search">
+						<div class="input-group-append">
+							<button class="btn theme-btn" type="button"><i class="fas fa-search"></i></button>
+						</div>
+					</div>
+					<div class="search-category-radio">
+							<div class="custom-control custom-radio">
+									<input type="radio" id="brand" name="search-category" value="brand" class="custom-control-input" checked>
+									<label class="custom-control-label" for="brand">Brand</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="generic" name="search-category" value="generic" class="custom-control-input">
+									<label class="custom-control-label" for="generic">Generic</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="indication" name="search-category" value="indication" class="custom-control-input">
+									<label class="custom-control-label" for="indication">Indication</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="manufacture" name="search-category" value="manufacture" class="custom-control-input">
+									<label class="custom-control-label" for="manufacture">Manufacture</label>
+								</div>
+								<p class="alphabets nav-aldphabets">
+									<a href="#" class="alphabet-link">A</a>
+									<a href="#" class="alphabet-link">B</a>
+									<a href="#" class="alphabet-link">C</a>
+									<a href="#" class="alphabet-link">D</a>
+									<a href="#" class="alphabet-link">E</a>
+									<a href="#" class="alphabet-link">F</a>
+									<a href="#" class="alphabet-link">G</a>
+									<a href="#" class="alphabet-link">H</a>
+									<a href="#" class="alphabet-link">I</a>
+									<a href="#" class="alphabet-link">J</a>
+									<a href="#" class="alphabet-link">K</a>
+									<a href="#" class="alphabet-link">L</a>
+									<a href="#" class="alphabet-link">M</a>
+									<a href="#" class="alphabet-link">N</a>
+									<a href="#" class="alphabet-link">O</a>
+									<a href="#" class="alphabet-link">P</a>
+									<a href="#" class="alphabet-link">Q</a>
+									<a href="#" class="alphabet-link">R</a>
+									<a href="#" class="alphabet-link">S</a>
+									<a href="#" class="alphabet-link">T</a>
+									<a href="#" class="alphabet-link">U</a>
+									<a href="#" class="alphabet-link">V</a>
+									<a href="#" class="alphabet-link">W</a>
+									<a href="#" class="alphabet-link">X</a>
+									<a href="#" class="alphabet-link">Y</a>
+									<a href="#" class="alphabet-link">Z</a>
+								</p>
+					</div>
+				</div>
+			</div>
+		</nav>
+    
+	<!-- banner -->
+	<div class="banner title-banner d-md-flex d-none">
+		<h2>About Us</h2>
+	</div>
+
+  <!-- content -->
+	<div class="container">
+			<div class="row about-mims">
+					<div class="col-md-8">
+            <div class="about-content">
+              <h4 class="about-header">
+                MIMS print publication
+              </h4>
+              <p class="about-text">
+                First published in 1959, MIMS has grown to be the essential prescribing and clinical reference for general practice.
+              </p>
+              <br>
+              <h4 class="about-header">
+                Receiving MIMS
+              </h4>
+              <p class="about-text">
+                MIMS is published in print every quarter, in March, June, September and December. Print copies are sent free of charge to all UK-based GPs who complete our online registration form.
+              </p>
+              <p class="about-text">
+                If you have already registered and need to change your mailing address, please email medicalcirculation@haymarket.com including your name, surgery address and GMC number.
+              </p>
+              <p class="about-text">
+                Other relevant healthcare professionals may subscribe to MIMS by emailing help@shop.haymarket.com or by completing the MIMS subscription form online.
+              </p>
+              <p class="about-text">
+                If you’d like access for 10 or more users at your company we can offer substantial discounts on subscription rates. Contact Alice French, Subscriptions Marketing Manager, on 020 8267 4865 or  alice.french@haymarket.com.
+              </p>
+              <br>
+              <h4 class="about-header">
+                MIMS Online
+              </h4>
+              <p class="about-text">
+                MIMS is one of the most up-to-date prescribing references for healthcare professionals. MIMS is updated constantly online, with hundreds of changes incorporated every month including the addition of new drugs and formulations and the removal of products that are no longer available. Each quarterly print edition includes all the updates from the corresponding three months of online updates.
+              </p>
+              <p class="about-text">
+                MIMS is available for free online to all GPs and nurses upon registration.
+              </p>
+              <p class="about-text">
+                Look inside an issue.
+              </p>
+              <br>
+              <h4 class="about-header">
+                Advertising information
+              </h4>
+              <p class="about-text">
+                Advertising enquiries can be directed to our advertising team, details of which can be found on our MIMS advertising information page.
+              </p>
+              <h4 class="about-header">
+                Insight from MIMS
+              </h4>
+              <p class="about-text">
+                MIMS regularly conducts research into the delivery of education and clinical information in the primary care sector. We’ve packaged up the findings from some of our most recent surveys, which you can download for free.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="about-img">
+              <img src="./images/mims-book.png" alt="">
+            </div>
+          </div>
+			</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container d-flex justify-content-between align-items-center footer-wrapper">
+				<div class="footer-logo logo-top">
+						<img id="logo" src="./images/green-logo.png" alt="">
+				</div>
+			<p>© 2018 - MiMS Bangladesh</p>
+			<div class="footer-logo logo-middle">
+					<img id="logo" src="./images/green-logo.png" alt="">
+			</div>
+			<p>Design & Development by <span class="dev-logo"></span></p>
+		</div>
+	</footer>
+
+	<script>
+		function viewImage(img) {
+			var viewer = ImageViewer();
+			var imgSrc = img;
+
+			viewer.show(img);
+		}
+	</script>
+</body>
+
+</html>

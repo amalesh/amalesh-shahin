@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Important Addresses</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="icon" type="image/x-icon" href=""> -->
+
+	<!-- CDN -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<!-- Custom -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./fonts/fonts.min.css">
+
+	<!-- scripts -->
+	<script src="./js/ui.js"></script>
+</head>
+
+<body>
+	<!-- navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarMenu"
+       aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation" id="navbarMenuButton">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <a class="navbar-brand-centered" href="#">
+        <img id="logo" src="./images/green-logo.png" alt="">
+      </a>
+  
+      <button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarSearch"
+       aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation" id="navbarSearchButton">
+         <i class="fas fa-search"></i>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <div class="container d-flex justify-content-between navbar-container">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link home-link active" href="./index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link doctor-link" href="./doctors.html">Doctor</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link resources-link" href="./resources.html">Resources</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link about-link" href="./about.html">About Us</a>
+						</li>
+					</ul>
+          <div class="left-links">
+            <a href="#" class="side-link"><i class="fab fa-facebook-square"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-twitter-square"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-google-plus-square"></i></a>
+          </div>
+          <div class="right-links">
+            <a href="#" class="side-link"><i class="fas fa-user-circle"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSearch">
+        <div class="navbar-search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-append">
+              <button class="btn theme-btn" type="button"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="search-category-radio">
+							<div class="custom-control custom-radio">
+									<input type="radio" id="brand" name="search-category" value="brand" class="custom-control-input" checked>
+									<label class="custom-control-label" for="brand">Brand</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="generic" name="search-category" value="generic" class="custom-control-input">
+									<label class="custom-control-label" for="generic">Generic</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="indication" name="search-category" value="indication" class="custom-control-input">
+									<label class="custom-control-label" for="indication">Indication</label>
+								</div>
+								<div class="custom-control custom-radio">
+									<input type="radio" id="manufacture" name="search-category" value="manufacture" class="custom-control-input">
+									<label class="custom-control-label" for="manufacture">Manufacture</label>
+								</div>
+								<p class="alphabets nav-aldphabets">
+									<a href="#" class="alphabet-link">A</a>
+									<a href="#" class="alphabet-link">B</a>
+									<a href="#" class="alphabet-link">C</a>
+									<a href="#" class="alphabet-link">D</a>
+									<a href="#" class="alphabet-link">E</a>
+									<a href="#" class="alphabet-link">F</a>
+									<a href="#" class="alphabet-link">G</a>
+									<a href="#" class="alphabet-link">H</a>
+									<a href="#" class="alphabet-link">I</a>
+									<a href="#" class="alphabet-link">J</a>
+									<a href="#" class="alphabet-link">K</a>
+									<a href="#" class="alphabet-link">L</a>
+									<a href="#" class="alphabet-link">M</a>
+									<a href="#" class="alphabet-link">N</a>
+									<a href="#" class="alphabet-link">O</a>
+									<a href="#" class="alphabet-link">P</a>
+									<a href="#" class="alphabet-link">Q</a>
+									<a href="#" class="alphabet-link">R</a>
+									<a href="#" class="alphabet-link">S</a>
+									<a href="#" class="alphabet-link">T</a>
+									<a href="#" class="alphabet-link">U</a>
+									<a href="#" class="alphabet-link">V</a>
+									<a href="#" class="alphabet-link">W</a>
+									<a href="#" class="alphabet-link">X</a>
+									<a href="#" class="alphabet-link">Y</a>
+									<a href="#" class="alphabet-link">Z</a>
+								</p>
+					</div>
+        </div>
+      </div>
+  </nav>
+
+  <!-- banner -->
+  <div class="banner title-banner d-md-flex d-none">
+    <h2>Important Addresses</h2>
+  </div>
+
+  <!-- advert -->
+  <!-- change the img tag accordingly (e.g: <ins> tag) -->
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="in-page-advert" id="advert-1">
+              <img src="./images/add-6.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="in-page-advert" id="advert-2">
+              <img src="./images/add-6.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="content-section main">
+                  <div class="section-header d-flex justify-content-between" style="margin-bottom: 0px; padding: 24px 30px 16px 30px;">
+                      <span>Find Address</span> <i class="fas fa-filter d-md-none d-blocK" data-toggle="modal" data-target="#filterModal"></i>
+                  </div>
+                  <div class="container" style="padding-bottom: 20px">
+                    <!-- address search -->
+                    <div class="address-search row">
+                      <div class="col-md-5 col-12 address-search-col">
+                        <div class="theme-select">
+                          <select name="city">
+                            <option style="color: #868686" disabled selected>Search by Cites</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="dhaka">Dhaka</option>
+                            <option value="dhaka">Dhaka</option>
+                          </select>
+                          <div class="theme-down-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-5 col-12 address-search-col">
+                          <input type="text" class="theme-input" name="areaSearchKey" placeholder="Search by Area…">
+                      </div>
+                      <div class="col-md-2 col-12 address-search-col">
+                          <button class="btn theme-btn" style="width: 100%;">Search</button>
+                      </div>
+                    </div>
+                    <!-- use "selected" class on the selected items -->
+                    <div class="address-search-filters">
+                      <span>
+                          <span>Filter: </span>
+                          <label class="search-tag">24 Hours Pharmacy
+                            <input type="checkbox" name="address_search_filter">
+                          </label>
+                          <label class="search-tag">Ambulance Service
+                            <input type="checkbox" name="address_search_filter">
+                          </label>
+                          <label class="search-tag">Blood Bank
+                            <input type="checkbox" name="address_search_filter">
+                          </label>
+                          <label class="search-tag">Cancer Hospital
+                            <input type="checkbox" name="address_search_filter">
+                          </label>
+                      </span>
+                      <div class="dropdown address-search-filter-dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-toggle="collapse" data-target="#seachFilterCollapse" aria-expanded="false" aria-controls="collapseExample">
+                          View All 
+                          <div class="theme-down-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="collapse" id="seachFilterCollapse" class="more-search-filters">
+                      <label class="search-tag">24 Hours Pharmacy
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Ambulance Service
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Blood Bank
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Cancer Hospital
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">24 Hours Pharmacy
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Ambulance Service
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Blood Bank
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Cancer Hospital
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">24 Hours Pharmacy
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Ambulance Service
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Blood Bank
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                      <label class="search-tag">Cancer Hospital
+                        <input type="checkbox" name="address_search_filter">
+                      </label>
+                    </div>
+                  
+                    <!-- filter modal -->
+                    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="filterModalTitle">Select Filters</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <label class="search-tag">24 Hours Pharmacy
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Ambulance Service
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Blood Bank
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Cancer Hospital
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">24 Hours Pharmacy
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Ambulance Service
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Blood Bank
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Cancer Hospital
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">24 Hours Pharmacy
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Ambulance Service
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Blood Bank
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                            <label class="search-tag">Cancer Hospital
+                              <input type="checkbox" name="address_search_filter">
+                            </label>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-block theme-btn" data-dismiss="modal" >Select</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="content-section main">
+                  <div class="container address-table table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col name-col" style="width: 30%">Name</th>
+                          <th scope="col address-col" style="width: 35%">Address</th>
+                          <th scope="col contact-col" style="width: 35%">Contact</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>Al-Helal Medicine Corner</td>
+                          <td>782 Sandrine Rest 084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka 2630</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>Al-Helal Medicine Corner</td>
+                          <td>782 Sandrine Rest 084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka 2630</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>Al-Helal Medicine Corner</td>
+                          <td>782 Sandrine Rest 084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka 2630</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>Al-Helal Medicine Corner</td>
+                          <td>782 Sandrine Rest 084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka 2630</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                        <tr>
+                          <td>24-hours Pharmacy</td>
+                          <td>084 Rae Landing Apt. 460, Nagar Hospital Bhavan, Dhanmondi, Dhaka</td>
+                          <td>Tel: +880-698-16110, +880-2-965698, +880-2-965698</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <div class="view-more-address-btn">
+                      <button class="btn btn-link btn-block no-outline">View More <i class="fas fa-chevron-down"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="in-page-advert" id="advert-3">
+                  <img src="./images/add-12.png" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 col-12">
+              <div class="container">
+                <div class="row">
+                  <!-- job circular -->
+                  <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                    <div class="section-header own-pad">
+                        <span><img src="./images/icons/briefcase.svg" alt="*"></span>Job Circular
+                    </div>
+                    <div class="container">
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-1.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Analytical Research & Deve..</p>
+                                <p class="job-company side-col">Square Pharmaceuticals Ltd.</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-2.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Medical Promotion Officer (MPO)</p>
+                                <p class="job-company side-col">Drug International Limited.</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-3.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Medical Officer/ Physician</p>
+                                <p class="job-company side-col">IBN SINA Pharmaceutical Industry</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <a href="#" class="side-col-see-more-btn no-outline">See All Jobs</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col" id="advert-4">
+                        <img src="./images/add-4.png" alt="">
+                    </div>
+                  </div>
+                <div class="row">
+                  <!-- local news -->
+                  <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                    <div class="section-header own-pad">
+                      <span><img src="./images/icons/newspaper.svg" alt="*"></span>Local News
+                    </div>
+                    <div class="container">
+                      <div class="row news">
+                        <div class="col-3" style="padding: 5px; padding-left: 16px;">
+                          <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+                        </div>
+                        <div class="col-9" style="padding-right: 0; padding-left: 7px">
+                          <p class="news-title side-col">Shahana first female pro-VC  of BSMMU</p>
+                          <p class="news-description side-col">
+                            November 11, 2018
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row news">
+                        <div class="col-3" style="padding: 5px; padding-left: 16px;">
+                          <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-2.jpg" alt="">
+                        </div>
+                        <div class="col-9" style="padding-right: 0; padding-left: 7px">
+                          <p class="news-title side-col">Princess Maria spends time  with special children</p>
+                            <p class="news-description side-col">
+                              November 11, 2018
+                            </p>
+                        </div>
+											</div>
+											<a href="#" class="side-col-see-more-btn no-outline">See All News</a>
+                    </div>
+                  </div>
+								</div>
+								<div class="row">
+									<!-- special reports -->
+									<div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+										<div class="section-header own-pad">
+											<span><img src="./images/icons/newspaper.svg" alt="*"></span>Special Reports
+										</div>
+										<div class="container">
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Shahana first female pro-VC  of BSMMU</p>
+													<p class="news-description side-col">
+														November 11, 2018
+													</p>
+												</div>
+											</div>
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-2.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Princess Maria spends time  with special children</p>
+														<p class="news-description side-col">
+															November 11, 2018
+														</p>
+												</div>
+											</div>
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Princess Maria spends time  with special children</p>
+														<p class="news-description side-col">
+															November 11, 2018
+														</p>
+												</div>
+											</div>
+											<a href="#" class="side-col-see-more-btn no-outline">See All Reports</a>
+										</div>
+									</div>
+								</div>
+                <div class="row">
+                  <!-- important addresses -->
+                  <div class="content-section col-12" style="padding: 0; max-height: none;">
+                    <div class="section-header own-pad">
+                      <span><img src="./images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                    </div>
+                      <ul class="address-list">
+                        <li class="address"><a href="#">24 hours Pharmacy</a></li>
+                        <li class="address"><a href="#">Ambulance Service </a></li>
+                        <li class="address"><a href="#">Blood Bank</a></li>
+                        <li class="address"><a href="#">Cancer Hospital</a></li>
+                        <li class="address"><a href="#">Cardiac Hospitals</a></li>
+                        <li class="address"><a href="#">Eye Hospital </a></li>
+                        <li class="address"><a href="#">Gastroliver Clinics</a></li>
+                        <li class="address"><a href="#">Kidney &amp; Urology Hospitals </a></li>
+                        <li class="address"><a href="#">Mother &amp; Child Hospitals</a></li>
+                        <a href="#" class="see-more-btn no-outline">See All Adresses</a>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+	<!-- footer -->
+	<footer>
+		<div class="container d-flex justify-content-between align-items-center footer-wrapper">
+				<div class="footer-logo logo-top">
+						<img id="logo" src="./images/green-logo.png" alt="">
+				</div>
+			<p>© 2018 - MiMS Bangladesh</p>
+			<div class="footer-logo logo-middle">
+					<img id="logo" src="./images/green-logo.png" alt="">
+			</div>
+			<p>Design & Development by <span class="dev-logo"></span></p>
+		</div>
+  </footer>
+  
+  <script>
+    $(function () {
+      $('.search-tag input').click(function () {
+        $(this).parent().toggleClass('selected')
+      })
+    })
+  </script>
+</body>
+
+</html>

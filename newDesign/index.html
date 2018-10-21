@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Mims</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="icon" type="image/x-icon" href=""> -->
+
+	<!-- CDN -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<!-- Custom -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./fonts/fonts.min.css">
+
+	<!-- scripts -->
+	<script src="./js/ui.js"></script>
+</head>
+
+<body>
+	<!-- navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+		<button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarMenu"
+		 aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation" id="navbarMenuButton">
+			<i class="fas fa-bars"></i>
+		</button>
+
+		<a class="navbar-brand-centered" href="#">
+			<img id="logo" src="./images/green-logo.png" alt="">
+		</a>
+
+		<button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarSearch"
+		 aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation" id="navbarSearchButton">
+		 	<i class="fas fa-search"></i>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarMenu">
+			<div class="container d-flex justify-content-between navbar-container">
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item">
+						<a class="nav-link mims-nav-link home-link active" href="./index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link mims-nav-link doctor-link" href="./doctors.html">Doctor</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link mims-nav-link resources-link" href="./resources.html">Resources</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link mims-nav-link about-link" href="about.html">About Us</a>
+					</li>
+				</ul>
+				<div class="left-links">
+					<a href="#" class="side-link"><i class="fab fa-facebook-square"></i></a>
+					<a href="#" class="side-link"><i class="fab fa-twitter-square"></i></a>
+					<a href="#" class="side-link"><i class="fab fa-linkedin"></i></a>
+					<a href="#" class="side-link"><i class="fab fa-google-plus-square"></i></a>
+				</div>
+				<div class="right-links">
+					<a href="#" class="side-link"><i class="fas fa-user-circle"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="collapse navbar-collapse" id="navbarSearch">
+			<div class="navbar-search">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search">
+					<div class="input-group-append">
+						<button class="btn theme-btn" type="button"><i class="fas fa-search"></i></button>
+					</div>
+				</div>
+				<div class="search-category-radio">
+						<div class="custom-control custom-radio">
+								<input type="radio" id="brand" name="search-category" value="brand" class="custom-control-input" checked>
+								<label class="custom-control-label" for="brand">Brand</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="generic" name="search-category" value="generic" class="custom-control-input">
+								<label class="custom-control-label" for="generic">Generic</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="indication" name="search-category" value="indication" class="custom-control-input">
+								<label class="custom-control-label" for="indication">Indication</label>
+							</div>
+							<div class="custom-control custom-radio">
+								<input type="radio" id="manufacture" name="search-category" value="manufacture" class="custom-control-input">
+								<label class="custom-control-label" for="manufacture">Manufacture</label>
+							</div>
+							<p class="alphabets nav-aldphabets">
+								<a href="#" class="alphabet-link">A</a>
+								<a href="#" class="alphabet-link">B</a>
+								<a href="#" class="alphabet-link">C</a>
+								<a href="#" class="alphabet-link">D</a>
+								<a href="#" class="alphabet-link">E</a>
+								<a href="#" class="alphabet-link">F</a>
+								<a href="#" class="alphabet-link">G</a>
+								<a href="#" class="alphabet-link">H</a>
+								<a href="#" class="alphabet-link">I</a>
+								<a href="#" class="alphabet-link">J</a>
+								<a href="#" class="alphabet-link">K</a>
+								<a href="#" class="alphabet-link">L</a>
+								<a href="#" class="alphabet-link">M</a>
+								<a href="#" class="alphabet-link">N</a>
+								<a href="#" class="alphabet-link">O</a>
+								<a href="#" class="alphabet-link">P</a>
+								<a href="#" class="alphabet-link">Q</a>
+								<a href="#" class="alphabet-link">R</a>
+								<a href="#" class="alphabet-link">S</a>
+								<a href="#" class="alphabet-link">T</a>
+								<a href="#" class="alphabet-link">U</a>
+								<a href="#" class="alphabet-link">V</a>
+								<a href="#" class="alphabet-link">W</a>
+								<a href="#" class="alphabet-link">X</a>
+								<a href="#" class="alphabet-link">Y</a>
+								<a href="#" class="alphabet-link">Z</a>
+							</p>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- banner -->
+	<div class="banner d-md-flex d-none">
+		<div class="search-wrapper">
+			<ul class="search-tabs group">
+				<li class="brand active"><a href="#one">Brand</a></li>
+				<li class="generic"><a href="#two">Generic</a></li>
+				<li class="indication"><a href="#three">Indication</a></li>
+				<li class="manufacture"><a href="#three">Manufacture</a></li>
+			</ul>
+			<div class="search">
+				<input class="search-bar no-outline" type="text" id="search">
+				<button class="search-btn no-outline"><img src="./images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
+			</div>
+			<div class="alphabets">
+				<a href="#" class="alphabet-link">A</a>
+				<a href="#" class="alphabet-link">B</a>
+				<a href="#" class="alphabet-link">C</a>
+				<a href="#" class="alphabet-link">D</a>
+				<a href="#" class="alphabet-link">E</a>
+				<a href="#" class="alphabet-link">F</a>
+				<a href="#" class="alphabet-link">G</a>
+				<a href="#" class="alphabet-link">H</a>
+				<a href="#" class="alphabet-link">I</a>
+				<a href="#" class="alphabet-link">J</a>
+				<a href="#" class="alphabet-link">K</a>
+				<a href="#" class="alphabet-link">L</a>
+				<a href="#" class="alphabet-link">M</a>
+				<a href="#" class="alphabet-link">N</a>
+				<a href="#" class="alphabet-link">O</a>
+				<a href="#" class="alphabet-link">P</a>
+				<a href="#" class="alphabet-link">Q</a>
+				<a href="#" class="alphabet-link">R</a>
+				<a href="#" class="alphabet-link">S</a>
+				<a href="#" class="alphabet-link">T</a>
+				<a href="#" class="alphabet-link">U</a>
+				<a href="#" class="alphabet-link">V</a>
+				<a href="#" class="alphabet-link">W</a>
+				<a href="#" class="alphabet-link">X</a>
+				<a href="#" class="alphabet-link">Y</a>
+				<a href="#" class="alphabet-link">Z</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- home product slider -->
+	<div class="home-product-slider-container container">
+		<div class="home-product-slider-wrapper">
+			<div id="home-product-slider">
+				<div class="home-product-slide">
+					<img src="./images/home-product-slide-1.jpg" alt="">
+				</div>
+				<div class="home-product-slide">
+					<img src="./images/home-product-slide-2.jpg" alt="">
+				</div>
+				<div class="home-product-slide">
+					<img src="./images/home-product-slide-3.jpg" alt="">
+				</div>
+				<div class="home-product-slide">
+					<img src="./images/home-product-slide-1.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- home advert -->
+	<div class="container advert-container" id="advert-1">
+		<a href="#" class="advert no-outline">
+			<img src="./images/home-advert-1.jpg" alt="Click this link!">
+		</a>
+	</div>
+
+	<!-- content -->
+	<div class="container">
+		<div class="row">
+			<!-- drug update -->
+			<div class="col-md-8 col-12">
+				<div class="content-section">
+					<div class="section-header drug-update-header">
+						<span><img src="./images/icons/medicine.svg" alt="*"></span>Drug Update
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 section-col">
+								<h4>New Products</h4>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Anema</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Carbestop</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
+							</div>
+							<div class="col-md-4 section-col">
+								<h4>New Brands</h4>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Carbestop</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Advixa</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
+							</div>
+							<div class="col-md-4 section-col">
+								<h4>New Presentations</h4>
+								<a href="./brand-generic-details.html">Pinto</a>
+								<a href="./brand-generic-details.html">Anema</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a href="./brand-generic-details.html">ACDC</a>
+								<a href="./brand-generic-details.html">5X</a>
+								<a href="./brand-generic-details.html">Advixa 4C</a>
+								<a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- star product -->
+			<div class="col-md-4 col-12">
+				<div class="star-product">
+					<div class="star-product-img">
+						<img src="./images/star-product.jpg" alt="">
+					</div>
+					<div class="star-product-info">
+						<div class="star"><i class="fas fa-star"></i></div>
+						<h3 class="star-product-name">Xigduo XR</h3>
+						<p class="star-product-attributes">(Per 5 mg/1,000 mg)</p>
+						<!-- NOTE: limit description in 2 lines -->
+						<p class="star-product-description">Adjunct to diet & exercise to improve glycaemic control in adult w... </p>
+					</div>
+				</div>
+			</div>
+			<!-- job circular -->
+			<div class="col-md-6 col-12" style="height: fit-content;">
+				<div class="content-section" style="padding: 0; max-height: none;">
+					<div class="section-header own-pad" style="margin-bottom: 20px;">
+						<span><img src="./images/icons/briefcase.svg" alt="*"></span>Job Circular
+						<a class="section-header-view-all-btn no-outline" href="./job-circular-list.html">See All jobs</a>
+					</div>
+					<div class="container">
+						<div class="row job">
+							<div class="col-2">
+								<img class="job-img" src="./images/job-img-1.jpg" alt="">
+							</div>
+							<div class="col-10">
+								<p class="job-title">Analytical Research & Development</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-2">
+								<img class="job-img" src="./images/job-img-2.jpg" alt="">
+							</div>
+							<div class="col-10">
+								<p class="job-title">Medical Promotion Officer (MPO)</p>
+								<p class="job-company">Drug International Limited.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-2">
+								<img class="job-img" src="./images/job-img-3.jpg" alt="">
+							</div>
+							<div class="col-10">
+								<p class="job-title">IBN SINA Pharmaceutical Industry Ltd</p>
+								<p class="job-company">IBN SINA Pharmaceutical Industry</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-2">
+								<img class="job-img" src="./images/job-img-4.jpg" alt="">
+							</div>
+							<div class="col-10">
+								<p class="job-title">Analytical Research & Development</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- local news -->
+			<div class="col-md-6 col-12" style="height: fit-content;">
+				<div class="content-section" style="padding: 0; max-height: none;">
+					<div class="section-header own-pad" style="margin-bottom: 16px;">
+						<span><img src="./images/icons/newspaper.svg" alt="*"></span>Local News
+						<a class="section-header-view-all-btn no-outline" href="#">See All News</a>
+					</div>
+					<div class="container">
+						<div class="row news home-news">
+							<div class="col-4">
+								<img class="news-img" src="./images/news-img-1.jpg" alt="">
+							</div>
+							<div class="col-8">
+								<p class="news-title">Shahana first female pro-VC  of BSMMU</p>
+								<p class="news-description d-md-block d-none">
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+										incididunt ut labore.
+								</p>
+							</div>
+							<div class="col-12 d-md-none d-blocK">
+									<p class="news-description">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+											incididunt ut labore.
+									</p>
+							</div>
+						</div>
+						<div class="row news home-news">
+							<div class="col-4">
+								<img class="news-img" src="./images/news-img-2.jpg" alt="">
+							</div>
+							<div class="col-8">
+								<p class="news-title">Princess Maria spends time  with special children</p>
+									<p class="news-description d-md-block d-none">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+											incididunt ut labore.
+									</p>
+							</div>
+							<div class="col-12 d-md-none d-blocK">
+									<p class="news-description">
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
+											incididunt ut labore.
+									</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- home advert -->
+	<div class="container advert-container" id="advert-2">
+		<a href="#" class="advert no-outline">
+			<img src="./images/home-advert-1.jpg" alt="Click this link!">
+		</a>
+	</div>
+
+	<!-- special reports slider -->
+	<div class="home-news-slider-container container">
+		<div class="home-news-slider-wrapper content-section">
+				<div class="section-header" style="margin-bottom: 24px;">
+					<span><img src="./images/icons/briefcase.svg" alt="*"></span>Special Reports
+					<a class="section-header-view-all-btn no-outline" href="./special-reports.html">See All News</a>
+				</div>
+			<div id="home-news-slider">
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-1.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-2.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-3.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-4.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-1.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+				<div class="home-news-slide">
+					<img src="./images/slide-news-img-3.jpg" alt="">
+					<p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- content -->
+	<div class="container">
+		<div class="row">
+			<!-- international health -->
+			<div class="col-md-8 col-12" style="height: fit-content;">
+				<div class="content-section" style="padding: 0; max-height: none;">
+					<div class="section-header own-pad" style="margin-bottom: 16px;">
+						<span><img src="./images/icons/briefcase.svg" alt="*"></span>International Health
+						<a class="section-header-view-all-btn no-outline" href="./special-reports.html">See All News</a>
+					</div>
+					<div class="container">
+						<div class="row job">
+							<div class="col-12">
+								<p class="job-title">800 Canadian doctors protest pay raises, say they .......</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-12">
+								<p class="job-title">Global campaign takes aim at tobacco giants for ........</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-12">
+								<p class="job-title">Thyroid removal linked to increased bone-thinning, ......</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+						<div class="row job">
+							<div class="col-12">
+								<p class="job-title">Heart disease patients live longer when they exercise</p>
+								<p class="job-company">Square Pharmaceuticals Ltd.</p>
+							</div>
+							<img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">">
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- important addresses -->
+			<div class="col-md-4 col-12" style="height: fit-content;">
+				<div class="content-section" style="padding: 0; max-height: none;">
+					<div class="section-header own-pad" style="margin-bottom: 24px;">
+						<span><img src="./images/icons/briefcase.svg" alt="*"></span>Important Addresses
+					</div>
+						<ul class="address-list">
+							<li class="address"><a href="#">24 hours Pharmacy</a></li>
+							<li class="address"><a href="#">Ambulance Service </a></li>
+							<li class="address"><a href="#">Blood Bank</a></li>
+							<li class="address"><a href="#">Cancer Hospital</a></li>
+							<li class="address"><a href="#">Cardiac Hospitals</a></li>
+							<li class="address"><a href="#">Eye Hospital </a></li>
+							<li class="address"><a href="#">Gastroliver Clinics</a></li>
+							<li class="address"><a href="#">Kidney &amp; Urology Hospitals </a></li>
+							<li class="address"><a href="#">Mother &amp; Child Hospitals</a></li>
+							<a href="./important-address.html" class="see-more-btn no-outline">See All Adresses</a>
+						</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- bottom quote section -->
+	<div class="bottom-quote-secton container">
+		<div class="row">
+			<div class="col-md-4 col-12 quote">
+				<img src="./images/do-not-use.jpg" alt="">
+			</div>
+			<div class="col-md-4 col-12 quote">
+				<img src="./images/visitor.jpg" alt="">
+				<div class="visitor">
+					<p>visitor</p>
+					<p class="visitor-count">123,45,67</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-12 quote">
+				<img src="./images/do-not-use.jpg" alt="">
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<footer>
+		<div class="container d-flex justify-content-between align-items-center footer-wrapper">
+				<div class="footer-logo logo-top">
+						<img id="logo" src="./images/green-logo.png" alt="">
+				</div>
+			<p>© 2018 - MiMS Bangladesh</p>
+			<div class="footer-logo logo-middle">
+					<img id="logo" src="./images/green-logo.png" alt="">
+			</div>
+			<p>Design & Development by <span class="dev-logo"></span></p>
+		</div>
+	</footer>
+</body>
+
+</html>

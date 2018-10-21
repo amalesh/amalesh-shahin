@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Report Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="icon" type="image/x-icon" href=""> -->
+
+	<!-- CDN -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+
+	<!-- scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	 crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+	<!-- Custom -->
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/base.css">
+	<link rel="stylesheet" href="./fonts/fonts.min.css">
+
+	<!-- scripts -->
+	<script src="./js/ui.js"></script>
+</head>
+
+<body>
+	<!-- navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light justify-content-between">
+      <button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarMenu"
+       aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation" id="navbarMenuButton">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <a class="navbar-brand-centered" href="#">
+        <img id="logo" src="./images/green-logo.png" alt="">
+      </a>
+  
+      <button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarSearch"
+       aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation" id="navbarSearchButton">
+         <i class="fas fa-search"></i>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <div class="container d-flex justify-content-between navbar-container">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link home-link active" href="./index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link doctor-link" href="./doctors.html">Doctor</a>
+						</li>
+					</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link resources-link" href="./resources.html">Resources</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link mims-nav-link about-link" href="./about.html">About Us</a>
+						</li>
+					</ul>
+          <div class="left-links">
+            <a href="#" class="side-link"><i class="fab fa-facebook-square"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-twitter-square"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="side-link"><i class="fab fa-google-plus-square"></i></a>
+          </div>
+          <div class="right-links">
+            <a href="#" class="side-link"><i class="fas fa-user-circle"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSearch">
+        <div class="navbar-search">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-append">
+              <button class="btn theme-btn" type="button"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="search-category-radio">
+              <div class="custom-control custom-radio">
+                  <input type="radio" id="brand" name="search-category" value="brand" class="custom-control-input" checked>
+                  <label class="custom-control-label" for="brand">Brand</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="generic" name="search-category" value="generic" class="custom-control-input">
+                  <label class="custom-control-label" for="generic">Generic</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="indication" name="search-category" value="indication" class="custom-control-input">
+                  <label class="custom-control-label" for="indication">Indication</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="manufacture" name="search-category" value="manufacture" class="custom-control-input">
+                  <label class="custom-control-label" for="manufacture">Manufacture</label>
+                </div>
+                <p class="alphabets nav-aldphabets">
+                  <a href="#" class="alphabet-link">A</a>
+                  <a href="#" class="alphabet-link">B</a>
+                  <a href="#" class="alphabet-link">C</a>
+                  <a href="#" class="alphabet-link">D</a>
+                  <a href="#" class="alphabet-link">E</a>
+                  <a href="#" class="alphabet-link">F</a>
+                  <a href="#" class="alphabet-link">G</a>
+                  <a href="#" class="alphabet-link">H</a>
+                  <a href="#" class="alphabet-link">I</a>
+                  <a href="#" class="alphabet-link">J</a>
+                  <a href="#" class="alphabet-link">K</a>
+                  <a href="#" class="alphabet-link">L</a>
+                  <a href="#" class="alphabet-link">M</a>
+                  <a href="#" class="alphabet-link">N</a>
+                  <a href="#" class="alphabet-link">O</a>
+                  <a href="#" class="alphabet-link">P</a>
+                  <a href="#" class="alphabet-link">Q</a>
+                  <a href="#" class="alphabet-link">R</a>
+                  <a href="#" class="alphabet-link">S</a>
+                  <a href="#" class="alphabet-link">T</a>
+                  <a href="#" class="alphabet-link">U</a>
+                  <a href="#" class="alphabet-link">V</a>
+                  <a href="#" class="alphabet-link">W</a>
+                  <a href="#" class="alphabet-link">X</a>
+                  <a href="#" class="alphabet-link">Y</a>
+                  <a href="#" class="alphabet-link">Z</a>
+                </p>
+          </div>
+        </div>
+      </div>
+  </nav>
+
+  <!-- banner -->
+  <div class="banner title-banner d-md-flex d-none">
+    <h2>Important Addresses</h2>
+  </div>
+  
+  <!-- advert -->
+  <!-- change the img tag accordingly (e.g: <ins> tag) -->
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="in-page-advert" id="advert-1">
+              <img src="./images/add-6.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-6 col-12">
+          <div class="in-page-advert" id="advert-2">
+              <img src="./images/add-6.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-12">
+              <div class="content-section main">
+                <div class="section-header own-pad bb-lighter" style="margin-bottom: 10px; padding: 24px 30px 16px 30px;">
+                    <!-- bread crumb -->
+                    <div class="bread-crumb">
+                      <a href="home.html">Home <i class="fas fa-chevron-right"></i></a>
+                      <a href="home.html">Job Circular <i class="fas fa-chevron-right"></i></a>
+                      <a href="home.html">Hyoscine <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-details">
+                  <!-- title -->
+                  <h2 class="news-title">
+                    Medical Officer/ Physician - Square
+                  </h2>
+                  <!-- date -->
+                  <p class="news-post-date">Posted on <span>9th September 2018</span></p>
+                  <!-- banner -->
+                  <img class="news-banner" src="./images/special-report-banner.jpg" alt="">
+                  <!-- author -->
+                  <p class="news-author">By Irene Tien, MD</p>
+                  <!-- description -->
+                  <p class="news-description">
+                      The C-med radio crackled to life:
+                  </p>
+                  <p class="news-description">
+                      “Seven-month-old boy found unresponsive. We started CPR and he has an IO and ET tube. We’re 5 minutes out.”
+                  </p>
+                  <p class="news-description">
+                      It was 8 a.m. and the emergency department team descended on the resuscitation room to prepare. I started scurrying around to finish some quick tasks to get my existing patients’ medical plans moving forward since I would surely be fully engrossed taking care of this infant.
+                  </p>
+                  <p class="news-description">
+                      Paramedics arrived and started performing chest compressions on the tiny, gray body on the stretcher. He was limp, cool to touch, eyes closed, pink foam bobbing up and down in the endotracheal tube with each squeeze of the bag valve mask.
+                  </p>
+                  <p class="news-description">
+                      “He has a rhythm.” Compressions paused. A faint pulse was palpable.
+                  </p>
+                  <p class="news-description">
+                      We thought the baby might make it. “Page the neonatologist and pediatrician to come down.” I needed all of the pediatric brains I had at my disposal.
+                  </p>
+                  <p class="news-description">
+                      Three and a half hours later, multiple rounds of medication, reintubation for a dislodged ETT, and an extra IO later, the baby was stabilized, and the pediatric transport team had just rolled the baby out to the ambulance to whisk the baby downtown to the children’s hospital. I emerged wearily from the resuscitation room. I was halfway through my 9-hour shift. The emergency department had exploded. In the 3.5-hours that I’d spent taking care of this infant, I would have normally evaluated at least 9 other patients. I had some major catching up to do, but I really wanted to sit in a quiet, dark room.
+                  </p>
+                  <p class="news-description">
+                      I walked into my next patient’s room. A young man with an ankle injury. I forced a friendly smile on my face.
+                  </p>
+                  <p class="news-description">
+                      “Hello. I’m Dr. Tien, one of the emergency room doctors. I’m so sorry for the wait.”
+                  </p>
+                  <p class="news-description">
+                      “I’ve been waiting here for the last 2.5 hours,” he said angrily. “Can you just tell me what the x-ray showed so I can get out of here?”
+                  </p>
+                  <p class="news-description">
+                      Empathy. We all want our doctors to have it. Doctors want to retain it. How do I allow myself to feel empathy but not be destroyed by it? I am expected to bring my A-game to every patient, which means I often have to compartmentalize my feelings. I defer the grief I have for children who die on my shift. I can’t allow myself to break down crying when I have to tell a mother of 3 young kids that she has a brain tumor. I have to empathize with the frustration of the patient who has been waiting while I’ve been working to save a life, but not become frustrated myself.
+                  </p>
+                  <p class="news-description">
+                      In reality, these things make me angry. They make me sad. But while I’m at work, they can’t make me anything. Even when I get home, these feelings stay locked away. Am I slowly becoming a robot? Is it possible for me to feel the full range of emotions of a human being anymore? Have the decades of keeping a calm, professional external demeanor despite whatever avalanche of anxiety, anger, sadness, or grief I feel inside been slowly stripping away my humanity?
+                  </p>
+                  <p class="news-description">
+                      In my experience, the paradox of being expected to empathize but having to emotionally disconnect results in 1 of 3 possible outcomes for the doctor: (1) becoming emotionally destroyed and quitting medicine, self-medicating with drugs or alcohol, or committing suicide; (2) becoming the emotionally-removed doctor who goes through the motions but isn’t emotionally invested in the patients; or (3) finding a balance between emotional detachment and emotional investment with the help of family, friends, colleagues and/or mental health professionals.
+                  </p>
+                  <p class="news-description">
+                      How do we help doctors find balance?
+                  </p>
+                  <p class="news-description">
+                      Doctors are generally loners. We suffer alone. We put on a brave face for the patients, staff, other doctors, and even our families. We need to learn to reach out to our colleagues in pain. No more judgement, especially from ourselves, for exposing our vulnerabilities. No one knows better the challenges we face than other doctors. We shouldn’t reserve our compassion just for our patients.
+                  </p>
+                  <div class="news-detais-footer d-flex justify-content-between">
+                      <span class="news-source">Article Source: <span>World Medical Paper</span></span>
+                      <button class="no-outline share-btn" data-toggle="collapse" data-target="#shareLinksCollapse" aria-expanded="false" aria-controls="shareLinksCollapse"><i class="fas fa-share-alt"></i></a>
+                  </div>
+                  <div class="collapse" id="shareLinksCollapse">
+                    <a href="#" class="side-link" style="color: #2D468A"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#" class="side-link" style="color: #2390F3"><i class="fab fa-twitter-square"></i></a>
+                    <a href="#" class="side-link" style="color: #1468A9"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="side-link" style="color: #F74A3C"><i class="fab fa-google-plus-square"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="in-page-advert" id="advert-3">
+                <img src="./images/add-12.png" alt="">
+              </div>
+            </div>
+            <div class="col-md-4 col-12">
+              <div class="container">
+                <div class="row">
+                  <!-- job circular -->
+                  <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                    <div class="section-header own-pad">
+                        <span><img src="./images/icons/briefcase.svg" alt="*"></span>Job Circular
+                    </div>
+                    <div class="container">
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-1.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Analytical Research & Deve..</p>
+                                <p class="job-company side-col">Square Pharmaceuticals Ltd.</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-2.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Medical Promotion Officer (MPO)</p>
+                                <p class="job-company side-col">Drug International Limited.</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <div class="row job side-col">
+                            <div class="col-3 pr-0" style="padding: 7px">
+                                <img class="job-img side-col" src="./images/job-img-3.jpg" alt="">
+                            </div>
+                            <div class="col-9" style="padding-right: 0; padding-left: 10px">
+                                <p class="job-title side-col">Medical Officer/ Physician</p>
+                                <p class="job-company side-col">IBN SINA Pharmaceutical Industry</p>
+                            </div>
+                            <!-- <img class="right-arrow" src="./images/icons/right-arrow.svg" alt=">"> -->
+                        </div>
+                        <a href="#" class="side-col-see-more-btn no-outline">See All Jobs</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="in-page-advert side-col" id="advert-4">
+                      <img src="./images/add-4.png" alt="">
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- local news -->
+                  <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                    <div class="section-header own-pad">
+                      <span><img src="./images/icons/newspaper.svg" alt="*"></span>Local News
+                    </div>
+                    <div class="container">
+                      <div class="row news">
+                        <div class="col-3" style="padding: 5px; padding-left: 16px;">
+                          <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+                        </div>
+                        <div class="col-9" style="padding-right: 0; padding-left: 7px">
+                          <p class="news-title side-col">Shahana first female pro-VC  of BSMMU</p>
+                          <p class="news-description side-col">
+                            November 11, 2018
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row news">
+                        <div class="col-3" style="padding: 5px; padding-left: 16px;">
+                          <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-2.jpg" alt="">
+                        </div>
+                        <div class="col-9" style="padding-right: 0; padding-left: 7px">
+                          <p class="news-title side-col">Princess Maria spends time  with special children</p>
+                            <p class="news-description side-col">
+                              November 11, 2018
+                            </p>
+                        </div>
+											</div>
+											<a href="#" class="side-col-see-more-btn no-outline">See All News</a>
+                    </div>
+                  </div>
+								</div>
+								<div class="row">
+									<!-- special reports -->
+									<div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+										<div class="section-header own-pad">
+											<span><img src="./images/icons/newspaper.svg" alt="*"></span>Special Reports
+										</div>
+										<div class="container">
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Shahana first female pro-VC  of BSMMU</p>
+													<p class="news-description side-col">
+														November 11, 2018
+													</p>
+												</div>
+											</div>
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-2.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Princess Maria spends time  with special children</p>
+														<p class="news-description side-col">
+															November 11, 2018
+														</p>
+												</div>
+											</div>
+											<div class="row news">
+												<div class="col-3" style="padding: 5px; padding-left: 16px;">
+													<img class="news-img" style="width: 100%; height: auto; padding: 0;" src="./images/news-img-1.jpg" alt="">
+												</div>
+												<div class="col-9" style="padding-right: 0; padding-left: 7px">
+													<p class="news-title side-col">Princess Maria spends time  with special children</p>
+														<p class="news-description side-col">
+															November 11, 2018
+														</p>
+												</div>
+											</div>
+											<a href="#" class="side-col-see-more-btn no-outline">See All Reports</a>
+										</div>
+									</div>
+								</div>
+                <div class="row">
+                  <!-- important addresses -->
+                  <div class="content-section col-12" style="padding: 0; max-height: none;">
+                    <div class="section-header own-pad">
+                      <span><img src="./images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                    </div>
+                      <ul class="address-list">
+                        <li class="address"><a href="#">24 hours Pharmacy</a></li>
+                        <li class="address"><a href="#">Ambulance Service </a></li>
+                        <li class="address"><a href="#">Blood Bank</a></li>
+                        <li class="address"><a href="#">Cancer Hospital</a></li>
+                        <li class="address"><a href="#">Cardiac Hospitals</a></li>
+                        <li class="address"><a href="#">Eye Hospital </a></li>
+                        <li class="address"><a href="#">Gastroliver Clinics</a></li>
+                        <li class="address"><a href="#">Kidney &amp; Urology Hospitals </a></li>
+                        <li class="address"><a href="#">Mother &amp; Child Hospitals</a></li>
+                        <a href="#" class="see-more-btn no-outline">See All Adresses</a>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </div>
+	<!-- footer -->
+	<footer>
+		<div class="container d-flex justify-content-between align-items-center footer-wrapper">
+				<div class="footer-logo logo-top">
+						<img id="logo" src="./images/green-logo.png" alt="">
+				</div>
+			<p>© 2018 - MiMS Bangladesh</p>
+			<div class="footer-logo logo-middle">
+					<img id="logo" src="./images/green-logo.png" alt="">
+			</div>
+			<p>Design & Development by <span class="dev-logo"></span></p>
+		</div>
+	</footer>
+</body>
+
+</html>
