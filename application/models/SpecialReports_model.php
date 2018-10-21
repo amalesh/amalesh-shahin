@@ -55,8 +55,8 @@ class SpecialReports_model extends GeneralData_model {
 
         $data = array();
         $data['Title'] = $this->input->post('Title');
-        $data['Description'] = $this->input->post('LinkAddress');
-        $data['ImagePath'] = $this->input->post('SpecialReportsImagePath');
+        $data['LinkAddress'] = $this->input->post('LinkAddress');
+        $data['ImagePath'] = $this->input->post('ImagePath');
         $data['CreatedBy'] = $userID;
         $specialreports_information_entity = new SpecialReportEntity($data);
         $specialreports_information_data = $specialreports_information_entity->getSpecialReportEntityForCreate();
@@ -68,8 +68,8 @@ class SpecialReports_model extends GeneralData_model {
         log_message('debug', __METHOD__.'#'.__LINE__.' SpecialReports Data: '.print_r($data, true));
         if($this->db->insert('specialreports', $specialreports_information_data)) {
             $specialreports_id = $this->db->insert_id();
-            if (isset($_FILES["SpecialReportsImagePath"]) && $_FILES["SpecialReportsImagePath"]['tmp_name']){
-                $upload_data = $this->util->upload('SpecialReportImages', 'SpecialReportsImagePath');
+            if (isset($_FILES["ImagePath"]) && $_FILES["ImagePath"]['tmp_name']){
+                $upload_data = $this->util->upload('SpecialReportImages', 'ImagePath');
                 if ($upload_data) {
                     $data = array();
                     $data['ImagePath'] = $upload_data['file_name'];
@@ -110,7 +110,7 @@ class SpecialReports_model extends GeneralData_model {
             $this->db->where('sr.ID', $specialreports_id);
             $this->db->limit(1);
             $specialreports_information = $this->db->get()->result_array();
-            return $specialreports_information;
+            return isset($specialreports_information[0]['ID']) ? $specialreports_information[0] : array();
         }
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
         return $this->prepareErrorResponse(ERROR_INVALID_REQUEST);
@@ -126,7 +126,7 @@ class SpecialReports_model extends GeneralData_model {
         $data = array();
         $data['Title'] = $this->input->post('Title');
         $data['LinkAddress'] = $this->input->post('LinkAddress');
-        $data['ImagePath'] = $this->input->post('SpecialReportsImagePath');
+        $data['ImagePath'] = $this->input->post('ImagePath');
         $data['CreatedBy'] = $userID;
 
         $require_fields = array('Title', 'LinkAddress');
@@ -144,8 +144,8 @@ class SpecialReports_model extends GeneralData_model {
         $this->db->set($specialreports_information_data);
         $this->db->where('ID', $specialreports_id);
         if($this->db->update('specialreports')) {
-            if (isset($_FILES["SpecialReportsImagePath"]) && $_FILES["SpecialReportsImagePath"]['tmp_name']){
-                $upload_data = $this->util->upload('SpecialReportImages', 'SpecialReportsImagePath');
+            if (isset($_FILES["ImagePath"]) && $_FILES["ImagePath"]['tmp_name']){
+                $upload_data = $this->util->upload('SpecialReportImages', 'ImagePath');
                 if ($upload_data) {
                     $data = array();
                     $data['ImagePath'] = $upload_data['file_name'];

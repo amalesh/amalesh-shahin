@@ -208,7 +208,7 @@
             console.log('Method Name: drugObject.getHighlightedBrands Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
-                if(drugData) {
+                if(drugData.ImagePath != undefined) {
                     $('.product-highlights').html('<h3 class="title">PRODUCT HIGHLIGHTS</h3>' +
                         '<img src="<?php echo base_url()?>BrandImages/'+drugData.ImagePath+'" alt="product" class="img-fluid" style="padding: 79px 0 10px 0px;">' +
                         '                            <div class="product-detail">' +
@@ -244,8 +244,12 @@
                 default:
                     break;
             }
+
             $('#searchDrugOption').autocomplete({
-                source: search_options
+                source: function(request, response) {
+                    var results = $.ui.autocomplete.filter(search_options, request.term);
+                    response(results.slice(0, 10));
+                }
             });
         },
         getDrugList: function(getDrugList) {
@@ -266,7 +270,7 @@
             });
             drugObject.populatePagination(pageNo);
         },
-        getAllDrugInfoForAutoComplete: function() {
+        getAllDrugInfoForAutoComplete: function(searchOption) {
             console.log('Method Name: drugObject.getAllDrugInfoForAutoComplete Param: option Value: ');
             var formURL = "<?php echo site_url('Brand/getAllDrugInfoForAutoComplete')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getAllDrugInfoForAutoComplete', function(drugData){
@@ -274,6 +278,8 @@
                 drugObject.searchOptionForGeneric = drugData.Generic;
                 drugObject.searchOptionForIndication = drugData.Indication;
                 drugObject.searchOptionForManufacturer = drugData.Manufacturer;
+
+                drugObject.changeSearchOption(searchOption);
             });
         },
         populatePagination: function (objectID, pageNo, populateList) {
@@ -282,7 +288,7 @@
             var total_page = Math.ceil(drugObject.totalDrug / per_page_information_number);
 
             if (populateList === true) drugObject.getSearchResult(pageNo);
-            if (total_page == 1) return;
+            if (total_page == 1) $('ul#'+objectID).hide();
 
             var total_pagination = <?php echo config_item('total_page');?>;
             var start_page_no = pageNo - Math.floor(per_page_information_number / 2) < 1 ? 1 : pageNo - Math.floor(per_page_information_number / 2);

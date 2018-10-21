@@ -90,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
-                            <input id="SpecialReportsImagePath" name="SpecialReportsImagePath" type="file" onchange="specialReportsObject.setSpecialReportsImagePathThumbnail(this, 'SpecialReportsImagePathThumbnail')" />
+                            <input id="SpecialReportsImagePath" name="ImagePath" type="file" onchange="specialReportsObject.setSpecialReportsImagePathThumbnail(this, 'SpecialReportsImagePathThumbnail')" />
                             <span class="special-reports-image-path-require-message error-message error">This field is required.</span>
                         </div>
                     </div>

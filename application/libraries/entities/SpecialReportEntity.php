@@ -7,7 +7,7 @@ class SpecialReportEntity extends GeneralDataEntity
     public $SpecialReportID;
     public $Title;
     public $LinkAddress;
-    public $ImagePath;
+//    public $ImagePath;
 
     function __construct ($data) {
         parent::__construct($data);
@@ -15,7 +15,7 @@ class SpecialReportEntity extends GeneralDataEntity
             $this->SpecialReportID = isset($data['ID']) ? $data['ID'] : '';
             $this->Title = $data['Title'];
             $this->LinkAddress = $data['LinkAddress'];
-            $this->ImagePath = $data['ImagePath'];
+//            $this->ImagePath = $data['ImagePath'];
         }
     }
 
@@ -24,7 +24,7 @@ class SpecialReportEntity extends GeneralDataEntity
         $news_data['SpecialReportID'] = intval($this->SpecialReportID);
         $news_data['Title'] = addslashes($this->Title);
         $news_data['LinkAddress'] = addslashes($this->LinkAddress);
-        $news_data['ImagePath'] = (string)$this->ImagePath;
+//        $news_data['ImagePath'] = (string)$this->ImagePath;
 
         return $news_data;
     }
@@ -33,7 +33,7 @@ class SpecialReportEntity extends GeneralDataEntity
         $news_data = parent::getGeneralDataEntityForCreate();
         $news_data['Title'] = addslashes($this->Title);
         $news_data['LinkAddress'] = addslashes($this->LinkAddress);
-        $news_data['ImagePath'] = (string)$this->ImagePath;
+//        $news_data['ImagePath'] = (string)$this->ImagePath;
         return $news_data;
     }
 
@@ -41,7 +41,7 @@ class SpecialReportEntity extends GeneralDataEntity
         $news_data = parent::getGeneralDataEntityForUpdate();
         $news_data['Title'] = addslashes($this->Title);
         $news_data['LinkAddress'] = addslashes($this->LinkAddress);
-        $news_data['ImagePath'] = (string)$this->ImagePath;
+//        $news_data['ImagePath'] = (string)$this->ImagePath;
         return $news_data;
     }
 }
