@@ -80,36 +80,9 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 section-col">
-                            <h4>New Products</h4>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Anema</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Carbestop</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
-                        </div>
-                        <div class="col-md-4 section-col">
-                            <h4>New Brands</h4>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Carbestop</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Advixa</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
-                        </div>
-                        <div class="col-md-4 section-col">
-                            <h4>New Presentations</h4>
-                            <a href="./brand-generic-details.html">Pinto</a>
-                            <a href="./brand-generic-details.html">Anema</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a href="./brand-generic-details.html">ACDC</a>
-                            <a href="./brand-generic-details.html">5X</a>
-                            <a href="./brand-generic-details.html">Advixa 4C</a>
-                            <a class="see-more-btn no-outline" href="./brand-generic-index.html">See More</a>
-                        </div>
+                        <div class="col-md-4 section-col new-product-information"></div>
+                        <div class="col-md-4 section-col new-brand-information"></div>
+                        <div class="col-md-4 section-col new-presentation-information"></div>
                     </div>
                 </div>
             </div>
@@ -366,9 +339,9 @@
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     // frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['home-product-slider-wrapper', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
-    // drugObject.getNewBrands(0);
-    // drugObject.getNewPresentations(0);
-    // drugObject.getNewProducts(0);
+    drugObject.getNewBrands(0);
+    drugObject.getNewPresentations(0);
+    drugObject.getNewProducts(0);
     // drugObject.getHighlightedBrands();
     drugObject.getAllDrugInfoForAutoComplete('brand');
     $('ul#main-menu li').removeClass('active');

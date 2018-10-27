@@ -155,12 +155,8 @@
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
                     for (var i = 0; i < home_page_new_item_limit / 2; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-products-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
-                    }
-
-                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
-                        if (i == drugData.length) break;
-                        $('div.new-products-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
+                        if (i == 0) $('div.new-product-information').html('<h4>New Products</h4>');
+                        $('div.new-product-information').append('<a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a>');
                     }
                 }
             });
@@ -173,14 +169,10 @@
                 $('div.new-presentation-ul ul').html('');
                 if(drugData) {
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
-                    for (var i = 0; i < home_page_new_item_limit / 2; i++) {
+                    for (var i = 0; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-presentation-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
-                    }
-
-                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
-                        if (i == drugData.length) break;
-                        $('div.new-presentation-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
+                        if (i == 0) $('div.new-presentation-information').html('<h4>New Presentations</h4>');
+                        $('div.new-presentation-information').append('<a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a>');
                     }
                 }
             });
@@ -192,14 +184,10 @@
                 $('div.new-brand-ul ul').html('');
                 if(drugData) {
                     var home_page_new_item_limit = <?php echo config_item("home_page_new_item_limit");?>;
-                    for (var i = 0; i < home_page_new_item_limit / 2; i++) {
+                    for (var i = 0; i < home_page_new_item_limit; i++) {
                         if (i == drugData.length) break;
-                        $('div.new-brand-ul ul.float-left').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
-                    }
-
-                    for (var i = home_page_new_item_limit / 2; i < home_page_new_item_limit; i++) {
-                        if (i == drugData.length) break;
-                        $('div.new-brand-ul ul.float-right').append('<li><a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a></li>');
+                        if (i == 0) $('div.new-brand-information').html('<h4>New Brands</h4>');
+                        $('div.new-brand-information').append('<a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand&Value=')?>'+drugData[i].Name+'">'+drugData[i].Name+'</a>');
                     }
                 }
             });
