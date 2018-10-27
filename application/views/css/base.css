@@ -304,7 +304,6 @@ thead {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../images/banner-bg.jpg');
   background-position: bottom center;
   background-color: var(--seconday-bg);
   background-size: cover;
@@ -953,21 +952,17 @@ thead {
   top: 69px;
 }
 .slick-prev.slick-arrow:before {
-  background-image: url('../images/icons/left-arrow-white.png');
   background-color: var(--theme-color-primary);
 }
 .slick-next.slick-arrow:before {
-  background-image: url('../images/icons/right-arrow-white.png');
   background-color: var(--theme-color-primary);
 }
 .slick-prev.slick-arrow.slick-disabled:before {
   opacity: 1;
-  background-image: url('../images/icons/left-arrow-white.png');
   background-color: var(--disabled-btn-bg);
 }
 .slick-next.slick-arrow.slick-disabled:before {
   opacity: 1;
-  background-image: url('../images/icons/right-arrow-white.png');
   background-color: var(--disabled-btn-bg);
 }
 @media screen and (max-width: 768px) {
@@ -1036,7 +1031,7 @@ thead {
 /* --------------------------------------------- */
 /* bottom quote section */
 /* --------------------------------------------- */
-.bottom-quote-secton {
+.bottom-quote-section {
   margin-top: 30px;
   margin-bottom: 80px;
 }
@@ -1067,7 +1062,7 @@ thead {
 }
 
 @media screen and (max-width: 768px) {
-  .bottom-quote-secton {
+  .bottom-quote-section {
     margin-top: 0px;
     margin-bottom: 60px;
   }
