@@ -43,8 +43,8 @@
         <i class="fas fa-bars"></i>
     </button>
 
-    <a class="navbar-brand-centered" href="#">
-        <img id="logo" href="<?php echo site_url()?>" src="<?php echo base_url().'application/views/';?>images/green-logo.png" alt="">
+    <a class="navbar-brand-centered" href="<?php echo site_url()?>">
+        <img id="logo" src="<?php echo base_url().'application/views/';?>images/green-logo.png" alt="">
     </a>
 
     <button class="navbar-toggler menu-btn no-outline" type="button" data-toggle="collapse" data-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle navigation" id="navbarSearchButton">
