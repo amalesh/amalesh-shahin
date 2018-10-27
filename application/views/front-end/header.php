@@ -31,8 +31,6 @@
     <script src="<?php echo base_url().'application/views/';?>js/common-script.js"></script>
     <script src="<?php echo base_url().'application/views/';?>js/popup-script.js"></script>
     <script src="<?php echo base_url().'application/views/';?>js/ajax-call.js"></script>
-    <script src="<?php echo base_url().'application/views/js/imageviewer.min.js';?>"></script>
-    <script src="<?php echo base_url().'application/views/js/ui.js';?>"></script>
 
     <!------Main Css------>
     <link rel="stylesheet" href="<?php echo base_url();?>application/views/css/imageviewer.css">

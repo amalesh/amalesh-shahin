@@ -20,6 +20,9 @@
         <p>Design & Development by <a href="https://studiomaqs.com/index.html" target="_blank"><img class="dev-logo" src="<?php echo base_url().'application/views/';?>images/logo/studiomaqs_logo.svg"></a></p>
     </div>
 </footer>
+
+<script src="<?php echo base_url().'application/views/js/imageviewer.min.js';?>"></script>
+<script src="<?php echo base_url().'application/views/js/ui.js';?>"></script>
 </body>
 
 </html>

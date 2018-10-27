@@ -122,38 +122,13 @@
 </div>
 
 <!-- special reports slider -->
-<div class="home-news-slider-container container">
-    <div class="home-news-slider-wrapper content-section">
+<div class="home-special-report-slider-container container">
+    <div class="home-special-report-slider-wrapper content-section">
         <div class="section-header" style="margin-bottom: 24px;">
             <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Special Reports
-            <a class="section-header-view-all-btn no-outline" href="./special-reports.html">See All News</a>
+            <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports')?>">See All Special Reports</a>
         </div>
-        <div id="home-news-slider">
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-1.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-2.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-3.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-4.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-1.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-            <div class="home-news-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/slide-news-img-3.jpg" alt="">
-                <p class="home-news-slide-title">High sugar intake in pregnancy  may raise childhood allergy risk</p>
-            </div>
-        </div>
+        <div id="home-special-report-slider" class="home-special-report-list"></div>
     </div>
 </div>
 
@@ -248,6 +223,7 @@
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     // frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['home-product-slider-wrapper', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
+    drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();
     drugObject.getNewBrands(0);

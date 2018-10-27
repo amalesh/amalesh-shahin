@@ -47,25 +47,6 @@ $(function() {
 	 ]
 	});
 
-	// home news slider
-	$('#home-news-slider').slick({
-	  slidesToScroll: 1,
-		slidesToShow: 4,
-	  autoplay: true,
-	  autoplaySpeed: 1000,
-		infinite: false,
-    arrows: true,
-		responsive: [
-		 {
-			 breakpoint: 480,
-			 settings: {
-				 slidesToShow: 2,
-				 arrows: false,
-			 }
-		 }
-	 ]
-	});
-
 	// image viewer
 	var viewer = ImageViewer();
 	$('.gallery-items').click(function () {

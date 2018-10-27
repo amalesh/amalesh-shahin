@@ -58,6 +58,41 @@
                 }
             });
         },
+        getSpecialReports: function() {
+            console.log('Method Name: drugObject.getSpecialReports Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('SpecialReports/getSpecialReportsForHomePage')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getSpecialReports', function(specialReportData) {
+                if (specialReportData) {
+                    var individual_special_report = '';
+                    for (var special_report_no = 0; special_report_no < specialReportData.length; special_report_no++) {
+                        individual_special_report = '<div class="home-special-report-slide">' +
+                        '<img src="<?php echo base_url();?>SpecialReportImages/'+specialReportData[special_report_no].ImagePath+'" alt="">'+
+                        '<p class="home-special-report-slide-title"><a href="'+specialReportData[special_report_no].LinkAddress+'" target="_blank">'+specialReportData[special_report_no].Title+'</p>'+
+                        '</div>';
+
+                        $('.home-special-report-list').append(individual_special_report);
+                    }
+
+                    $('#home-special-report-slider').slick({
+                        slidesToScroll: 1,
+                        slidesToShow: 4,
+                        autoplay: true,
+                        autoplaySpeed: 1000,
+                        infinite: false,
+                        arrows: true,
+                        responsive: [
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 2,
+                                    arrows: false,
+                                }
+                            }
+                        ]
+                    });
+                }
+            });
+        },
         getManufacturerBrand: function(searchOption){
             $('li.search-manufacturer-option').removeClass('active');
             $('li.search-manufacturer-option-'+searchOption).addClass('active');

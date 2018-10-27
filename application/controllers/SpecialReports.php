@@ -24,6 +24,11 @@ class SpecialReports extends CI_Controller {
         $this->load->view('front-end/footer');
     }
 
+    public function getSpecialReportsForHomePage() {
+        $all_special_reports = $this->SpecialReports_model->getSpecialReportsForSidebar();
+        $this->sendRestAPIResponse($all_special_reports);
+    }
+
     public function getSpecialReportForFrontend(){
         $special_reports = $this->SpecialReports_model->getSpecialReportForFrontend();
         $this->sendRestAPIResponse($special_reports);
