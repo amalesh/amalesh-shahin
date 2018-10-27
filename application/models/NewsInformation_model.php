@@ -257,6 +257,8 @@ class NewsInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->db->select('ID');
         $this->db->select('Title');
+        $this->db->select('Description');
+        $this->db->select('ImagePath');
         $this->db->from('newsInformation');
         $this->db->where('PublishDateTime <=', date("Y-m-d H:i:s"));
         $this->db->where('UnpublishedDateTime >=', date("Y-m-d H:i:s"));

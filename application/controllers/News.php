@@ -24,6 +24,11 @@ class News extends CI_Controller {
         $this->load->view('front-end/footer');
     }
 
+    public function getLocalNewsForHomePage() {
+        $all_news = $this->NewsInformation_model->getNewsInformationForSidebar();
+        $this->sendRestAPIResponse($all_news);
+    }
+
     public function getNewsInformationForFrontend(){
         $job_information = $this->NewsInformation_model->getNewsInformationForFrontend();
         $this->sendRestAPIResponse($job_information);

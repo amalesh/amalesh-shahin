@@ -13,7 +13,7 @@
         getJobCirculars: function() {
             console.log('Method Name: drugObject.getJobCirculars Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Job/getJobInformationForHomePage')?>";
-            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getSideBarData', function(jobData) {
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getJobCirculars', function(jobData) {
                 if (jobData) {
                     var individual_job = '';
                     for (var job_no = 0; job_no < jobData.length; job_no++) {
@@ -30,6 +30,30 @@
                         '</div>';
 
                         $('.home-job-circular-list').append(individual_job);
+                    }
+                }
+            });
+        },
+        getLocalNews: function() {
+            console.log('Method Name: drugObject.getLocalNews Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('News/getLocalNewsForHomePage')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getLocalNews', function(newsData) {
+                if (newsData) {
+                    var individual_news = '';
+                    for (var news_no = 0; news_no < newsData.length; news_no++) {
+                        var news_description = newsData[news_no].Description;
+                        news_description = news_description.length > 100 ? news_description.substr(0, 100) + '...' : news_description;
+                        individual_news = '<div class="row news home-news">' +
+                        '<div class="col-4">' +
+                        '<img class="news-img" src="<?php echo base_url();?>NewsImages/'+newsData[news_no].ImagePath+'" alt="">'+
+                        '</div>'+
+                        '<div class="col-8">'+
+                        '<p class="news-title"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[news_no].ID+'">'+newsData[news_no].Title+'</a></p>'+
+                        '<p class="news-description d-md-block d-none">'+news_description+'</p>'+
+                        '</div>'+
+                        '</div>';
+
+                        $('.home-local-news-list').append(individual_news);
                     }
                 }
             });

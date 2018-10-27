@@ -106,46 +106,9 @@
             <div class="content-section" style="padding: 0 0 24px 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 16px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/newspaper.svg" alt="*"></span>Local News
-                    <a class="section-header-view-all-btn no-outline" href="#">See All News</a>
+                    <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('News/getAllLocalNews')?>">See All News</a>
                 </div>
-                <div class="container">
-                    <div class="row news home-news">
-                        <div class="col-4">
-                            <img class="news-img" src="<?php echo base_url().'application/views/';?>images/news-img-1.jpg" alt="">
-                        </div>
-                        <div class="col-8">
-                            <p class="news-title">Shahana first female pro-VC  of BSMMU</p>
-                            <p class="news-description d-md-block d-none">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore.
-                            </p>
-                        </div>
-                        <div class="col-12 d-md-none d-blocK">
-                            <p class="news-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row news home-news">
-                        <div class="col-4">
-                            <img class="news-img" src="<?php echo base_url().'application/views/';?>images/news-img-2.jpg" alt="">
-                        </div>
-                        <div class="col-8">
-                            <p class="news-title">Princess Maria spends time  with special children</p>
-                            <p class="news-description d-md-block d-none">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore.
-                            </p>
-                        </div>
-                        <div class="col-12 d-md-none d-blocK">
-                            <p class="news-description">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt ut labore.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <div class="container home-local-news-list"></div>
             </div>
         </div>
     </div>
@@ -286,6 +249,7 @@
     // frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['home-product-slider-wrapper', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
     drugObject.getJobCirculars();
+    drugObject.getLocalNews();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);
