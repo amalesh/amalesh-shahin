@@ -96,50 +96,9 @@
             <div class="content-section" style="padding: 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 16px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Job Circular
-                    <a class="section-header-view-all-btn no-outline" href="./job-circular-list.html">See All jobs</a>
+                    <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('Job/getAllJobInformation')?>">See All jobs</a>
                 </div>
-                <div class="container">
-                    <div class="row job">
-                        <div class="col-2">
-                            <img class="job-img" src="<?php echo base_url().'application/views/';?>images/job-img-1.jpg" alt="">
-                        </div>
-                        <div class="col-10">
-                            <p class="job-title">Analytical Research & Development</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-2">
-                            <img class="job-img" src="<?php echo base_url().'application/views/';?>images/job-img-2.jpg" alt="">
-                        </div>
-                        <div class="col-10">
-                            <p class="job-title">Medical Promotion Officer (MPO)</p>
-                            <p class="job-company">Drug International Limited.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-2">
-                            <img class="job-img" src="<?php echo base_url().'application/views/';?>images/job-img-3.jpg" alt="">
-                        </div>
-                        <div class="col-10">
-                            <p class="job-title">IBN SINA Pharmaceutical Industry Ltd</p>
-                            <p class="job-company">IBN SINA Pharmaceutical Industry</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-2">
-                            <img class="job-img" src="<?php echo base_url().'application/views/';?>images/job-img-4.jpg" alt="">
-                        </div>
-                        <div class="col-10">
-                            <p class="job-title">Analytical Research & Development</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                </div>
+                <div class="container home-job-circular-list"></div>
             </div>
         </div>
         <!-- local news -->
@@ -326,6 +285,7 @@
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     // frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['home-product-slider-wrapper', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
+    drugObject.getJobCirculars();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);

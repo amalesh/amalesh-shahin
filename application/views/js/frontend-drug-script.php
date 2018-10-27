@@ -10,6 +10,30 @@
         searchOptionForManufacturer: [],
         searchManufacturerBrandOption: '',
         totalDrug: 0,
+        getJobCirculars: function() {
+            console.log('Method Name: drugObject.getJobCirculars Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('Job/getJobInformationForHomePage')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getSideBarData', function(jobData) {
+                if (jobData) {
+                    var individual_job = '';
+                    for (var job_no = 0; job_no < jobData.length; job_no++) {
+                        var logo_path = jobData[job_no].OrganizationLogo == '' || jobData[job_no].OrganizationLogo == null ? '' : '<?php echo base_url();?>'+'JobImages/'+jobData[job_no].OrganizationLogo;
+                        individual_job = '<div class="row job">' +
+                        '<div class="col-2">' +
+                        '<img class="job-img" src="'+logo_path+'" alt="">'+
+                        '</div>'+
+                        '<div class="col-10">'+
+                        '<p class="job-title"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+jobData[job_no].ID+'">'+jobData[job_no].Title+'</a></p>'+
+                        '<p class="job-company">'+jobData[job_no].Organization+'</p>'+
+                        '</div>'+
+                        '<img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">'+
+                        '</div>';
+
+                        $('.home-job-circular-list').append(individual_job);
+                    }
+                }
+            });
+        },
         getManufacturerBrand: function(searchOption){
             $('li.search-manufacturer-option').removeClass('active');
             $('li.search-manufacturer-option-'+searchOption).addClass('active');

@@ -277,9 +277,13 @@ class JobInformation_model extends GeneralData_model {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->db->select('ID');
         $this->db->select('Title');
+        $this->db->select('Organization');
+        $this->db->select('OrganizationLogo');
         $this->db->from('jobinformation');
         $this->db->where('IsActive', 1);
-        $this->db->order_by('Title');
+        $this->db->where('PublishDate <=', date('Y-m-d'));
+        $this->db->where('ApplicationDeadline >=', date('Y-m-d'));
+        $this->db->order_by('PublishDate', 'desc');
         $this->db->limit(config_item('side_bar_link_limit'));
         $result = $this->db->get()->result_array();
 //        echo $this->db->last_query();

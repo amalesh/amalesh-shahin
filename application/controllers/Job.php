@@ -24,6 +24,11 @@ class Job extends CI_Controller {
         $this->load->view('front-end/footer');
     }
 
+    public function getJobInformationForHomePage() {
+        $all_jobs = $this->JobInformation_model->getJobInformationForSidebar();
+        $this->sendRestAPIResponse($all_jobs);
+    }
+
     public function getJobInformationForFrontend(){
         $job_information = $this->JobInformation_model->getJobInformationForFrontend();
         $this->sendRestAPIResponse($job_information);
