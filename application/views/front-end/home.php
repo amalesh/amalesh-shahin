@@ -8,7 +8,7 @@
             <li class="manufacture"><a onclick="drugObject.changeSearchOption('manufacturer')" class="search_option_type search_by_manufacturer">Manufacture</a></li>
         </ul>
         <div class="search">
-            <input class="search-bar no-outline" type="text" id="search">
+            <input class="search-bar no-outline" type="text" id="searchDrugOption">
             <button class="search-btn no-outline" onclick="drugObject.searchBrandInformation()" id="searchInformation"><img src="<?php echo base_url().'application/views/';?>images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
         </div>
         <div class="alphabets">
@@ -364,14 +364,13 @@
     $('.slick-next.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     $('.slick-prev.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
-    $('#navbarSearch').css('display', 'block');
     // frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['home-product-slider-wrapper', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
     // drugObject.getNewBrands(0);
     // drugObject.getNewPresentations(0);
     // drugObject.getNewProducts(0);
     // drugObject.getHighlightedBrands();
-    // drugObject.getAllDrugInfoForAutoComplete('brand');
+    drugObject.getAllDrugInfoForAutoComplete('brand');
     $('ul#main-menu li').removeClass('active');
     $('ul#main-menu li.home-link').addClass('active');
 </script>
