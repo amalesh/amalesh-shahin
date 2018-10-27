@@ -89,20 +89,7 @@
         </div>
         <!-- star product -->
         <div class="col-md-4 col-12">
-            <div class="star-product">
-                <div class="star-product-img">
-                    <img src="<?php echo base_url().'application/views/';?>images/star-product.jpg" alt="">
-                </div>
-                <div class="star-product-info">
-                    <div class="star"><i class="fas fa-star"></i></div>
-                    <a href="#" class="star-product-name">
-                        Xigduo XR
-                    </a>
-                    <p class="star-product-attributes">(Per 5 mg/1,000 mg)</p>
-                    <!-- NOTE: limit description in 2 lines -->
-                    <p class="star-product-description">Adjunct to diet & exercise to improve glycaemic control in adult w... </p>
-                </div>
-            </div>
+            <div class="star-product" id="highlighted-product"></div>
         </div>
         <!-- job circular -->
         <div class="col-md-6 col-12" style="height: fit-content;">
@@ -342,7 +329,7 @@
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);
-    // drugObject.getHighlightedBrands();
+    drugObject.getHighlightedBrands();
     drugObject.getAllDrugInfoForAutoComplete('brand');
     $('ul#main-menu li').removeClass('active');
     $('ul#main-menu li.home-link').addClass('active');

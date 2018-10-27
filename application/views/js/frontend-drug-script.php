@@ -197,16 +197,17 @@
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
                 if(drugData.ImagePath != undefined) {
-                    $('.product-highlights').html('<h3 class="title">PRODUCT HIGHLIGHTS</h3>' +
-                        '<img src="<?php echo base_url()?>BrandImages/'+drugData.ImagePath+'" alt="product" class="img-fluid" style="padding: 79px 0 10px 0px;">' +
-                        '                            <div class="product-detail">' +
-                        '                                <h4 class="title">PRODUCT</h4>' +
-                        '                                <p class="info" style="color: #4C99D3;font-size: 15px; font-weight:600; margin-bottom: 17px;"><a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>'+drugData.ID+'">'+drugData.Name+'</a></p>' +
-                        '                                <h4 class="title">CONTENT</h4>' +
-                        '                                <p class="info">('+drugData.StrengthName+')</p>' +
-                        '                                <h4 class="title">INDICATIONS</h4>' +
-                        '                                <p class="info">'+drugData.Indication+'</p>' +
-                        '                            </div>');
+                    var indication = drugData.Indication;
+                    indication = indication.length > 70 ? indication.substr(0, 67) + '...' : indication;
+                    $('#highlighted-product').html('<div class="star-product-img">' +
+                    '<img src="<?php echo base_url()?>BrandImages/' + drugData.ImagePath + '" alt="">' +
+                    '</div>' +
+                    '<div class="star-product-info">' +
+                    '<div class="star"><i class="fas fa-star"></i></div>' +
+                    '<a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>' + drugData.ID + '" class="star-product-name">' + drugData.Name + '</a>' +
+                    '<p class="star-product-attributes">(' + drugData.StrengthName + ')</p>' +
+                    '<p class="star-product-description">' + indication + '</p>' +
+                    '</div>');
                 }
             });
         },
