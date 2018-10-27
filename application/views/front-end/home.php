@@ -135,86 +135,27 @@
 <!-- content -->
 <div class="container">
     <div class="row">
-        <!-- international health -->
-        <div class="col-md-8 col-12" style="height: fit-content;">
-            <div class="content-section" style="padding: 0; max-height: none;">
-                <div class="section-header own-pad" style="margin-bottom: 16px;">
-                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>International Health
-                    <a class="section-header-view-all-btn no-outline" href="./special-reports.html">See All News</a>
-                </div>
-                <div class="container">
-                    <div class="row job">
-                        <div class="col-12">
-                            <p class="job-title">800 Canadian doctors protest pay raises, say they .......</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-12">
-                            <p class="job-title">Global campaign takes aim at tobacco giants for ........</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-12">
-                            <p class="job-title">Thyroid removal linked to increased bone-thinning, ......</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                    <div class="row job">
-                        <div class="col-12">
-                            <p class="job-title">Heart disease patients live longer when they exercise</p>
-                            <p class="job-company">Square Pharmaceuticals Ltd.</p>
-                        </div>
-                        <img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- important addresses -->
-        <div class="col-md-4 col-12" style="height: fit-content;">
+        <div class="col-md-6 col-12" style="height: fit-content;">
             <div class="content-section" style="padding: 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 24px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Important Addresses
                 </div>
-                <ul class="address-list">
-                    <li class="address"><a href="#">24 hours Pharmacy</a></li>
-                    <li class="address"><a href="#">Ambulance Service </a></li>
-                    <li class="address"><a href="#">Blood Bank</a></li>
-                    <li class="address"><a href="#">Cancer Hospital</a></li>
-                    <li class="address"><a href="#">Cardiac Hospitals</a></li>
-                    <li class="address"><a href="#">Eye Hospital </a></li>
-                    <!-- <li class="address"><a href="#">Gastroliver Clinics</a></li> -->
-                    <li class="address"><a href="#">Kidney &amp; Urology Hospitals </a></li>
-                    <li class="address"><a href="#">Mother &amp; Child Hospitals</a></li>
-                    <a href="./important-address.html" class="see-more-btn no-outline">See All Adresses</a>
-                </ul>
+                <ul class="address-list home-address-list"></ul>
+            </div>
+        </div>
+        <!-- Resources -->
+        <div class="col-md-6 col-12" style="height: fit-content;">
+            <div class="content-section" style="padding: 0; max-height: none;">
+                <div class="section-header own-pad" style="margin-bottom: 24px;">
+                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Resources
+                </div>
+                <ul class="resource-item-list"></ul>
             </div>
         </div>
     </div>
 </div>
 
-<!-- bottom quote section -->
-<div class="bottom-quote-section container home-bottom-quote-section">
-    <div class="row">
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
-        </div>
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/visitor.jpg" alt="">
-            <div class="visitor">
-                <p>visitor</p>
-                <p class="visitor-count">123,45,67</p>
-            </div>
-        </div>
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
-        </div>
-    </div>
-</div>
 <script>
     $('.banner').css('background-image', '<?php echo base_url().'application/views/';?>images/banner-bg.jpg');
     $('.slick-prev.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
@@ -226,6 +167,8 @@
     drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();
+    drugObject.getImportantAddress();
+    drugObject.getResources();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);

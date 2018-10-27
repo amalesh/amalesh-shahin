@@ -93,6 +93,40 @@
                 }
             });
         },
+        getImportantAddress: function() {
+            console.log('Method Name: drugObject.getImportantAddress Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('Address/getImportantAddressForHomePage')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getImportantAddress', function(addressData) {
+                if (addressData) {
+                    var individual_address = '';
+                    for (var address_no = 0; address_no < addressData.length; address_no++) {
+                        individual_address = '<li class="address"><a href="<?php echo site_url('Address/getAllImportantAddress?AddressCategoryID=')?>'+addressData[address_no].ID+'">'+addressData[address_no].Name+'</a></li>';
+                        $('ul.home-address-list').append(individual_address);
+                    }
+
+                    if (addressData.length) {
+                        $('ul.home-address-list').append('<a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="see-more-btn no-outline">See All Addresses</a>');
+                    }
+                }
+            });
+        },
+        getResources: function() {
+            console.log('Method Name: drugObject.getResources Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('Resource/getAllActiveResource')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getResources', function(resourceData) {
+                if (resourceData) {
+                    var individual_resource = '';
+                    for (var resource_no = 0; resource_no < resourceData.length; resource_no++) {
+                        individual_resource = '<li class="resource-item"><a target="_blank" href="<?php echo site_url('Resource/getResourceDetail?ResourceID=')?>'+resourceData[resource_no].ID+'">'+resourceData[resource_no].Title+'</a></li>';
+                        $('ul.resource-item-list').append(individual_resource);
+                    }
+
+                    if (resourceData.length) {
+                        $('ul.resource-item-list').append('<a href="<?php echo site_url('Resource/getAllActiveResourceInformation')?>" class="see-more-btn no-outline">See All Addresses</a>');
+                    }
+                }
+            });
+        },
         getManufacturerBrand: function(searchOption){
             $('li.search-manufacturer-option').removeClass('active');
             $('li.search-manufacturer-option-'+searchOption).addClass('active');

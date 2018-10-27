@@ -30,6 +30,11 @@ class Address extends CI_Controller {
         $this->load->view('front-end/footer');
     }
 
+    public function getImportantAddressForHomePage() {
+        $all_address = $this->AddressCategory_model->getAllActiveAddressCategoryForSideBar();
+        $this->sendRestAPIResponse($all_address);
+    }
+
     public function getAddressForFrontend(){
         $data = array();
         list($data['AllAddress'], $data['TotalAddress']) = $this->AddressInformation_model->getAddressForFrontend();

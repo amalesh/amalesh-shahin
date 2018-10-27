@@ -997,6 +997,47 @@ thead {
 }
 
 /* --------------------------------------------- */
+/* resources */
+/* --------------------------------------------- */
+.resource-item-list {
+  padding-left: 30px;
+  padding-bottom: 37px;
+  margin-bottom: 0;
+}
+.resource-item {
+  list-style: none;
+  margin: 12px 0px 12px 0px;
+  font-family: var(--font-medium);
+}
+.resource-item a {
+  color: var(--title-color);
+  font-size: var(--font-size-medium);
+}
+.resource-item:hover a {
+  color: var(--theme-color-primary);
+  text-decoration: none;
+}
+.resource-item:before {
+  content: ' ';
+  display: inline-block;
+  background-color: var(--theme-color-primary);
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .resource-item-list {
+    padding-left: 16px;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+  }
+  .resource-item {
+    margin: 7px 0px 7px 0px;
+  }
+}
+/* --------------------------------------------- */
 /* important addresses */
 /* --------------------------------------------- */
 .address-list {
