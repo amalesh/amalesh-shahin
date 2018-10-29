@@ -50,6 +50,16 @@ class User extends CI_Controller {
         redirect('User/login');
     }
 
+    public function incrementVisitorCount() {
+        $return = $this->User_model->incrementVisitorCount();
+        $this->sendRestAPIResponse($return);
+    }
+
+    public function getNumberOfVisitor() {
+        $total_visitor = $this->User_model->getNumberOfVisitor();
+        $this->sendRestAPIResponse($total_visitor);
+    }
+
     private function sendRestAPIResponse($response){
         $rest_api_response = array();
         $rest_api_response['response'] = $response;

@@ -16,7 +16,7 @@
             <img src="<?php echo base_url().'application/views/';?>images/visitor.jpg" alt="">
             <div class="visitor">
                 <p>visitor</p>
-                <p class="visitor-count">123,45,67</p>
+                <p class="visitor-count"></p>
             </div>
         </div>
         <div class="col-md-4 col-12 quote">
@@ -38,6 +38,10 @@
 
 <script src="<?php echo base_url().'application/views/js/imageviewer.min.js';?>"></script>
 <script src="<?php echo base_url().'application/views/js/ui.js';?>"></script>
+<script>
+    frontendCommonMethods.incrementVisitorCount();
+    frontendCommonMethods.getNumberOfVisitor();
+</script>
 </body>
 
 </html>

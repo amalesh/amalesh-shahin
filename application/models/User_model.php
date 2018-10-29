@@ -277,4 +277,19 @@ class User_model extends GeneralData_model {
 //        echo $this->db->last_query();
         return isset($user_info[0]['ID']) ? $user_info[0] : array();
     }
+
+    public function incrementVisitorCount() {
+        $this->db->set('NymberOfVisitor', 'NymberOfVisitor + 1', FALSE);
+        $this->db->limit(1);
+        return $this->db->update('visitor');
+    }
+
+    public function getNumberOfVisitor() {
+        $this->db->select('NymberOfVisitor');
+        $this->db->from('visitor');
+        $this->db->limit(1);
+        $user_info = $this->db->get()->result_array();
+//        echo $this->db->last_query();
+        return isset($user_info[0]['NymberOfVisitor']) ? $user_info[0]['NymberOfVisitor'] : 0;
+    }
 }

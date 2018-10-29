@@ -4,6 +4,23 @@
         totalDrug: 0,
         activeBrandAlphabet: '',
         activeGenericAlphabet: '',
+        numberWithCommas: function(number) {
+            var parts = number.toString().split(".");
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            return parts.join(".");
+        },
+        incrementVisitorCount: function() {
+            console.log('Method Name: frontendCommonMethods.getSideBarData Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('User/incrementVisitorCount')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.incrementVisitorCount', function(data){});
+        },
+        getNumberOfVisitor: function() {
+            console.log('Method Name: frontendCommonMethods.getNumberOfVisitor Param:  Value: '+[].toString());
+            var formURL = "<?php echo site_url('User/getNumberOfVisitor')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getNumberOfVisitor', function(totalVisitor){
+                $('.visitor-count').html(frontendCommonMethods.numberWithCommas(totalVisitor));
+            });
+        },
         getSideBarData: function () {
             console.log('Method Name: frontendCommonMethods.getSideBarData Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('CommonMethods/getSideBarInformation')?>";
