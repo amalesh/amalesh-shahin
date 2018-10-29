@@ -18,7 +18,7 @@ class SpecialReports extends CI_Controller {
         list($data['AllSpecialReports'], $data['TotalSpecialReport']) = $this->SpecialReports_model->getAllActiveSpecialReports();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-special-report-script');
         $this->load->view('front-end/local-special-reports', $data);
         $this->load->view('front-end/footer');

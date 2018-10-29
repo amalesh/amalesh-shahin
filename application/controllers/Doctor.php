@@ -21,7 +21,7 @@ class Doctor extends CI_Controller {
         $data['Cities'] = $this->Location_model->getAllActiveCities();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-doctor-script');
         $this->load->view('front-end/doctor', $data);
         $this->load->view('front-end/footer');

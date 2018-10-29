@@ -19,7 +19,7 @@ class Manufacturer extends CI_Controller {
         $data['AllManufacturers'] = $all_manufacturer_information;
 
         $this->load->view('front-end/header');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/manufacturer-list', $data);
         $this->load->view('front-end/footer');
     }
@@ -27,7 +27,7 @@ class Manufacturer extends CI_Controller {
     public function getManufacturerDetail()
     {
         $this->load->view('front-end/header');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/manufacturer-detail');
         $this->load->view('front-end/footer');
     }

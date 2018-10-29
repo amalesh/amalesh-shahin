@@ -18,7 +18,7 @@ class News extends CI_Controller {
         list($data['AllNews'], $data['TotalNews']) = $this->NewsInformation_model->getAllActiveNewsInformation();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-news-script');
         $this->load->view('front-end/local-news', $data);
         $this->load->view('front-end/footer');
@@ -41,7 +41,7 @@ class News extends CI_Controller {
         $data['NewsInfo'] = $news_information;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/local-news-detail', $data);
         $this->load->view('front-end/footer');
     }

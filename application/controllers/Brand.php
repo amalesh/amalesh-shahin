@@ -20,7 +20,7 @@ class Brand extends CI_Controller {
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/brand-list', $data);
         $this->load->view('js/frontend-brand-script');
         $this->load->view('front-end/footer');
@@ -38,7 +38,7 @@ class Brand extends CI_Controller {
         $data['BrandDetail'] = $this->BrandInformation_model->getBrandFullDetail();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/brand-detail', $data);
         $this->load->view('front-end/footer');
     }
@@ -185,7 +185,7 @@ class Brand extends CI_Controller {
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-drug-script');
         $this->load->view('front-end/drug-list', $data);
         $this->load->view('front-end/footer');
@@ -201,7 +201,7 @@ class Brand extends CI_Controller {
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-drug-script');
         $this->load->view('front-end/drug-list', $data);
         $this->load->view('front-end/footer');
@@ -217,7 +217,7 @@ class Brand extends CI_Controller {
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-drug-script');
         $this->load->view('front-end/drug-list', $data);
         $this->load->view('front-end/footer');
@@ -234,7 +234,7 @@ class Brand extends CI_Controller {
 
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-drug-script');
         switch ($option_type) {
             case 'brand':

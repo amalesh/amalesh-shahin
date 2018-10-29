@@ -18,7 +18,7 @@ class Job extends CI_Controller {
         list($data['AllJobs'], $data['TotalJob']) = $this->JobInformation_model->getAllActiveJobInformation();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-job-script');
         $this->load->view('front-end/job-circular', $data);
         $this->load->view('front-end/footer');
@@ -40,7 +40,7 @@ class Job extends CI_Controller {
         $data['JobInfo'] = $job_information;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/job-detail', $data);
         $this->load->view('front-end/footer');
     }

@@ -19,7 +19,7 @@ class Product extends CI_Controller {
         $data['TotalDrug'] = $total_drug;
 
         $this->load->view('front-end/header');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/drug-list', $data);
         $this->load->view('js/frontend-drug-script');
         $this->load->view('front-end/footer');
@@ -36,7 +36,7 @@ class Product extends CI_Controller {
         $data = array();
         $data['DrugDetail'] = $this->DrugInformation_model->getDrugDetail();
         $this->load->view('front-end/header');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('front-end/drug-detail', $data);
         $this->load->view('front-end/footer');
     }

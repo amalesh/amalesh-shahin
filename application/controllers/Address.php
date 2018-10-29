@@ -24,7 +24,7 @@ class Address extends CI_Controller {
         $data['Cities'] = $this->Location_model->getAllActiveCities();
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
-        $this->load->view('front-end/main-menu');
+        //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-address-script');
         $this->load->view('front-end/important-addresses', $data);
         $this->load->view('front-end/footer');
