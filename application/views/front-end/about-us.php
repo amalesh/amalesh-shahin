@@ -6,26 +6,70 @@
  * Time: 6:56 PM
  */
 ?>
-<section class="product brand">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                    <h2 class="title">About Us</h2>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et ante ut augue efficitur venenatis non quis tortor. Vivamus rhoncus ante sed tortor bibendum feugiat. Sed fringilla tellus ex, eu semper mauris venenatis quis. Nulla facilisi. In augue purus, sollicitudin vel luctus sit amet, dictum id velit. Sed non quam tristique, viverra diam maximus, egestas lacus. Vestibulum aliquet nulla lacus, in placerat tellus tempor quis. </p>
-                    <p> Morbi eu interdum ipsum, et mollis lectus. Morbi ultricies volutpat felis nec faucibus. Quisque pharetra enim dui. Curabitur ipsum mauris, viverra non ullamcorper a, porttitor in dolor. In posuere semper efficitur. Cras dapibus augue non lacus ultricies congue. Sed euismod luctus felis, eget placerat lectus tempus quis. Nullam ut dignissim sem. Suspendisse id sem diam. Phasellus vestibulum orci a neque consectetur, fermentum hendrerit purus tristique. Aenean scelerisque nulla et augue commodo condimentum quis eget metus. Proin ultrices maximus nisl, a ullamcorper lectus blandit sit amet. Pellentesque pulvinar arcu at augue iaculis eleifend. Mauris sed nibh feugiat, posuere sem id, interdum dui. Curabitur scelerisque tempor urna a maximus. </p>
-                    <p> Donec semper ornare velit, in posuere turpis dictum eget. Donec venenatis ex tortor, non facilisis orci fringilla ut. Quisque consequat placerat neque id dignissim. Integer vitae ante venenatis, sodales dolor at, interdum massa. Integer auctor sem eu nulla dapibus, mattis efficitur risus tincidunt. Proin tincidunt erat ac lacus aliquet egestas. Curabitur luctus risus in lectus pellentesque maximus. Nullam hendrerit risus quis dolor efficitur, eu lobortis velit porttitor. Mauris sagittis erat ut blandit sollicitudin. Maecenas vulputate pretium imperdiet. Nullam dignissim urna in tincidunt consequat. Morbi in erat eget risus vehicula faucibus sit amet vel odio. Sed laoreet dui luctus ex gravida ultrices. Sed gravida semper dictum. </p>
-                    <p> Curabitur varius et ipsum id fermentum. Integer eleifend nec augue ut auctor. Ut posuere dignissim ante, vel bibendum enim euismod ac. Fusce et metus sed ex lacinia eleifend. Vestibulum a mi velit. Vestibulum vestibulum nibh vel scelerisque imperdiet. Proin vitae viverra ante. Praesent consectetur nisi egestas ullamcorper vehicula. </p>
+<!-- banner -->
+<div class="banner title-banner d-md-flex d-none">
+    <h2>About Us</h2>
+</div>
+
+<!-- content -->
+<div class="container">
+    <div class="row about-mims">
+        <div class="col-md-8">
+            <div class="about-content">
+                <h4 class="about-header">
+                    MIMS print publication
+                </h4>
+                <p class="about-text">
+                    First published in 1959, MIMS has grown to be the essential prescribing and clinical reference for general practice.
+                </p>
+                <br>
+                <h4 class="about-header">
+                    Receiving MIMS
+                </h4>
+                <p class="about-text">
+                    MIMS is published in print every quarter, in March, June, September and December. Print copies are sent free of charge to all UK-based GPs who complete our online registration form.
+                </p>
+                <p class="about-text">
+                    If you have already registered and need to change your mailing address, please email medicalcirculation@haymarket.com including your name, surgery address and GMC number.
+                </p>
+                <p class="about-text">
+                    Other relevant healthcare professionals may subscribe to MIMS by emailing help@shop.haymarket.com or by completing the MIMS subscription form online.
+                </p>
+                <p class="about-text">
+                    If you’d like access for 10 or more users at your company we can offer substantial discounts on subscription rates. Contact Alice French, Subscriptions Marketing Manager, on 020 8267 4865 or  alice.french@haymarket.com.
+                </p>
+                <br>
+                <h4 class="about-header">
+                    MIMS Online
+                </h4>
+                <p class="about-text">
+                    MIMS is one of the most up-to-date prescribing references for healthcare professionals. MIMS is updated constantly online, with hundreds of changes incorporated every month including the addition of new drugs and formulations and the removal of products that are no longer available. Each quarterly print edition includes all the updates from the corresponding three months of online updates.
+                </p>
+                <p class="about-text">
+                    MIMS is available for free online to all GPs and nurses upon registration.
+                </p>
+                <p class="about-text">
+                    Look inside an issue.
+                </p>
+                <br>
+                <h4 class="about-header">
+                    Advertising information
+                </h4>
+                <p class="about-text">
+                    Advertising enquiries can be directed to our advertising team, details of which can be found on our MIMS advertising information page.
+                </p>
+                <h4 class="about-header">
+                    Insight from MIMS
+                </h4>
+                <p class="about-text">
+                    MIMS regularly conducts research into the delivery of education and clinical information in the primary care sector. We’ve packaged up the findings from some of our most recent surveys, which you can download for free.
+                </p>
             </div>
-            <div class="col-md-4">
-                <h4 class="title">The Team</h4>
-                <img src="<?php echo base_url().'application/views/';?>images/avatar1.jpg">
-                <img src="<?php echo base_url().'application/views/';?>images/avatar1.jpg">
-                <img src="<?php echo base_url().'application/views/';?>images/avatar1.jpg">
+        </div>
+        <div class="col-md-4">
+            <div class="about-img">
+                <img src="<?php echo base_url().'application/views/';?>images/mims-book.png" alt="">
             </div>
         </div>
     </div>
-</section>
-<script>
-    $('ul#main-menu li').removeClass('active');
-    $('ul#main-menu li#main-menu-about-us').addClass('active');
-</script>
+</div>
