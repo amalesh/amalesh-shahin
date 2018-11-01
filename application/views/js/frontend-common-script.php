@@ -4,6 +4,29 @@
         totalDrug: 0,
         activeBrandAlphabet: '',
         activeGenericAlphabet: '',
+        mainMenuActivation: function(item) {
+            $('li#mainMenuHome a').removeClass('active');
+            $('li#mainMenuDoctor a').removeClass('active');
+            $('li#mainMenuResource a').removeClass('active');
+            $('li#mainMenuAbout a').removeClass('active');
+            switch (item) {
+                case 'home':
+                    $('li#mainMenuHome a').addClass('active');
+                    break;
+                case 'doctor':
+                    $('li#mainMenuDoctor a').addClass('active');
+                    break;
+                case 'resource':
+                    $('li#mainMenuResource a').addClass('active');
+                    break;
+                case 'about':
+                    $('li#mainMenuAbout a').addClass('active');
+                    break;
+                default:
+                    $('li#mainMenuHome a').addClass('active');
+                    break;
+            }
+        },
         numberWithCommas: function(number) {
             var parts = number.toString().split(".");
             parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -32,57 +55,69 @@
                     var all_news = sideBarData.AllNews;
                     var all_special_reports = sideBarData.AllSpecialReports;
 
-                    $('ul.sidebar-jobs').html('');
-                    $('ul.sidebar-news').html('');
-                    $('ul.sidebar-address').html('');
+                    $('div.sidebar-jobs').html('');
+                    $('div.sidebar-news').html('');
+                    $('div.sidebar-address').html('');
+                    $('div.sidebar-special-reports').html('');
 
                     for(var i = 0; i < all_jobs.length; i++) {
-                        $('ul.sidebar-jobs').append('<li><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+all_jobs[i].Title+'</a></li>');
+                        var organization_logo = all_jobs[i].OrganizationLogo;
+                        organization_logo = organization_logo != null && organization_logo.length > 0 ? '<?php echo base_url();?>'+'JobImages/'+organization_logo : '';
+                        var job_title = all_jobs[i].Title;
+                        job_title = job_title.length > 30 ? job_title.substr(0, 27) + '...' : job_title;
+                        $('div.sidebar-jobs').append('<div class="row job side-col">' +
+                            '                                <div class="col-3 pr-0" style="padding: 7px">' +
+                            '                                    <img class="job-img side-col" src="'+organization_logo+'" alt="">' +
+                            '                                </div>' +
+                            '                                <div class="col-9" style="padding-right: 0; padding-left: 10px">' +
+                            '                                    <p class="job-title side-col"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+job_title+'</a></p>' +
+                            '                                    <p class="job-company side-col">'+all_jobs[i].Organization+'</p>' +
+                            '                                </div>' +
+                            '                            </div>');
                     }
+
+                    $('div.sidebar-jobs').append('<a href="<?php echo site_url('Job/getAllJobInformation')?>" class="side-col-see-more-btn no-outline">See All Jobs</a>');
 
                     for(var i = 0; i < all_address.length; i++) {
-                        $('ul.sidebar-assress').append('<li><a href="<?php echo site_url('Address/getAllImportantAddress?AddressCategoryID=')?>'+all_address[i].ID+'">'+all_address[i].Name+'</a></li>');
+                        $('ul.sidebar-assress').append('<li class="address"><a href="<?php echo site_url('Address/getAllImportantAddress?AddressCategoryID=')?>'+all_address[i].ID+'">'+all_address[i].Name+'</a></li>');
                     }
+
+                    $('ul.sidebar-assress').append('<a href="<?php echo site_url('Job/getAllJobInformation')?>" class="see-more-btn no-outline">See All Adresses</a>');
 
                     for(var i = 0; i < all_news.length; i++) {
-                        $('ul.sidebar-news').append('<li><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+all_news[i].ID+'">'+all_news[i].Title+'</a></li>');
+                        var news_image_path = all_news[i].ImagePath;
+                        news_image_path = news_image_path != null && news_image_path.length > 0 ? '<?php echo base_url();?>'+'NewsImages/'+news_image_path : '';
+                        var news_title = all_news[i].Title;
+                        news_title = news_title.length > 30 ? news_title.substr(0, 27) + '...' : news_title;
+                        $('div.sidebar-news').append('<div class="row news">' +
+                            '                                <div class="col-3" style="padding: 5px; padding-left: 16px;">' +
+                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+news_image_path+'" alt="">' +
+                            '                                </div>' +
+                            '                                <div class="col-9" style="padding-right: 0; padding-left: 7px">' +
+                            '                                    <p class="news-title side-col"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+all_news[i].ID+'">'+news_title+'</a></p>' +
+                            '                                    <p class="news-description side-col">' + all_news[i].PublishDateTime + '</p>' +
+                            '                                </div>' +
+                            '                            </div>');
                     }
 
-                    if($('div.speacial-reports').length) {
-                        $('div.speacial-reports').html('<h3 class="title">Special Reports</h3>');
-                        for(var i = 0; i < all_special_reports.length; i++) {
-                            $('div.speacial-reports').append('<div class="media">' +
-                                '<img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">'+
-                                '<div class="media-body">'+
-                                '<a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a>'+
-                                '</div>'+
-                                '</div>');
-                            if (i == 4) break;
-                        }
+                    $('div.sidebar-news').append('<a href="<?php echo site_url('News/getAllLocalNews')?>" class="side-col-see-more-btn no-outline">See All News</a>');
 
-                        if (all_special_reports.length > 0) {
-                            $('div.speacial-reports').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right">'+
-'                            <i class="fas fa-chevron-right"></i> see more'+
-'                        </a>');
-                        }
+                    for(var i = 0; i < all_special_reports.length; i++) {
+                        var report_image = all_special_reports[i].ImagePath;
+                        report_image = report_image.length > 0 ? '<?php echo base_url();?>'+'JobImages/'+report_image : '';
+                        var report_title = all_special_reports[i].Title;
+                        report_title = report_title.length > 30 ? report_title.substr(0, 27) + '...' : report_title;
+                        $('div.sidebar-special-reports').append('<div class="row news">' +
+                            '                                <div class="col-3" style="padding: 5px; padding-left: 16px;">' +
+                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+report_image+'" alt="">' +
+                            '                                </div>' +
+                            '                                <div class="col-9" style="padding-right: 0; padding-left: 7px">' +
+                            '                                    <p class="news-title side-col"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+report_title+'</a></p>' +
+                            '                                </div>' +
+                            '                            </div>');
                     }
 
-                    if ($('div.special-reports-sidebar').length) {
-                        $('div.special-reports-sidebar').html('<h3 class="title">Special Reports</h3>');
-                        for(var i = 0; i < all_special_reports.length; i++) {
-                            $('div.special-reports-sidebar').append('<div class="media">' +
-                                '                        <img class="mr-3" src="<?php echo base_url();?>SpecialReportImages/'+all_special_reports[i].ImagePath+'" alt="image">' +
-                                '                        <div class="media-body">' +
-                                '                            <a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+all_special_reports[i].Title+'</a>' +
-                                '                        </div>' +
-                                '                    </div>');
-                        }
-
-                        $('div.special-reports-sidebar').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports');?>" class="btn btn-s float-right">' +
-                            '                        <i class="fas fa-chevron-right"></i> see more' +
-                            '                    </a>' +
-                            '                    <div class="clearfix"></div>');
-                    }
+                    $('div.sidebar-special-reports').append('<a href="<?php echo site_url('SpecialReports/getAllLocalSpecialReports')?>" class="side-col-see-more-btn no-outline">See All Reports</a>');
                 }
             });
         },

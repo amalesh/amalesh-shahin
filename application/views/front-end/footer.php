@@ -6,25 +6,6 @@
  * Time: 12:31 PM
  */
 ?>
-<!-- bottom quote section -->
-<div class="bottom-quote-section container home-bottom-quote-section">
-    <div class="row">
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
-        </div>
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/visitor.jpg" alt="">
-            <div class="visitor">
-                <p>visitor</p>
-                <p class="visitor-count"></p>
-            </div>
-        </div>
-        <div class="col-md-4 col-12 quote">
-            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
-        </div>
-    </div>
-</div>
-
 <!-- footer -->
 <footer>
     <div class="container d-flex justify-content-between align-items-center footer-wrapper">

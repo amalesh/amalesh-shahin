@@ -156,6 +156,25 @@
     </div>
 </div>
 
+<!-- bottom quote section -->
+<div class="bottom-quote-section container home-bottom-quote-section">
+    <div class="row">
+        <div class="col-md-4 col-12 quote">
+            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
+        </div>
+        <div class="col-md-4 col-12 quote">
+            <img src="<?php echo base_url().'application/views/';?>images/visitor.jpg" alt="">
+            <div class="visitor">
+                <p>visitor</p>
+                <p class="visitor-count"></p>
+            </div>
+        </div>
+        <div class="col-md-4 col-12 quote">
+            <img src="<?php echo base_url().'application/views/';?>images/do-not-use.jpg" alt="">
+        </div>
+    </div>
+</div>
+
 <script>
     $('.banner').css('background-image', '<?php echo base_url().'application/views/';?>images/banner-bg.jpg');
     $('.slick-prev.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
@@ -174,6 +193,5 @@
     drugObject.getNewProducts(0);
     drugObject.getHighlightedBrands();
     drugObject.getAllDrugInfoForAutoComplete('brand');
-    $('ul#main-menu li').removeClass('active');
-    $('ul#main-menu li.home-link').addClass('active');
+    frontendCommonMethods.mainMenuActivation('home');
 </script>

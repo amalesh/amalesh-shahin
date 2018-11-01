@@ -53,19 +53,19 @@
 
     <div class="collapse navbar-collapse" id="navbarMenu">
         <div class="container d-flex justify-content-between navbar-container">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="main-menu">
-                <li class="nav-item">
-                    <a class="nav-link mims-nav-link home-link active" href="<?php echo site_url();?>">Home</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 main-menu">
+                <li id="mainMenuHome" class="nav-item">
+                    <a class="nav-link mims-nav-link home-link" href="<?php echo site_url();?>">Home</a>
                 </li>
-                <li class="nav-item">
+                <li id="mainMenuDoctor" class="nav-item">
                     <a class="nav-link mims-nav-link doctor-link" href="<?php echo site_url('Doctor/getAllDoctorInformation');?>">Doctor</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
+            <ul class="navbar-nav main-menu">
+                <li class="nav-item" id="mainMenuResource">
                     <a class="nav-link mims-nav-link resources-link" href="<?php echo site_url('Resource/getAllActiveResourceInformation');?>">Resources</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="mainMenuAbout">
                     <a class="nav-link mims-nav-link about-link" href="<?php echo site_url('StaticInfo/showAboutUs');?>">About Us</a>
                 </li>
             </ul>
