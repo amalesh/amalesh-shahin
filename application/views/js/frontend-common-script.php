@@ -82,7 +82,7 @@
                         $('ul.sidebar-assress').append('<li class="address"><a href="<?php echo site_url('Address/getAllImportantAddress?AddressCategoryID=')?>'+all_address[i].ID+'">'+all_address[i].Name+'</a></li>');
                     }
 
-                    $('ul.sidebar-assress').append('<a href="<?php echo site_url('Job/getAllJobInformation')?>" class="see-more-btn no-outline">See All Adresses</a>');
+                    $('ul.sidebar-assress').append('<a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="see-more-btn no-outline">See All Adresses</a>');
 
                     for(var i = 0; i < all_news.length; i++) {
                         var news_image_path = all_news[i].ImagePath;

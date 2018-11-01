@@ -5,15 +5,25 @@
         selectedCategoryID: '',
         selectedCity: '',
         selectedArea: '',
+        viewAdditionalFilterOption: true,
+        toggleFilterOption: function() {
+            addressObject.viewAdditionalFilterOption = addressObject.viewAdditionalFilterOption ? false : true;
+            if(addressObject.viewAdditionalFilterOption) {
+                $('#address-filter-text').html('Hide Extra');
+                $('.address-additional-filter').show();
+            } else {
+                $('#address-filter-text').html('View All');
+                $('.address-additional-filter').hide();
+            }
+        },
         perPageInformationNumber: <?php echo config_item('per_page_address_information_number');?>,
         getCategoryWiseAddresses: function(categoryID) {
-            $('ul.address-list li').removeClass('highlight');
-            $('li.address-category-'+categoryID).addClass('highlight');
-            $('#currently-selected-filter').html($('li.address-category-'+categoryID+' a').html());
+            $('label.address-search-tag').removeClass('highlight');
+            $('label.address-category-'+categoryID).addClass('highlight');
             addressObject.selectedCategoryID = categoryID;
-            addressObject.getSearchResult(1);
             addressObject.selectedCity = $('#addressCity').val();
             addressObject.selectedArea = $('#addressArea').val();
+            addressObject.getSearchResult(1);
         },
         getLocationWiseAddresses: function() {
             addressObject.selectedCity = $('#addressCity').val();
@@ -28,9 +38,9 @@
                     addressObject.populatePagination(1);
                 }
                 if (addressData) {
-                    $('table.addtess-detail tbody').html('');
+                    $('table#address-list-table tbody').html('');
                     for (var i = 0; i < addressData.length; i++) {
-                        $('table.addtess-detail tbody').append('<tr>' +
+                        $('table#address-list-table tbody').append('<tr>' +
                             '<td>'+addressData[i].Name+'</td>' +
                             '<td class="border-left">'+addressData[i].Address+'</td>' +
                             '<td class="border-left">'+addressData[i].ContactNumber+'</td>' +

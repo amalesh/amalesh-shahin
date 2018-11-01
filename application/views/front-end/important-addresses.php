@@ -6,126 +6,189 @@
  * Time: 12:26 AM
  */
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-address-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-address-page-inner-right-523x52"></ul>
+<!-- banner -->
+<div class="banner title-banner d-md-flex d-none">
+    <h2>Important Addresses</h2>
+</div>
+
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert address-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="row">
-                    <div class="col-md-4 filter-address">
-                        <h1>Important address</h1>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">City</label>
-                            <select class="form-control" id="addressCity">
-                                <option value="0">Search Cities</option>
-                                <?php
-                                foreach ($Cities AS $city) {
-                                    echo '<option value="'.$city['Name'].'">'.$city['Name'].'</option>';
-                                }
-                                ?>
-                            </select>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert address-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="content-section main">
+                <div class="section-header d-flex justify-content-between" style="margin-bottom: 0px; padding: 24px 30px 16px 30px;">
+                    <span>Find Address</span> <i class="fas fa-filter d-md-none d-blocK"></i>
+                </div>
+                <!-- address search -->
+                <div class="container" style="padding-bottom: 20px">
+                    <div class="address-search row">
+                        <div class="col-md-5 col-12 address-search-col">
+                            <div class="theme-select">
+                                <select class="form-control" id="addressCity">
+                                    <option value="0">Search by City</option>
+                                    <?php
+                                    foreach ($Cities AS $city) {
+                                        echo '<option value="'.$city['ID'].'">'.$city['Name'].'</option>';
+                                    }
+                                    ?>
+                                </select>
+                                <div class="theme-down-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group imp-address-filter">
-                            <label for="exampleInputEmail1">Area</label>
-                            <input type="text" class="form-control" id="addressArea" placeholder="Search Area">
-                            <input type="button" class="btn" value="Search" onclick="addressObject.getLocationWiseAddresses()">
+                        <div class="col-md-5 col-12 address-search-col">
+                            <input type="search" class="form-control" id="addressArea" placeholder="Search by Area">
                         </div>
-                        <ul class="requirement-list address-list">
-                            <?php
-                            $selected_category_name = '';
-                            foreach ($AllAddressCategory AS $category) {
-                                if ($category['ID'] == $AddressCategoryID) {
-                                    echo '<li class="address-category-'.$category['ID'].' highlight"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
-                                    $selected_category_name = $category['Name'];
-                                } else {
-                                    echo '<li class="address-category-'.$category['ID'].'"><i class="fas fa-chevron-right"></i><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></li>';
-                                }
-                            }
-                            ?>
-                        </ul>
+                        <div class="col-md-2 col-12 address-search-col">
+                            <button class="btn theme-btn" style="width: 100%;" onclick="addressObject.getLocationWiseAddresses()">Search</button>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="addresses">
-                            <h4 id="currently-selected-filter"><?php echo $selected_category_name;?></h4>
-                            <table class="table addtess-detail">
-                                <thead class="">
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Address</th>
-                                    <th scope="col">Contact</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                foreach ($AllAddress AS $address) {
-                                    echo '<tr>
+                </div>
+            </div>
+            <!-- use "selected" class on the selected items -->
+            <div class="address-search-filters">
+                      <span id="address-filter-list">
+                          <span>Filter: </span>
+                          <?php
+                          $selected_category_name = '';
+                          $category_no = 0;
+                          foreach ($AllAddressCategory AS $category) {
+                              $additional_filter_class = $category_no < 4 ? '' : ' address-additional-filter';
+                              if ($category['ID'] == $AddressCategoryID) {
+                                  echo '<label class="address-category-'.$category['ID'].' search-tag address-search-tag highlight'.$additional_filter_class.'"><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></label>';
+                                  $selected_category_name = $category['Name'];
+                              } else {
+                                  echo '<label class="address-category-'.$category['ID'].' search-tag address-search-tag'.$additional_filter_class.'"><a onclick="addressObject.getCategoryWiseAddresses('.$category['ID'].')">'.$category['Name'].'</a></label>';
+                              }
+                              $category_no++;
+                          }
+                          ?>
+                      </span>
+                <div class="dropdown address-search-filter-dropdown">
+                    <button class="btn dropdown-toggle" type="button" onclick="addressObject.toggleFilterOption()">
+                        <span id="address-filter-text">View All</span>
+                        <div class="theme-down-arrow">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="content-section main">
+                <div class="container address-table table-responsive">
+                    <table class="table" id="address-list-table">
+                        <thead>
+                        <tr>
+                            <th scope="col name-col" style="width: 30%">Name</th>
+                            <th scope="col address-col" style="width: 35%">Address</th>
+                            <th scope="col contact-col" style="width: 35%">Contact</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($AllAddress AS $address) {
+                            echo '<tr>
                                     <td>'.$address['Name'].'</td>
                                     <td>'.$address['Address'].'</td>
                                     <td>'.$address['ContactNumber'].'</td>
                                 </tr>';
-                                }
-                                ?>
-                                </tbody>
-                            </table>
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- pagination -->
+            <nav class="mims-pagination" style="margin-top: 36px;">
+                <ul class="pagination">
+                    <!-- <li class="page-item">
+                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
+                    </li> -->
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="in-page-advert address-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
                         </div>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination" id="address-pagination"></ul>
-                        </nav>
+                        <div class="container sidebar-jobs"></div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <ul class="rslides add-address-page-bottom-left-823x115"></ul>
+                    <div class="in-page-advert side-col address-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-assress"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 sidebar">
-                <ul class="rslides add-address-page-top-right-340x355"></ul>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline sidebar-news"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
-            </div>
         </div>
     </div>
-</section>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-address-page-top-right-340x355', 'add-address-page-bottom-left-823x115', 'add-address-page-inner-left-523x52', 'add-address-page-inner-right-523x52']);
-    addressObject.totalAddress = <?php echo isset($TotalAddress) ? $TotalAddress : 0;?>;
-    addressObject.populatePagination(1);
+    addressObject.toggleFilterOption();
+    //frontendCommonMethods.getAdvertisement(['address-sidebar-advert', ' address-advert-top-left', ' address-advert-top-right', ' address-advert-bottom']);
+    //addressObject.totalAddress = <?php //echo isset($TotalAddress) ? $TotalAddress : 0;?>//;
+    //addressObject.populatePagination(1);
 </script>

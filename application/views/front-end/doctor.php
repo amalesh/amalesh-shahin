@@ -34,7 +34,7 @@
         <div class="col-md-8 col-12">
             <div class="content-section main">
                 <div class="section-header d-flex justify-content-between" style="margin-bottom: 0px; padding: 24px 30px 16px 30px;">
-                    <span>Find Doctors</span> <i class="fas fa-filter d-md-none d-blocK" data-toggle="modal" data-target="#filterModal"></i>
+                    <span>Find Doctors</span> <i class="fas fa-filter d-md-none d-blocK"></i>
                 </div>
                 <!-- doctor search -->
                 <div class="container" style="padding-bottom: 20px">
