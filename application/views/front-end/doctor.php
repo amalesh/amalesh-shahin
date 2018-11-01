@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </div>
-            <div class="doctor-list container">
+            <div class="doctor-list container" id="doctor-info-list">
                 <?php
                 foreach ($AllDoctors AS $doctor) {
                     $image_path = empty($doctor['ImagePath']) ? base_url().'application/views/images/doctor.png' : base_url().'application/views/img/'.$doctor['ImagePath'];
