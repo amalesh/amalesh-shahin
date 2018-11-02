@@ -42,8 +42,8 @@
                     for (var i = 0; i < addressData.length; i++) {
                         $('table#address-list-table tbody').append('<tr>' +
                             '<td>'+addressData[i].Name+'</td>' +
-                            '<td class="border-left">'+addressData[i].Address+'</td>' +
-                            '<td class="border-left">'+addressData[i].ContactNumber+'</td>' +
+                            '<td>'+addressData[i].Address+'</td>' +
+                            '<td>'+addressData[i].ContactNumber+'</td>' +
                             '</tr>');
                     }
                 }

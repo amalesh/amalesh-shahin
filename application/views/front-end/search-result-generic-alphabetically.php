@@ -84,7 +84,7 @@
                             <th scope="col">Manufacturer Name</th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="generic-alphabetically-list">
                         <?php
                         foreach ($BrandData AS $brand) {
                             echo '<tr>';
@@ -100,20 +100,7 @@
             </div>
             <!-- pagination -->
             <nav class="mims-pagination" style="margin-top: 36px;">
-                <ul class="pagination">
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
+                <ul class="pagination" id="search-genetic-pagination"></ul>
             </nav>
             <div class="in-page-advert generic-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
@@ -168,11 +155,11 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['generic-sidebar-advert', ' generic-advert-top-left', ' generic-advert-top-right', ' generic-advert-bottom']);
+    // frontendCommonMethods.getAdvertisement(['generic-sidebar-advert', ' generic-advert-top-left', ' generic-advert-top-right', ' generic-advert-bottom']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
-    //drugObject.perPageInformationNumber = <?php //echo $PerPageInformationNumber;?>//;
-    //drugObject.totalDrug = <?php //echo isset($TotalBrand) ? $TotalBrand : 0;?>//;
-    //drugObject.populatePagination('search-genetic-pagination', 1);
+    drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
+    drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
+    drugObject.populatePagination('search-genetic-pagination', 1);
     drugObject.getAllDrugInfoForAutoComplete('generic');
 </script>

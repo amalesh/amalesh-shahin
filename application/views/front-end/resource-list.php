@@ -49,27 +49,6 @@
                 }
                 ?>
             </div>
-
-            <!-- pagination -->
-            <nav class="mims-pagination" style="margin-top: 36px;">
-                <ul class="pagination">
-                    <!-- <li class="page-item">
-                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
-                    </li> -->
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
-            </nav>
             <div class="in-page-advert resource-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
             </div>

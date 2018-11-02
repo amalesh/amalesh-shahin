@@ -124,23 +124,7 @@
             </div>
             <!-- pagination -->
             <nav class="mims-pagination" style="margin-top: 36px;">
-                <ul class="pagination">
-                    <!-- <li class="page-item">
-                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
-                    </li> -->
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
+                <ul class="pagination" id="doctor-pagination"></ul>
             </nav>
             <div class="in-page-advert doctor-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
@@ -199,7 +183,7 @@
 <script>
     frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['doctor-sidebar-advert', ' doctor-advert-top-left', ' doctor-advert-top-right', ' doctor-advert-bottom']);
-    //doctorObject.totalDoctor = <?php //echo isset($TotalDoctor) ? $TotalDoctor : 0;?>//;
-    //doctorObject.populatePagination(1);
+    doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
+    doctorObject.populatePagination(1);
     frontendCommonMethods.mainMenuActivation('doctor');
 </script>

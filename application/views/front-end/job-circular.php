@@ -54,23 +54,7 @@
             </div>
             <!-- pagination -->
             <nav class="mims-pagination" style="margin-top: 36px;">
-                <ul class="pagination">
-                    <!-- <li class="page-item">
-                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
-                    </li> -->
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
+                <ul class="pagination" id="job-circular-pagination"></ul>
             </nav>
             <div class="in-page-advert job-circular-list-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
@@ -126,7 +110,7 @@
 <script>
     frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['job-circular-list-sidebar-advert', ' job-circular-list-advert-top-left', ' job-circular-list-advert-top-right', ' job-circular-list-advert-bottom']);
-    //jobObject.totalJob = <?php //echo isset($TotalJob) ? $TotalJob : 0;?>//;
-    //jobObject.perPageInformationNumber = <?php //echo config_item('per_page_job_information_number');?>//;
-    //jobObject.populatePagination(1);
+    jobObject.totalJob = <?php echo isset($TotalJob) ? $TotalJob : 0;?>;
+    jobObject.perPageInformationNumber = <?php echo config_item('per_page_job_information_number');?>;
+    jobObject.populatePagination(1);
 </script>

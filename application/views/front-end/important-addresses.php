@@ -116,23 +116,7 @@
             </div>
             <!-- pagination -->
             <nav class="mims-pagination" style="margin-top: 36px;">
-                <ul class="pagination">
-                    <!-- <li class="page-item">
-                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
-                    </li> -->
-                    <li class="page-item active">
-                        <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
-                    </li>
-                </ul>
+                <ul class="pagination" id="address-pagination"></ul>
             </nav>
             <div class="in-page-advert address-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
@@ -189,6 +173,6 @@
     frontendCommonMethods.getSideBarData();
     addressObject.toggleFilterOption();
     //frontendCommonMethods.getAdvertisement(['address-sidebar-advert', ' address-advert-top-left', ' address-advert-top-right', ' address-advert-bottom']);
-    //addressObject.totalAddress = <?php //echo isset($TotalAddress) ? $TotalAddress : 0;?>//;
-    //addressObject.populatePagination(1);
+    addressObject.totalAddress = <?php echo isset($TotalAddress) ? $TotalAddress : 0;?>;
+    addressObject.populatePagination(1);
 </script>

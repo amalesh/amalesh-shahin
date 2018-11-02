@@ -9,6 +9,23 @@
                 if (jobData) {
                     $('div.job-list').html('');
                     for (var i = 0; i < jobData.length; i++) {
+                        var organization_logo = jobData[i].OrganizationLogo;
+                        organization_logo = organization_logo == '' || organization_logo == null ? '' : '<?php echo base_url();?>JobImages/'+organization_logo;
+                        $('div.job-list').append('<div class="row job">' +
+                            '                <div class="col-md-9 col-10">' +
+                            '<a href="<?php echo site_url('Job/showJobDetail?JobID=');?>'+jobData[i].ID+'"><h3 class="job-title">' +
+                            jobData[i].Title +
+                            '                    </h3></a>' +
+                            '                    <p class="job-post-date">Posted on <span>'+jobData[i].PublishDate+'</span></p>' +
+                            '                    <p class="job-info-summary">' +
+                            jobData[i].Description +
+                            '                    </p>' +
+                            '                    <a class="job-detail-btn no-outline" href="<?php echo site_url('Job/showJobDetail?JobID=');?>'+jobData[i].ID+'">View Job Detail</a>' +
+                            '                </div>' +
+                            '                <div class="col-md-3 col-2 p-0">' +
+                            '                  <img class="job-img" src="'+organization_logo+'" alt="">' +
+                            '                </div>' +
+                            '              </div>');
                         $('div.job-list').append('<div class="job">' +
                             '<div class="job-info">' +
                             '<a href="<?php echo site_url('Job/showJobDetail?JobID=');?>'+jobData[i].ID+'"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> '+jobData[i].Title+'</h1></a>' +
