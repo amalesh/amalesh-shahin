@@ -358,6 +358,9 @@
                 }
             });
         },
+        searchAlphabetically: function(type, value) {
+            window.location.replace('<?php echo site_url('Brand/searchBrandInformation?Type=');?>'+type+'&Value='+value);
+        },
         getDrugList: function(getDrugList) {
             console.log('Method Name: drugObject.getDrugList Param: getDrugList Value: '+[getDrugList].toString());
             var formURL = "<?php echo site_url('Brand/getAllDrugInformation')?>"+'?PageNo='+pageNo;

@@ -20,32 +20,32 @@
             <button class="search-btn no-outline" onclick="drugObject.searchBrandInformation()" id="searchInformation"><img src="<?php echo base_url().'application/views/';?>images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
         </div>
         <div class="alphabets">
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=a');?>" class="alphabet-link">A</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=b');?>" class="alphabet-link">B</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=c');?>" class="alphabet-link">C</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=d');?>" class="alphabet-link">D</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=e');?>" class="alphabet-link">E</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=f');?>" class="alphabet-link">F</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=g');?>" class="alphabet-link">G</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=h');?>" class="alphabet-link">H</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=i');?>" class="alphabet-link">I</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=j');?>" class="alphabet-link">J</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=k');?>" class="alphabet-link">K</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=l');?>" class="alphabet-link">L</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=m');?>" class="alphabet-link">M</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=n');?>" class="alphabet-link">N</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=o');?>" class="alphabet-link">O</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=p');?>" class="alphabet-link">P</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=q');?>" class="alphabet-link">Q</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=r');?>" class="alphabet-link">R</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=s');?>" class="alphabet-link">S</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=t');?>" class="alphabet-link">T</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=u');?>" class="alphabet-link">U</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=v');?>" class="alphabet-link">V</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=w');?>" class="alphabet-link">W</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=x');?>" class="alphabet-link">X</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=y');?>" class="alphabet-link">Y</a>
-            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=z');?>" class="alphabet-link">Z</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','a')" class="alphabet-link">A</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','b')" class="alphabet-link">B</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','c')" class="alphabet-link">C</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','d')" class="alphabet-link">D</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','e')" class="alphabet-link">E</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','f')" class="alphabet-link">F</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','g')" class="alphabet-link">G</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','h')" class="alphabet-link">H</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','i')" class="alphabet-link">I</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','j')" class="alphabet-link">J</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','k')" class="alphabet-link">K</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','l')" class="alphabet-link">L</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','m')" class="alphabet-link">M</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','n')" class="alphabet-link">N</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','o')" class="alphabet-link">O</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','p')" class="alphabet-link">P</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','q')" class="alphabet-link">Q</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','r')" class="alphabet-link">R</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','s')" class="alphabet-link">S</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','t')" class="alphabet-link">T</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','u')" class="alphabet-link">U</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','v')" class="alphabet-link">V</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','w')" class="alphabet-link">W</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','x')" class="alphabet-link">X</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','y')" class="alphabet-link">Y</a>
+            <a onclick="drugObject.searchAlphabetically('brand_by_alphabetically','z')" class="alphabet-link">Z</a>
         </div>
     </div>
 </div>

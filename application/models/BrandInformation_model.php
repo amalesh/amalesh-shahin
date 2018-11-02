@@ -793,7 +793,7 @@ class BrandInformation_model extends GeneralData_model {
                 break;
         }
 
-        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
+        log_message('debug', __METHOD__.'#'.__LINE__.' Method End.'.$this->db->last_query());
         return $total;
     }
 

@@ -6,185 +6,158 @@
  * Time: 9:55 PM
  */
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-manufacturer-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-manufacturer-page-inner-right-523x52"></ul>
-            </div>
+<!-- banner -->
+<div class="banner banner-small d-md-flex d-none">
+    <div class="search-wrapper">
+        <ul class="search-tabs group">
+            <li class="brand active"><a onclick="drugObject.changeSearchOption('brand')" class="search_option_type search_by_brand">Brand</a></li>
+            <li class="generic"><a onclick="drugObject.changeSearchOption('generic')" class="search_option_type search_by_generic">Generic</a></li>
+            <li class="indication"><a onclick="drugObject.changeSearchOption('indication')" class="search_option_type search_by_indication">Indication</a></li>
+            <li class="manufacture"><a onclick="drugObject.changeSearchOption('manufacturer')" class="search_option_type search_by_manufacturer">Manufacture</a></li>
+        </ul>
+        <div class="search">
+            <input class="search-bar no-outline" type="text" id="searchDrugOption">
+            <button class="search-btn no-outline" onclick="drugObject.searchBrandInformation()" id="searchInformation"><img src="<?php echo base_url().'application/views/';?>images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="search-bar search-bar-inner">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a class="search_option_type search_by_brand" onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_generic" onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_indication" onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_manufacturer" onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
-                            </ul>
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
-                            <a onclick="drugObject.searchBrandInformation()" id="searchInformation" class="search-btn"><i class="fas fa-search"></i></a>
-                            <span class="error_message invalid-search-option-error">Please enter a valid search option.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="presentation">
-                    <span style="font-size: 20px">Brand of</span>
-                    <h4><?php echo $Manufacturer;?></h4>
-                    <ul class="list-inline text-center alpha-list">
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-a"><a onclick="drugObject.getManufacturerBrand('a')">A</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-b"><a onclick="drugObject.getManufacturerBrand('b')">B</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-c"><a onclick="drugObject.getManufacturerBrand('c')">C</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-d"><a onclick="drugObject.getManufacturerBrand('d')">D</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-e"><a onclick="drugObject.getManufacturerBrand('e')">E</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-f"><a onclick="drugObject.getManufacturerBrand('f')">F</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-g"><a onclick="drugObject.getManufacturerBrand('g')">G</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-h"><a onclick="drugObject.getManufacturerBrand('h')">H</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-i"><a onclick="drugObject.getManufacturerBrand('i')">I</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-j"><a onclick="drugObject.getManufacturerBrand('j')">J</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-k"><a onclick="drugObject.getManufacturerBrand('k')">K</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-l"><a onclick="drugObject.getManufacturerBrand('l')">L</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-m"><a onclick="drugObject.getManufacturerBrand('m')">M</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-n"><a onclick="drugObject.getManufacturerBrand('n')">N</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-o"><a onclick="drugObject.getManufacturerBrand('o')">O</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-p"><a onclick="drugObject.getManufacturerBrand('p')">P</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-q"><a onclick="drugObject.getManufacturerBrand('q')">Q</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-r"><a onclick="drugObject.getManufacturerBrand('r')">R</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-s"><a onclick="drugObject.getManufacturerBrand('s')">S</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-t"><a onclick="drugObject.getManufacturerBrand('t')">T</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-u"><a onclick="drugObject.getManufacturerBrand('u')">U</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-v"><a onclick="drugObject.getManufacturerBrand('v')">V</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-w"><a onclick="drugObject.getManufacturerBrand('w')">W</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-x"><a onclick="drugObject.getManufacturerBrand('x')">X</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-y"><a onclick="drugObject.getManufacturerBrand('y')">Y</a></li>
-                        <span class="separator"></span>
-                        <li class="list-inline-item search-manufacturer-option search-manufacturer-option-z"><a onclick="drugObject.getManufacturerBrand('z')">Z</a></li>
-                        <span class="separator"></span>
+        <div class="alphabets">
+            <a onclick="drugObject.getManufacturerBrand('a')" class="alphabet-link">A</a>
+            <a onclick="drugObject.getManufacturerBrand('b')" class="alphabet-link">B</a>
+            <a onclick="drugObject.getManufacturerBrand('c')" class="alphabet-link">C</a>
+            <a onclick="drugObject.getManufacturerBrand('d')" class="alphabet-link">D</a>
+            <a onclick="drugObject.getManufacturerBrand('e')" class="alphabet-link">E</a>
+            <a onclick="drugObject.getManufacturerBrand('f')" class="alphabet-link">F</a>
+            <a onclick="drugObject.getManufacturerBrand('g')" class="alphabet-link">G</a>
+            <a onclick="drugObject.getManufacturerBrand('h')" class="alphabet-link">H</a>
+            <a onclick="drugObject.getManufacturerBrand('i')" class="alphabet-link">I</a>
+            <a onclick="drugObject.getManufacturerBrand('j')" class="alphabet-link">J</a>
+            <a onclick="drugObject.getManufacturerBrand('k')" class="alphabet-link">K</a>
+            <a onclick="drugObject.getManufacturerBrand('l')" class="alphabet-link">L</a>
+            <a onclick="drugObject.getManufacturerBrand('m')" class="alphabet-link">M</a>
+            <a onclick="drugObject.getManufacturerBrand('n')" class="alphabet-link">N</a>
+            <a onclick="drugObject.getManufacturerBrand('o')" class="alphabet-link">O</a>
+            <a onclick="drugObject.getManufacturerBrand('p')" class="alphabet-link">P</a>
+            <a onclick="drugObject.getManufacturerBrand('q')" class="alphabet-link">Q</a>
+            <a onclick="drugObject.getManufacturerBrand('r')" class="alphabet-link">R</a>
+            <a onclick="drugObject.getManufacturerBrand('s')" class="alphabet-link">S</a>
+            <a onclick="drugObject.getManufacturerBrand('t')" class="alphabet-link">T</a>
+            <a onclick="drugObject.getManufacturerBrand('u')" class="alphabet-link">U</a>
+            <a onclick="drugObject.getManufacturerBrand('v')" class="alphabet-link">V</a>
+            <a onclick="drugObject.getManufacturerBrand('w')" class="alphabet-link">W</a>
+            <a onclick="drugObject.getManufacturerBrand('x')" class="alphabet-link">X</a>
+            <a onclick="drugObject.getManufacturerBrand('y')" class="alphabet-link">Y</a>
+            <a onclick="drugObject.getManufacturerBrand('z')" class="alphabet-link">Z</a>
+        </div>
+    </div>
+</div>
 
-                    </ul>
-                    <div class="presentation-table">
-                        <table class="table" id="product-list">
-                            <thead>
-                            <tr>
-                                <th scope="col" style="width: 150px;">Brand Name</th>
-                                <th scope="col">Generic Name</th>
-                            </tr>
-                            </thead>
-                            <tbody class="manufacturer-list">
-                            <?php
-                            foreach ($AllManufacturers AS $brand) {
-                                echo '<tr>';
-                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
-                                echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value='.$brand['GenericName']).'">'.$brand['GenericName'].'</a></td>';
-                                echo '</tr>';
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination" id="search-manufacturer-pagination"></ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="rslides add-manufacturer-page-bottom-left-823x115"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <ul class="rslides add-manufacturer-page-top-right-340x355"></ul>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert manufacturer-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <section class="visitor">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-9.png" alt="image">
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <h3 class="title">Visitor</h3>
-                                <span class="counter">123,45,67</span>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-10.png" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert manufacturer-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="content-section main" style="margin-top: 15px">
+                <!-- more jobs -->
+                <div class="section-header own-pad section-header-title" style="margin-bottom: 10px; padding: 24px 30px 16px 30px;"></div>
+                <div class="brand-manufacturer-table brand-of-generic">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="width: 150px;">Brand Name</th>
+                            <th scope="col">Generic Name</th>
+                        </tr>
+                        </thead>
+                        <tbody class="manufacturer-list">
+                        <?php
+                        foreach ($AllManufacturers AS $brand) {
+                            echo '<tr>';
+                            echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=brand&Value='.$brand['Name']).'">'.$brand['Name'].'</a></td>';
+                            echo '<td><a href="'.site_url('Brand/searchBrandInformation?Type=generic&Value='.$brand['GenericName']).'">'.$brand['GenericName'].'</a></td>';
+                            echo '</tr>';
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- pagination -->
+            <nav class="mims-pagination" style="margin-top: 36px;">
+                <ul class="pagination" id="search-manufacturer-pagination"></ul>
+            </nav>
+            <div class="in-page-advert manufacturer-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
+                        </div>
+                        <div class="container sidebar-jobs"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col manufacturer-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-assress"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-manufacturer-page-top-right-340x355', 'add-manufacturer-page-bottom-left-823x115', 'add-manufacturer-page-inner-left-523x52', 'add-manufacturer-page-inner-right-523x52']);
+    // frontendCommonMethods.getAdvertisement(['manufacturer-sidebar-advert', ' manufacturer-advert-top-left', ' manufacturer-advert-top-right', ' manufacturer-advert-bottom']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
     drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
     drugObject.populatePagination('search-manufacturer-pagination', 1);
     drugObject.getAllDrugInfoForAutoComplete('manufacturer');
+    $('div.section-header-title').html(drugObject.searchOptionValue);
 </script>
