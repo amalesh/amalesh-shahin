@@ -15,7 +15,7 @@ class StaticInfo extends CI_Controller {
     public function showAboutUs()
     {
         $this->load->view('front-end/header');
-        //$this->load->view('front-end/main-menu');
+        $this->load->view('js/frontend-common-script');
         $this->load->view('front-end/about-us', array());
         $this->load->view('js/frontend-staticinfo-script');
         $this->load->view('front-end/footer');

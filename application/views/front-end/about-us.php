@@ -73,3 +73,6 @@
         </div>
     </div>
 </div>
+<script>
+    frontendCommonMethods.mainMenuActivation('about');
+</script>

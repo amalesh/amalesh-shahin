@@ -6,92 +6,123 @@
  * Time: 9:55 PM
  */
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-resource-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-resource-page-inner-right-523x52"></ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <h2 style="border-bottom:1px solid #dfdfdf;">Resources</h2>
-                <div class="product-details" style="border: 0;padding-left: 0;">
-                    <?php
-                    foreach ($AllResources As $resource) {
-                        echo '<div><a target="_blank" href="'.site_url('Resource/getResourceDetail').'?ResourceID='.$resource['ID'].'">'.$resource['Title'].'</a> </div>';
-                    }
-                    ?>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="rslides add-resource-page-bottom-left-823x115"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <ul class="rslides add-resource-page-top-right-340x355"></ul>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
+<!-- banner -->
+<div class="banner title-banner d-md-flex d-none">
+    <h2>Resources</h2>
+</div>
+
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert resource-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <section class="visitor">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-9.png" alt="image">
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <h3 class="title">Visitor</h3>
-                                <span class="counter">123,45,67</span>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-10.png" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert resource-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="resource-list container">
+                <?php
+                foreach ($AllResources As $resource) {
+                    echo '<a class="resource row d-flex align-items-center" target="_blank" href="'.site_url('Resource/getResourceDetail').'?ResourceID='.$resource['ID'].'">
+                    <div class="resource-icon d-md-flex d-none">
+                        <i class="material-icons">picture_as_pdf</i>
+                    </div>
+                    <div class="resource-info">
+                        <p class="resource-name">'.$resource['Title'].'</p>
+                        <p class="resource-type">
+                            PDF
+                        </p>
+                    </div>
+                </a>';
+                }
+                ?>
+            </div>
+
+            <!-- pagination -->
+            <nav class="mims-pagination" style="margin-top: 36px;">
+                <ul class="pagination">
+                    <!-- <li class="page-item">
+                      <a class="page-link prev" href="#"><i class="fas fa-chevron-left"></i> Previous</i></a>
+                    </li> -->
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="in-page-advert resource-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
+                        </div>
+                        <div class="container sidebar-jobs"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col resource-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-assress"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-resource-page-top-right-340x355', 'add-resource-page-bottom-left-823x115', 'add-resource-page-inner-left-523x52', 'add-resource-page-inner-right-523x52']);
-    $('ul#main-menu li').removeClass('active');
-    $('ul#main-menu li#main-menu-resource').addClass('active');
+    // frontendCommonMethods.getAdvertisement(['resource-sidebar-advert', ' resource-advert-top-left', ' resource-advert-top-right', ' resource-advert-bottom']);
+    frontendCommonMethods.mainMenuActivation('resource');
 </script>
