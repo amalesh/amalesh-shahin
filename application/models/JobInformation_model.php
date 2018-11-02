@@ -17,7 +17,7 @@ class JobInformation_model extends GeneralData_model {
 
     public function getAllActiveJobInformation() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
+        $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.OrganizationLogo, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
         $this->db->from('jobinformation AS j');
         $this->db->where('j.IsActive', 1);
         $this->db->limit(config_item('per_page_job_information_number'));
