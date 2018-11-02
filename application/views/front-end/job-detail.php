@@ -8,113 +8,192 @@
 
 $job_title = $JobInfo['Title'];
 $job_organization = !empty($JobInfo['Organization']) ? ' - '.$JobInfo['Organization'] : '';
-$job_publish_date = !empty($JobInfo['PublishDate']) ? 'Posted on '.$JobInfo['PublishDate'] : '';
+$job_publish_date = !empty($JobInfo['PublishDate']) ? $JobInfo['PublishDate'] : '';
 $job_description = $JobInfo['Description'];
-$job_position = !empty($JobInfo['Position']) ? '<li><i class="fas fa-chevron-right"></i><b>Position:</b> '.$JobInfo['Position'].'</li>' : '';
-$job_application_deadline = !empty($JobInfo['ApplicationDeadline']) ? '<li><i class="fas fa-chevron-right"></i><b>Application Deadline:</b> '.$JobInfo['ApplicationDeadline'].'</li>' : '';
-$job_salary = !empty($JobInfo['Salary']) ? '<li><i class="fas fa-chevron-right"></i><b>Salary:</b> '.$JobInfo['Salary'].'</li>' : '';
-$job_educational_requirement = !empty($JobInfo['EducationalRequirement']) ? '<li><i class="fas fa-chevron-right"></i><b>Educational Requirement:</b> '.$JobInfo['EducationalRequirement'].'</li>' : '';
-$job_experience_requirement = !empty($JobInfo['ExperienceRequirement']) ? '<li><i class="fas fa-chevron-right"></i><b>Experience Requirement:</b> '.$JobInfo['ExperienceRequirement'].'</li>' : '';
-$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? '<li><i class="fas fa-chevron-right"></i><b>Number of Vacancy:</b> '.$JobInfo['NumberOfVacancy'].'</li>' : '';
-$job_age_limit = !empty($JobInfo['AgeLimit']) ? '<li><i class="fas fa-chevron-right"></i><b>Age Limit:</b> '.$JobInfo['AgeLimit'].'</li>' : '';
-$job_location = !empty($JobInfo['Location']) ? '<li><i class="fas fa-chevron-right"></i><b>Location:</b> '.$JobInfo['Location'].'</li>' : '';
-$job_source = !empty($JobInfo['JobSource']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Source:</b> '.$JobInfo['JobSource'].'</li>' : '';
-$job_type = !empty($JobInfo['JobType']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Type:</b> '.$JobInfo['JobType'].'</li>' : '';
-$job_employment_type = !empty($JobInfo['EmploymentType']) ? '<li><i class="fas fa-chevron-right"></i><b>Employment Type:</b> '.$JobInfo['EmploymentType'].'</li>' : '';
-$job_nature = !empty($JobInfo['JobNature']) ? '<li><i class="fas fa-chevron-right"></i><b>Job Nature:</b> '.$JobInfo['JobNature'].'</li>' : '';
-$job_applying_procedure = !empty($JobInfo['ApplyingProcedure']) ? '<li><i class="fas fa-chevron-right"></i><b>Applying Procedure:</b> '.$JobInfo['ApplyingProcedure'].'</li>' : '';
-$job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="more-news text-center">
-                        <p>See job circular image</p>
-                        <div class="round">
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
-                        <div class="job-circular-img">
-                            <img class="img-fluid" src="'.base_url('JobImages/'.$JobInfo['JobCircularImagePath']).'" alt="">
-                        </div>
-                    </div>';
+$job_position = !empty($JobInfo['Position']) ? $JobInfo['Position'] : '';
+$job_application_deadline = !empty($JobInfo['ApplicationDeadline']) ? $JobInfo['ApplicationDeadline'] : '';
+$job_salary = !empty($JobInfo['Salary']) ? $JobInfo['Salary'] : '';
+$job_educational_requirement = !empty($JobInfo['EducationalRequirement']) ? $JobInfo['EducationalRequirement'] : '';
+$job_experience_requirement = !empty($JobInfo['ExperienceRequirement']) ? $JobInfo['ExperienceRequirement'] : '';
+$job_number_of_vacancy = !empty($JobInfo['NumberOfVacancy']) ? $JobInfo['NumberOfVacancy'] : '';
+$job_age_limit = !empty($JobInfo['AgeLimit']) ? $JobInfo['AgeLimit'] : '';
+$job_location = !empty($JobInfo['Location']) ? $JobInfo['Location'] : '';
+$job_source = !empty($JobInfo['JobSource']) ? $JobInfo['JobSource'] : '';
+$job_type = !empty($JobInfo['JobType']) ? $JobInfo['JobType'] : '';
+$job_employment_type = !empty($JobInfo['EmploymentType']) ? $JobInfo['EmploymentType'] : '';
+$job_nature = !empty($JobInfo['JobNature']) ? $JobInfo['JobNature'] : '';
+$job_applying_procedure = !empty($JobInfo['ApplyingProcedure']) ? $JobInfo['ApplyingProcedure'] : '';
+$job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="col-md-6 col-12 job-circular-image-wrapper">
+                                <div class="job-circular-image">
+                                    <img src="'.base_url('JobImages/'.$JobInfo['JobCircularImagePath']).'" class="gallery-items" alt="">
+                                    <div class="d-flex justify-content-around">
+                                        <a class="btn no-outline" onclick="frontendCommonMethods.viewImage(\''.base_url('JobImages/'.$JobInfo['JobCircularImagePath']).'\')"><i class="material-icons"></i> View</a>
+                                        <a class="btn no-outline" href="'.base_url('JobImages/'.$JobInfo['JobCircularImagePath']).'" target="_blank" download><i class="material-icons"></i> Download</a>
+                                    </div>
+                                </div>
+                            </div>';
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-job-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-job-page-inner-right-523x52"></ul>
+<!-- banner -->
+<div class="banner title-banner d-md-flex d-none">
+    <h2>Job Circular</h2>
+</div>
+
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert job-circular-detail-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="job-circular-head">
-                    <div class="news-top">
-                        <h1 class="job-circular-title">Job circular</h1>
-                    </div>
-                </div>
-                <div class="job-details">
-                    <h1><?php echo $job_title.$job_organization;?></h1>
-                    <h4 class="date"><?php echo $job_publish_date;?></h4>
-                    <p><?php echo $job_description;?></p>
-                    <?php
-                    echo '<ul class="requirement-list">'.
-                        $job_position.
-                        $job_application_deadline.
-                        $job_salary.
-                        $job_educational_requirement.
-                        $job_experience_requirement.
-                        $job_number_of_vacancy.
-                        $job_age_limit.
-                        $job_location.
-                        $job_source.
-                        $job_type.
-                        $job_employment_type.
-                        $job_nature.
-                        $job_applying_procedure.'</ul>'.$job_image;
-                    ?>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="rslides add-job-page-bottom-left-823x115"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <ul class="rslides add-job-page-top-right-340x355"></ul>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert job-circular-detail-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="content-section main">
+                <div class="job-details">
+                    <h2 class="job-title"><?php echo $job_title;?></h2>
+                    <p class="job-post-date">Posted on <span><?php echo $job_title.$job_organization;?></span></p>
+                    <p class="job-description"><?php echo $job_title;?></p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-12 pl-0">
+                                <!-- job info table -->
+                                <div class="job-info-table">
+                                    <table class="table">
+                                        <tbody>
+                                        <tr>
+                                            <td class="job-info-title">Title</td>
+                                            <td>: <?php echo $job_title;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Job Type</td>
+                                            <td>: <?php echo $job_type;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Salary</td>
+                                            <td>: <?php echo $job_salary;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Application Deadline</td>
+                                            <td>: <?php echo $job_application_deadline;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Position</td>
+                                            <td>: <?php echo $job_position;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Educational Requirement</td>
+                                            <td>: <?php echo $job_title;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Experience Requirement</td>
+                                            <td>: <?php echo $job_experience_requirement;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">Age Limit</td>
+                                            <td>: <?php echo $job_age_limit;?></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="job-info-title">No. of Vacancy</td>
+                                            <td>: <?php echo $job_number_of_vacancy;?></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- job circular image -->
+                            <?php echo $job_image;?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-section main" style="margin-top: 15px">
+                <!-- more jobs -->
+                <div class="section-header own-pad" style="margin-bottom: 10px; padding: 24px 30px 16px 30px;">
+                    You may also be interested in
+                </div>
+                <div class="job-list container">
+                    <?php
+                    foreach ($AllJobs AS $job) {
+                        $organization_logo = $job['OrganizationLogo'];
+                        $organization_logo = empty($organization_logo) ? base_url().'JobImages/'.$organization_logo : '';
+
+                        echo '<div class="row job">
+                    <div class="col-md-9 col-10">
+                        <a href="'.site_url('Job/showJobDetail?JobID='.$job['ID']).'"><h3 class="job-title">Medical Officer/ Physician</h3></a>
+                        <p class="job-post-date">Posted on <span>'.$job['PublishDate'].'</span></p>
+                        <p class="job-info-summary">'.$job['Description'].'</p>
+                        <a class="job-detail-btn no-outline" href="'.site_url('Job/showJobDetail?JobID='.$job['ID']).'">View Job Detail</a>
+                    </div>
+                    <div class="col-md-3 col-2 p-0">
+                        <img class="job-img" src="'.$organization_logo.'" alt="">
+                    </div>
+                </div>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="in-page-advert job-circular-detail-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
+                        </div>
+                        <div class="container sidebar-jobs"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col job-circular-detail-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-assress"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-job-page-top-right-340x355', 'add-job-page-bottom-left-823x115', 'add-job-page-inner-left-523x52', 'add-job-page-inner-right-523x52']);
+    // frontendCommonMethods.getAdvertisement(['job-circular-detail-sidebar-advert', ' job-circular-detail-advert-top-left', ' job-circular-detail-advert-top-right', ' job-circular-detail-advert-bottom']);
 </script>

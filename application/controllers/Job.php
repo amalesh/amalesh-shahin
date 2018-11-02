@@ -38,6 +38,8 @@ class Job extends CI_Controller {
         $job_information = $this->JobInformation_model->getJobDetail();
         $data = array();
         $data['JobInfo'] = $job_information;
+        $similar_jobs = $this->JobInformation_model->getSimilarActiveJobInformation();
+        $data['AllJobs'] = $similar_jobs;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         //$this->load->view('front-end/main-menu');

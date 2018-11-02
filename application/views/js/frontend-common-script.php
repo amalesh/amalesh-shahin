@@ -4,6 +4,10 @@
         totalDrug: 0,
         activeBrandAlphabet: '',
         activeGenericAlphabet: '',
+        viewImage: function(img) {
+            var viewer = ImageViewer();
+            viewer.show(img);
+        },
         mainMenuActivation: function(item) {
             $('li#mainMenuHome a').removeClass('active');
             $('li#mainMenuDoctor a').removeClass('active');

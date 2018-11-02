@@ -45,6 +45,32 @@ class JobInformation_model extends GeneralData_model {
         return array($job_information, count($result));
     }
 
+    public function getSimilarActiveJobInformation() {
+        log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
+        $job_id = $this->input->get('JobID');
+        $this->db->select('j.ID, j.Title, j.Description, j.Organization, j.OrganizationLogo, j.Position, j.ApplicationDeadline, j.Salary, j.EducationalRequirement, j.ExperienceRequirement, j.NumberOfVacancy, j.AgeLimit, j.Location, j.JobSource, j.JobType, j.EmploymentType, j.JobNature, j.ApplyingProcedure, j.PublishDate, j.JobCircularImagePath');
+        $this->db->from('jobinformation AS j');
+        $this->db->join('jobinformation AS sj', 'j.Position = sj.Position AND sj.ID = '.$job_id.' AND j.ID <> '.$job_id, 'inner');
+        $this->db->where('j.IsActive', 1);
+        $this->db->limit(config_item('per_page_job_information_number'));
+        $result = $this->db->get()->result_array();
+        $job_information = array();
+        $total = 0;
+        foreach ($result AS $info) {
+            $info['ApplicationDeadline'] = substr($info['ApplicationDeadline'], 0, 10);
+            $info['PublishDate'] = substr($info['PublishDate'], 0, 10);
+            $temp = explode('-', $info['ApplicationDeadline']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['ApplicationDeadline'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $temp = explode('-', $info['PublishDate']);
+            $mktime_value = mktime(0, 0, 0, $temp[1], $temp[2], $temp[0]);
+            $info['PublishDate'] = count($temp) == 3 ? date("dS F Y", $mktime_value) : '';
+            $job_information[$total++] = $info;
+        }
+        log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
+        return $job_information;
+    }
+
     public function getJobInformationForFrontend() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $page_no = $this->input->get('PageNo');
