@@ -20,32 +20,32 @@
             <button class="search-btn no-outline" onclick="drugObject.searchBrandInformation()" id="searchInformation"><img src="<?php echo base_url().'application/views/';?>images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
         </div>
         <div class="alphabets">
-            <a onclick="drugObject.getManufacturerBrand('a')" class="alphabet-link">A</a>
-            <a onclick="drugObject.getManufacturerBrand('b')" class="alphabet-link">B</a>
-            <a onclick="drugObject.getManufacturerBrand('c')" class="alphabet-link">C</a>
-            <a onclick="drugObject.getManufacturerBrand('d')" class="alphabet-link">D</a>
-            <a onclick="drugObject.getManufacturerBrand('e')" class="alphabet-link">E</a>
-            <a onclick="drugObject.getManufacturerBrand('f')" class="alphabet-link">F</a>
-            <a onclick="drugObject.getManufacturerBrand('g')" class="alphabet-link">G</a>
-            <a onclick="drugObject.getManufacturerBrand('h')" class="alphabet-link">H</a>
-            <a onclick="drugObject.getManufacturerBrand('i')" class="alphabet-link">I</a>
-            <a onclick="drugObject.getManufacturerBrand('j')" class="alphabet-link">J</a>
-            <a onclick="drugObject.getManufacturerBrand('k')" class="alphabet-link">K</a>
-            <a onclick="drugObject.getManufacturerBrand('l')" class="alphabet-link">L</a>
-            <a onclick="drugObject.getManufacturerBrand('m')" class="alphabet-link">M</a>
-            <a onclick="drugObject.getManufacturerBrand('n')" class="alphabet-link">N</a>
-            <a onclick="drugObject.getManufacturerBrand('o')" class="alphabet-link">O</a>
-            <a onclick="drugObject.getManufacturerBrand('p')" class="alphabet-link">P</a>
-            <a onclick="drugObject.getManufacturerBrand('q')" class="alphabet-link">Q</a>
-            <a onclick="drugObject.getManufacturerBrand('r')" class="alphabet-link">R</a>
-            <a onclick="drugObject.getManufacturerBrand('s')" class="alphabet-link">S</a>
-            <a onclick="drugObject.getManufacturerBrand('t')" class="alphabet-link">T</a>
-            <a onclick="drugObject.getManufacturerBrand('u')" class="alphabet-link">U</a>
-            <a onclick="drugObject.getManufacturerBrand('v')" class="alphabet-link">V</a>
-            <a onclick="drugObject.getManufacturerBrand('w')" class="alphabet-link">W</a>
-            <a onclick="drugObject.getManufacturerBrand('x')" class="alphabet-link">X</a>
-            <a onclick="drugObject.getManufacturerBrand('y')" class="alphabet-link">Y</a>
-            <a onclick="drugObject.getManufacturerBrand('z')" class="alphabet-link">Z</a>
+            <a onclick="drugObject.searchAlphabetically('a')" class="alphabet-link">A</a>
+            <a onclick="drugObject.searchAlphabetically('b')" class="alphabet-link">B</a>
+            <a onclick="drugObject.searchAlphabetically('c')" class="alphabet-link">C</a>
+            <a onclick="drugObject.searchAlphabetically('d')" class="alphabet-link">D</a>
+            <a onclick="drugObject.searchAlphabetically('e')" class="alphabet-link">E</a>
+            <a onclick="drugObject.searchAlphabetically('f')" class="alphabet-link">F</a>
+            <a onclick="drugObject.searchAlphabetically('g')" class="alphabet-link">G</a>
+            <a onclick="drugObject.searchAlphabetically('h')" class="alphabet-link">H</a>
+            <a onclick="drugObject.searchAlphabetically('i')" class="alphabet-link">I</a>
+            <a onclick="drugObject.searchAlphabetically('j')" class="alphabet-link">J</a>
+            <a onclick="drugObject.searchAlphabetically('k')" class="alphabet-link">K</a>
+            <a onclick="drugObject.searchAlphabetically('l')" class="alphabet-link">L</a>
+            <a onclick="drugObject.searchAlphabetically('m')" class="alphabet-link">M</a>
+            <a onclick="drugObject.searchAlphabetically('n')" class="alphabet-link">N</a>
+            <a onclick="drugObject.searchAlphabetically('o')" class="alphabet-link">O</a>
+            <a onclick="drugObject.searchAlphabetically('p')" class="alphabet-link">P</a>
+            <a onclick="drugObject.searchAlphabetically('q')" class="alphabet-link">Q</a>
+            <a onclick="drugObject.searchAlphabetically('r')" class="alphabet-link">R</a>
+            <a onclick="drugObject.searchAlphabetically('s')" class="alphabet-link">S</a>
+            <a onclick="drugObject.searchAlphabetically('t')" class="alphabet-link">T</a>
+            <a onclick="drugObject.searchAlphabetically('u')" class="alphabet-link">U</a>
+            <a onclick="drugObject.searchAlphabetically('v')" class="alphabet-link">V</a>
+            <a onclick="drugObject.searchAlphabetically('w')" class="alphabet-link">W</a>
+            <a onclick="drugObject.searchAlphabetically('x')" class="alphabet-link">X</a>
+            <a onclick="drugObject.searchAlphabetically('y')" class="alphabet-link">Y</a>
+            <a onclick="drugObject.searchAlphabetically('z')" class="alphabet-link">Z</a>
         </div>
     </div>
 </div>

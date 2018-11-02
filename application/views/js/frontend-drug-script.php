@@ -358,8 +358,24 @@
                 }
             });
         },
-        searchAlphabetically: function(type, value) {
-            window.location.replace('<?php echo site_url('Brand/searchBrandInformation?Type=');?>'+type+'&Value='+value);
+        searchAlphabetically: function(value) {
+            if(drugObject.searchOptionType == 'manufacturer') {
+                drugObject.getManufacturerBrand(value);
+            } else {
+                var type = 'brand_by_alphabetically';
+                switch (drugObject.searchOptionType) {
+                    case 'brand':
+                        type = 'brand_by_alphabetically';
+                        break;
+                    case 'generic':
+                        type = 'generic_by_alphabetically';
+                        break;
+                    default:
+                        break;
+                }
+
+                window.location.replace('<?php echo site_url('Brand/searchBrandInformation?Type=');?>'+type+'&Value='+value);
+            }
         },
         getDrugList: function(getDrugList) {
             console.log('Method Name: drugObject.getDrugList Param: getDrugList Value: '+[getDrugList].toString());

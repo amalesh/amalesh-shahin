@@ -14,7 +14,7 @@ $(function() {
 	  $(".search-tabs li").removeClass("active");
 		$(this).addClass("active");
 		
-		if($(this).hasClass('brand') || $(this).hasClass('generic')) {
+		if($(this).hasClass('brand') || $(this).hasClass('generic') || $(this).hasClass('manufacturer')) {
 			$('.alphabets').removeClass('hide')
 		} else {
 			$('.alphabets').addClass('hide')
@@ -22,7 +22,7 @@ $(function() {
 	});
 	// search radio in nav
 	$('input[name="search-category"]').click(function(){
-		if($(this).val() === 'brand' || $(this).val() === 'generic') {
+		if($(this).val() === 'brand' || $(this).val() === 'generic' || $(this).val() === 'manufacturer') {
 			$('.alphabets').removeClass('remove')
 		} else {
 			$('.alphabets').addClass('remove')
