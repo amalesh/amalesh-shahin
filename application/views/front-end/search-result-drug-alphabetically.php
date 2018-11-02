@@ -6,134 +6,177 @@
  * Time: 9:55 PM
  */
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-brand-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-brand-page-inner-right-523x52"></ul>
+<!-- banner -->
+<div class="banner banner-small d-md-flex d-none">
+    <div class="search-wrapper">
+        <ul class="search-tabs group">
+            <li class="brand active"><a onclick="drugObject.changeSearchOption('brand')" class="search_option_type search_by_brand">Brand</a></li>
+            <li class="generic"><a onclick="drugObject.changeSearchOption('generic')" class="search_option_type search_by_generic">Generic</a></li>
+            <li class="indication"><a onclick="drugObject.changeSearchOption('indication')" class="search_option_type search_by_indication">Indication</a></li>
+            <li class="manufacture"><a onclick="drugObject.changeSearchOption('manufacturer')" class="search_option_type search_by_manufacturer">Manufacture</a></li>
+        </ul>
+        <div class="search">
+            <input class="search-bar no-outline" type="text" id="searchDrugOption">
+            <button class="search-btn no-outline" onclick="drugObject.searchBrandInformation()" id="searchInformation"><img src="<?php echo base_url().'application/views/';?>images/icons/magnifying-glass.svg" class="search-icon" alt=""></button>
+        </div>
+        <div class="alphabets">
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=a');?>" class="alphabet-link">A</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=b');?>" class="alphabet-link">B</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=c');?>" class="alphabet-link">C</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=d');?>" class="alphabet-link">D</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=e');?>" class="alphabet-link">E</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=f');?>" class="alphabet-link">F</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=g');?>" class="alphabet-link">G</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=h');?>" class="alphabet-link">H</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=i');?>" class="alphabet-link">I</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=j');?>" class="alphabet-link">J</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=k');?>" class="alphabet-link">K</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=l');?>" class="alphabet-link">L</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=m');?>" class="alphabet-link">M</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=n');?>" class="alphabet-link">N</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=o');?>" class="alphabet-link">O</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=p');?>" class="alphabet-link">P</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=q');?>" class="alphabet-link">Q</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=r');?>" class="alphabet-link">R</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=s');?>" class="alphabet-link">S</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=t');?>" class="alphabet-link">T</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=u');?>" class="alphabet-link">U</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=v');?>" class="alphabet-link">V</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=w');?>" class="alphabet-link">W</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=x');?>" class="alphabet-link">X</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=y');?>" class="alphabet-link">Y</a>
+            <a href="<?php echo site_url('Brand/searchBrandInformation?Type=brand_by_alphabetically&Value=z');?>" class="alphabet-link">Z</a>
+        </div>
+    </div>
+</div>
+
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert brand-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-8">
-                <div class="search-bar search-bar-inner">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <ul class="list-inline">
-                                <li class="list-inline-item"><a class="search_option_type search_by_brand" onclick="drugObject.changeSearchOption('brand')">Brand</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_generic" onclick="drugObject.changeSearchOption('generic')">Generic</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_indication" onclick="drugObject.changeSearchOption('indication')">Indication</a></li><span class="separator"></span>
-                                <li class="list-inline-item"><a class="search_option_type search_by_manufacturer" onclick="drugObject.changeSearchOption('manufacturer')">Manufacturer</a></li>
-                            </ul>
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="searchDrugOption">
-                            <a onclick="drugObject.searchBrandInformation()" id="searchInformation" class="search-btn"><i class="fas fa-search"></i></a>
-                            <span class="error_message invalid-search-option-error">Please enter a valid search option.</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="presentation">
-                    <div class="presentation-table">
-                        <table class="table" id="product-list">
-                            <thead>
-                            <tr>
-                                <th scope="col" style="width: 150px;">Brand Name</th>
-                                <th scope="col">Dosage Form</th>
-                                <th scope="col">Strength</th>
-                                <th scope="col">Pack Size</th>
-                                <th scope="col">Price</th>
-                            </tr>
-                            </thead>
-                            <tbody class="drug-list">
-                            <?php
-                            foreach ($AllBrands AS $brand) {
-                                echo '<tr>';
-                                echo '<td><a href="'.site_url('Brand/showBrandDetail').'?BrandID='.$brand['ID'].'">'.$brand['Name'].'</a></td>';
-                                echo '<td>'.$brand['DosageForm'].'</td>';
-                                echo '<td>'.$brand['StrengthName'].'</td>';
-                                echo '<td>'.$brand['PackSize'].'</td>';
-                                echo '<td>'.$brand['PriceInBDT'].' Tk</td>';
-                                echo '</tr>';
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination" id="search-brand-by-alphabetically-pagination"></ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="add-brand-page-bottom-left-823x115"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="add-brand-page-top-right-340x355"></div>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <section class="visitor">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-9.png" alt="image">
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <h3 class="title">Visitor</h3>
-                                <span class="counter">123,45,67</span>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-10.png" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert brand-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="content-section main">
+                <div class="section-header own-pad" style="margin-bottom: 10px; padding: 24px 30px 16px 30px;">
+                    Presentation
+                </div>
+                <div class="brand-generic-table">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col" style="width: 150px;">Brand Name</th>
+                            <th scope="col">Dosage Form</th>
+                            <th scope="col">Strength</th>
+                            <th scope="col">Pack Size</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        foreach ($AllBrands AS $brand) {
+                            echo '<tr>';
+                            echo '<td><a href="'.site_url('Brand/showBrandDetail').'?BrandID='.$brand['ID'].'">'.$brand['Name'].'</a></td>';
+                            echo '<td>'.$brand['DosageForm'].'</td>';
+                            echo '<td>'.$brand['StrengthName'].'</td>';
+                            echo '<td>'.$brand['PackSize'].'</td>';
+                            echo '<td>'.$brand['PriceInBDT'].' Tk</td>';
+                            echo '</tr>';
+                        }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- pagination -->
+            <nav class="mims-pagination" style="margin-top: 36px;">
+                <ul class="pagination">
+                    <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link next" href="#">Next <i class="fas fa-chevron-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="in-page-advert brand-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
+                        </div>
+                        <div class="container sidebar-jobs"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col brand-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-assress"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-brand-page-top-right-340x355', 'add-brand-page-bottom-left-823x115', 'add-brand-page-inner-left-523x52', 'add-brand-page-inner-right-523x52']);
+    frontendCommonMethods.getAdvertisement(['brand-sidebar-advert', ' brand-advert-top-left', ' brand-advert-top-right', ' brand-advert-bottom']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
-    drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
-    drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
-    drugObject.populatePagination('search-brand-by-alphabetically-pagination', 1);
-    drugObject.getAllDrugInfoForAutoComplete('brand');
+    //drugObject.perPageInformationNumber = <?php //echo $PerPageInformationNumber;?>//;
+    //drugObject.totalDrug = <?php //echo isset($TotalBrand) ? $TotalBrand : 0;?>//;
+    //drugObject.populatePagination('search-genetic-pagination', 1);
+    drugObject.getAllDrugInfoForAutoComplete('generic');
 </script>
