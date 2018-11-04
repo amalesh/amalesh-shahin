@@ -128,7 +128,7 @@
                         <div class="section-header own-pad">
                             <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
                         </div>
-                        <div class="container sidebar-assress"></div>
+                        <div class="container sidebar-news"></div>
                     </div>
                 </div>
                 <div class="row">

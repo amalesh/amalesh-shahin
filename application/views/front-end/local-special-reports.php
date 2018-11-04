@@ -6,102 +6,100 @@
  * Time: 9:55 PM
  */
 ?>
-<section class="product">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <ul class="rslides add-special-report-page-inner-left-523x52"></ul>
-            </div>
-            <div class="col-md-6">
-                <ul class="rslides add-special-report-page-inner-right-523x52"></ul>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8">
-                <h2>Special Reports</h2>
-                <br/>
-                <div class="special-reports">
-                    <?php
-                    foreach ($AllSpecialReports AS $report) {
-                        echo '<div class="media">
-                        <img class="mr-3" src="'.base_url('SpecialReportImages/'.$report['ImagePath']).'" alt="image">
-                        <div class="media-body">
-                        <a href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a>
-                        </div>
-                        </div>';
-                    }
-                    ?>
-                </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination" id="special-report-pagination"></ul>
-                </nav>
-                <div class="row">
-                    <div class="col-md-12">
-                        <ul class="rslides add-special-report-page-bottom-left-823x115"></ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <ul class="rslides add-special-report-page-top-right-340x355"></ul>
-                <div class="sidebar-news">
-                    <h4 class="title">JOB CIRCULAR</h4>
-                    <ul class="list-inline sidebar-jobs"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Job/getAllJobInformation')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">LOCAL NEWS</h4>
-                    <ul class="list-inline sidebar-news"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('News/getAllLocalNews')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="sidebar-news">
-                    <h4 class="title">IMPORTANT ADDRESSES</h4>
-                    <ul class="list-inline sidebar-assress"></ul>
-                    <ul class="list-inline">
-                        <a href="<?php echo site_url('Address/getAllImportantAddress')?>" class="btn btn-s float-right">
-                            <i class="fas fa-chevron-right"></i> see more
-                        </a>
-                        <div class="clearfix"></div>
-                    </ul>
-                </div>
-                <div class="special-reports-sidebar"></div>
+<!-- banner -->
+<div class="banner title-banner d-md-flex d-none">
+    <h2>Special Reports</h2>
+</div>
+
+<!-- advert -->
+<!-- change the img tag accordingly (e.g: <ins> tag) -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert special-report-advert-top-left">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <section class="visitor">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-9.png" alt="image">
-                            </div>
-                            <div class="col-md-6 text-center">
-                                <h3 class="title">Visitor</h3>
-                                <span class="counter">123,45,67</span>
-                            </div>
-                            <div class="col-md-3 text-center">
-                                <img src="<?php echo base_url().'application/views/';?>img/img-10.png" alt="image">
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="col-md-6 col-12">
+            <div class="in-page-advert special-report-advert-top-right">
+                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-12">
+            <div class="special-report-list container">
+                <?php
+                foreach ($AllSpecialReports AS $report) {
+                    echo '<div class="news-item row">
+                    <div class="news-thumb col-3">
+                        <img src="'.base_url('SpecialReportImages/'.$report['ImagePath']).'" alt="">
+                    </div>
+                    <div class="news-info col-9">
+                        <a class="news-title" href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a>
+                        <a href="'.$report['LinkAddress'].'" target="_blank" class="read-more">Read More</a>
+                    </div>
+                </div>';
+                }
+                ?>
+            </div>
+            <div class="in-page-advert special-report-advert-bottom">
+                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="container">
+                <div class="row">
+                    <!-- job circular -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Job Circular
+                        </div>
+                        <div class="container sidebar-jobs"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="in-page-advert side-col special-report-sidebar-advert">
+                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- local news -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Local News
+                        </div>
+                        <div class="container sidebar-news"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- special reports -->
+                    <div class="content-section col-12" style="padding: 0; height: auto; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/newspaper.svg" alt="*"></span>Special Reports
+                        </div>
+                        <div class="container sidebar-special-reports"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- important addresses -->
+                    <div class="content-section col-12" style="padding: 0; max-height: none;">
+                        <div class="section-header own-pad">
+                            <span><img src="<?php echo base_url();?>application/views/images/icons/briefcase.svg" alt="*"></span>Important Addresses
+                        </div>
+                        <ul class="address-list sidebar-assress"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['add-special-report-page-top-right-340x355', 'add-special-report-page-bottom-left-823x115', 'add-special-report-page-inner-left-523x52', 'add-special-report-page-inner-right-523x52']);
-    specialReportObject.totalSpecialReport = <?php echo isset($TotalSpecialReport) ? $TotalSpecialReport : 0;?>;
-    specialReportObject.perPageInformationNumber = <?php echo config_item('per_page_special_report_number');?>;
-    specialReportObject.populatePagination(1);
+    // frontendCommonMethods.getAdvertisement(['special-report-sidebar-advert', ' special-report-advert-top-left', ' special-report-advert-top-right', ' special-report-advert-bottom']);
+    frontendCommonMethods.mainMenuActivation('resource');
 </script>
