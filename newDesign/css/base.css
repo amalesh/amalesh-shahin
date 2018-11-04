@@ -1800,6 +1800,11 @@ footer p .dev-logo {
   width: auto;
   margin-left: 10px;
 }
+footer p .dev-logo {
+  height: 36px;
+  width: auto;
+  margin-left: 10px;
+}
 
 @media screen and (max-width: 768px) {
   .footer-wrapper {
