@@ -57,6 +57,10 @@
                 }
                 ?>
             </div>
+            <!-- pagination -->
+            <nav class="mims-pagination" style="margin-top: 36px;">
+                <ul class="pagination" id="news-pagination"></ul>
+            </nav>
             <div class="in-page-advert news-advert-bottom">
                 <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
             </div>
@@ -111,5 +115,8 @@
 <script>
     frontendCommonMethods.getSideBarData();
     // frontendCommonMethods.getAdvertisement(['news-sidebar-advert', ' news-advert-top-left', ' news-advert-top-right', ' news-advert-bottom']);
-    frontendCommonMethods.mainMenuActivation('resource');
+    // frontendCommonMethods.mainMenuActivation('resource');
+    newsObject.totalNews = <?php echo isset($TotalNews) ? $TotalNews : 0;?>;
+    newsObject.perPageInformationNumber = <?php echo config_item('per_page_news_information_number');?>;
+    newsObject.populatePagination(1);
 </script>

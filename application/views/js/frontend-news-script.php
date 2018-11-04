@@ -9,16 +9,16 @@
                 if (newsData) {
                     $('div.news-list').html('');
                     for (var i = 0; i < newsData.length; i++) {
-                        $('div.news-list').append('<div class="news">' +
-                            '<div class="news-info">' +
-                            '<a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[i].ID+'"><h1 class="news-title"> <i class="fas fa-chevron-right"></i> '+newsData[i].Title+'</h1></a>' +
-                            '<p>'+newsData[i].Description+'</p>' +
-                            '<a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[i].ID+'" class="see-details">See more</a>' +
-                            '</div>' +
-                            '<div class="see-more">' +
-                            '<img src="<?php echo base_url('NewsImages/');?>'+newsData[i].ImagePath+'" alt="">' +
-                            '</div>' +
-                            '</div>');
+                        $('div.news-list').append('<div class="news-item row">' +
+                            '                  <div class="news-thumb col-3">' +
+                            '                    <img src="<?php echo base_url('NewsImages/');?>'+newsData[i].ImagePath+'" alt="">' +
+                            '                  </div>' +
+                            '                  <div class="news-info col-9">' +
+                            '                    <a class="news-title" href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[i].ID+'">'+newsData[i].Title+'</a>' +
+                            '                    <p class="news-summary">'+newsData[i].Description+'</p>' +
+                            '                    <a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[i].ID+'" class="read-more">Read More</a>' +
+                            '                  </div>' +
+                            '                </div>');
                     }
                 }
             });
