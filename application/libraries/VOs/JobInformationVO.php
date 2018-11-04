@@ -8,6 +8,7 @@ class JobInformationVO
         $vo['Title'] = addslashes($jobInformationEntity->Title);
         $vo['Description'] = addslashes($jobInformationEntity->Description);
         $vo['Organization'] = addslashes($jobInformationEntity->Organization);
+        $vo['OrganizationLogo'] = addslashes($jobInformationEntity->OrganizationLogo);
         $vo['Position'] = addslashes($jobInformationEntity->Position);
         $vo['ApplicationDeadline'] = (string)$jobInformationEntity->ApplicationDeadline;
         $vo['Salary'] = addslashes($jobInformationEntity->Salary);

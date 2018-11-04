@@ -93,6 +93,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-4">
+                            <span>Organization Logo </span>
+                            <span class="required-field">*</span>
+                        </label>
+                        <div class="col-md-6">
+                            <input id="OrganizationLogo" name="OrganizationLogo" type="file" onchange="jobObject.setJobImagePathThumbnail(this, 'OrganizationLogoThumbnail')" />
+                            <span class="job-circular-image-path-require-message error-message error">This field is required.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">
+                            <span>Organization Logo Thumbnail</span>
+                        </label>
+                        <div class="col-md-6">
+                            <img id="OrganizationLogoThumbnail" src='' alt="Thumbnail"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-4">
                             <span>Description </span>
                             <span class="required-field">*</span>
                         </label>

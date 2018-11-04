@@ -53,6 +53,7 @@
             $('#job_modal').html('Create');
             $('#JobTitle').val('');
             $('#JobOrganization').val('');
+            $('#OrganizationLogoThumbnail').attr('src', '');
             $('#JobDescription').val('');
             $('#JobPosition').val('');
             $('#JobCircularImagePathThumbnail').attr('src', '');
@@ -165,6 +166,7 @@
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'jobObject.showJobEditModal', function(jobData){
                 $('#JobTitle').val(jobData.Title);
                 $('#JobOrganization').val(jobData.Organization);
+                $('#OrganizationLogoThumbnail').attr('src', '<?php echo base_url()?>JobImages/'+jobData.OrganizationLogo);
                 $('#JobDescription').val(jobData.Description);
                 $('#JobPosition').val(jobData.Position);
                 $('#JobCircularImagePathThumbnail').attr('src', '<?php echo base_url()?>JobImages/'+jobData.JobCircularImagePath);

@@ -26,16 +26,6 @@
                             '                  <img class="job-img" src="'+organization_logo+'" alt="">' +
                             '                </div>' +
                             '              </div>');
-                        $('div.job-list').append('<div class="job">' +
-                            '<div class="job-info">' +
-                            '<a href="<?php echo site_url('Job/showJobDetail?JobID=');?>'+jobData[i].ID+'"><h1 class="job-title"> <i class="fas fa-chevron-right"></i> '+jobData[i].Title+'</h1></a>' +
-                            '<h4 class="date">Posted on '+jobData[i].PublishDate+'</h4>' +
-                            '<p>'+jobData[i].Description+'</p>' +
-                            '</div>' +
-                            '<div class="see-more">' +
-                            '<a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+jobData[i].ID+'">Read more</a>' +
-                            '</div>' +
-                            '</div>');
                     }
                 }
             });
