@@ -195,5 +195,5 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="col-md-
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    // frontendCommonMethods.getAdvertisement(['job-circular-detail-sidebar-advert', ' job-circular-detail-advert-top-left', ' job-circular-detail-advert-top-right', ' job-circular-detail-advert-bottom']);
+    frontendCommonMethods.getAdvertisement(['job-circular-detail-sidebar-advert', 'job-circular-detail-advert-top-left', 'job-circular-detail-advert-top-right', 'job-circular-detail-advert-bottom']);
 </script>

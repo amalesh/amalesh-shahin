@@ -181,8 +181,7 @@
     $('.slick-next.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     $('.slick-prev.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
-    // frontendCommonMethods.getSideBarData();
-    // frontendCommonMethods.getAdvertisement(['home-product-slider', 'home-advert-container1', 'home-advert-container2', 'home-bottom-quote-section']);
+    frontendCommonMethods.getAdvertisement(['home-product-slider', 'home-advert-container1', 'home-advert-container2']);
     drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();

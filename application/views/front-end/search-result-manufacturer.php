@@ -152,7 +152,7 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    // frontendCommonMethods.getAdvertisement(['manufacturer-sidebar-advert', ' manufacturer-advert-top-left', ' manufacturer-advert-top-right', ' manufacturer-advert-bottom']);
+    frontendCommonMethods.getAdvertisement(['manufacturer-sidebar-advert', 'manufacturer-advert-top-left', 'manufacturer-advert-top-right', 'manufacturer-advert-bottom']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;

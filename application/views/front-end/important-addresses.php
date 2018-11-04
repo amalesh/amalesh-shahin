@@ -172,7 +172,7 @@
 <script>
     frontendCommonMethods.getSideBarData();
     addressObject.toggleFilterOption();
-    //frontendCommonMethods.getAdvertisement(['address-sidebar-advert', ' address-advert-top-left', ' address-advert-top-right', ' address-advert-bottom']);
+    frontendCommonMethods.getAdvertisement(['address-sidebar-advert', 'address-advert-top-left', 'address-advert-top-right', 'address-advert-bottom']);
     addressObject.totalAddress = <?php echo isset($TotalAddress) ? $TotalAddress : 0;?>;
     addressObject.populatePagination(1);
 </script>
