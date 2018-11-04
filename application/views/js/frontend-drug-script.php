@@ -330,22 +330,25 @@
         },
         changeSearchOption: function(searchOption) {
             console.log('Method Name: drugObject.changeSearchOption Param: searchOption  Value: '+[searchOption].toString());
+            $('ul.search-tabs li').removeClass('active');
             drugObject.searchOptionType = searchOption;
             var search_options = [];
-            $('.search_option_type').css('color', '#1996C0');
-            $('.search_by_'+searchOption).css('color', 'red');
             switch (searchOption) {
                 case 'brand':
                     search_options = drugObject.searchOptionForBrand;
+                    $('ul.search-tabs li.brand').addClass('active');
                     break;
                 case 'generic':
                     search_options = drugObject.searchOptionForGeneric;
+                    $('ul.search-tabs li.generic').addClass('active');
                     break;
                 case 'indication':
                     search_options = drugObject.searchOptionForIndication;
+                    $('ul.search-tabs li.indication').addClass('active');
                     break;
                 case 'manufacturer':
                     search_options = drugObject.searchOptionForManufacturer;
+                    $('ul.search-tabs li.manufacture').addClass('active');
                     break;
                 default:
                     break;
