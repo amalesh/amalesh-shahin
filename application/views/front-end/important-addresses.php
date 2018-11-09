@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-12 address-search-col">
-                            <input type="search" class="form-control" id="addressArea" placeholder="Search by Area">
+                            <input type="search" class="form-control theme-input" id="addressArea" placeholder="Search by Area">
                         </div>
                         <div class="col-md-2 col-12 address-search-col">
                             <button class="btn theme-btn" style="width: 100%;" onclick="addressObject.getLocationWiseAddresses()">Search</button>

@@ -82,4 +82,60 @@
             </div>
         </div>
     </div>
+    <div class="collapse navbar-collapse" id="navbarSearch">
+        <div class="navbar-search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search">
+                <div class="input-group-append">
+                    <button class="btn theme-btn" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="search-category-radio">
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="brand" name="search-category" value="brand" class="custom-control-input" checked>
+                    <label class="custom-control-label" for="brand">Brand</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="generic" name="search-category" value="generic" class="custom-control-input">
+                    <label class="custom-control-label" for="generic">Generic</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="indication" name="search-category" value="indication" class="custom-control-input">
+                    <label class="custom-control-label" for="indication">Indication</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="manufacture" name="search-category" value="manufacture" class="custom-control-input">
+                    <label class="custom-control-label" for="manufacture">Manufacture</label>
+                </div>
+                <p class="alphabets nav-aldphabets">
+                    <a href="#" class="alphabet-link">A</a>
+                    <a href="#" class="alphabet-link">B</a>
+                    <a href="#" class="alphabet-link">C</a>
+                    <a href="#" class="alphabet-link">D</a>
+                    <a href="#" class="alphabet-link">E</a>
+                    <a href="#" class="alphabet-link">F</a>
+                    <a href="#" class="alphabet-link">G</a>
+                    <a href="#" class="alphabet-link">H</a>
+                    <a href="#" class="alphabet-link">I</a>
+                    <a href="#" class="alphabet-link">J</a>
+                    <a href="#" class="alphabet-link">K</a>
+                    <a href="#" class="alphabet-link">L</a>
+                    <a href="#" class="alphabet-link">M</a>
+                    <a href="#" class="alphabet-link">N</a>
+                    <a href="#" class="alphabet-link">O</a>
+                    <a href="#" class="alphabet-link">P</a>
+                    <a href="#" class="alphabet-link">Q</a>
+                    <a href="#" class="alphabet-link">R</a>
+                    <a href="#" class="alphabet-link">S</a>
+                    <a href="#" class="alphabet-link">T</a>
+                    <a href="#" class="alphabet-link">U</a>
+                    <a href="#" class="alphabet-link">V</a>
+                    <a href="#" class="alphabet-link">W</a>
+                    <a href="#" class="alphabet-link">X</a>
+                    <a href="#" class="alphabet-link">Y</a>
+                    <a href="#" class="alphabet-link">Z</a>
+                </p>
+            </div>
+        </div>
+    </div>
 </nav>

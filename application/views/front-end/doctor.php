@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-12 address-search-col">
-                            <input type="search" class="form-control" id="doctorSearchBy" placeholder="Specialty or Doctor Name">
+                            <input type="search" class="form-control theme-input" id="doctorSearchBy" placeholder="Specialty or Doctor Name">
                         </div>
                         <div class="col-md-2 col-12 address-search-col"></div>
                     </div>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="col-md-5 col-12 address-search-col">
-                            <input class="form-control" id="doctorArea" placeholder="Search By Area">
+                            <input class="form-control theme-input" id="doctorArea" placeholder="Search By Area">
                         </div>
                         <div class="col-md-2 col-12 address-search-col">
                             <button class="btn theme-btn" style="width: 100%;" onclick="doctorObject.searchDoctor(1)">Search</button>

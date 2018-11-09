@@ -71,7 +71,7 @@
                         job_title = job_title.length > 30 ? job_title.substr(0, 27) + '...' : job_title;
                         $('div.sidebar-jobs').append('<div class="row job side-col">' +
                             '                                <div class="col-3 pr-0" style="padding: 7px">' +
-                            '                                    <img class="job-img side-col" src="'+organization_logo+'" alt="">' +
+                            '                                    <img class="job-img side-col" src="'+organization_logo+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">' +
                             '                                </div>' +
                             '                                <div class="col-9" style="padding-right: 0; padding-left: 10px">' +
                             '                                    <p class="job-title side-col"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+all_jobs[i].ID+'">'+job_title+'</a></p>' +
@@ -95,7 +95,7 @@
                         news_title = news_title.length > 30 ? news_title.substr(0, 27) + '...' : news_title;
                         $('div.sidebar-news').append('<div class="row news">' +
                             '                                <div class="col-3" style="padding: 5px; padding-left: 16px;">' +
-                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+news_image_path+'" alt="">' +
+                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+news_image_path+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">' +
                             '                                </div>' +
                             '                                <div class="col-9" style="padding-right: 0; padding-left: 7px">' +
                             '                                    <p class="news-title side-col"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+all_news[i].ID+'">'+news_title+'</a></p>' +
@@ -113,7 +113,7 @@
                         report_title = report_title.length > 30 ? report_title.substr(0, 27) + '...' : report_title;
                         $('div.sidebar-special-reports').append('<div class="row news">' +
                             '                                <div class="col-3" style="padding: 5px; padding-left: 16px;">' +
-                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+report_image+'" alt="">' +
+                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+report_image+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">' +
                             '                                </div>' +
                             '                                <div class="col-9" style="padding-right: 0; padding-left: 7px">' +
                             '                                    <p class="news-title side-col"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+report_title+'</a></p>' +

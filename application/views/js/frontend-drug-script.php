@@ -66,7 +66,7 @@
                     var individual_special_report = '';
                     for (var special_report_no = 0; special_report_no < specialReportData.length; special_report_no++) {
                         individual_special_report = '<div class="home-special-report-slide">' +
-                        '<img src="<?php echo base_url();?>SpecialReportImages/'+specialReportData[special_report_no].ImagePath+'" alt="">'+
+                        '<img src="<?php echo base_url();?>SpecialReportImages/'+specialReportData[special_report_no].ImagePath+'"  alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
                         '<p class="home-special-report-slide-title"><a href="'+specialReportData[special_report_no].LinkAddress+'" target="_blank">'+specialReportData[special_report_no].Title+'</p>'+
                         '</div>';
 
