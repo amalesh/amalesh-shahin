@@ -149,6 +149,7 @@ thead {
 }
 .see-more-btn:hover, .see-more-btn:active {
   color: var(--theme-color-primary);
+  text-decoration: none;
 }
 .side-col-see-more-btn {
   display: block;
@@ -570,6 +571,11 @@ thead {
   height: auto;
   padding: 0;
 }
+.content-section.min-height {
+  padding: 0;
+  max-height: none;
+  min-height: 470px;
+}
 .section-header {
   font-family: var(--font-medium);
   color: var(--title-color);
@@ -629,6 +635,9 @@ thead {
 }
 
 @media screen and (max-width: 768px) {
+  .content-section.min-height {
+    min-height: fit-content;
+  }
   .content-section {
     padding: 0;
     margin-top: 16px;
