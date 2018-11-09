@@ -345,7 +345,7 @@ thead {
   float: left;
   padding: 6px 16px;
   text-decoration: none;
-  color: var(--section-bg);
+  color: var(--section-bg) !important;
   font-size: var(--font-size-medium);
   font-family: var(--font-regular);
   -webkit-border-top-left-radius: 7px;
@@ -355,16 +355,17 @@ thead {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .search-tabs li:hover a{
-  color: var(--theme-color-primary);
+  color: var(--theme-color-primary) !important;
 }
 .search-tabs .active {
   z-index: 3;
 }
 .search-tabs .active a {
   background: var(--section-bg);
-  color: var(--theme-color-primary);
+  color: var(--theme-color-primary) !important;
   font-family: var(--font-regular);
 }
 .search-tabs li:before, .search-tabs li:after,
@@ -470,10 +471,11 @@ thead {
   display: none;
 }
 .alphabet-link {
-  color: var(--text-color-white);
+  color: var(--text-color-white) !important;
+  cursor: pointer;
 }
 .alphabet-link:hover, .alphabet-link:focus, .alphabet-link:active {
-  color: var(--theme-color-primary);
+  color: var(--theme-color-primary) !important;
 }
 
 /* --------------------------------------------- */
@@ -766,8 +768,8 @@ thead {
   right: 24px;
   top: 32px;
 }
-.job:hover .job-title {
-  color: var(--theme-color-primary);
+.job:hover .job-title a {
+  color: var(--theme-color-primary) !important;
 }
 .job:hover .right-arrow {
   display: block;
@@ -791,9 +793,14 @@ thead {
 .job-title {
   font-size: var(--font-size-medium);
   font-family: var(--font-bold);
-  color: var(--title-color);
   margin-bottom: 3px;
   margin-top: 5px;
+}
+.job-title a {
+  color: var(--title-color) !important;
+}
+.job-title a:hover {
+  text-decoration: none;
 }
 .job-title.side-col {
   font-size: 16px
@@ -838,13 +845,13 @@ thead {
   position: relative;
 }
 .news.home-news {
-  padding: 18px 16px;
+  padding: 18px 16px 38px 16px
 }
 .news.home-news .news-title{
   line-height: 1.2em;
 }
-.news:hover .news-title {
-  color: var(--theme-color-primary);
+.news:hover .news-title a {
+  color: var(--theme-color-primary) !important;
 }
 .news:last-child {
   border-bottom: none;
@@ -856,14 +863,16 @@ thead {
   height: auto;
   max-height: 150px;
   margin: 0 auto;
-  padding-top: 5px;
 }
-.news-title {
+.news-title a {
   font-size: var(--font-size-header);
   font-family: var(--font-medium);
-  color: var(--title-color);
+  color: var(--title-color) !important;
   margin-bottom: 3px;
   margin-top: 0;
+}
+.news-title a {
+  text-decoration: none;
 }
 .news-title.side-col {
   font-size: var(--font-size-medium);

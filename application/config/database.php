@@ -73,11 +73,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
     'username' => 'mymonthl_mims',
     'password' => 'C@Mnr)SzZ[4!',
+    /*'username' => 'root',
+    'password' => '',*/
     'database' => 'mymonthl_mims_dev',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => 'mims_',

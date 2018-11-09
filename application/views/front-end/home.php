@@ -91,8 +91,10 @@
         <div class="col-md-4 col-12">
             <div class="star-product" id="highlighted-product"></div>
         </div>
+    </div>
+    <div class="row">
         <!-- job circular -->
-        <div class="col-md-6 col-12" style="height: fit-content;">
+        <div class="col-md-6 col-12">
             <div class="content-section" style="padding: 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 16px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Job Circular
@@ -102,7 +104,7 @@
             </div>
         </div>
         <!-- local news -->
-        <div class="col-md-6 col-12" style="height: fit-content;">
+        <div class="col-md-6 col-12">
             <div class="content-section" style="padding: 0 0 24px 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 16px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/newspaper.svg" alt="*"></span>Local News

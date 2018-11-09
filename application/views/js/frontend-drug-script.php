@@ -20,7 +20,7 @@
                         var logo_path = jobData[job_no].OrganizationLogo == '' || jobData[job_no].OrganizationLogo == null ? '' : '<?php echo base_url();?>'+'JobImages/'+jobData[job_no].OrganizationLogo;
                         individual_job = '<div class="row job">' +
                         '<div class="col-2">' +
-                        '<img class="job-img" src="'+logo_path+'" alt="">'+
+                        '<img class="job-img" src="'+logo_path+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
                         '</div>'+
                         '<div class="col-10">'+
                         '<p class="job-title"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+jobData[job_no].ID+'">'+jobData[job_no].Title+'</a></p>'+
@@ -44,8 +44,8 @@
                         var news_description = newsData[news_no].Description;
                         news_description = news_description.length > 100 ? news_description.substr(0, 100) + '...' : news_description;
                         individual_news = '<div class="row news home-news">' +
-                        '<div class="col-4">' +
-                        '<img class="news-img" src="<?php echo base_url();?>NewsImages/'+newsData[news_no].ImagePath+'" alt="">'+
+                        '<div class="col-4 pr-0">' +
+                        '<img class="news-img" src="<?php echo base_url();?>NewsImages/'+newsData[news_no].ImagePath+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
                         '</div>'+
                         '<div class="col-8">'+
                         '<p class="news-title"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[news_no].ID+'">'+newsData[news_no].Title+'</a></p>'+
