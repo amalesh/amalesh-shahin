@@ -122,7 +122,7 @@
                     }
 
                     if (resourceData.length) {
-                        $('ul.resource-item-list').append('<a href="<?php echo site_url('Resource/getAllActiveResourceInformation')?>" class="see-more-btn no-outline">See All Addresses</a>');
+                        $('ul.resource-item-list').append('<a href="<?php echo site_url('Resource/getAllActiveResourceInformation')?>" class="see-more-btn no-outline">See All Resources</a>');
                     }
                 }
             });

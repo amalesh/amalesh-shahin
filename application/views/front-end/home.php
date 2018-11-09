@@ -139,7 +139,7 @@
     <div class="row">
         <!-- important addresses -->
         <div class="col-md-6 col-12" style="height: fit-content;">
-            <div class="content-section" style="padding: 0; max-height: none;">
+            <div class="content-section" style="padding: 0; max-height: none; min-height: 470px;">
                 <div class="section-header own-pad" style="margin-bottom: 24px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Important Addresses
                 </div>
@@ -148,7 +148,7 @@
         </div>
         <!-- Resources -->
         <div class="col-md-6 col-12" style="height: fit-content;">
-            <div class="content-section" style="padding: 0; max-height: none;">
+            <div class="content-section" style="padding: 0; max-height: none; min-height: 470px;">
                 <div class="section-header own-pad" style="margin-bottom: 24px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Resources
                 </div>

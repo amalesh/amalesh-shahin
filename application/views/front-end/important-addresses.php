@@ -81,7 +81,7 @@
                           }
                           ?>
                       </span>
-                <div class="dropdown address-search-filter-dropdown">
+                <div class="dropdown address-search-filter-dropdown align-self-start">
                     <button class="btn dropdown-toggle" type="button" onclick="addressObject.toggleFilterOption()">
                         <span id="address-filter-text">View All</span>
                         <div class="theme-down-arrow">

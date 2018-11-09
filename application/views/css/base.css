@@ -873,8 +873,8 @@ thead {
 .news-title a {
   text-decoration: none;
 }
-.news-title.side-col {
-  font-size: var(--font-size-medium);
+.news-title.side-col a {
+  font-size: var(--font-size-medium) !important;
   font-family: var(--font-bold);
   line-height: 1.2em;
 }
