@@ -1186,6 +1186,9 @@ thead {
   color: var(--theme-color-primary);
   /* font-family: var(--font-medium); */
 }
+.brand-generic-table tr:hover td a{
+    color: var(--theme-color-primary);
+}
 .brand-generic-table th {
   color: var(--sub-title-color);
   text-transform: uppercase;
@@ -1195,6 +1198,9 @@ thead {
 .brand-generic-table td {
   border: none;
   border-top: 1px solid var(--medium-border-color);
+}
+.brand-generic-table td a {
+    color: var(--title-color);
 }
 @media screen and (max-width: 768px) {
   .brand-generic-table {
@@ -1252,6 +1258,9 @@ thead {
   font-size: var(--font-size-text);
   text-align: left;
   padding: 5px 0;
+}
+.brand-info-table td a {
+    color: var(--title-color);
 }
 .brand-info-table td.brand-info-title {
   color: var(--title-color);
@@ -1662,6 +1671,7 @@ thead {
   margin-top: 0;
   margin-bottom: 15px;
   line-height: 1.2em;
+  color: var(--title-color);
 }
 .news-item .news-info .news-title:hover {
   text-decoration: none;

@@ -119,15 +119,15 @@
             <div class="content-section main" style="margin-top: 15px">
                 <!-- more jobs -->
                 <div class="section-header own-pad" style="margin-bottom: 10px; padding: 24px 30px 16px 30px;">Presentation</div>
-                <div class="brand-brand-table brand-of-generic">
+                <div class="brand-generic-table brand-of-generic">
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col" style="width: 150px;">Brand Name</th>
-                            <th scope="col">Dosage Form</th>
-                            <th scope="col">Strength</th>
-                            <th scope="col">Pack Size</th>
-                            <th scope="col">Price</th>
+                            <th scope="col" style="width: 20%">Brand Name</th>
+                            <th scope="col" style="width: 20%">Dosage Form</th>
+                            <th scope="col" style="width: 30%">Strength</th>
+                            <th scope="col" style="width: 20%">Pack Size</th>
+                            <th scope="col" style="width: 10%">Price</th>
                         </tr>
                         </thead>
                         <tbody class="drug-list">
