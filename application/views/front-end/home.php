@@ -1,4 +1,7 @@
 <!-- banner -->
+<!-- International Health -->
+<!-- Brand Detail -->
+<!-- Search click event -->
 <div class="banner d-md-flex d-none">
     <div class="search-wrapper">
         <ul class="search-tabs group">

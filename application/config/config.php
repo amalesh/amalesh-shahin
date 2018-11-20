@@ -523,6 +523,6 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-require_once ('mims_config.php');
+require_once ('constants/mims-config.php');
 require_once ('constants/errors.php');
 require_once ('constants/mims-advertisement-config.php');

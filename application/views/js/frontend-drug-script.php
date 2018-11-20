@@ -19,15 +19,15 @@
                     for (var job_no = 0; job_no < jobData.length; job_no++) {
                         var logo_path = jobData[job_no].OrganizationLogo == '' || jobData[job_no].OrganizationLogo == null ? '' : '<?php echo base_url();?>'+'JobImages/'+jobData[job_no].OrganizationLogo;
                         individual_job = '<div class="row job">' +
-                        '<div class="col-2">' +
-                        '<img class="job-img" src="'+logo_path+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
-                        '</div>'+
-                        '<div class="col-10">'+
-                        '<p class="job-title"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+jobData[job_no].ID+'">'+jobData[job_no].Title+'</a></p>'+
-                        '<p class="job-company">'+jobData[job_no].Organization+'</p>'+
-                        '</div>'+
-                        '<img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">'+
-                        '</div>';
+                            '<div class="col-2">' +
+                            '<img class="job-img" src="'+logo_path+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
+                            '</div>'+
+                            '<div class="col-10">'+
+                            '<p class="job-title"><a href="<?php echo site_url('Job/showJobDetail?JobID=')?>'+jobData[job_no].ID+'">'+jobData[job_no].Title+'</a></p>'+
+                            '<p class="job-company">'+jobData[job_no].Organization+'</p>'+
+                            '</div>'+
+                            '<img class="right-arrow" src="<?php echo base_url().'application/views/';?>images/icons/right-arrow.svg" alt=">">'+
+                            '</div>';
 
                         $('.home-job-circular-list').append(individual_job);
                     }
@@ -44,14 +44,14 @@
                         var news_description = newsData[news_no].Description;
                         news_description = news_description.length > 100 ? news_description.substr(0, 100) + '...' : news_description;
                         individual_news = '<div class="row news home-news">' +
-                        '<div class="col-4 pr-0">' +
-                        '<img class="news-img" src="<?php echo base_url();?>NewsImages/'+newsData[news_no].ImagePath+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
-                        '</div>'+
-                        '<div class="col-8">'+
-                        '<p class="news-title"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[news_no].ID+'">'+newsData[news_no].Title+'</a></p>'+
-                        '<p class="news-description d-md-block d-none">'+news_description+'</p>'+
-                        '</div>'+
-                        '</div>';
+                            '<div class="col-4 pr-0">' +
+                            '<img class="news-img" src="<?php echo base_url();?>NewsImages/'+newsData[news_no].ImagePath+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
+                            '</div>'+
+                            '<div class="col-8">'+
+                            '<p class="news-title"><a href="<?php echo site_url('News/showIndividualNewsDetail?NewsID=')?>'+newsData[news_no].ID+'">'+newsData[news_no].Title+'</a></p>'+
+                            '<p class="news-description d-md-block d-none">'+news_description+'</p>'+
+                            '</div>'+
+                            '</div>';
 
                         $('.home-local-news-list').append(individual_news);
                     }
@@ -66,9 +66,9 @@
                     var individual_special_report = '';
                     for (var special_report_no = 0; special_report_no < specialReportData.length; special_report_no++) {
                         individual_special_report = '<div class="home-special-report-slide">' +
-                        '<img src="<?php echo base_url();?>SpecialReportImages/'+specialReportData[special_report_no].ImagePath+'"  alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
-                        '<p class="home-special-report-slide-title"><a href="'+specialReportData[special_report_no].LinkAddress+'" target="_blank">'+specialReportData[special_report_no].Title+'</p>'+
-                        '</div>';
+                            '<img src="<?php echo base_url();?>SpecialReportImages/'+specialReportData[special_report_no].ImagePath+'"  alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">'+
+                            '<p class="home-special-report-slide-title"><a href="'+specialReportData[special_report_no].LinkAddress+'" target="_blank">'+specialReportData[special_report_no].Title+'</p>'+
+                            '</div>';
 
                         $('.home-special-report-list').append(individual_special_report);
                     }
@@ -222,14 +222,14 @@
                 }
             });
         },
-        searchBrandInformation: function() {
+        searchBrandInformation: function(Option) {
             console.log('Method Name: drugObject.searchBrandInformation Param:  Value: ');
-            var search_option = $('#searchDrugOption').val();
+            var search_option = Option == undefined ? $('#searchDrugOption').val() : Option;
             drugObject.searchOptionValue = search_option;
             if (search_option == '') return false;
-            console.log('Search By:'+search_option+'Word');
+            console.log('Search By:'+search_option+' Word');
             search_option = $.trim(search_option);
-            console.log('Search By:'+search_option+'Word After trim');
+            console.log('Search By:'+search_option+' Word After trim');
             var formURL = "<?php echo site_url('Brand/searchBrandInformation?Type=')?>"+drugObject.searchOptionType+'&Value='+drugObject.searchOptionValue;
             switch (drugObject.searchOptionType) {
                 case 'brand':
@@ -317,14 +317,14 @@
                     var indication = drugData.Indication;
                     indication = indication.length > 70 ? indication.substr(0, 67) + '...' : indication;
                     $('#highlighted-product').html('<div class="star-product-img">' +
-                    '<img src="<?php echo base_url()?>BrandImages/' + drugData.ImagePath + '" alt="">' +
-                    '</div>' +
-                    '<div class="star-product-info">' +
-                    '<div class="star"><i class="fas fa-star"></i></div>' +
-                    '<a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>' + drugData.ID + '" class="star-product-name">' + drugData.Name + '</a>' +
-                    '<p class="star-product-attributes">(' + drugData.StrengthName + ')</p>' +
-                    '<p class="star-product-description">' + indication + '</p>' +
-                    '</div>');
+                        '<img src="<?php echo base_url()?>BrandImages/' + drugData.ImagePath + '" alt="">' +
+                        '</div>' +
+                        '<div class="star-product-info">' +
+                        '<div class="star"><i class="fas fa-star"></i></div>' +
+                        '<a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>' + drugData.ID + '" class="star-product-name">' + drugData.Name + '</a>' +
+                        '<p class="star-product-attributes">(' + drugData.StrengthName + ')</p>' +
+                        '<p class="star-product-description">' + indication + '</p>' +
+                        '</div>');
                 }
             });
         },
@@ -358,6 +358,9 @@
                 source: function(request, response) {
                     var results = $.ui.autocomplete.filter(search_options, request.term);
                     response(results.slice(0, 10));
+                },
+                select: function( event, ui ) {
+                    drugObject.searchBrandInformation(ui.item.value);
                 }
             });
         },
@@ -434,7 +437,7 @@
                     '                                </li>' +
                     '                                ');
             }
-            
+
             for(var i = start_page_no; ; i++) {
                 if (page_counter == total_pagination - 1 || page_counter == total_page) {
                     break;

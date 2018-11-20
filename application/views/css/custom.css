@@ -212,24 +212,28 @@ a.btn.btn-s.float-right {
     color: #EC1C24;
 }
 
-.sidebar-news .title {
+.sidebar-news .title,
+.sidebar-international-health .title{
     font-size: 20px;
     margin-bottom: 25px;
     color: #000;
     border-bottom: 1px solid #dddbdb;
 }
 
-.sidebar-news li a {
+.sidebar-news li a,
+.sidebar-international-health li a{
     color: #1996C0;
     font-size: 14px;
     text-decoration: none;
 }
 
-.sidebar-news a:hover {
+.sidebar-news a:hover,
+.sidebar-international-health a:hover{
     color: #EC1C24;
 }
 
-.sidebar-news li {
+.sidebar-news li,
+.sidebar-international-health li{
     padding: 5px 0;
 }
 
@@ -244,6 +248,7 @@ a.btn.btn-s.float-right {
 .add-resource-page-top-right-340x355,
 .add-special-report-page-top-right-340x355,
 .add-news-page-top-right-340x355,
+.add-international-health-page-top-right-340x355,
 .add-job-page-top-right-340x355,
 .add-address-page-top-right-340x355,
 .add-doctor-page-top-right-340x355,
@@ -265,6 +270,8 @@ a.btn.btn-s.float-right {
 .add-special-report-page-inner-right-523x52,
 .add-news-page-inner-left-523x52,
 .add-news-page-inner-right-523x52,
+.add-international-health-page-inner-left-523x52,
+.add-international-health-page-inner-right-523x52,
 .add-job-page-inner-left-523x52,
 .add-job-page-inner-right-523x52,
 .add-address-page-inner-left-523x52,
@@ -294,19 +301,19 @@ a.btn.btn-s.float-right {
     margin-bottom: 50px;
 }
 
-.sidebar-news, .special-reports-sidebar {
+.sidebar-news, .sidebar-international-health, .special-reports-sidebar {
     margin-bottom: 30px;
     border: 1px solid #DBDCDD;
 }
 
-.sidebar-news ul,  .special-reports-sidebar ul{
+.sidebar-news ul,  .sidebar-international-health ul,  .special-reports-sidebar ul{
     margin-left: 15px;
     font-weight: 600;
 }
 .product-add-1 {
     margin: 60px 0;
 }
-.sidebar-news h4,  .special-reports-sidebar h3{
+.sidebar-news h4,  .sidebar-international-health h4,  .special-reports-sidebar h3{
     background-color: #DBDCDD;
     padding: 5px 15px 5px 15px;
 }
@@ -652,7 +659,8 @@ span.separator-2 {
     text-align: center;
 }
 
-.job-circular-head .news-top {
+.job-circular-head .news-top,
+.job-circular-head .international-health-top{
     background-image: url('../img/company-logos.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -660,7 +668,8 @@ span.separator-2 {
     margin-bottom:  25px;
     border-bottom:  none;
 }
-.job-circular-head .news-top h1.job-circular-title {
+.job-circular-head .news-top h1.job-circular-title,
+.job-circular-head .international-health-top h1.job-circular-title{
     background: #5EACD5;
     padding: 10px 45px 10px 20px;
     color: #fff;
@@ -699,7 +708,8 @@ span.separator-2 {
 .job-details h1 {
     padding-top: 30px;
 }
-.job-details .more-news p{
+.job-details .more-news p,
+.job-details .more-international-health p{
     text-align: center!important;
 }
 .requirement-list {
@@ -742,7 +752,8 @@ ul.address-list{
 }
 /*css for news page*/
 
-.news-top {
+.news-top,
+.international-health-top{
     display: flex;
     flex-wrap: wrap;
     justify-content:space-between;
@@ -750,86 +761,105 @@ ul.address-list{
     align-items:  center;
     border-bottom: 1px solid #decbcb;
 }
-.news-top.padding-bottom-10 {
+.news-top.padding-bottom-10,
+.international-health-top.padding-bottom-10{
     padding-bottom: 10px;
 }
-.news.padding-top-30 {
+.news.padding-top-30,
+.international-health.padding-top-30{
     padding-top: 30px;
 }
-.news-top.no-border {
+.news-top.no-border,
+.international-health-top.no-border{
     border: none;
 }
-.news-top h1 {
+.news-top h1,
+.international-health-top h1{
     text-transform: uppercase;
     font-size: 40px;
     color: #9f9292;
 }
-.news-top .news-alert {
+.news-top .news-alert,
+.international-health-top .international-health-alert{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
-.news-top .news-alert p {
+.news-top .news-alert p,
+.international-health-top .international-health-alert p{
     width: 170px;
     padding:  0 20px;
 }
-.news-top .news-alert .form {
+.news-top .news-alert .form,
+.international-health-top .international-health-alert .form{
     padding:  0 20px;
     padding-left: 40px;
 }
-.news-top .news-alert .form .btn-primary {
+.news-top .news-alert .form .btn-primary,
+.international-health-top .international-health-alert .form .btn-primary{
     background: #ec1c24;
     border: none;
     padding: 5px 30px;
 }
 
-.featured-news {
+.featured-news,
+.featured-international-health{
     padding-top: 50px;
     display:  flex;
     flex-wrap:  wrap;
 }
-.featured-news .news-info {
+.featured-news .news-info,
+.featured-international-health .international-health-info{
     width: 60%;
 }
-.featured-news .featured-news-img {
+.featured-news .featured-news-img,
+.featured-international-health .featured-international-health-img{
     width: 40%;
 }
-.featured-news .news-info h1 {
+.featured-news .news-info h1,
+.featured-international-health .international-health-info h1{
     font-size: 26px;
     color: #6e6767;
     margin-bottom: 20px;
 }
-.more-news {
+.more-news,
+.more-international-health{
     padding: 80px;
     color: #1995c0;
     padding-bottom:  0;
 }
-.more-news p {
+.more-news p,
+.more-international-health p{
     font-size: 24px;
     margin-bottom: 5px;
 }
-.more-news .round {
+.more-news .round,
+.more-international-health .round{
     width: 50px;
     height:  50px;
     border-radius: 100px;
     display:  inline-block;
     border: 2px solid #1995c0;
 }
-.more-news i.fa-chevron-right {
+.more-news i.fa-chevron-right,
+.more-international-health i.fa-chevron-right{
     transform: rotate(90deg);
     font-size:  25px;
     color: #1995c0;
     position:  relative;
     top: 10px;
 }
-.news {
+.news,
+.international-health{
     padding-top: 100px;
 }
-.news .job .see-more
+.news .job .see-more,
+.international-health .job .see-more
 {
     border: none;
 }
-.news .job-info a.see-details
+.news .job-info a.see-details,
+.international-health .job-info a.see-details
 {
     align-self: flex-end;
 }
@@ -948,7 +978,8 @@ ul.alpha-list li a:hover{
 ul.alpha-list span.separator{
     border-right: 1px solid #A6A8AB;
 }
-.news-list .job .see-more img{
+.news-list .job .see-more img,
+.international-health-list .job .see-more img{
     width: 100px;
     height: 75px;
 }

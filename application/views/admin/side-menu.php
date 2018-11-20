@@ -111,6 +111,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo site_url('InternationalHealth/getInternationalHealthListForAdmin')?>">
+                            <i class="fa fa-dashboard"></i>
+                            <span>International Health</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo site_url('User/logout')?>">
                             <i class="fa fa-dashboard"></i>
                             <span>logout</span>

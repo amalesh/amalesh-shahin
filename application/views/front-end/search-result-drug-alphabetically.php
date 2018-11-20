@@ -165,5 +165,5 @@
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;
     drugObject.totalDrug = <?php echo isset($TotalBrand) ? $TotalBrand : 0;?>;
     drugObject.populatePagination('search-brand-pagination', 1);
-    drugObject.getAllDrugInfoForAutoComplete('generic');
+    drugObject.getAllDrugInfoForAutoComplete('brand');
 </script>

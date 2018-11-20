@@ -7,6 +7,7 @@
  */
 ?>
 <!-- banner -->
+<!-- need to change table -->
 <div class="banner banner-small d-md-flex d-none">
     <div class="search-wrapper">
         <ul class="search-tabs group">
