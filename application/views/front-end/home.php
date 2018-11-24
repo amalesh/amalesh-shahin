@@ -66,7 +66,7 @@
 </div>
 
 <!-- home advert -->
-<div class="container advert-container home-advert-container1">
+<div id="home-advert-container-top" class="container advert-container home-advert-container1">
     <a href="#" class="advert no-outline">
         <img src="<?php echo base_url().'application/views/';?>images/home-advert-1.jpg" alt="Click this link!">
     </a>
@@ -120,7 +120,7 @@
 </div>
 
 <!-- home advert -->
-<div class="container advert-container home-advert-container2">
+<div id="home-advert-container-mid" class="container advert-container home-advert-container2">
     <a href="#" class="advert no-outline">
         <img src="<?php echo base_url().'application/views/';?>images/home-advert-1.jpg" alt="Click this link!">
     </a>
@@ -186,7 +186,7 @@
     $('.slick-next.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     $('.slick-prev.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
-    frontendCommonMethods.getAdvertisement(['home-product-slider', 'home-advert-container1', 'home-advert-container2']);
+    // frontendCommonMethods.getAdvertisement(['home-product-slider', 'home-advert-container-top', 'home-advert-container-mid']);
     drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();

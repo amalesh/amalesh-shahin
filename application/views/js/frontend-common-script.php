@@ -173,23 +173,41 @@
             console.log('Method Name: frontendCommonMethods.populatePagination Param: classNames Value: '+[classNames].toString());
             for (var class_no = 0; class_no < classNames.length; class_no++) {
                 var class_name = classNames[class_no];
-                $('.'+class_name).hide();
+                $('#'+class_name).hide();
                 var formURL = "<?php echo site_url('Advertisement/getAdvertisement?ClassName=')?>"+class_name;
                 mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getAdvertisement', function(advertisementData){
                     if (advertisementData.length) {
                         var position_class_name = advertisementData[0].ClassName;
                         var interval = advertisementData[0].Interval;
-                        $("ul."+position_class_name).html('');
+                        $('#'+class_name).html('');
                         for (var advertisement_no = 0; advertisement_no < advertisementData.length; advertisement_no++) {
-                            $('ul.'+position_class_name).append('<li><img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'" alt=""></li>');
+                            $('#'+class_name).append('<div class="'+class_name+'">' +
+                                '<img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'" alt="">'+
+                                '</div>');
                         }
 
-                        $("ul."+position_class_name).responsiveSlides({
-                            auto: true,
-                            timeout: interval * 1000
-                        });
-
-                        $('ul.'+position_class_name).show();
+                        switch (class_name) {
+                            case 'home-product-slider':
+                                $('#'+class_name).slick({
+                                    slidesToScroll: 1,
+                                    slidesToShow: 3,
+                                    autoplay: true,
+                                    autoplaySpeed: interval,
+                                    infinite: true,
+                                    arrows: false,
+                                    responsive: [
+                                        {
+                                            breakpoint: 480,
+                                            settings: {
+                                                slidesToShow: 2,
+                                            }
+                                        }
+                                    ]
+                                });
+                                break;
+                            default:
+                                break;
+                        }
                     }
                 });
             }

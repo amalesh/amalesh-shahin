@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 04, 2018 at 08:55 AM
+-- Generation Time: Nov 23, 2018 at 01:52 AM
 -- Server version: 5.6.41-log
--- PHP Version: 5.6.30
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -155,23 +155,6 @@ CREATE TABLE `mims_advertisementinformation` (
   `MobileNo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `mims_advertisementinformation`
---
-
-INSERT INTO `mims_advertisementinformation` (`ID`, `Organization`, `Title`, `BodyText`, `LinkURL`, `ImagePath`, `PublishDate`, `UnpublishedDate`, `AdvertisementPositionID`, `CreatedBy`, `LastUpdate`, `IsActive`, `ContactPerson`, `EmailID`, `MobileNo`) VALUES
-(17, 'SKF', 'PG', 'dddd', '', 'cb494c55a59927120e9aad14cbbaef59.jpg', '2018-09-21 00:00:00', '2018-09-25 00:00:00', 6, 3, '2018-09-22 05:51:02', 1, 'dfdsfdsfd', 'abmshahin123@gmail.com', '01818296743'),
-(18, 'SKF', 'Xinc B', '', '', NULL, '2018-09-21 00:00:00', '2018-09-25 00:00:00', 8, 3, '2018-09-22 05:58:17', 1, 'dfdfdfds', 'abmshahin123@gmail.com', '01818296743'),
-(19, 'SKF', 'Tamen Turbo', '', '', '10bd045586285f0b1f7b296aa646174d.jpg', '2018-09-21 00:00:00', '2018-09-25 00:00:00', 5, 3, '2018-09-22 06:07:47', 1, 'dfdfd', 'abmshahin123@gmail.com', '01818296743'),
-(21, 'SKF', '', '', '', '1390fcbc1e98253fddfd6c9a0cd30d68.jpg', '2018-09-21 00:00:00', '2018-09-25 00:00:00', 87, 3, '2018-09-22 06:32:52', 1, '', NULL, ''),
-(22, 'SKF', '', '', '', 'a30dad376d7415ee3a0c29a7a83f51bf.jpg', '2018-09-21 00:00:00', '2018-09-25 00:00:00', 88, 3, '2018-09-22 06:33:20', 1, '', NULL, ''),
-(23, 'SKF', '', '', '', 'da2bfa89f64f37177e164593b4a0db9d.jpg', '2018-09-21 00:00:00', '2018-09-25 00:00:00', 85, 3, '2018-09-22 06:36:31', 1, '', NULL, ''),
-(25, 'SKF', 'SKF 2', 'asdasd asd', 'https://asdasd.com', '7f9f8f87dc7e6833a35652f094438b93.png', '2018-09-21 00:00:00', '2018-09-30 00:00:00', 5, 1, '2018-09-22 11:39:05', 1, 'asdsa asdas', 'asdasd@asdasd.com', '12312321'),
-(26, 'SKF', '', '', '', '2fb81e762f306f7165dd87d94bb33011.jpg', '2018-09-22 00:00:00', '2018-09-25 00:00:00', 51, 3, '2018-09-22 13:29:56', 1, '', NULL, ''),
-(27, 'SKF', '', '', '', 'bb01c70653681759133ceac02f5478d3.jpg', '2018-09-22 00:00:00', '2018-09-25 00:00:00', 52, 3, '2018-09-22 13:30:33', 1, '', NULL, ''),
-(28, 'SKF', '', '', '', '356066cf0e0f4ee1eb4997f7584b1b10.jpg', '2018-09-22 00:00:00', '2018-09-25 00:00:00', 49, 3, '2018-09-22 13:32:21', 1, '', NULL, ''),
-(29, 'SKF', '', '', '', '5691bb26b76ab4fffa395e87b66404e1.jpg', '2018-09-22 00:00:00', '2018-09-25 00:00:00', 50, 3, '2018-09-22 13:34:33', 1, '', NULL, '');
-
 -- --------------------------------------------------------
 
 --
@@ -197,54 +180,53 @@ CREATE TABLE `mims_advertisementpositioninformation` (
 --
 
 INSERT INTO `mims_advertisementpositioninformation` (`ID`, `Name`, `ClassName`, `ImageWidth`, `ImageHeight`, `NumberOfAdvertisement`, `Interval`, `PriceInBDT`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
-(5, 'Home Page Top right', 'add-home-page-top-right-305x355', 305, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(6, 'Home Page Bottom Left', 'add-home-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(7, 'Home Inner Page Left', 'add-home-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(8, 'Home Inner Pages Right', 'add-home-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(49, 'Brand Page Top right', 'add-brand-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(50, 'Brand Page Bottom Left', 'add-brand-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(51, 'Brand Inner Page Left', 'add-brand-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(52, 'Brand Inner Pages Right', 'add-brand-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(53, 'Generic Page Top right', 'add-generic-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(54, 'Generic Page Bottom Left', 'add-generic-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(55, 'Generic Inner Page Left', 'add-generic-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(56, 'Generic Inner Pages Right', 'add-generic-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(57, 'Indication Page Top right', 'add-indication-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(58, 'Indication Page Bottom Left', 'add-indication-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(59, 'Indication Inner Page Left', 'add-indication-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(60, 'Indication Inner Pages Right', 'add-indication-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(61, 'Manufacturer Page Top right', 'add-manufacturer-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(62, 'Manufacturer Page Bottom Left', 'add-manufacturer-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(63, 'Manufacturer Inner Page Left', 'add-manufacturer-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(64, 'Manufacturer Inner Pages Right', 'add-manufacturer-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(65, 'Resource Page Top right', 'add-resource-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(66, 'Resource Page Bottom Left', 'add-resource-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(67, 'Resource Inner Page Left', 'add-resource-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(68, 'Resource Inner Pages Right', 'add-resource-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(69, 'Special Report Page Top right', 'add-special-report-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(70, 'Special Report Page Bottom Left', 'add-special-report-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(71, 'Special Report Inner Page Left', 'add-special-report-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(72, 'Special Report Inner Pages Right', 'add-special-report-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(73, 'News Page Top right', 'add-news-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(74, 'News Page Bottom Left', 'add-news-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(75, 'News Inner Page Left', 'add-news-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(76, 'News Inner Pages Right', 'add-news-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(77, 'Job Page Top right', 'add-job-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(78, 'Job Page Bottom Left', 'add-job-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(79, 'Job Inner Page Left', 'add-job-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(80, 'Job Inner Pages Right', 'add-job-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(81, 'Address Page Top right', 'add-address-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(82, 'Address Page Bottom Left', 'add-address-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(83, 'Address Inner Page Left', 'add-address-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(84, 'Address Inner Pages Right', 'add-address-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(85, 'Doctor Page Top right', 'add-doctor-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(86, 'Doctor Page Bottom Left', 'add-doctor-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(87, 'Doctor Inner Page Left', 'add-doctor-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(88, 'Doctor Inner Pages Right', 'add-doctor-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1),
-(89, 'About Us Page Top right', 'add-about-us-page-top-right-340x355', 340, 355, 3, 5, 1000, 1, '2018-08-30 03:54:27', 1),
-(90, 'About Us Page Bottom Left', 'add-about-us-page-bottom-left-823x115', 823, 115, 3, 5, 2000, 1, '2018-08-30 03:54:27', 1),
-(91, 'About Us Inner Page Left', 'add-about-us-page-inner-left-523x52', 523, 80, 3, 5, 300, 1, '2018-08-30 03:58:32', 1),
-(92, 'About Us Inner Pages Right', 'add-about-us-page-inner-right-523x52', 523, 80, 3, 5, 1500, 1, '2018-08-30 03:58:32', 1);
+(140, 'Home Page Product Slider Advertisement', 'home-product-slider', 370, 232, 0, 6, 1000, 1, '2018-08-30 08:54:27', 1),
+(141, 'Home Page Container1 Advertisement', 'home-advert-container1', 1170, 147, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(142, 'Home Page Container2 Advertisement', 'home-advert-container2', 1170, 147, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(143, 'Doctor Page Sidebar Advertisement', 'doctor-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(144, 'Doctor Page Top Left Advertisement', 'doctor-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(145, 'Doctor Page Top Right Advertisement', 'doctor-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(146, 'Doctor Page Bottom Advertisement', 'doctor-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(147, 'Address Page Sidebar Advertisement', 'address-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(148, 'Address Page Top Left Advertisement', 'address-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(149, 'Address Page Top Right Advertisement', 'address-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(150, 'Address Page Bottom Advertisement', 'address-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(151, 'Job Circular Page Sidebar Advertisement', 'job-circular-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(152, 'Job Circular Page Top Left Advertisement', 'job-circular-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(153, 'Job Circular Page Top Right Advertisement', 'job-circular-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(154, 'Job Circular Page Bottom Advertisement', 'job-circular-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(155, 'Job Circular Detail Page Sidebar Advertisement', 'job-circular-detail-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(156, 'Job Circular Detail Page Top Left Advertisement', 'job-circular-detail-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(157, 'Job Circular Detail Page Top Right Advertisement', 'job-circular-detail-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(158, 'Job Circular Detail Page Bottom Advertisement', 'job-circular-detail-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(159, 'Local News Page Sidebar Advertisement', 'news-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(160, 'Local News Page Top Left Advertisement', 'news-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(161, 'Local News Page Top Right Advertisement', 'news-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(162, 'Local News Page Bottom Advertisement', 'news-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(163, 'Special Report Page Sidebar Advertisement', 'special-report-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(164, 'Special Report Page Top Left Advertisement', 'special-report-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(165, 'Special Report Page Top Right Advertisement', 'special-report-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(166, 'Special Report Page Bottom Advertisement', 'special-report-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(167, 'Resource Page Sidebar Advertisement', 'resource-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(168, 'Resource Page Top Left Advertisement', 'resource-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(169, 'Resource Page Top Right Advertisement', 'resource-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(170, 'Resource Page Bottom Advertisement', 'resource-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(171, 'Brand Search Result Page Sidebar Advertisement', 'brand-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(172, 'Brand Search Result Page Top Left Advertisement', 'brand-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(173, 'Brand Search Result Page Top Right Advertisement', 'brand-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(174, 'Brand Search Result Page Bottom Advertisement', 'brand-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(175, 'Generic Search Result Page Sidebar Advertisement', 'generic-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(176, 'Generic Search Result Page Top Left Advertisement', 'generic-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(177, 'Generic Search Result Page Top Right Advertisement', 'generic-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(178, 'Generic Search Result Page Bottom Advertisement', 'generic-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(179, 'Indication Search Result Page Sidebar Advertisement', 'indication-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(180, 'Indication Search Result Page Top Left Advertisement', 'indication-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(181, 'Indication Search Result Page Top Right Advertisement', 'indication-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(182, 'Indication Search Result Page Bottom Advertisement', 'indication-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(183, 'Manufacturer Search Result Page Sidebar Advertisement', 'manufacturer-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(184, 'Manufacturer Search Result Page Top Left Advertisement', 'manufacturer-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(185, 'Manufacturer Search Result Page Top Right Advertisement', 'manufacturer-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(186, 'Manufacturer Search Result Page Bottom Advertisement', 'manufacturer-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1);
 
 -- --------------------------------------------------------
 
@@ -755,7 +737,7 @@ INSERT INTO `mims_brandinformation` (`ID`, `Name`, `GenericID`, `ManufacturerID`
 (734, 'TRUPAN ', 8, 192, 88, 98, 192, '', '240', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (735, 'TRUPAN ', 8, 192, 88, 138, 192, '', '360', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (736, 'TRUPAN ', 8, 192, 63, 138, 132, '', '70', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
-(737, 'ACIFIX ', 9, 145, 88, 98, 174, '', '250', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
+(737, 'ACIFIX ', 9, 145, 88, 98, 174, '28b933ace60241956d37ca80bca2f70e.jpg', '250', 1, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (738, 'FINIX ', 9, 179, 88, 115, 121, '', '703', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (739, 'PARICEL ', 9, 135, 88, 98, 156, '', '151', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (740, 'PARICEL ', 9, 135, 88, 98, 174, '', '251', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
@@ -909,7 +891,7 @@ INSERT INTO `mims_brandinformation` (`ID`, `Name`, `GenericID`, `ManufacturerID`
 (888, 'SPASMIN ', 14, 149, 52, 59, 99, '', '154', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (889, 'SPASMOSON ', 14, 164, 88, 59, 108, '', '341', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (890, 'SPASMOSON ', 14, 164, 41, 108, 102, '', '79', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
-(891, 'A-MEB ', 15, 136, 88, 74, 181, '1e23efd0e7719b2fd20b273ab805fa5a.png', '301', 1, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
+(891, 'A-MEB ', 15, 136, 88, 74, 181, '1e23efd0e7719b2fd20b273ab805fa5a.png', '301', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (892, 'EVARIN ', 15, 148, 88, 74, 174, '', '300', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (893, 'IRIBAN ', 15, 162, 88, 74, 174, '', '300', 0, 0, 0, 1, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (894, 'IRIBAN-SR ', 15, 162, 83, 97, 156, '', '300', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
@@ -1621,7 +1603,7 @@ INSERT INTO `mims_brandinformation` (`ID`, `Name`, `GenericID`, `ManufacturerID`
 (1598, 'TROCER 2.6 SR CAPSULE ', 57, 162, 83, 94, 156, '', '120', 0, 0, 1, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1599, 'TROCER 2.6 SR TABLET ', 57, 162, 84, 94, 156, '', '120', 0, 1, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1600, 'ESORDIN ', 58, 192, 88, 59, 99, '', '35', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
-(1601, 'A-CARD ', 59, 136, 88, 98, 108, '', '142', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
+(1601, 'A-CARD ', 59, 136, 88, 98, 108, '4448a324daf1b68063f3d1c69e3aa3af.png', '142', 1, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1602, 'ANGIFIX ', 59, 162, 88, 98, 174, '', '71', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1603, 'ESMO ', 59, 192, 88, 98, 108, '', '142', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1604, 'ESMO-LA ', 59, 192, 43, 150, 159, '', '211', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
@@ -1683,6 +1665,169 @@ INSERT INTO `mims_brandinformation` (`ID`, `Name`, `GenericID`, `ManufacturerID`
 (1660, 'CINAZIN PLUS     ', 68, 136, 88, 104, 181, '', '76', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1661, 'NIMOCAL ', 69, 192, 88, 132, 159, '', '151', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1),
 (1662, 'NIMODI ', 69, 155, 88, 132, 156, '', '150', 0, 0, 0, 0, '2018-09-12 22:04:00', '2018-10-01 14:33:08', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mims_brandin_data`
+--
+
+CREATE TABLE `mims_brandin_data` (
+  `ID` bigint(20) NOT NULL,
+  `Name` varchar(100) DEFAULT NULL,
+  `Generic` varchar(100) DEFAULT NULL,
+  `Manufacturer` varchar(100) DEFAULT NULL,
+  `DosageForm` varchar(100) DEFAULT NULL,
+  `Strength` varchar(100) DEFAULT NULL,
+  `PackSize` varchar(100) DEFAULT NULL,
+  `ImagePath` varchar(300) DEFAULT NULL,
+  `PriceInBDT` decimal(10,0) DEFAULT NULL,
+  `IsHighlighted` tinyint(1) NOT NULL DEFAULT '0',
+  `IsFeatureProduct` tinyint(1) NOT NULL DEFAULT '0',
+  `CreateDate` datetime DEFAULT NULL,
+  `LastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `CreatedBy` varchar(100) NOT NULL,
+  `IsActive` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `mims_brandin_data`
+--
+
+INSERT INTO `mims_brandin_data` (`ID`, `Name`, `Generic`, `Manufacturer`, `DosageForm`, `Strength`, `PackSize`, `ImagePath`, `PriceInBDT`, `IsHighlighted`, `IsFeatureProduct`, `CreateDate`, `LastUpdate`, `CreatedBy`, `IsActive`) VALUES
+(1, 'ALENIA ', 'Esomeprazole', 'Delta Pharma ', 'CAP ', '20mg ', '8x8?s ', '', '320', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(2, 'ALENIA ', 'Esomeprazole', 'Delta Pharma ', 'CAP ', '40mg ', '30?s ', '', '210', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(3, 'ALTON ', 'Esomeprazole', 'General Pharma ', 'TAB ', '20mg ', '3x10?s ', '', '150', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(4, 'ALTON ', 'Esomeprazole', 'General Pharma ', 'TAB ', '40mg ', '3x10?s ', '', '241', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(5, 'ALTON ', 'Esomeprazole', 'General Pharma ', 'INJ ', '40mg/vial ', '1?s ', '', '100', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(6, 'EMA ', 'Esomeprazole', 'Globe Pharma ', 'CAP ', '20mg ', '6x10?s ', '', '420', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(7, 'EMA ', 'Esomeprazole', 'Globe Pharma ', 'CAP ', '40mg ', '3x10?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(8, 'EMA ', 'Esomeprazole', 'Globe Pharma ', 'TAB ', '20mg ', '3x10?s ', '', '143', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(9, 'EMA ', 'Esomeprazole', 'Globe Pharma ', 'TAB ', '40mg ', '3x10?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(10, 'EMA ', 'Esomeprazole', 'Globe Pharma ', 'INJ ', '40mg/vial', '1?s ', '', '80', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(11, 'EMEP ', 'Esomeprazole', 'Aristo Pharma ', 'CAP ', '20mg ', '60?s ', '', '420', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(12, 'EMEP ', 'Esomeprazole', 'Aristo Pharma ', 'CAP ', '40mg ', '40?s ', '', '360', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(13, 'EMEP ', 'Esomeprazole', 'Aristo Pharma ', 'INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(14, 'EMEP ', 'Esomeprazole', 'Aristo Pharma ', 'TAB ', '20mg ', '60?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(15, 'EPRAZOL ', 'Esomeprazole', 'Labaid Pharma ', 'CAP ', '20mg ', '60?s ', '', '421', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(16, 'EPRAZOL ', 'Esomeprazole', 'Labaid Pharma ', 'CAP ', '40mg ', '30?s ', '', '301', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(17, 'ESCAP 20MG ', 'Esomeprazole', 'Sanofi Bangladesh ', 'CAP ', '20mg ', '5x10?s ', '', '400', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(18, 'ESCAP 20MG ', 'Esomeprazole', 'Sanofi Bangladesh ', 'CAP ', '40mg ', '5x6?s ', '', '400', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(19, 'ESMAX ', 'Esomeprazole', 'Concord ', 'TAB ', '20mg ', '6x10?s ', '', '301', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(20, 'ESMAX ', 'Esomeprazole', 'Concord ', 'CAP ', '20mg ', '10x10?s ', '', '700', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(21, 'ESMAX ', 'Esomeprazole', 'Concord ', 'CAP ', '40mg ', '5x4s ', '', '160', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(22, 'ESMOSEC ', 'Esomeprazole', 'Techno Drugs ', 'TAB ', '20mg ', '4x10?s ', '', '160', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(23, 'ESO ', 'Esomeprazole', 'Asiatic Lab', 'TAB ', '20mg ', '10x10?s ', '', '500', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(24, 'ESO ', 'Esomeprazole', 'Asiatic Lab', 'TAB ', '40mg ', '3x10?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(25, 'ESOCARE ', 'Esomeprazole', 'Novelta', 'CAP ', '20mg ', '50?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(26, 'ESOCARE ', 'Esomeprazole', 'Novelta', 'CAP ', '40mg ', '10x3?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(27, 'ESOCON ', 'Esomeprazole', 'Bio-Pharma ', 'CAP ', '20mg ', '60?s ', '', '360', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(28, 'ESOCON ', 'Esomeprazole', 'Bio-Pharma ', 'CAP ', '20mg ', '100?s ', '', '600', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(29, 'ESOCON ', 'Esomeprazole', 'Bio-Pharma ', 'CAP ', '40mg ', '40?s ', '', '360', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(30, 'ESOCON ', 'Esomeprazole', 'Bio-Pharma ', 'IV-INJ ', '40mg ', '1?s ', '', '65', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(31, 'ESOGEL ', 'Esomeprazole', 'Organic Health Care ', 'CAP ', '20mg ', '100?s ', '', '602', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(32, 'ESOGEL ', 'Esomeprazole', 'Organic Health Care ', 'CAP', '40mg ', '28?s ', '', '225', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(33, 'ESOPROL  ', 'Esomeprazole', 'Ziska Pharma ', 'CAP ', '20mg ', '8x7?s ', '', '280', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(34, 'ESOPROL  ', 'Esomeprazole', 'Ziska Pharma ', 'CAP ', '40mg ', '4x7?s ', '', '224', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(35, 'ESOLOK ', 'Esomeprazole', 'IBN Sina ', 'TAB ', '20mg ', '30?s ', '', '120', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(36, 'ESOLOK ', 'Esomeprazole', 'IBN Sina ', 'TAB ', '40mg ', '30?s ', '', '210', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(37, 'ESOLOK ', 'Esomeprazole', 'IBN Sina ', 'CAP ', '20mg ', '60?s ', '', '390', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(38, 'ESOLOK ', 'Esomeprazole', 'IBN Sina ', 'CAP ', '40mg ', '48?s ', '', '384', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(39, 'ESOLOK ', 'Esomeprazole', 'IBN Sina ', 'INJ ', '40mg ', '1?s ', '', '100', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(40, 'ESOM E', 'Esomeprazole', 'Edruc ', 'TAB ', '20mg ', '3x10?s ', '', '150', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(41, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'TAB ', '20mg ', '30?s ', '', '121', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(42, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'TAB ', '20mg ', '50?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(43, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(44, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'CAP ', '20mg ', '50?s ', '', '350', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(45, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'CAP ', '40mg ', '40?s ', '', '360', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(46, 'ESOMEP ', 'Esomeprazole', 'ACI Limited ', 'IV-INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(47, 'ESOMILOC', 'Esomeprazole', ' Kumudini Pharma ', 'TAB ', '20mg ', '5x10?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(48, 'ESOMILOC', 'Esomeprazole', 'Kumudini Pharma', 'TAB ', '40mg ', '3x10?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(49, 'ESOLIN ', 'Esomeprazole', 'Rephco Pharma ', 'TAB ', '20mg ', '5x10?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(50, 'ESOLIN ', 'Esomeprazole', 'Rephco Pharma ', 'TAB', ' 40mg ', '5x10?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(51, 'ESONIX ', 'Esomeprazole', 'Incepta ', 'TAB ', '20mg ', '50?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(52, 'ESONIX ', 'Esomeprazole', 'Incepta ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(53, 'ESONIX ', 'Esomeprazole', 'Incepta ', 'CAP ', '20mg ', '56?s ', '', '392', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(54, 'ESONIX ', 'Esomeprazole', 'Incepta ', 'CAP ', '40mg ', '30?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(55, 'ESONIX ', 'Esomeprazole', 'Incepta ', 'INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(56, 'ESONIX 20 DR', 'Esomeprazole', 'lncepta ', 'SUSP (sachet) ', '20mg ', '30?s ', '', '210', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(57, 'ESOPRA ', 'Esomeprazole', 'Alco Pharma ', 'TAB ', '20mg ', '30?s ', '', '180', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(58, 'ESOPRA ', 'Esomeprazole', 'Alco Pharma ', 'TAB ', '40mg ', '30?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(59, 'ESOPREX ', 'Esomeprazole', 'Beacon Pharma ', 'CAP ', '20mg ', '7x8?s ', '', '393', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(60, 'ESOPREX ', 'Esomeprazole', 'Beacon Pharma ', 'CAP ', '40mg ', '5x6?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(61, 'ESOPREX ', 'Esomeprazole', 'Beacon Pharma ', 'IV-INJ ', '40mg ', '1x1?s ', '', '100', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(62, 'ESORAL ', 'Esomeprazole', 'Eskayef', 'EC-TAB ', '20mg ', '100?s ', '', '500', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(63, 'ESORAL ', 'Esomeprazole', 'Eskayef', 'EC-TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(64, 'ESORAL ', 'Esomeprazole', 'Eskayef', 'CAP ', '20mg ', '60?s ', '', '420', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(65, 'ESORAL ', 'Esomeprazole', 'Eskayef', 'CAP ', '40mg ', '30?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(66, 'ESORAL ', 'Esomeprazole', 'Eskayef', 'IV-INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(67, 'ESOTAC ', 'Esomeprazole', 'Navana', 'TAB ', '20mg ', '60?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(68, 'ESOTAC ', 'Esomeprazole', 'Navana', 'TAB ', '40mg ', '30?s ', '', '210', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(69, 'ESOTAC ', 'Esomeprazole', 'Navana', 'CAP ', '20mg ', '60?s ', '', '361', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(70, 'ESOTAC ', 'Esomeprazole', 'Navana', 'CAP ', '40mg ', '30?s ', '', '241', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(71, 'ESOTID ', 'Esomeprazole', 'Opsonin Pharma ', 'TAB ', '20mg ', '10x5?s ', '', '251', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(72, 'ESOTID ', 'Esomeprazole', 'Opsonin Pharma ', 'TAB ', '40mg ', '10x5?s ', '', '400', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(73, 'ESOTID ', 'Esomeprazole', 'Opsonin Pharma ', 'CAP ', '20mg ', '10x9?s ', '', '542', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(74, 'ESOTID ', 'Esomeprazole', 'Opsonin Pharma ', 'CAP ', '40mg ', '10x3?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(75, 'ESOTID ', 'Esomeprazole', 'Opsonin Pharma ', 'INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(76, 'ESOTOR ', 'Esomeprazole', 'NIPRO JMI Pharma ', 'TAB ', '20mg ', '50?s ', '', '251', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(77, 'ESOTOR ', 'Esomeprazole', 'NIPRO JMI Pharma ', 'TAB ', '40mg ', '30?s ', '', '241', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(78, 'ESOTRON-20 ', 'Esomeprazole', 'Jayson Pharma ', 'TAB ', '20mg ', '3x10?s ', '', '150', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(79, 'ESOTRON-40 ', 'Esomeprazole', 'Jayson Pharma ', 'TAB ', '40mg ', '3x10?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(80, 'ESOZOL ', 'Esomeprazole', 'Medicon ', 'CAP ', '20mg ', '5x10?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(81, 'ESRU ', 'Esomeprazole', 'Doctor?s ', 'TAB ', '20mg ', '5x10?s ', '', '200', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(82, 'EXIUM ', 'Esomeprazole', 'Radiant Pharma ', 'CAP ', '20mg ', '100?s ', '', '752', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(83, 'EXIUM ', 'Esomeprazole', 'Radiant Pharma ', 'CAP ', '40mg ', '60?s ', '', '572', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(84, 'EXOR ', 'Esomeprazole', 'Orion ', 'CAP ', '20mg ', '10x10?s ', '', '700', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(85, 'EXOR ', 'Esomeprazole', 'Orion ', 'CAP ', '40mg ', '3x10?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(86, 'EXOR ', 'Esomeprazole', 'Orion ', 'IV-INJ ', '40mg ', '1?s ', '', '100', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(87, 'MAXIMA ', 'Esomeprazole', 'ACME Lab ', 'CAP ', '20mg ', '10x4?s ', '', '280', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(88, 'MAXIMA ', 'Esomeprazole', 'ACME Lab ', 'CAP ', '40mg ', '5x4?s ', '', '181', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(89, 'MAXIMA ', 'Esomeprazole', 'ACME Lab ', 'TAB ', '20mg ', '10x10?s ', '', '500', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(90, 'MAXIMA ', 'Esomeprazole', 'ACME Lab ', 'TAB ', '40mg ', '4x10?s ', '', '320', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(91, 'MAXIMA ', 'Esomeprazole', 'ACME Lab ', 'IV-INJ ', '40mg ', '1?s', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(92, 'MAXPRO ', 'Esomeprazole', 'Renata ', 'EC-TAB ', '20mg', '10x10?s ', '', '700', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(93, 'MAXPRO ', 'Esomeprazole', 'Renata ', 'EC-TAB ', '40mg ', '3x10?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(94, 'MAXPRO ', 'Esomeprazole', 'Renata ', 'EC-CAP ', '20mg ', '16x6?s ', '', '672', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(95, 'MAXPRO ', 'Esomeprazole', 'Renata ', 'BC-CAP ', '40mg ', '10x6?s', '', '600', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(96, 'MAXPRO ', 'Esomeprazole', 'Renata ', 'IV-VIAL ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(97, 'NEPTOR ', 'Esomeprazole', 'Novartis ', 'CAP ', '20mg ', '8x10?s ', '', '648', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(98, 'NEPTOR ', 'Esomeprazole', 'Novartis ', 'CAP ', '40mg ', '10x4?s ', '', '480', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(99, 'NEXCAP ', 'Esomeprazole', 'UniMed & UniHealth ', 'DR-CAP ', '20mg ', '4x7?s ', '', '196', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(100, 'NEXCAP ', 'Esomeprazole', 'UniMed & UniHealth ', 'DR-CAP ', '40mg ', '4x7?s ', '', '252', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(101, 'NEXE ', 'Esomeprazole', 'Apex Pharma ', 'TAB ', '20mg ', '30?s ', '', '150', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(102, 'NEXE ', 'Esomeprazole', 'Apex Pharma ', 'TAB ', '20mg ', '50?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(103, 'NEXE-40 ', 'Esomeprazole', 'Apex Pharma ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(104, 'NEXPRO ', 'Esomeprazole', 'UniMed & UniHealth ', 'TAB ', '20mg ', '30?s ', '', '120', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(105, 'NEXPRO ', 'Esomeprazole', 'UniMed & UniHealth ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(106, 'NEXUM ', 'Esomeprazole', 'Square Pharma ', 'EC-TAB ', '20mg ', '5x10?s ', '', '251', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(107, 'NEXUM ', 'Esomeprazole', 'Square Pharma ', 'EC-TAB ', '40mg ', '3x10?s ', '', '241', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(108, 'NEXUM ', 'Esomeprazole', 'Square Pharma ', 'IV-VIAL ', '40mg ', '10?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(109, 'NEXUM CAP ', 'Esomeprazole', 'Square Pharma ', 'CAP ', '20mg ', '60?s ', '', '361', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(110, 'NEXUM CAP ', 'Esomeprazole', 'Square Pharma ', 'CAP ', '40mg ', '5x6?s ', '', '270', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(111, 'OPTON ', 'Esomeprazole', 'Beximco  Pharma ', 'CAP ', '20mg ', '60?s ', '', '420', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(112, 'OPTON ', 'Esomeprazole', 'Beximco  Pharma ', 'CAP ', '40mg ', '30?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(113, 'OPTON ', 'Esomeprazole', 'Beximco  Pharma ', 'EC-TAB ', '20mg ', '60?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(114, 'OPTON ', 'Esomeprazole', 'Beximco  Pharma ', 'EC-TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(115, 'OPTON ', 'Esomeprazole', 'Beximco  Pharma ', 'IV-INJ ', '40mg ', '1?s ', '', '110', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(116, 'PROGUT ', 'Esomeprazole', 'Popular Pharma ', 'TAB ', '20mg ', '50?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(117, 'PROGUT ', 'Esomeprazole', 'Popular Pharma ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(118, 'PROGUT ', 'Esomeprazole', 'Popular Pharma ', 'CAP ', '20 mg ', '100?s ', '', '700', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(119, 'PROGUT ', 'Esomeprazole', 'Popular Pharma ', 'CAP ', '40 mg ', '50?s ', '', '450', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(120, 'PROGUT ', 'Esomeprazole', 'Popular Pharma ', 'INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(121, 'PRONEX ', 'Esomeprazole', 'Drug International ', 'TAB ', '20mg ', '56?s ', '', '283', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(122, 'PRONEX ', 'Esomeprazole', 'Drug International ', 'TAB ', '40mg ', '100?s ', '', '600', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(123, 'PRONEX ', 'Esomeprazole', 'Drug International ', 'CAP ', '20 mg ', '50?s ', '', '300', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(124, 'PRONEX ', 'Esomeprazole', 'Drug International ', 'CAP ', '40 mg ', '28?s ', '', '224', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(125, 'PRONEX ', 'Esomeprazole', 'Drug International ', 'lV-INJ ', '40mg ', '1?s ', '', '90', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(126, 'S-OME ', 'Esomeprazole', 'Somatec Pharma ', 'TAB ', '20mg ', '50?s ', '', '250', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(127, 'S-OME ', 'Esomeprazole', 'Somatec Pharma ', 'TAB ', '40mg ', '30?s ', '', '240', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(128, 'S-OME ', 'Esomeprazole', 'Somatec Pharma ', 'CAP ', '20mg ', '40?s ', '', '280', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(129, 'SERGEL ', 'Esomeprazole', 'Healthcare Pharma ', 'TAB ', '20mg ', '100?s ', '', '0', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(130, 'SERGEL ', 'Esomeprazole', 'Healthcare Pharma ', 'TAB ', '40mg ', '30?s ', '', '0', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(131, 'SERGEL ', 'Esomeprazole', 'Healthcare Pharma ', 'CAP ', '20mg ', '60?s ', '', '0', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(132, 'SERGEL ', 'Esomeprazole', 'Healthcare Pharma ', 'CAP ', '40mg ', '30?s ', '', '0', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1),
+(133, 'SERGEL ', 'Esomeprazole', 'Healthcare Pharma ', 'INJ ', '40mg ', '1?s ', '', '0', 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -1780,7 +1925,7 @@ CREATE TABLE `mims_doctorinformation` (
 --
 
 INSERT INTO `mims_doctorinformation` (`ID`, `Name`, `Specialization`, `ProfessionDegree`, `Gender`, `ImagePath`, `HomeAddressID`, `ChamberAddressID`, `PhoneNo`, `MobileNo1`, `MobileNo2`, `MobileNo3`, `Hotline`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
-(1, 'Prof. ( Brig. Gen. ) M H M Delowar Hossain', 'Anesthesiology?Specialist', 'MBBS, DA, MCPS, FCPS, Professor, Combined Military Hospital ( CMH ), Dhaka', 1, '', 1, 1, '+880-2-9128835-7, 9126625-6', '880 1717351631, +880 1913568759 ', '', '', '', 1, '0000-00-00 00:00:00', 1),
+(1, 'Prof. ( Brig. Gen. ) M H M Delowar Hossain', 'anesthesiologist', 'MBBS, DA, MCPS, FCPS, Professor, Combined Military Hospital ( CMH ), Dhaka', 1, '', 1, 1, '+880-2-9128835-7, 9126625-6', '880 1717351631, +880 1913568759 ', '', '', '', 1, '0000-00-00 00:00:00', 1),
 (2, 'Prof. Dr. Kazi Mesbahuddin lqbal', 'Anesthesiology?Specialist', 'MBBS, DA, FFARCS (Ireland), FRCA (USA), Coordinator & Senior Consultant\nApollo Hospitals Dhaka\n', 1, '', 1, 1, '+880-2-8401661, 8845242', '+880 1841276556', '', '', '10678', 1, '0000-00-00 00:00:00', 1),
 (3, 'Prof. Dr. Md. Ahsanul Habib', 'Anesthesiology?Specialist', 'MBBS, FCPS, Consultant, Square Hospitals Ltd.', 0, '', 1, 1, '+880-2-8159457, 8142431, 8141522, 8144400, 8142333', '1713141447', '', '', '', 1, '0000-00-00 00:00:00', 1),
 (4, 'Prof. Dr. Md. Khalilur Rahman', 'Anesthesiology?Specialist', 'MBBS, MCPS, FCPS, DA (UK), FFARCS (Ireland), Consultant, SQUARE Hospitals Ltd.', 0, '', 1, 1, '+880-2-8159457, 8142431, 8141522, 8144400, 8142333', '1713141447', '', '', '', 1, '0000-00-00 00:00:00', 1),
@@ -1949,20 +2094,20 @@ CREATE TABLE `mims_genericinformation` (
 --
 
 INSERT INTO `mims_genericinformation` (`ID`, `Name`, `Classification`, `SafetyRemark`, `Indication`, `IndicationTags`, `DosageAdministration`, `ContraindicationPrecaution`, `SideEffect`, `PregnancyLactation`, `LastUpdate`, `CreatedBy`, `IsActive`) VALUES
-(1, 'Esomeprazole', 'Proton Pump Inhibitor', 'P? L? Food * Lab *', 'It is indicated for the treatment of - Gastroesophageal Reflux Disease (GERD), Healing of Erosive Esophagitis, Maintenance of healing of Erosive Esophagitis, Symptomatic Gastroesophageal Reflux Disease (GERD), Risk Reduction of NSAID associated gastric ulcer & H. pylori eradication (Triple therapy).', '', 'Adult : PO Erosive oesophagitis 40 mg once daily for 4 wk, up to another 4 wk if needed. Maintenance: 20 mg once daily. GERD 40 mg once daily for 4 wk, up to another 4 wk if needed. Maintenance or GERD w/o erosive oesophagitis: 20 mg once daily. Peptic ulcer 20 mg bid for 7 days or 40 mg once daily for 10 days as triple therapy w/ amoxicillin and clarithromycin. Prophylaxis of NSAID-induced ulcers 20 or 40 mg/day. NSAID-associated ulceration 20 mg once daily for 4-8 wk. Zollinger-Ellison syndrome Initial: 40 mg bid. Usual range: 80-160 mg/day. Daily doses >80 mg should be given in 2 divided doses. IV GERD 20 or 40 mg by inj over at least 3 min or infusion over 10-30 min once daily for ?10 days until PO can be resumed. NSAID-associated ulceration 20 mg/day by inj over at least 3 min or infusion over 10-30 min until PO can be resumed. Gastric and duodenal ulcers 80 mg infusion over 30 min followed by continuous infusion 8 mg/hr over 72 hr, until PO can be resumed given as 40 mg once daily for 4 wk. Delayed-Release Cap: Should be taken on an empty stomach. Take 1 hr before meals.\nTab: May be taken with or without food.', 'Esomeprazole is contraindicated in those patients who have known hypersensitivity to any other components of the formulation. Exclude the possibility of malignancy when gastric ulcer is suspected & before treatment for dyspepsia.', 'Side Effects reported with Esomeprazole include headache, diarrhea & abdominal pain.', 'This drug should be used during regnancy only if clearly needed. Because Esomeprazole is likely to be excreted in human milk, a decision should be made whether to discontinue nursing or to discontinue the drug, taking into account the importance of the drug to the mother.', '0000-00-00 00:00:00', 1, 1),
+(1, 'Esomeprazole', 'Proton Pump Inhibitor', 'P? L? Food * Lab *', 'It is indicated for the treatment of - Gastroesophageal Reflux Disease (GERD), Healing of Erosive Esophagitis, Maintenance of healing of Erosive Esophagitis, Symptomatic Gastroesophageal Reflux Disease (GERD), Risk Reduction of NSAID associated gastric ulcer & H. pylori eradication (Triple therapy).', 'GERD, Acidity', 'Adult : PO Erosive oesophagitis 40 mg once daily for 4 wk, up to another 4 wk if needed. Maintenance: 20 mg once daily. GERD 40 mg once daily for 4 wk, up to another 4 wk if needed. Maintenance or GERD w/o erosive oesophagitis: 20 mg once daily. Peptic ulcer 20 mg bid for 7 days or 40 mg once daily for 10 days as triple therapy w/ amoxicillin and clarithromycin. Prophylaxis of NSAID-induced ulcers 20 or 40 mg/day. NSAID-associated ulceration 20 mg once daily for 4-8 wk. Zollinger-Ellison syndrome Initial: 40 mg bid. Usual range: 80-160 mg/day. Daily doses >80 mg should be given in 2 divided doses. IV GERD 20 or 40 mg by inj over at least 3 min or infusion over 10-30 min once daily for ?10 days until PO can be resumed. NSAID-associated ulceration 20 mg/day by inj over at least 3 min or infusion over 10-30 min until PO can be resumed. Gastric and duodenal ulcers 80 mg infusion over 30 min followed by continuous infusion 8 mg/hr over 72 hr, until PO can be resumed given as 40 mg once daily for 4 wk. Delayed-Release Cap: Should be taken on an empty stomach. Take 1 hr before meals.\r\nTab: May be taken with or without food.', 'Esomeprazole is contraindicated in those patients who have known hypersensitivity to any other components of the formulation. Exclude the possibility of malignancy when gastric ulcer is suspected & before treatment for dyspepsia.', 'Side Effects reported with Esomeprazole include headache, diarrhea & abdominal pain.', 'This drug should be used during regnancy only if clearly needed. Because Esomeprazole is likely to be excreted in human milk, a decision should be made whether to discontinue nursing or to discontinue the drug, taking into account the importance of the drug to the mother.', '0000-00-00 00:00:00', 1, 1),
 (2, 'Domperidone', 'Dopamine Antagonist', 'P? L? Food *', '1. Dyspeptic symptom complex: Often\nassociated with delayed gastric emptying,\ngastroesophageal reflux and esophagitis.\nepigastric sense of fullness, feeling of\nabdominal distension, upper abdominal pain,\neructation, early satiety, heartburn with or\nwithout regurgitations of gastric contents in\nthe mouth, diabetic gastroparesis, non ulcer\ndyspepsia.\n2. Nausea & vomiting: Acute nausea & vomiting\nof functional, organic, infectious, dietetic origin\nor induced by radiotherapy or drug therapy or\ninduced in migraine.\n3. Parkinson?s disease: In dopamine-agonist\ninduced nausea and vomiting.\n4. Radiological studies: Speading barium transit\nin follow through radiological studies.', '', '1-2 tablet or 10-20 ml suspension every 6-8\nhours daily before meals. Children: 2 ml-4 ml\nsuspension/10 kg or 0.4 ml-0.8 ml Paed. drops/\n10 kg 6-8 hours daily.', 'Known hypersensitivity, gastro-intestinal\nstimulation, gastro-intestinal hemorrhage, mechanical obstruction or perforation,\nprolactinoma, increased risk of extra-pyramidal\nreactions, should be used with caution in\npatient with hepatic impairment.', 'Hyperprolactinemia, galactorrhea, breast\nenlargement, & soreness & reduced libido.\nDry mouth, thirst, headache, nervousness,\ndrowsiness, diarrhea, skin rash & itching.', 'Not recommended during pregnancy. It\nis secreted in breast milk but in very small\nquantities insufficient to be considered\nharmful.', '0000-00-00 00:00:00', 1, 1),
 (3, 'Famotidine', 'H2-receptor Antagonist ', 'P? L?', 'Duodenal ulcer, Gastric ulcer, Gastrooesophageal\nreflux dis', '', '20 mg twice daily or 40 mg at night. Maintenance therapy as Famotack 20 one tablet at night.', 'Hypersensitivity', 'Headache, dizziness, constipation & diarrhoea,\nnausea and/or vomiting, abdominal discomfort\nor distention, anorexia, fatigue, rash.', 'Should be prescribed only if clearly needed. It is best avoided by nursing mothers.', '0000-00-00 00:00:00', 1, 1),
 (4, 'Lansoprazole', 'Proton Pump Inhibitor; Antiulcer', 'P? L? ', 'Duodenal ulcer, gastric ulcers, erosive\nesophagitis, Zollinger-Ellison Syndrome, H.\npylori eradication.', '', '30 mg daily dose.', 'Known hypersensitivity.', 'Gastrointestinal disturbances, headache,\ndizziness, malaise, dry or sour mouth or throat.', 'USFDA Pregnancy category B.', '0000-00-00 00:00:00', 1, 1),
 (5, 'METOCLOPRAMIDE', 'Antiemetics / GIT Regulators, Antiflatulents & Anti-Inflammatories', 'P? L? Lab *', '', '', 'Adult : PO GERD 10-15 mg 4 times/day. If symptoms are intermittent, may give single doses of 20 mg prior to provoking situation. Max duration: 12 wk. Diabetic gastric stasis 10 mg 4 times/day for 2-8 wk. Nausea and vomiting associated w/ cancer chemotherapy or radiotherapy 10 mg, up to tid. Max duration: 5 days. IM/IV Diabetic gastric stasis 10 mg 4 times/day by IM inj or slow IV inj over 1-2 min for up to 10 days. Convert to oral admin when symptoms subside sufficiently. Prophylaxis of post-op nausea and vomiting 10 mg as a single dose by IM or slow IV inj over at least 3 min. IV Prophylaxis of chemotherapy-induced nausea and vomiting For highly emetogenic drugs/regimens: Initial: 2 mg/kg by slow inj over at least 15 min, 30 min before chemotherapy. Repeat 2 hrly for 2 doses, then 3 hrly for 3 doses. For less emetogenic drugs/regimens: 1 mg/kg may be used. Max duration: 5 days. Intubation of the small intestine; Premedication for radiologic examination of the upper GI tract 10 mg as a single dose by slow inj over 1-2 min.  Should be taken on an empty stomach. Take ? hr before meals.', '', '', 'Category B: Either animal-reproduction studies have not demonstrated a foetal risk but there are no controlled studies in pregnant women or animal-reproduction studies have shown an adverse effect (other than a decrease in fertility) that was not confirmed in controlled studies in women in the 1st trimester (and there is no evidence of a risk in later trimesters).', '0000-00-00 00:00:00', 1, 1),
 (6, 'MISOPROSTOL', 'Drugs Acting on the Uterus / Antacids, Antireflux Agents & Antiulcerants', 'P? L? ', 'Labor induction (in unfavorable cervical\nconditions) & in the prevention & treatment of\nPost Partum Hemorrhage (PPH)', '', 'Induction of Labor: 25 mcg vaginally 6 hourly\nor, 50 mcg orally 4 hourly.\nPostpartum Hemorrhage (PPH) prophylaxis:\n400 mcg to 600 mcg orally or rectally immediately following delivery of the child.\nPostpartum Hemorrhage (PPH) treatment:\n1000 mcg rectally or, 200 mcg orally with 400\nmcg sublingually.', 'Precaution should be taken in conditions\nwhere hypertension might precipitate\nsevere complications (e.g. Cerebrovascular &\ncardiovascular disease).', 'Spotting, cramps, hypermenorrhea, menstrual\ndisorder & dysmenorrhea. Postmenopausal\nvaginal bleeding may be related to Misoprostol\nadministration.', 'Because of the abortifacient property of the\nMisoprostol component, it is contraindicated\nin women who are pregnant.', '0000-00-00 00:00:00', 1, 1),
-(7, 'OMEPRAZOLE', 'Proton Pump Inhibitor; Antacid, Antiulcer', 'P? L? Food * Lab *', 'Omeprazole indicated for gastroesophageal reflux disease including reflux esophagitis,\nacid reflux disease, duodenal & benign gastric ulcers, Helicobacter pylori eradication regimens in\npeptic ulcer disease, prophylaxis of acid aspiration, Zollinger-Ellison Syndrome & for the treatment\nof NSAID-associated gastric ulcers, duodenal ulcers or gastroduodenal erosions.\nSeclo IV is indicated primarily for the treatment of Zollinger-Ellison syndrome, & may also be used\nfor the treatment of gastric ulcer, duodenal ulcer & reflux esophagitis.', '', 'Omeprazole should be taken 30 minutes before meal.', 'There are no known contraindications to\nthe use of Omeprazole. When gastric ulcer\nis suspected, the possibility of malignancy\nshould be excluded before treatment with\nOmeprazole is instituted as treatment may\nalleviate symptoms & delay diagnosis.', 'Omeprazole is well tolerated. Nausea, diarrhoea, abdominal colic, paresthesia,\ndizziness & headache have been stated to be\ngenerally mild & transient & not requiring a\nreduction in dosage.', 'US FDA pregnancy category C. Omeprazole is excreted in breast milk but is not likely to influence the child when therapeutic doses are used.', '0000-00-00 00:00:00', 1, 1),
-(8, 'PANTOPRAZOLE', 'Proton Pump Inhibitor', 'P? L? Food * Lab*', 'Trupan is indicated for the treatment of - Benign\ngastric ulcer, duodenal ulcer, gastroesophageal\nreflux disease (GERD), NSAID-induced peptic\nulcer, acid hypersecretory conditions including\nZollinger-Ellison Syndrome, eradication of\nHelicobacter pylori (in combination with\nAntibiotics), ulcer resistant to H2 receptor\nantagonists.', '', 'Adult : PO GERD 20-40 mg for 4 wk, up to 8 wk if needed. Maintenance: 20-40 mg/day. Erosive oesophagitis 20-40 mg for up to 16 wk if needed. Peptic ulcer 40 mg for 2-4 wk (duodenal ulcer) or 4-8 wk for (benign gastric ulceration). Prophylaxis of NSAID-induced ulcers 20 mg. Zollinger-Ellison syndrome Initial: 80 mg. Max: 240 mg/day. Daily doses >80 mg should be given in 2 divided doses. All doses to be taken once daily in the morning. H.pylori infection 40 mg bid w/ clarithromycin and either amoxicillin or metronidazole. IV Zollinger-Ellison syndrome 80 mg once or twice daily until PO can be resumed. Max: 240 mg/day in divided doses. GERD; Peptic ulcer 40 mg/day until PO can be resumed.', 'Pantoprazole is contraindicated in patients\nwith known hypersensitivity to the active drug\nor any other components of the formulation.\nPatients should be cautioned that Pantoprazole\ntablet should not be split, crushed or chewed.', 'Pantoprazole is well tolerated in both short\nterm & long term treatment. Headache &\ndiarrhoea are the most common side effects\n& rarely included abdominal pain, flatulence,\nrash, insomnia & hyperglycemia.', 'USFDA Pregnancy category B. Pantoprazole should\nbe used during pregnancy only if clearly needed. A\ndecision should be made whether to discontinue\nnursing or to discontinue the drug, taking into\naccount the benefit of the drug to the mother.', '0000-00-00 00:00:00', 1, 1),
+(7, 'OMEPRAZOLE', 'Proton Pump Inhibitor; Antacid, Antiulcer', 'P? L? Food * Lab *', 'Omeprazole indicated for gastroesophageal reflux disease including reflux esophagitis,\r\nacid reflux disease, duodenal & benign gastric ulcers, Helicobacter pylori eradication regimens in\r\npeptic ulcer disease, prophylaxis of acid aspiration, Zollinger-Ellison Syndrome & for the treatment\r\nof NSAID-associated gastric ulcers, duodenal ulcers or gastroduodenal erosions.\r\nSeclo IV is indicated primarily for the treatment of Zollinger-Ellison syndrome, & may also be used\r\nfor the treatment of gastric ulcer, duodenal ulcer & reflux esophagitis.', 'gastroesophageal reflux disease , GERD, reflux esophagitis, acid reflux disease, peptic ulcer disease ', 'Omeprazole should be taken 30 minutes before meal.', 'There are no known contraindications to\r\nthe use of Omeprazole. When gastric ulcer\r\nis suspected, the possibility of malignancy\r\nshould be excluded before treatment with\r\nOmeprazole is instituted as treatment may\r\nalleviate symptoms & delay diagnosis.', 'Omeprazole is well tolerated. Nausea, diarrhoea, abdominal colic, paresthesia,\r\ndizziness & headache have been stated to be\r\ngenerally mild & transient & not requiring a\r\nreduction in dosage.', 'US FDA pregnancy category C. Omeprazole is excreted in breast milk but is not likely to influence the child when therapeutic doses are used.', '0000-00-00 00:00:00', 1, 1),
+(8, 'PANTOPRAZOLE', 'Proton Pump Inhibitor', 'P? L? Food * Lab*', 'Trupan is indicated for the treatment of - Benign\r\ngastric ulcer, duodenal ulcer, gastroesophageal\r\nreflux disease (GERD), NSAID-induced peptic\r\nulcer, acid hypersecretory conditions including\r\nZollinger-Ellison Syndrome, eradication of\r\nHelicobacter pylori (in combination with\r\nAntibiotics), ulcer resistant to H2 receptor\r\nantagonists.', 'GERD', 'Adult : PO GERD 20-40 mg for 4 wk, up to 8 wk if needed. Maintenance: 20-40 mg/day. Erosive oesophagitis 20-40 mg for up to 16 wk if needed. Peptic ulcer 40 mg for 2-4 wk (duodenal ulcer) or 4-8 wk for (benign gastric ulceration). Prophylaxis of NSAID-induced ulcers 20 mg. Zollinger-Ellison syndrome Initial: 80 mg. Max: 240 mg/day. Daily doses >80 mg should be given in 2 divided doses. All doses to be taken once daily in the morning. H.pylori infection 40 mg bid w/ clarithromycin and either amoxicillin or metronidazole. IV Zollinger-Ellison syndrome 80 mg once or twice daily until PO can be resumed. Max: 240 mg/day in divided doses. GERD; Peptic ulcer 40 mg/day until PO can be resumed.', 'Pantoprazole is contraindicated in patients\r\nwith known hypersensitivity to the active drug\r\nor any other components of the formulation.\r\nPatients should be cautioned that Pantoprazole\r\ntablet should not be split, crushed or chewed.', 'Pantoprazole is well tolerated in both short\r\nterm & long term treatment. Headache &\r\ndiarrhoea are the most common side effects\r\n& rarely included abdominal pain, flatulence,\r\nrash, insomnia & hyperglycemia.', 'USFDA Pregnancy category B. Pantoprazole should\r\nbe used during pregnancy only if clearly needed. A\r\ndecision should be made whether to discontinue\r\nnursing or to discontinue the drug, taking into\r\naccount the benefit of the drug to the mother.', '0000-00-00 00:00:00', 1, 1),
 (9, 'RABEPRAZOLE', 'Proton Pump Inhibitor', 'P? Food *', 'Short-term treatment in healing & symptomatic\nrelief of duodenal ulcers & erosive or ulcerative\nGastroesophageal Reflux Disease (GERD).\nMaintaining healing & reducing relapse rates\nof heartburn symptoms in patients with GERD.\nTreatment of daytime & nighttime heartburn &\nother symptoms associated with GERD. Longterm\ntreatment of pathological hypersecretory\nconditions, including Zollinger-Ellison\nSyndrome. In combination with Amoxicillin &\nClarithromycin to eradicate Helicobacter pylori.', '', 'Can be taken with or without food. Healing of\nErosive or Ulcerative Gastroesophageal Reflux\nDisease (GERD): 20 mg to be taken once daily\nfor 4 to 8 weeks. For those patients who have\nnot healed after 8 weeks of treatment, an\nadditional 8 week course may be considered.\nMaintenance of Healing of Erosive or Ulcerative\nGastroesophageal Reflux Disease (GERD\nMaintenance): The recommended adult oral\ndose is 20 mg once daily.\nTreatment of Symptomatic Gastroesophageal\nReflux Disease (GERD): The recommended\nadult oral dose is 20 mg once daily for 4 weeks.\nIf symptoms do not resolve completely after 4\nweeks, an additional course of treatment may\nbe considered.\nHealing of Duodenal Ulcers: The recommended\nadult oral dose is 20 mg once daily after the\nmorning meal for a period up to four weeks.\nMost patients with Duodenal Ulcer heal\nwithin four weeks. A few patients may require\nadditional therapy to achieve healing.\nHelicobacter pylori Eradication to Reduce\nthe Risk of Duodenal Ulcer Recurrence:\nRabeprazole Sodium 20 mg Twice Daily for\n7 Days Amoxicillin 1000 mg Twice Daily for 7\nDays Clarithromycin 500 mg Twice Daily for\n7 Days. All three medications should be taken\ntwice daily with the morning & evening meals.\nIt is important that patients comply with the\nfull 7-day regimen.  Treatment of Pathological Hypersecretory\nConditions Including Zollinger-Ellison\nSyndrome: The dosage of Rabeprazole Sodium\nin patients with pathologic hypersecretory\nconditions varies with the individual patient.\nThe recommended adult oral starting dose is\n60 mg once a day. Doses should be adjusted\nto individual patient needs & should continue\nfor as long as clinically indicated. Some patients\nmay require divided doses. Doses up to 100 mg\nQD & 60 mg BID have been administered. Some\npatients with Zollinger-Ellision syndrome have\nbeen treated continuously with Rabeprazole\nSodium for up to one year.', 'Rabeprazole Sodium is contraindicated\nin patient with known hypersensitivity to\nRabeprazole or to any component in the\nproduct. Administration of Rabeprazole Sodium to patients with mild to moderate liver impairment resulted in increased exposure & decreased elimination. Caution should be exercised in patients with severe hepatic impairment.', '', 'Rabeprazole is USFDA Pregnancy Category\nC. No data is available on administration of Rabeprazole to pregnant women. However this drug should be used during pregnancy, only if clearly needed. There are no data on the excretion of Rabeprazole into the breast milk. A decision should be made whether to discontinue nursing or to discontinue the drug, taking into account the benefit of the drug to\nthe mother.', '0000-00-00 00:00:00', 1, 1),
 (10, 'RANITIDIN', 'H2-receptor Antagonist', 'P? L?', 'Duodenal ulcer, Gastric ulcer, Reflux\noesophagitis, Zollinger-Ellison syndrome, post\noperative ulcer, Mendelson?s syndrome', '', '150 mg twice daily. Maintenance therapy: 150\nmg at night. Injection: 50 mg, slow IV every\nsix to eight hourly. Children: 2 mg/kg-4 mg/\nkg twice daily to a maximum 300 mg/day.\nInjection is not indicated for children.', 'Hypersensitivity.', 'Infrequent Rash, mental confusion & hallucination.', 'Should be prescribed only if clearly needed. It is best avoided by nursing mothers.', '0000-00-00 00:00:00', 1, 1),
 (11, 'SUCRALFATE', 'Chelating complex', 'P? L?', 'For the treatment of duodenal ulcer, gastric ulcer and chronic gastritis.', '', 'Adult: Usual dose 1 gm 4 times daily to be taken 1 hour before meals and at bed time. Maximum daily dose is 8 gm. Four to six weeks treatment is usually needed for ulcer healing but upto twelve weeks may be necessary in resistant cases. Antacids may be used as required for relief of pain, but should not be taken half an hour before or after Gastalfet.\n\nElderly: There are no special dosage requirements for elderly patients but as with all medicines the lowest effective dose should be used. \n\nchildren: Safety and efficacy in children have not been established', 'There are no known contraindications', 'The incidence and severity of side effects from sucralfate are very low. Mild side effect like constipation has been reported in some patients.', 'Although animal studies show no evidence of foetal malformation, safety in pregnant women has not been established and Sucralfate should be used in pregnancy only if clearly needed. \n\nIt is not known whether this drug is excreted in human milk. Caution should be exercised when sucralfate is administered to nursing mothers.', '0000-00-00 00:00:00', 1, 1),
 (12, 'DICYCLOVERINE HYDROCHLORIDE', 'Anticholinergic; Antispasmodic Agent ', 'P? L?', 'Irritable bowel syndrome, Infantile colic,\nGIT spasm, Diverticulitis, Abdominal colic,\nDiarrhoea, Dysentery.', '', 'Adults : 10 to 20 mg three to four times a day.\nMaximum recommended oral dose is 160 mg\ndaily in divided dose. Children : Children over\n6 months of age- 5 to 10 mg three times a day.', 'Obstructive uropathy, Obstruction disorder\nin GIT, Severe ulcerative colitis, Unstable\ncardiovascular status in acute hemorrhage,\nGlucoma, Myasthenia gravis, Patients with\nhypersensitivity to dicycloverine hydrochloride.', 'Insomnia, headache, weakness, confusion,\nincreased ocular tension, urinary hesitancy,\npalpitations etc.', 'Pregnancy Category B. Dicycloverine should be used during pregnancy only if clearly needed. Dicycloverine should not be used in case of lactating mother.', '0000-00-00 00:00:00', 1, 1),
 (13, 'DROTAVERINE', 'soquinolone; \nAntispasmodic Agent ', 'P? L?', 'Spastic conditions of the gastrointestinal tract, irritable bowel syndrome-\nBiliary colics and spastic conditions of the biliary tract: Cholecystolithiasis, cholecystitis, cholangitis.\nRenal colics and spastic conditions of the urogenital tract: Nephrolithiasis, ureterolithiasis, pyelitis, cystitis.\nSpastic conditions of the uterus: Dysmenorrhea, imminent abortion, uterine tetanus.', '', 'Oral-\nAdults: 1 to 2 tablets, 3 times daily\nChildren (over 6 years): 1/2 to 1 tablet, 1-2 times daily.\nChildren (1-6 years): 1/4 to 1/2 tablet, 1-2 times daily.\nInjection-\nAdults: 1 to 2 ampoules, intramuscularly or subcutaneously, 1-3 times daily.\nFor the management of acute stone colics: 1 or 2 ampoules by slow intravenous injection.', 'Drotaverine is contraindicated in patients with known hypersensitivity to the products and its constituents.\n\nCaution should be taken for patients suffering from liver and kidney disease.', 'The common side effects are headache, dizziness, rhinitis, sinusitis, gastrointestinal upset, nausea, pharyngitis, edema and fatigue.', 'As with most drugs, the use of Drotaverine Hydrochloride should be avoided during pregnancy and lactation unless essential.', '0000-00-00 00:00:00', 1, 1),
-(14, 'HYOSCINE', 'Anticholinergic; Antispasmodic Agent', 'P? L?', 'Hyoscine butylbromide is an antispasmodic medicine which is taken to relieve cramps in the stomach, intestines or bladder. In particular, it helps to ease bloating and the spasm-type pain that can be associated with irritable bowel syndrome and diverticular disease. It works by relaxing some of the muscles in your gastrointestinal and urinary systems.\n\nHyoscine butylbromide is available on prescription. You can also buy it from a pharmacy, without a prescription, to relieve the symptoms of irritable bowel syndrome, providing your symptoms have previously been diagnosed by a doctor.\n\nThere is also a medicine called hyoscine which is taken to prevent travel sickness. There is more information about this in a separate medicine leaflet called Hyoscine for travel sickness.', '', 'Tablets: The usual dose of Hyoscine tablets is 10 to 20 mg tablets per day. If you need to take this medication regularly, then the usual dose is 10 mg tablet 3 to 5 times a day. The maximum dose is 6 tablets per day.\n\nInjection: The usual dose of Hyoscine Injection is 10 mg to 20 mg given by intramuscular (into a muscle), intravenous (into a vein), or subcutaneous (under the skin) injection. The maximum daily dose is 100 mg.\n\nMany things can affect the dose of medication that a person needs, such as body weight, other medical conditions, and other medications. If your doctor has recommended a dose different from the ones listed here,do not change the way that you are using the medication without consulting your doctor.\n\nSwallow the tablets whole with a glass of water. Do not crush or chew the tablets.\n\nIt is important to use this medication exactly as prescribed by your doctor. If you miss a dose, skip the missed dose and continue with your regular dosing schedule. Do not use a double dose to make up for a missed one. If you are not sure what to do after missing a dose, contact your doctor or pharmacist for advice.', 'Some medicines are not suitable for people with certain conditions, and sometimes a medicine may only be used if extra care is taken. For these reasons, before you start taking hyoscine butylbromide it is important that your doctor or pharmacist knows:\nIf you are pregnant or breast-feeding.\nIf you have prostate problems.\nIf you have any other digestive system problems, such as reflux disease, diarrhoea, ulcerative colitis, or severe constipation.\nIf you have high blood pressure, or if you have recently had a heart attack.\nIf you have glaucoma. This is a condition where the pressure in your eyes is raised.\nIf you have been told by a doctor that you have a fast heart rate.\nIf you have Down\'s syndrome.\nIf you are less than 12 years old or over 65 years old.\nIf you have been told you have nerve damage, a condition called autonomic neuropathy.\nIf you have a condition that causes muscle weakness, called myasthenia gravis.\nIf you are taking any other medicines. This includes any medicines you are taking which are available to buy without a prescription, as well as herbal and complementary medicines.\nIf you have ever had an allergic reaction to a medicine.', 'Hyoscine butylbromide side-effects (these affect less than 1 in 100 people) are Dry mouth, Dry skin, sweating, Itchy skin rash', '', '0000-00-00 00:00:00', 1, 1),
+(14, 'HYOSCINE', 'Anticholinergic; Antispasmodic Agent', 'P? L?', 'Hyoscine butylbromide is an antispasmodic medicine which is taken to relieve cramps in the stomach, intestines or bladder. In particular, it helps to ease bloating and the spasm-type pain that can be associated with irritable bowel syndrome and diverticular disease. It works by relaxing some of the muscles in your gastrointestinal and urinary systems.\r\n\r\nHyoscine butylbromide is available on prescription. You can also buy it from a pharmacy, without a prescription, to relieve the symptoms of irritable bowel syndrome, providing your symptoms have previously been diagnosed by a doctor.\r\n\r\nThere is also a medicine called hyoscine which is taken to prevent travel sickness. There is more information about this in a separate medicine leaflet called Hyoscine for travel sickness.', 'antispasmodic, cramps in the stomach, cramps in the intestines, cramps in the bladder', 'Tablets: The usual dose of Hyoscine tablets is 10 to 20 mg tablets per day. If you need to take this medication regularly, then the usual dose is 10 mg tablet 3 to 5 times a day. The maximum dose is 6 tablets per day.\r\n\r\nInjection: The usual dose of Hyoscine Injection is 10 mg to 20 mg given by intramuscular (into a muscle), intravenous (into a vein), or subcutaneous (under the skin) injection. The maximum daily dose is 100 mg.\r\n\r\nMany things can affect the dose of medication that a person needs, such as body weight, other medical conditions, and other medications. If your doctor has recommended a dose different from the ones listed here,do not change the way that you are using the medication without consulting your doctor.\r\n\r\nSwallow the tablets whole with a glass of water. Do not crush or chew the tablets.\r\n\r\nIt is important to use this medication exactly as prescribed by your doctor. If you miss a dose, skip the missed dose and continue with your regular dosing schedule. Do not use a double dose to make up for a missed one. If you are not sure what to do after missing a dose, contact your doctor or pharmacist for advice.', 'Some medicines are not suitable for people with certain conditions, and sometimes a medicine may only be used if extra care is taken. For these reasons, before you start taking hyoscine butylbromide it is important that your doctor or pharmacist knows:\r\nIf you are pregnant or breast-feeding.\r\nIf you have prostate problems.\r\nIf you have any other digestive system problems, such as reflux disease, diarrhoea, ulcerative colitis, or severe constipation.\r\nIf you have high blood pressure, or if you have recently had a heart attack.\r\nIf you have glaucoma. This is a condition where the pressure in your eyes is raised.\r\nIf you have been told by a doctor that you have a fast heart rate.\r\nIf you have Down\\\\\\\'s syndrome.\r\nIf you are less than 12 years old or over 65 years old.\r\nIf you have been told you have nerve damage, a condition called autonomic neuropathy.\r\nIf you have a condition that causes muscle weakness, called myasthenia gravis.\r\nIf you are taking any other medicines. This includes any medicines you are taking which are available to buy without a prescription, as well as herbal and complementary medicines.\r\nIf you have ever had an allergic reaction to a medicine.', 'Hyoscine butylbromide side-effects (these affect less than 1 in 100 people) are Dry mouth, Dry skin, sweating, Itchy skin rash', '', '0000-00-00 00:00:00', 1, 1),
 (15, 'MEBEVERINE', 'Anticholinergic; Antispasmodic Agent', 'P? L?', '? Symptomatic treatment of IBS\n? Chronic irritable colon\n? Spastic constipation\n? Mucous colitis\n? Colicky abdominal pain\n? Persistent non-specific diarrhoea', '', 'Dosage & Administration\nAdults, elderly & children over 10 years: MevinTM\nTablet: 1 tablet three times daily. MevinTM 200\nSR Capsule: 1 capsule 2 times daily. MevinTM is\nmost effective when taken 20 minutes before\nmeals. After several weeks when the desired\neffect has been obtained, the dosage may be\ngradually reduced.', 'Caution should be exercised in porphyria or\nallergic reaction to this or any other medicine\nof this group.', 'Generally Mebeverine is well tolerated.\nHowever, few side-effects like skin rash,\nurticaria & angioedema may appear.', 'No teratogenicity has been shown in animal experiments. However, the usual precautions concerning the administration of any drug during pregnancy should be exercised.\nMebeverine does not excrete in the breast milk after administering the therapeutic dose.', '0000-00-00 00:00:00', 1, 1),
 (16, 'OXYPHENONIUM', 'Anticholinergic; Antispasmodic Agent ', 'P? L?', 'Abdominal pain, Colic, Gastrointestinal tract spasm, Peptic ulcer disease, Visceral spasms', '', 'Adult: 1-2 tablets 3-4 times daily\nChildren: ?- 1 tablets 1-3 times daily', 'Urinary outflow obstruction, paralytic ileus, myasthenia gravis. \n\nChildren; elderly; benign prostatic hyperplasia; acute MI, cardiac failure, hypertension, thyrotoxicosis; pregnancy and lactation; fever; angle-closure glaucoma.', 'Dryness of mouth, difficulty in talking/swallowing; reduced bronchial secretions; blurring of vision, photophobia; bradycardia followed by tachycardia and arrhythmias; urinary retention, constipation, vomiting, nausea; confusion and giddiness.', 'Category C: Either studies in animals have revealed adverse effects on the foetus (teratogenic or embryocidal or other) and there are no controlled studies in women or studies in women and animals are not available. Drugs should be given only if the potential benefit justifies the potential risk to the foetus.', '0000-00-00 00:00:00', 1, 1),
 (17, 'TRIMEBUTINE', 'Synthetic anticholinergic agent ', 'P? L?', 'Treatment & relief of symptoms associated\nwith irritable bowel syndrome (spastic colon)\nPostoperative paralytic ileus in order to\naccelerate the resumption of the intestinal\ntransit following abdominal surgery.', '', 'For adults: 100mg-200mg, 3 times per day\nbefore meals.', 'Patients with known hypersensitivity to\ntrimebutine maleate or any excipient.', '', 'The use of trimebutine maleate in pregnant women is recommended. It is not known if trimebutine maleate passes into breast milk. This medication should be used while breast feeding only if the potential benefits outweigh risks to the nursing infants.', '0000-00-00 00:00:00', 1, 1),
@@ -2024,6 +2169,24 @@ INSERT INTO `mims_genericinformation` (`ID`, `Name`, `Classification`, `SafetyRe
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mims_InternationalHealth`
+--
+
+CREATE TABLE `mims_InternationalHealth` (
+  `ID` bigint(20) NOT NULL,
+  `Title` varchar(200) NOT NULL,
+  `Description` text NOT NULL,
+  `ImagePath` varchar(200) DEFAULT NULL,
+  `PublishDateTime` datetime DEFAULT NULL,
+  `UnpublishedDateTime` datetime DEFAULT NULL,
+  `CreatedBy` bigint(20) NOT NULL,
+  `LastUpdate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `IsActive` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mims_jobinformation`
 --
 
@@ -2058,11 +2221,12 @@ CREATE TABLE `mims_jobinformation` (
 --
 
 INSERT INTO `mims_jobinformation` (`ID`, `Title`, `Description`, `Organization`, `OrganizationLogo`, `Position`, `ApplicationDeadline`, `Salary`, `EducationalRequirement`, `ExperienceRequirement`, `NumberOfVacancy`, `AgeLimit`, `Location`, `JobSource`, `JobType`, `EmploymentType`, `JobNature`, `ApplyingProcedure`, `PublishDate`, `JobCircularImagePath`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
-(2, 'IBN SINA Pharmaceutical Industry Ltd ', 'IBN SINA Pharmaceutical Industry Ltd Job Circular 2018 has been published by their authority in daily online job portal and to get from the best jobs circular and education doorway website in BD Jobs Careers-www.bdjobscareers.com.  ', 'IBN SINA Pharmaceutical Industry Ltd ', NULL, 'asd p', '2019-01-29 00:00:00', 'Negotiable', 'asd e', 'asd er', 11, 23, 'Anywhere in Bangladesh', 'Online job portal', 'jy', 'et', 'Full-Time', '', '2018-09-09', '7fdd83710529ec3e3e5f801b31790914.jpg', 1, '2018-09-02 18:20:21', 1),
-(3, ' Square Pharmaceuticals Ltd.', '\r\nJob Responsibilities\r\n\r\n1.Perform analytical method development for both compendia & non-compendia method\r\n2.Prepare and review of method validation protocols and reports\r\n3. Conduct analytical method validation/ verification activities\r\n4.Carry out analytical method transfer\r\n 5.Develop and validate test methods for cleaning validation\r\n6. Generate and review laboratory investigation reports\r\n7.Conduct review of analytical test data\r\n    ', 'Analytical Research & Development', NULL, 'Associate Scientist', '2019-01-02 00:00:00', 'Negotiable', 'M. Pharm', 'N/A', 2, 30, 'Gazipur (Kaliakair)', 'Square Pharmaceuticals Ltd.', '', '', 'Full-Time', '', '2018-09-05', 'c1e89f44a6fc3bbb4dab2cada0e68cc0.jpg', 1, '2018-09-02 18:27:24', 1),
+(2, 'IBN SINA Pharmaceutical Industry Ltd ', 'IBN SINA Pharmaceutical Industry Ltd Job Circular 2018 has been published by their authority in daily online job portal and to get from the best jobs circular and education doorway website in BD Jobs Careers-www.bdjobscareers.com.  ', 'IBN SINA Pharmaceutical Industry Ltd ', '4d589973db37e12a19e311fbce3e3d51.png', 'asd p', '2019-01-29 00:00:00', 'Negotiable', 'asd e', 'asd er', 11, 23, 'Anywhere in Bangladesh', 'Online job portal', 'jy', 'et', 'Full-Time', '', '2018-09-09', '7fdd83710529ec3e3e5f801b31790914.jpg', 1, '2018-09-02 18:20:21', 1),
+(3, ' Square Pharmaceuticals Ltd.', '\r\nJob Responsibilities\r\n\r\n1.Perform analytical method development for both compendia & non-compendia method\r\n2.Prepare and review of method validation protocols and reports\r\n3. Conduct analytical method validation/ verification activities\r\n4.Carry out analytical method transfer\r\n 5.Develop and validate test methods for cleaning validation\r\n6. Generate and review laboratory investigation reports\r\n7.Conduct review of analytical test data\r\n    ', 'Analytical Research & Development', '5be929adf8a5d631f2fe7f46db3ce53f.png', 'Associate Scientist', '2019-01-02 00:00:00', 'Negotiable', 'M. Pharm', 'N/A', 2, 30, 'Gazipur (Kaliakair)', 'Square Pharmaceuticals Ltd.', '', '', 'Full-Time', '', '2018-09-05', 'c1e89f44a6fc3bbb4dab2cada0e68cc0.jpg', 1, '2018-09-02 18:27:24', 1),
 (4, 'Drug International Limited', 'Drug International Ltd. is a long record of solid reputation as one of the leading pharmaceutical company, having business operations both in local and internationally. Drug International Ltd. believes their mission is to ensure better life through better medicine. We are seeking for self-driven, young and energetic fresh candidates. ', 'Medical Promotion Officer (MPO)', NULL, 'MPO', '2018-10-17 00:00:00', 'Negotiable', 'B.SC, M.SC', 'N/A', 20, 30, 'Anywhere in Bangladesh', '', '', '', 'Full-Time', '', '2018-10-03', '4a8e94716bfe0eeff7305df3281fe1ad.jpg', 1, '2018-09-02 18:31:48', 1),
-(5, 'Ziska Pharmaceuticals Ltd.', '\r\nJob Responsibilities:  Coordinate factory operations, Supervise the production process and manage the manpower in various departments,  Optimize resources & to undertake process control to ensure cGMP are being followed, Undertake documentation & validation activity, Additional duties as assigned or deemed necessary for effective factory operations\r\n\r\n', 'Assistant General Manager / General Manager : Biotech', NULL, 'Assistant General Manager', '2019-01-17 00:00:00', 'Negotiable', 'M.Pharm, MBA', '5years', 1, 40, 'Head Office', '', '', '', 'Full-Time', '', '2018-09-25', 'dc347667d02737b6b8cf0bc4a0927552.jpg', 1, '2018-09-02 18:39:29', 1),
-(6, 'Novo Nordisk Pharma (Private) Ltd.', 'Job Responsibilities\r\n1, Responsible for meeting sales objective and managing multiple projects.\r\n  2,Manage & coach a group of Regional Sales Managers', 'Assistant Sales Manager ', NULL, 'Second Line Manager', '2018-12-19 00:00:00', 'Negotiable', '', '10years', 1, 40, 'Anywhere in Bangladesh', 'Online job portal', '', '', 'Full-Time', '', '2018-10-01', 'f0a84fe3535f1fe0698e75b5e1c11a53.jpg', 1, '2018-09-02 18:44:03', 1);
+(5, 'Ziska Pharmaceuticals Ltd.', '\r\nJob Responsibilities:  Coordinate factory operations, Supervise the production process and manage the manpower in various departments,  Optimize resources & to undertake process control to ensure cGMP are being followed, Undertake documentation & validation activity, Additional duties as assigned or deemed necessary for effective factory operations\r\n\r\n', 'Assistant General Manager / General Manager : Biotech', '770b4f029c5cb0a189854f2b7b6674e3.png', 'Assistant General Manager', '2019-01-17 00:00:00', 'Negotiable', 'M.Pharm, MBA', '5years', 1, 40, 'Head Office', '', '', '', 'Full-Time', '', '2018-09-25', 'dc347667d02737b6b8cf0bc4a0927552.jpg', 1, '2018-09-02 18:39:29', 1),
+(6, 'Novo Nordisk Pharma (Private) Ltd.', 'Job Responsibilities\r\n1, Responsible for meeting sales objective and managing multiple projects.\r\n  2,Manage & coach a group of Regional Sales Managers', 'Assistant Sales Manager ', 'a8bb4157916c9379676a97e9371e8c91.png', 'Second Line Manager', '2018-12-19 00:00:00', 'Negotiable', '', '10years', 1, 40, 'Anywhere in Bangladesh', 'Online job portal', '', '', 'Full-Time', '', '2018-10-01', '19594d1f2a299500cdc089ad92648957.jpg', 1, '2018-09-02 18:44:03', 1),
+(7, 'Quality Control Officer', ' Sample, analyze & check quality of RM/PM & finished products as per SOP\\\\\\\\\\\\\\\'s.\r\n    Prepare specification & method of incoming materials (RM/PM).\r\n    Conduct method validation activities.\r\n    Perform calibration of equipment as per schedule.\r\n    Prepare reference of working standard (RWS) and maintain documents.\r\n    Ensure retention sample of all raw material (RM) as per SOP.\r\n    Prepare test solution & volumetric solution, standardize of volumetric solution with proper documents.', 'SMC Enterprise Ltd. ', 'd3b1bb502383771b795fea5b4f010d83.png', 'Quality Control Officer', '2018-12-03 00:00:00', 'Negotiable', 'Master of Pharmacy (M.Pharm), Master of Science (MSc) in Applied Chemistry, Chemistry, Bio-Chemistry\r\nPublic University preferred', '1 to 2 year(s) \r\nThe applicants should have experience in the following business area(s):\r\nPharmaceuticals', 0, 30, 'Mymensingh (Bhaluka)', '', 'Full-Time', '', 'Full-Time', '', '2018-11-19', NULL, 3, '2018-11-20 08:13:31', 1);
 
 -- --------------------------------------------------------
 
@@ -2276,10 +2440,11 @@ CREATE TABLE `mims_newsInformation` (
 --
 
 INSERT INTO `mims_newsInformation` (`ID`, `Title`, `Description`, `ImagePath`, `PublishDateTime`, `UnpublishedDateTime`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
-(2, '123ewqe', '12esad asdas asd', '54933feb5e333170ac23b9c39ccf9fe4.png', '2018-09-05 00:00:00', '2019-01-09 00:00:00', 1, '2018-09-12 17:36:47', 1),
-(3, 'asdsad asd', 'qwdasd', 'd9db36bd298581170eef3ffc36f066d6.png', '2018-09-13 00:00:00', '2019-01-23 00:00:00', 1, '2018-09-20 11:50:10', 1),
-(4, 'test 1', 'asbdkas kashdksah ksahdk', '54933feb5e333170ac23b9c39ccf9fe4.png', '2018-09-14 00:00:00', '2018-09-25 00:00:00', 1, '2018-09-20 11:50:53', 1),
-(5, 'Square Pharma Conference Tour in Thailand', 'dsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\n\r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf ', 'd9db36bd298581170eef3ffc36f066d6.png', '2018-09-22 00:00:00', '2018-09-26 00:00:00', 3, '2018-09-22 11:51:37', 1);
+(3, 'BACAMH-এর সম্মেলন অনুষ্ঠিত', 'মনোরোগ বিশেষজ্ঞদের সংগঠন বাংলাদেশ এসোসিয়েশন ফর চাইল্ড এন্ড এডলোসেন্ট মেন্টাল হেলথ (বিএসিএ-এমএইচ)-এর দুই দিনব্যাপি সম্মেলন অনুষ্ঠিত হয়েছে। গত ১২-১৩ নভেম্বর বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় এর ডা. মিলন হলে এই সম্মেলন অনুষ্ঠিত হয়।\r\n\r\nদুইদিনের এই সম্মেলনে বেশ কয়েকটি সেশনে বিষয়ভিত্তিক বৈজ্ঞানিক সেমিনার, কর্মশালা ও কর্মপরিকল্পনা উপস্থাপন করা হয়। এছাড়া পরিবেশন করা হয় মনোজ্ঞ সাংস্কৃতিক অনুষ্ঠান।\r\n\r\n১২ নভেম্বর সম্মেলনের উদ্বোধন করেন বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় এর উপাচার্য অধ্যাপক ডা. ক', '01c074da5d2787ac456b910844d8f4dd.jpg', '2018-09-13 00:00:00', '2019-01-23 00:00:00', 1, '2018-09-20 11:50:10', 1),
+(4, 'শোভাযাত্রা, আলোচনা অনুষ্ঠানসহ নানা কর্মসূচির মধ্য দিয়ে দেশে পালিত হল বিশ্ব ডায়াবেটিস দিবস', 'দিবসটি উপলক্ষে বুধবার এসব কর্মসূচি থেকে ডায়াবেটিস নিয়ে জনসচেতনতা গড়ে তোলার আহ্বান জানানো হয়।\r\n\r\nঢাকার সেগুন বাগিচায় বারডেম হাসপাতালে শৈশবকালীন ডায়াবেটিক প্রতিরোধ বিষয়ক এক অনুষ্ঠানে অংশ নেন স্বাস্থ্যমন্ত্রী মোহাম্মদ নাসিম।\r\n\r\nঢাকায় এছাড়াও বিভিন্ন অনুষ্ঠান হয় বিভিন্ন হাসপাতাল ও চিকিৎসা সংক্রান্ত সংগঠনগুলোর উদ্যোগে।\r\n\r\nসিলেট এমএজি ওসমানী মেডিকেল হাসপাতালের এন্ডোক্রাইনোলজি বিভাগের উদ্যোগে ও নভোনরডিক্স ফার্মার সহযোগিতায় সকালে হাসপাতালের হলরুমে কর্মশালা এবং কলেজ ও হাসপাতাল ক্যাম্পাসে শোভাযাত্রা হয়।\r\n\r\nকর্মশাল', 'c4f14cbd1246c13bed578f41b8b246d5.jpg', '2018-09-14 00:00:00', '2018-09-25 00:00:00', 1, '2018-09-20 11:50:53', 1),
+(5, 'Square Pharma Conference Tour in Thailand', 'dsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\n\r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf ', 'd9db36bd298581170eef3ffc36f066d6.png', '2018-09-22 00:00:00', '2018-09-26 00:00:00', 3, '2018-09-22 11:51:37', 1),
+(6, 'শোভাযাত্রা, আলোচনা অনুষ্ঠানসহ নানা কর্মসূচির মধ্য দিয়ে দেশে পালিত হল বিশ্ব ডায়াবেটিস দিবস', 'দিবসটি উপলক্ষে বুধবার এসব কর্মসূচি থেকে ডায়াবেটিস নিয়ে জনসচেতনতা গড়ে তোলার আহ্বান জানানো হয়।\r\n\r\nঢাকার সেগুন বাগিচায় বারডেম হাসপাতালে শৈশবকালীন ডায়াবেটিক প্রতিরোধ বিষয়ক এক অনুষ্ঠানে অংশ নেন স্বাস্থ্যমন্ত্রী মোহাম্মদ নাসিম।\r\n\r\nঢাকায় এছাড়াও বিভিন্ন অনুষ্ঠান হয় বিভিন্ন হাসপাতাল ও চিকিৎসা সংক্রান্ত সংগঠনগুলোর উদ্যোগে।\r\n\r\nসিলেট এমএজি ওসমানী মেডিকেল হাসপাতালের এন্ডোক্রাইনোলজি বিভাগের উদ্যোগে ও নভোনরডিক্স ফার্মার সহযোগিতায় সকালে হাসপাতালের হলরুমে কর্মশালা এবং কলেজ ও হাসপাতাল ক্যাম্পাসে শোভাযাত্রা হয়।\r\n\r\nকর্মশাল', 'a125c39bce7ec409a16435ece87ac371.jpg', '2018-11-20 00:00:00', '2018-11-21 00:00:00', 3, '2018-11-20 06:03:52', 1),
+(7, 'মাতৃদুগ্ধ পানের বিষয়টিতে সমর্থন বাড়াতে নতুন একটি নীতিমালা গ্রহণ করেছে বিশ্বস্বাস্থ্য সংস্থা ও ইউনিসেফ। জেনেভায় অনুষ্ঠিত সম্মেলনে গৃহীত এ নীতিমালায় নতুন ১০টি বিষয় অন্তর্ভুক্ত করা হয়েছে', 'একটা শিশুর সারাজীবনের সুস্থতার জন্য বুকের দুধ খাওয়া খুবই জরুরি। আর এতে পরিবার ও সরকারের ব্যয়ও কমে।\r\nবিশেষজ্ঞরা বলেন, জন্মের প্রথম ঘণ্টার মধ্যে বুকের দুধ খাওয়ালে শিশুদের বিভিন্ন সংক্রমণ থেকে রক্ষা করা, এমনকি জীবন বাঁচানোও সম্ভব। শিশুদের বুদ্ধিমত্তাও বাড়ায় এটি।\r\nশিশুকে পুরোপুরি বুকের দুধ না খাওয়ালে বা একদমই না খাওয়ালে ডায়রিয়া ও অন্যান্য সংক্রামক রোগে মৃত্যুর ঝুঁকি বেড়ে যায়। আর শিশুকে বুকের দুধ খাওয়ালে কমে মায়েদের স্তন ক্যান্সারের ঝুঁকি।\r\nইউনিসেফের নির্বাহী পরিচালক হেনরিয়েটা এইচ ফোর বলেন, মাতৃদুগ্ধপান', '95f06b132ff2772cd05cc82254f351c3.jpg', '2018-11-20 00:00:00', '2018-11-22 00:00:00', 3, '2018-11-20 06:23:53', 1);
 
 -- --------------------------------------------------------
 
@@ -2713,9 +2878,9 @@ CREATE TABLE `mims_userinformation` (
 --
 
 INSERT INTO `mims_userinformation` (`ID`, `UserName`, `EmailID`, `UserPass`, `FirstName`, `LastName`, `RoleID`, `LastUpdate`, `IsActive`) VALUES
-(1, 'amalesh', 'amalesh.debnath@gmail.com', 'cda4d218f6e8de2ae94a41024364d020', 'Amalesh', 'Debnath', 1, '2018-05-19 21:31:06', 1),
+(1, 'amalesh', 'amalesh.debnath@gmail.com', '96f0f08c0188ba04898ce8cc465c19c4', 'Amalesh', 'Debnath', 1, '2018-05-19 21:31:06', 1),
 (2, 'maq', 'mostaque@gmail.com', 'deddd3b17a3ada8a2e05a101e25ab25b', 'Mostaq', 'Ahmed', 2, '2018-08-17 22:05:39', 1),
-(3, 'shahin', 'shahin@test.com', 'deddd3b17a3ada8a2e05a101e25ab25b', 'Shahin', 'Bhai', 2, '2018-08-17 22:05:39', 1);
+(3, 'pulak', 'srpulak99@gmail.com', 'd07ea2047ec93e772cf183bc02e4a7b7', 'Shahin', 'Bhai', 1, '2018-08-17 22:05:39', 1);
 
 -- --------------------------------------------------------
 
@@ -2753,7 +2918,7 @@ CREATE TABLE `mims_visitor` (
 --
 
 INSERT INTO `mims_visitor` (`NymberOfVisitor`) VALUES
-(10092);
+(10838);
 
 --
 -- Indexes for dumped tables
@@ -2848,6 +3013,14 @@ ALTER TABLE `mims_genericinformation`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `Name` (`Name`,`IsActive`),
   ADD KEY `genericinformation_cbfk_1` (`CreatedBy`);
+
+--
+-- Indexes for table `mims_InternationalHealth`
+--
+ALTER TABLE `mims_InternationalHealth`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `PublishDateTime` (`PublishDateTime`,`UnpublishedDateTime`,`IsActive`),
+  ADD KEY `InternationalHealth_cbfk_1` (`CreatedBy`);
 
 --
 -- Indexes for table `mims_jobinformation`
@@ -2961,13 +3134,13 @@ ALTER TABLE `mims_addressinformation`
 -- AUTO_INCREMENT for table `mims_advertisementinformation`
 --
 ALTER TABLE `mims_advertisementinformation`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `mims_advertisementpositioninformation`
 --
 ALTER TABLE `mims_advertisementpositioninformation`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
 
 --
 -- AUTO_INCREMENT for table `mims_brandinformation`
@@ -3006,10 +3179,16 @@ ALTER TABLE `mims_genericinformation`
   MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
+-- AUTO_INCREMENT for table `mims_InternationalHealth`
+--
+ALTER TABLE `mims_InternationalHealth`
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `mims_jobinformation`
 --
 ALTER TABLE `mims_jobinformation`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mims_location`
@@ -3027,7 +3206,7 @@ ALTER TABLE `mims_manufacturerinformation`
 -- AUTO_INCREMENT for table `mims_newsInformation`
 --
 ALTER TABLE `mims_newsInformation`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `mims_packsizeinformation`
@@ -3144,6 +3323,12 @@ ALTER TABLE `mims_dosageforminformation`
 --
 ALTER TABLE `mims_genericinformation`
   ADD CONSTRAINT `genericinformation_cbfk_1` FOREIGN KEY (`CreatedBy`) REFERENCES `mims_userinformation` (`ID`);
+
+--
+-- Constraints for table `mims_InternationalHealth`
+--
+ALTER TABLE `mims_InternationalHealth`
+  ADD CONSTRAINT `InternationalHealth_cbfk_1` FOREIGN KEY (`CreatedBy`) REFERENCES `mims_userinformation` (`ID`);
 
 --
 -- Constraints for table `mims_jobinformation`

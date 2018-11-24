@@ -19,30 +19,25 @@ class InternationalHealth extends CI_Controller {
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         //$this->load->view('front-end/main-menu');
-        $this->load->view('js/frontend-news-script');
-        $this->load->view('front-end/local-news', $data);
+        $this->load->view('js/frontend-international-health-script');
+        $this->load->view('front-end/local-international-health', $data);
         $this->load->view('front-end/footer');
     }
 
     public function getInternationalHealthForHomePage() {
-        $all_news = $this->InternationalHealth_model->getInternationalHealthForSidebar();
-        $this->sendRestAPIResponse($all_news);
-    }
-
-    public function getInternationalHealthForFrontend(){
-        $job_information = $this->InternationalHealth_model->getInternationalHealthForFrontend();
-        $this->sendRestAPIResponse($job_information);
+        $all_international_health = $this->InternationalHealth_model->getInternationalHealthForSidebar();
+        $this->sendRestAPIResponse($all_international_health);
     }
 
     public function showIndividualInternationalHealthDetail() {
         $data = array();
-        $news_information = $this->InternationalHealth_model->getIndividualInternationalHealthDetail();
+        $international_health = $this->InternationalHealth_model->getIndividualInternationalHealthDetail();
         list($data['AllInternationalHealth'], $data['TotalInternationalHealth']) = $this->InternationalHealth_model->getAllActiveInternationalHealth();
-        $data['InternationalHealthInfo'] = $news_information;
+        $data['InternationalHealthInfo'] = $international_health;
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         //$this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-news-detail', $data);
+        $this->load->view('front-end/local-international-health-detail', $data);
         $this->load->view('front-end/footer');
     }
 
@@ -53,13 +48,13 @@ class InternationalHealth extends CI_Controller {
             redirect('User/login');
             return;
         }
-        $all_news_information = $this->InternationalHealth_model->getAllInternationalHealth();
+        $all_international_health = $this->InternationalHealth_model->getAllInternationalHealth();
         $data = array();
-        $data['AllInternationalHealths'] = $all_news_information;
+        $data['AllInternationalHealths'] = $all_international_health;
         $this->load->view('admin/header');
         $this->load->view('admin/side-menu');
-        $this->load->view('admin/news', $data);
-        $this->load->view('js/admin-news-script');
+        $this->load->view('admin/international-health', $data);
+        $this->load->view('js/admin-international-health-script');
         $this->load->view('admin/footer');
     }
 
@@ -113,8 +108,8 @@ class InternationalHealth extends CI_Controller {
             return;
         }
 
-        $all_news_information = $this->InternationalHealth_model->getAllInternationalHealth();
-        $this->sendRestAPIResponse($all_news_information);
+        $all_international_health = $this->InternationalHealth_model->getAllInternationalHealth();
+        $this->sendRestAPIResponse($all_international_health);
     }
 
     public function getInternationalHealthDetail() {
@@ -125,8 +120,8 @@ class InternationalHealth extends CI_Controller {
             return;
         }
 
-        $news_detail_information = $this->InternationalHealth_model->getInternationalHealthDetail();
-        $this->sendRestAPIResponse($news_detail_information);
+        $international_health_detail = $this->InternationalHealth_model->getInternationalHealthDetail();
+        $this->sendRestAPIResponse($international_health_detail);
     }
 
     public function deleteInternationalHealth() {
