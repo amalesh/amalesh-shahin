@@ -182,7 +182,7 @@
 
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['doctor-sidebar-advert', 'doctor-advert-top-left', 'doctor-advert-top-right', 'doctor-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['doctor-sidebar-advert', 'doctor-advert-top-left', 'doctor-advert-top-right', 'doctor-advert-bottom']);
     doctorObject.totalDoctor = <?php echo isset($TotalDoctor) ? $TotalDoctor : 0;?>;
     doctorObject.populatePagination(1);
     frontendCommonMethods.mainMenuActivation('doctor');

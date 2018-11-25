@@ -105,8 +105,7 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['news-sidebar-advert', 'news-advert-top-left', 'news-advert-top-right', 'news-advert-bottom']);
-    // frontendCommonMethods.mainMenuActivation('resource');
+    frontendCommonMethods.getCommonAdvertisement(['news-sidebar-advert', 'news-advert-top-left', 'news-advert-top-right', 'news-advert-bottom']);
     newsObject.totalNews = <?php echo isset($TotalNews) ? $TotalNews : 0;?>;
     newsObject.perPageInformationNumber = <?php echo config_item('per_page_news_information_number');?>;
     newsObject.populatePagination(1);

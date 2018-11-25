@@ -66,11 +66,7 @@
 </div>
 
 <!-- home advert -->
-<div id="home-advert-container-top" class="container advert-container home-advert-container1">
-    <a href="#" class="advert no-outline">
-        <img src="<?php echo base_url().'application/views/';?>images/home-advert-1.jpg" alt="Click this link!">
-    </a>
-</div>
+<div class="container advert-container home-advert-container1 home-advert-container-top"></div>
 
 <!-- content -->
 <div class="container">
@@ -120,11 +116,7 @@
 </div>
 
 <!-- home advert -->
-<div id="home-advert-container-mid" class="container advert-container home-advert-container2">
-    <a href="#" class="advert no-outline">
-        <img src="<?php echo base_url().'application/views/';?>images/home-advert-1.jpg" alt="Click this link!">
-    </a>
-</div>
+<div class="container advert-container home-advert-container2 home-advert-container-mid"></div>
 
 <!-- special reports slider -->
 <div class="home-special-report-slider-container container">
@@ -140,17 +132,18 @@
 <!-- content -->
 <div class="container">
     <div class="row">
-        <!-- important addresses -->
-        <div class="col-md-6 col-12" style="height: fit-content;">
-            <div class="content-section min-height">
-                <div class="section-header own-pad" style="margin-bottom: 24px;">
-                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Important Addresses
+        <!-- international health -->
+        <div class="col-md-8 col-12" style="height: fit-content;">
+            <div class="content-section" style="padding: 0; max-height: none;">
+                <div class="section-header own-pad" style="margin-bottom: 16px;">
+                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>International Health
+                    <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('InternationalHealth/getAllInternationalHealth')?>">See All News</a>
                 </div>
-                <ul class="address-list home-address-list"></ul>
+                <div id="internationalHealthList" class="container"></div>
             </div>
         </div>
         <!-- Resources -->
-        <div class="col-md-6 col-12" style="height: fit-content;">
+        <div class="col-md-4 col-12" style="height: fit-content;">
             <div class="content-section min-height">
                 <div class="section-header own-pad" style="margin-bottom: 24px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Resources
@@ -186,7 +179,8 @@
     $('.slick-next.slick-arrow:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
     $('.slick-prev.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/left-arrow-white.png');
     $('.slick-next.slick-arrow.slick-disabled:before').css('background-image', '<?php echo base_url().'application/views/';?>images/icons/right-arrow-white.png');
-    // frontendCommonMethods.getAdvertisement(['home-product-slider', 'home-advert-container-top', 'home-advert-container-mid']);
+    frontendCommonMethods.getAdvertisement(['home-product-slider']);
+    frontendCommonMethods.getCommonAdvertisement(['home-advert-container-top', 'home-advert-container-mid']);
     drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();

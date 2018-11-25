@@ -199,7 +199,7 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['generic-sidebar-advert', 'generic-advert-top-left', 'generic-advert-top-right', 'generic-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['generic-sidebar-advert', 'generic-advert-top-left', 'generic-advert-top-right', 'generic-advert-bottom']);
     drugObject.searchOptionType = '<?php echo $OptionType;?>';
     drugObject.searchOptionValue = '<?php echo $OptionValue;?>';
     drugObject.perPageInformationNumber = <?php echo $PerPageInformationNumber;?>;

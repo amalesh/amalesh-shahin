@@ -100,6 +100,6 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['special-report-sidebar-advert', 'special-report-advert-top-left', 'special-report-advert-top-right', 'special-report-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['special-report-sidebar-advert', 'special-report-advert-top-left', 'special-report-advert-top-right', 'special-report-advert-bottom']);
     frontendCommonMethods.mainMenuActivation('resource');
 </script>

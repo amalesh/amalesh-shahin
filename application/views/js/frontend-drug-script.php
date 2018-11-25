@@ -93,6 +93,29 @@
                 }
             });
         },
+        getInternationalHealth: function() {
+            console.log('Method Name: drugObject.getInternationalHealth Param:  Value: '+[].toString());
+            $('#internationalHealthList').html('');
+            var formURL = "<?php echo site_url('InternationalHealth/getInternationalHealthForHomePage')?>";
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getInternationalHealth', function(internationalHealthData) {
+                if (internationalHealthData) {
+                    var individual_international_health = '';
+                    var news_description = '';
+                    for (var international_health_no = 0; international_health_no < internationalHealthData.length; international_health_no++) {
+                        news_description = internationalHealthData[international_health_no].Description;
+                        news_description = news_description.length > 100 ? news_description.substr(0, 100) + '...' : news_description;
+                        individual_international_health = '<div class="row job">' +
+                            '                        <div class="col-12">' +
+                            '                            <p class="job-title">'+internationalHealthData[international_health_no].Title+'</p>' +
+                            '                            <p class="job-company">'+news_description+'</p>' +
+                            '                        </div>' +
+                            '                        <img class="right-arrow" src="<?php echo base_url()?>InternationalHealthImages/' + internationalHealthData[international_health_no].ImagePath+'" alt=">">' +
+                            '                    </div>';
+                        $('#internationalHealthList').append(individual_international_health);
+                    }
+                }
+            });
+        },
         getImportantAddress: function() {
             console.log('Method Name: drugObject.getImportantAddress Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Address/getImportantAddressForHomePage')?>";

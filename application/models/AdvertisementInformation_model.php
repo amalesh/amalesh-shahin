@@ -242,7 +242,9 @@ class AdvertisementInformation_model extends GeneralData_model {
             $this->db->where('a.ImagePath <>', '');
             $this->db->where('p.ID', $advertisement_position_information[0]['ID'], false);
             $this->db->order_by('rand()');
-            $this->db->limit($advertisement_position_information[0]['NumberOfAdvertisement']);
+            if ($advertisement_position_information[0]['NumberOfAdvertisement']) {
+                $this->db->limit($advertisement_position_information[0]['NumberOfAdvertisement']);
+            }
             $data = $this->db->get()->result_array();
 //            echo $this->db->last_query();
         }

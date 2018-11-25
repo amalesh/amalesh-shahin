@@ -2,6 +2,7 @@ var mimsServerAPI = {
     showErrorPopup: true,
     timeOutInterval: 1200000,
     getServerData: function (actionType, serverURL, dataType, methodName, callback) {
+        console.log('Ajax URL: '+serverURL);
         var ajaxTime= new Date().getTime();
         var returnValue = false;
         $.ajax({

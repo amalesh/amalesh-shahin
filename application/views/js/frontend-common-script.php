@@ -169,8 +169,23 @@
                 .end()
                 .appendTo('#slideshow');
         },
+        getCommonAdvertisement: function (classNames) {
+            console.log('Method Name: frontendCommonMethods.getCommonAdvertisement Param: classNames Value: '+[classNames].toString());
+            for (var class_no = 0; class_no < classNames.length; class_no++) {
+                var class_name = classNames[class_no];
+                $('.'+class_name).html('');
+                var formURL = "<?php echo site_url('Advertisement/getAdvertisement?ClassName=')?>"+class_name;
+                mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getAdvertisement', function(advertisementData){
+                    if (advertisementData.length) {
+                        var position_class_name = advertisementData[0].ClassName;
+                        var interval = advertisementData[0].Interval;
+                        $('.'+advertisementData[0].ClassName).append('<img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[0].ImagePath+'" alt="">');
+                    }
+                });
+            }
+        },
         getAdvertisement: function (classNames) {
-            console.log('Method Name: frontendCommonMethods.populatePagination Param: classNames Value: '+[classNames].toString());
+            console.log('Method Name: frontendCommonMethods.getAdvertisement Param: classNames Value: '+[classNames].toString());
             for (var class_no = 0; class_no < classNames.length; class_no++) {
                 var class_name = classNames[class_no];
                 $('#'+class_name).hide();
@@ -179,14 +194,15 @@
                     if (advertisementData.length) {
                         var position_class_name = advertisementData[0].ClassName;
                         var interval = advertisementData[0].Interval;
-                        $('#'+class_name).html('');
+                        $('#'+position_class_name).html('');
                         for (var advertisement_no = 0; advertisement_no < advertisementData.length; advertisement_no++) {
-                            $('#'+class_name).append('<div class="'+class_name+'">' +
+                            $('#'+position_class_name).append('<div class="'+position_class_name+'">' +
                                 '<img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[advertisement_no].ImagePath+'" alt="">'+
                                 '</div>');
                         }
+                        $('#'+class_name).show();
 
-                        switch (class_name) {
+                        switch (position_class_name) {
                             case 'home-product-slider':
                                 $('#'+class_name).slick({
                                     slidesToScroll: 1,

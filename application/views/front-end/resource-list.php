@@ -103,6 +103,6 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['resource-sidebar-advert', 'resource-advert-top-left', 'resource-advert-top-right', 'resource-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['resource-sidebar-advert', 'resource-advert-top-left', 'resource-advert-top-right', 'resource-advert-bottom']);
     frontendCommonMethods.mainMenuActivation('resource');
 </script>

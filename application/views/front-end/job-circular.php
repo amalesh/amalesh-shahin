@@ -109,7 +109,7 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['job-circular-list-sidebar-advert', 'job-circular-list-advert-top-left', 'job-circular-list-advert-top-right', 'job-circular-list-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['job-circular-list-sidebar-advert', 'job-circular-list-advert-top-left', 'job-circular-list-advert-top-right', 'job-circular-list-advert-bottom']);
     jobObject.totalJob = <?php echo isset($TotalJob) ? $TotalJob : 0;?>;
     jobObject.perPageInformationNumber = <?php echo config_item('per_page_job_information_number');?>;
     jobObject.populatePagination(1);

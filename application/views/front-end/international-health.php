@@ -105,7 +105,7 @@
 </div>
 <script>
     frontendCommonMethods.getSideBarData();
-    frontendCommonMethods.getAdvertisement(['international-health-sidebar-advert', 'international-health-advert-top-left', 'international-health-advert-top-right', 'international-health-advert-bottom']);
+    frontendCommonMethods.getCommonAdvertisement(['international-health-sidebar-advert', 'international-health-advert-top-left', 'international-health-advert-top-right', 'international-health-advert-bottom']);
     internationalHealthObject.totalNews = <?php echo isset($TotalNews) ? $TotalNews : 0;?>;
     internationalHealthObject.perPageInformationNumber = <?php echo config_item('per_page_international_health_information_number');?>;
     internationalHealthObject.populatePagination(1);
