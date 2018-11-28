@@ -79,7 +79,7 @@
                             <tbody>
                             <tr>
                                 <td class="brand-info-title">Generic Name</td>
-                                <td>: <a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$AllBrands[0]['GenericName']);?>"><?php echo $AllBrands[0]['GenericName'];?></a></td>
+                                <td style="color: blue">: <a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$AllBrands[0]['GenericName']);?>"><?php echo $AllBrands[0]['GenericName'];?></a></td>
                             </tr>
                             <tr>
                                 <td class="brand-info-title">Drug Class</td>

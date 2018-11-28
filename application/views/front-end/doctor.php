@@ -16,14 +16,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-12">
-            <div class="in-page-advert doctor-advert-top-left">
-                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
-            </div>
+            <div class="in-page-advert doctor-advert-top-left"></div>
         </div>
         <div class="col-md-6 col-12">
-            <div class="in-page-advert doctor-advert-top-right">
-                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
-            </div>
+            <div class="in-page-advert doctor-advert-top-right"></div>
         </div>
     </div>
 </div>
