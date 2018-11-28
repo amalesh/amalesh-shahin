@@ -48,20 +48,7 @@
 <!-- home product slider -->
 <div class="home-product-slider-container container">
     <div class="home-product-slider-wrapper">
-        <div id="home-product-slider">
-            <div class="home-product-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/home-product-slide-1.jpg" alt="">
-            </div>
-            <div class="home-product-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/home-product-slide-2.jpg" alt="">
-            </div>
-            <div class="home-product-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/home-product-slide-3.jpg" alt="">
-            </div>
-            <div class="home-product-slide">
-                <img src="<?php echo base_url().'application/views/';?>images/home-product-slide-1.jpg" alt="">
-            </div>
-        </div>
+        <div id="home-product-slider"></div>
     </div>
 </div>
 
@@ -142,13 +129,13 @@
                 <div id="internationalHealthList" class="container"></div>
             </div>
         </div>
-        <!-- Resources -->
+        <!-- important addresses -->
         <div class="col-md-4 col-12" style="height: fit-content;">
             <div class="content-section min-height">
                 <div class="section-header own-pad" style="margin-bottom: 24px;">
-                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Resources
+                    <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>Important Addresses
                 </div>
-                <ul class="resource-item-list"></ul>
+                <ul class="address-list home-address-list"></ul>
             </div>
         </div>
     </div>
@@ -185,7 +172,7 @@
     drugObject.getJobCirculars();
     drugObject.getLocalNews();
     drugObject.getImportantAddress();
-    drugObject.getResources();
+    // drugObject.getResources();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);
