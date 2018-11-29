@@ -80,6 +80,7 @@ class AdvertisementInformation_model extends GeneralData_model {
         $this->db->select('a.ID, a.Organization, a.Title, a.BodyText, a.LinkURL, a.ImagePath, a.PublishDate, a.UnpublishedDate, a.AdvertisementPositionID, a.IsActive, a.ContactPerson, a.EmailID, a.MobileNo, p.Name AS PositionName');
         $this->db->from('advertisementinformation AS a');
         $this->db->join('advertisementpositioninformation AS p', 'a.AdvertisementPositionID = p.ID', 'inner');
+        $this->db->order_by('p.Name');
         $result = $this->db->get()->result_array();
         $advertisement_information = array();
         $total = 0;

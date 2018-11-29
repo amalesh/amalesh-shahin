@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 23, 2018 at 01:52 AM
+-- Generation Time: Nov 28, 2018 at 01:21 PM
 -- Server version: 5.6.41-log
 -- PHP Version: 7.2.7
 
@@ -155,6 +155,27 @@ CREATE TABLE `mims_advertisementinformation` (
   `MobileNo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mims_advertisementinformation`
+--
+
+INSERT INTO `mims_advertisementinformation` (`ID`, `Organization`, `Title`, `BodyText`, `LinkURL`, `ImagePath`, `PublishDate`, `UnpublishedDate`, `AdvertisementPositionID`, `CreatedBy`, `LastUpdate`, `IsActive`, `ContactPerson`, `EmailID`, `MobileNo`) VALUES
+(5, 'Beacon', 'Lenvanix', '', '', 'd81ebc8c6802a7bf78ff2eaa58e57a11.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 140, 3, '2018-11-26 07:03:36', 1, '', NULL, ''),
+(6, 'Beacon', 'Flexibac', '', '', '4bdecd075caf4a1ca8d1da78a46fe266.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 140, 3, '2018-11-26 07:04:56', 1, '', NULL, ''),
+(7, 'MIMS', 'MIMS', '', '', '33c9390ad60a9a25856bb292b351b5e7.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 140, 3, '2018-11-26 07:05:33', 1, '', NULL, ''),
+(8, 'MIMS', 'MIMS', '', '', '897791f97f60dad39a4d82de27277c55.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 141, 3, '2018-11-26 07:47:44', 1, '', NULL, ''),
+(9, 'MIMS', 'MIMS', '', '', '8042b11950ec4a7166184757457c0a01.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 142, 3, '2018-11-26 07:49:18', 1, '', NULL, ''),
+(10, 'MIMS', 'MIMS', '', '', '7a694ef7207f9801175d8a3b93c55415.png', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 145, 3, '2018-11-26 07:59:08', 1, '', NULL, ''),
+(11, 'Beacon', 'Flexibac', '', '', 'bc62b9791ef2240647ffb9b365b43f5c.jpg', '2018-11-26 00:00:00', '2018-12-15 00:00:00', 144, 3, '2018-11-26 08:01:20', 1, '', NULL, ''),
+(12, 'MIMS', 'MIMS', '', '', '8b44893d5c8beb6e094674c6cf878f95.jpg', '2018-11-27 00:00:00', '2018-12-21 00:00:00', 140, 3, '2018-11-27 16:57:23', 1, '', NULL, ''),
+(13, 'MIMS', 'MIMS', '', '', '2c01aa493541926f1e37a7b393c79c85.jpg', '2018-11-27 00:00:00', '2018-12-21 00:00:00', 173, 3, '2018-11-27 17:15:10', 1, '', NULL, ''),
+(14, 'MIMS', 'MIMS', '', '', '5f1e54b7a856b6060704e9e2079a1880.jpg', '2018-11-27 00:00:00', '2018-12-21 00:00:00', 172, 3, '2018-11-27 17:33:54', 1, '', NULL, ''),
+(15, 'Beacon', 'Flexibac', '', '', 'c7ab2f27e18561efdd6fb5a29429f26f.jpg', '2018-11-27 00:00:00', '2018-12-21 00:00:00', 171, 3, '2018-11-27 18:03:00', 1, '', NULL, ''),
+(16, 'Beacon', 'Hexinor', '', '', '963e4a0f441d9724e8bf4489bc83cfa3.jpg', '2018-11-28 00:00:00', '2018-12-22 00:00:00', 174, 3, '2018-11-27 18:31:06', 1, '', NULL, ''),
+(17, 'Beacon', 'Hexinor', '', '', '94aa9eba776e5faf69d1e63a87cc6f75.jpg', '2018-11-28 00:00:00', '2018-12-22 00:00:00', 146, 3, '2018-11-27 18:35:13', 1, '', NULL, ''),
+(18, 'MIMS', 'MIMS', '', '', '702a5bfe11920780518f370a9255c7ae.jpg', '2018-11-28 00:00:00', '2018-12-22 00:00:00', 149, 3, '2018-11-27 18:37:55', 1, '', NULL, ''),
+(19, 'MIMS', 'MIMS', '', '', '6aa08c787d0b741e6e0c12add1cf9dc7.jpg', '2018-11-28 00:00:00', '2018-12-22 00:00:00', 169, 3, '2018-11-27 18:39:39', 1, '', NULL, '');
+
 -- --------------------------------------------------------
 
 --
@@ -226,7 +247,11 @@ INSERT INTO `mims_advertisementpositioninformation` (`ID`, `Name`, `ClassName`, 
 (183, 'Manufacturer Search Result Page Sidebar Advertisement', 'manufacturer-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
 (184, 'Manufacturer Search Result Page Top Left Advertisement', 'manufacturer-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
 (185, 'Manufacturer Search Result Page Top Right Advertisement', 'manufacturer-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
-(186, 'Manufacturer Search Result Page Bottom Advertisement', 'manufacturer-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1);
+(186, 'Manufacturer Search Result Page Bottom Advertisement', 'manufacturer-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 08:54:27', 1),
+(187, 'International Health Page Sidebar Advertisement', 'international-health-sidebar-advert', 333, 256, 0, 1, 1000, 1, '2018-08-30 13:54:27', 1),
+(188, 'International Health Page Top Left Advertisement', 'international-health-advert-top-left', 523, 120, 0, 1, 1000, 1, '2018-08-30 13:54:27', 1),
+(189, 'International Health Page Top Right Advertisement', 'international-health-advert-top-right', 523, 120, 0, 1, 1000, 1, '2018-08-30 13:54:27', 1),
+(190, 'International Health Page Bottom Advertisement', 'international-health-advert-bottom', 756, 138, 0, 1, 1000, 1, '2018-08-30 13:54:27', 1);
 
 -- --------------------------------------------------------
 
@@ -2184,6 +2209,13 @@ CREATE TABLE `mims_InternationalHealth` (
   `IsActive` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `mims_InternationalHealth`
+--
+
+INSERT INTO `mims_InternationalHealth` (`ID`, `Title`, `Description`, `ImagePath`, `PublishDateTime`, `UnpublishedDateTime`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
+(1, ' Type II diabetes now affects 7,000 under-25\\\'s in England and Wales', 'Nearly 7,000 children and young adults in England and Wales now have type II diabetes, as the rise in obesity continues, Diabetes UK has warned.\r\n\r\nThe figure is around about 10 times the number previously reported.\r\n\r\nThe government has been warned that it must take action, and the charity is calling for a ban on junk food advertising and restrictions on supermarket promotions of unhealthy foods to help address the surge in cases of the disease, which is largely preventable.\r\n', '84a3780fdffcbcbaaac51c9c4563f8be.jpg', '2018-11-25 00:00:00', '2018-11-30 00:00:00', 3, '2018-11-25 09:54:47', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -2440,11 +2472,8 @@ CREATE TABLE `mims_newsInformation` (
 --
 
 INSERT INTO `mims_newsInformation` (`ID`, `Title`, `Description`, `ImagePath`, `PublishDateTime`, `UnpublishedDateTime`, `CreatedBy`, `LastUpdate`, `IsActive`) VALUES
-(3, 'BACAMH-এর সম্মেলন অনুষ্ঠিত', 'মনোরোগ বিশেষজ্ঞদের সংগঠন বাংলাদেশ এসোসিয়েশন ফর চাইল্ড এন্ড এডলোসেন্ট মেন্টাল হেলথ (বিএসিএ-এমএইচ)-এর দুই দিনব্যাপি সম্মেলন অনুষ্ঠিত হয়েছে। গত ১২-১৩ নভেম্বর বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় এর ডা. মিলন হলে এই সম্মেলন অনুষ্ঠিত হয়।\r\n\r\nদুইদিনের এই সম্মেলনে বেশ কয়েকটি সেশনে বিষয়ভিত্তিক বৈজ্ঞানিক সেমিনার, কর্মশালা ও কর্মপরিকল্পনা উপস্থাপন করা হয়। এছাড়া পরিবেশন করা হয় মনোজ্ঞ সাংস্কৃতিক অনুষ্ঠান।\r\n\r\n১২ নভেম্বর সম্মেলনের উদ্বোধন করেন বঙ্গবন্ধু শেখ মুজিব মেডিকেল বিশ্ববিদ্যালয় এর উপাচার্য অধ্যাপক ডা. ক', '01c074da5d2787ac456b910844d8f4dd.jpg', '2018-09-13 00:00:00', '2019-01-23 00:00:00', 1, '2018-09-20 11:50:10', 1),
-(4, 'শোভাযাত্রা, আলোচনা অনুষ্ঠানসহ নানা কর্মসূচির মধ্য দিয়ে দেশে পালিত হল বিশ্ব ডায়াবেটিস দিবস', 'দিবসটি উপলক্ষে বুধবার এসব কর্মসূচি থেকে ডায়াবেটিস নিয়ে জনসচেতনতা গড়ে তোলার আহ্বান জানানো হয়।\r\n\r\nঢাকার সেগুন বাগিচায় বারডেম হাসপাতালে শৈশবকালীন ডায়াবেটিক প্রতিরোধ বিষয়ক এক অনুষ্ঠানে অংশ নেন স্বাস্থ্যমন্ত্রী মোহাম্মদ নাসিম।\r\n\r\nঢাকায় এছাড়াও বিভিন্ন অনুষ্ঠান হয় বিভিন্ন হাসপাতাল ও চিকিৎসা সংক্রান্ত সংগঠনগুলোর উদ্যোগে।\r\n\r\nসিলেট এমএজি ওসমানী মেডিকেল হাসপাতালের এন্ডোক্রাইনোলজি বিভাগের উদ্যোগে ও নভোনরডিক্স ফার্মার সহযোগিতায় সকালে হাসপাতালের হলরুমে কর্মশালা এবং কলেজ ও হাসপাতাল ক্যাম্পাসে শোভাযাত্রা হয়।\r\n\r\nকর্মশাল', 'c4f14cbd1246c13bed578f41b8b246d5.jpg', '2018-09-14 00:00:00', '2018-09-25 00:00:00', 1, '2018-09-20 11:50:53', 1),
-(5, 'Square Pharma Conference Tour in Thailand', 'dsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\n\r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf \r\ndsfdsfdfd  dfdfd   dfdsfd sdfd sdfdsfdsf ', 'd9db36bd298581170eef3ffc36f066d6.png', '2018-09-22 00:00:00', '2018-09-26 00:00:00', 3, '2018-09-22 11:51:37', 1),
-(6, 'শোভাযাত্রা, আলোচনা অনুষ্ঠানসহ নানা কর্মসূচির মধ্য দিয়ে দেশে পালিত হল বিশ্ব ডায়াবেটিস দিবস', 'দিবসটি উপলক্ষে বুধবার এসব কর্মসূচি থেকে ডায়াবেটিস নিয়ে জনসচেতনতা গড়ে তোলার আহ্বান জানানো হয়।\r\n\r\nঢাকার সেগুন বাগিচায় বারডেম হাসপাতালে শৈশবকালীন ডায়াবেটিক প্রতিরোধ বিষয়ক এক অনুষ্ঠানে অংশ নেন স্বাস্থ্যমন্ত্রী মোহাম্মদ নাসিম।\r\n\r\nঢাকায় এছাড়াও বিভিন্ন অনুষ্ঠান হয় বিভিন্ন হাসপাতাল ও চিকিৎসা সংক্রান্ত সংগঠনগুলোর উদ্যোগে।\r\n\r\nসিলেট এমএজি ওসমানী মেডিকেল হাসপাতালের এন্ডোক্রাইনোলজি বিভাগের উদ্যোগে ও নভোনরডিক্স ফার্মার সহযোগিতায় সকালে হাসপাতালের হলরুমে কর্মশালা এবং কলেজ ও হাসপাতাল ক্যাম্পাসে শোভাযাত্রা হয়।\r\n\r\nকর্মশাল', 'a125c39bce7ec409a16435ece87ac371.jpg', '2018-11-20 00:00:00', '2018-11-21 00:00:00', 3, '2018-11-20 06:03:52', 1),
-(7, 'মাতৃদুগ্ধ পানের বিষয়টিতে সমর্থন বাড়াতে নতুন একটি নীতিমালা গ্রহণ করেছে বিশ্বস্বাস্থ্য সংস্থা ও ইউনিসেফ। জেনেভায় অনুষ্ঠিত সম্মেলনে গৃহীত এ নীতিমালায় নতুন ১০টি বিষয় অন্তর্ভুক্ত করা হয়েছে', 'একটা শিশুর সারাজীবনের সুস্থতার জন্য বুকের দুধ খাওয়া খুবই জরুরি। আর এতে পরিবার ও সরকারের ব্যয়ও কমে।\r\nবিশেষজ্ঞরা বলেন, জন্মের প্রথম ঘণ্টার মধ্যে বুকের দুধ খাওয়ালে শিশুদের বিভিন্ন সংক্রমণ থেকে রক্ষা করা, এমনকি জীবন বাঁচানোও সম্ভব। শিশুদের বুদ্ধিমত্তাও বাড়ায় এটি।\r\nশিশুকে পুরোপুরি বুকের দুধ না খাওয়ালে বা একদমই না খাওয়ালে ডায়রিয়া ও অন্যান্য সংক্রামক রোগে মৃত্যুর ঝুঁকি বেড়ে যায়। আর শিশুকে বুকের দুধ খাওয়ালে কমে মায়েদের স্তন ক্যান্সারের ঝুঁকি।\r\nইউনিসেফের নির্বাহী পরিচালক হেনরিয়েটা এইচ ফোর বলেন, মাতৃদুগ্ধপান', '95f06b132ff2772cd05cc82254f351c3.jpg', '2018-11-20 00:00:00', '2018-11-22 00:00:00', 3, '2018-11-20 06:23:53', 1);
+(8, 'Health Service through Mobile Phone', 'Our citizens can take health suggestions for free now from doctors working in government health centers. For this a mobile phone has been given to each district and sub-district hospital of Bangladesh. The numbers of these mobile phones have been publicized locally. These numbers are also given in the website of Directorate General of Health Services (www.dghs.gov.bd). Doctors receive calls in these numbers 24 hours. Local people can receive free health suggestions by calling these numbers.', 'cdec92d7dd209e39780326f0ef1c140c.jpg', '2018-11-25 00:00:00', '2018-11-30 00:00:00', 3, '2018-11-25 10:06:08', 1),
+(9, '      Home     Bangladesh  Patients suffer as physicians stop services in Rajshahi pvt hospitals, clinics', '\r\n\r\n    Home\r\n    Bangladesh\r\n\r\nPatients suffer as physicians stop services in Rajshahi pvt hospitals, clinics\r\nProthom Alo English Desk | Update: 12:23, Apr 30, 2018\r\n0 Like\r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\nMap of RajshahiPhysicians in Rajshahi stopped providing all sorts of healthcare services in private hospitals, clinics and diagnostic centres protesting \\\'assault\\\' on a fellow over the death of a child due to alleged wrong treatment on Saturday.\r\nThey also refrained from seeing patients in their private chambers. ', 'c125639be61899cb3461e81565245ba2.png', '2018-11-25 00:00:00', '2018-11-30 00:00:00', 3, '2018-11-25 10:30:11', 1);
 
 -- --------------------------------------------------------
 
@@ -2636,11 +2665,10 @@ CREATE TABLE `mims_specialreports` (
 --
 
 INSERT INTO `mims_specialreports` (`ID`, `Title`, `LinkAddress`, `ImagePath`, `LastUpdate`, `CreatedBy`, `IsActive`) VALUES
-(3, '1. High sugar intake in pregnancy may raise childhood allergy risk', 'https://www.google.com', 'img-6.png', '2018-09-14 13:11:32', 1, 1),
-(4, '2. High sugar intake in pregnancy may raise childhood allergy risk', 'https://bangla.bdnews24.com/sport/', 'img-7.png', '2018-09-14 13:11:32', 1, 1),
-(5, 'asdasd', 'https://bangla.bdnews24.com/samagrabangladesh/', '09b0276259b5044978851a7d721b63ec.png', '2018-10-01 11:18:05', 1, 1),
-(6, 'werwer', 'https://bangla.bdnews24.com/cricket/', '268ee5cac6fee29ddaa4654280156c0c.png', '2018-10-01 11:24:07', 1, 1),
-(7, 'Test', 'https://www.prothomalo.com/', '09b0276259b5044978851a7d721b63ec.png', '2018-10-27 19:10:46', 1, 1);
+(8, 'Social media use more common in young with mental disorders, research shows', 'http://www.pharmatimes.com/news/social_media_use_more_common_in_young_with_mental_disorders,_research_shows_1262734', 'a29eb048487d46cee820d3fa34914c91.jpg', '2018-11-25 09:36:53', 3, 1),
+(9, 'The PharmaTimes International Clinical Researcher of the Year is open for entry – with a broad range of categories for all types of candidates', 'http://www.pharmatimes.com/news/the_pharmatimes_international_clinical_researcher_of_the_year_is_open_for_entry_with_a_broad_range_of_categories_for_all_types_of_candidates_1263063', 'c903236b3f118520b4804600705f8871.png', '2018-11-25 09:39:22', 3, 1),
+(10, 'Adult Cardiac Stem Cells Don’t Exist: Study', 'https://www.the-scientist.com/news-opinion/adult-cardiac-stem-cells-dont-exist--study-64752', 'a9c35c5619543306fe9b0196c195521c.jpg', '2018-11-25 09:43:35', 3, 1),
+(11, 'Medical Device Safety Action Plan: Protecting Patients, Promoting Public Health', 'https://www.fda.gov/AboutFDA/CentersOffices/OfficeofMedicalProductsandTobacco/CDRH/CDRHReports/ucm604500.htm', 'e0e948eb76ddc225354f50079e1578d6.jpg', '2018-11-25 09:48:24', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -2918,7 +2946,7 @@ CREATE TABLE `mims_visitor` (
 --
 
 INSERT INTO `mims_visitor` (`NymberOfVisitor`) VALUES
-(10838);
+(11332);
 
 --
 -- Indexes for dumped tables
@@ -3134,13 +3162,13 @@ ALTER TABLE `mims_addressinformation`
 -- AUTO_INCREMENT for table `mims_advertisementinformation`
 --
 ALTER TABLE `mims_advertisementinformation`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `mims_advertisementpositioninformation`
 --
 ALTER TABLE `mims_advertisementpositioninformation`
-  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
+  MODIFY `ID` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=191;
 
 --
 -- AUTO_INCREMENT for table `mims_brandinformation`
@@ -3182,7 +3210,7 @@ ALTER TABLE `mims_genericinformation`
 -- AUTO_INCREMENT for table `mims_InternationalHealth`
 --
 ALTER TABLE `mims_InternationalHealth`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mims_jobinformation`
@@ -3206,7 +3234,7 @@ ALTER TABLE `mims_manufacturerinformation`
 -- AUTO_INCREMENT for table `mims_newsInformation`
 --
 ALTER TABLE `mims_newsInformation`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mims_packsizeinformation`
@@ -3224,7 +3252,7 @@ ALTER TABLE `mims_resourceinformation`
 -- AUTO_INCREMENT for table `mims_specialreports`
 --
 ALTER TABLE `mims_specialreports`
-  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `mims_state`

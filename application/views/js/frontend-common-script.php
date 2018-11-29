@@ -208,7 +208,7 @@
                                     slidesToScroll: 1,
                                     slidesToShow: 3,
                                     autoplay: true,
-                                    autoplaySpeed: interval,
+                                    autoplaySpeed: 1000,
                                     infinite: true,
                                     arrows: false,
                                     responsive: [

@@ -29,24 +29,6 @@ $(function() {
 		}
 	})
 
-	// home product slider
-	$('#home-product-slider').slick({
-	  slidesToScroll: 1,
-		slidesToShow: 3,
-	  autoplay: true,
-	  autoplaySpeed: 1000,
-		infinite: true,
-    arrows: false,
-		responsive: [
-		 {
-			 breakpoint: 480,
-			 settings: {
-				 slidesToShow: 2,
-			 }
-		 }
-	 ]
-	});
-
 	// image viewer
 	var viewer = ImageViewer();
 	$('.gallery-items').click(function () {
