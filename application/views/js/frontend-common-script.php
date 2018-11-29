@@ -108,12 +108,12 @@
 
                     for(var i = 0; i < all_special_reports.length; i++) {
                         var report_image = all_special_reports[i].ImagePath;
-                        report_image = report_image.length > 0 ? '<?php echo base_url();?>'+'JobImages/'+report_image : '';
+                        report_image = report_image.length > 0 ? '<?php echo base_url();?>'+'SpecialReportImages/'+report_image : '';
                         var report_title = all_special_reports[i].Title;
                         report_title = report_title.length > 30 ? report_title.substr(0, 27) + '...' : report_title;
                         $('div.sidebar-special-reports').append('<div class="row news">' +
                             '                                <div class="col-3" style="padding: 5px; padding-left: 16px;">' +
-                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+report_image+'" alt="" onerror="this.src=\'https://image.ibb.co/cBMMNq/default-placeholder.png\'">' +
+                            '                                    <img class="news-img" style="width: 100%; height: auto; padding: 0;" src="'+report_image+'" alt="">' +
                             '                                </div>' +
                             '                                <div class="col-9" style="padding-right: 0; padding-left: 7px">' +
                             '                                    <p class="news-title side-col"><a href="'+all_special_reports[i].LinkAddress+'" target="_blank">'+report_title+'</a></p>' +
