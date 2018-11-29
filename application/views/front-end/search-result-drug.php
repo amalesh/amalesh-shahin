@@ -82,6 +82,10 @@
                                 <td style="color: blue">: <a href="<?php echo site_url('Brand/searchBrandInformation?Type=generic&Value='.$AllBrands[0]['GenericName']);?>"><?php echo $AllBrands[0]['GenericName'];?></a></td>
                             </tr>
                             <tr>
+                                <td class="brand-info-title">Manufacturer Name</td>
+                                <td style="color: blue">: <a href="<?php echo site_url('Brand/searchBrandInformation?Type=manufacturer&Value='.$AllBrands[0]['ManufacturerName'])?>"><?php echo $AllBrands[0]['ManufacturerName'];?></a></td>
+                            </tr>
+                            <tr>
                                 <td class="brand-info-title">Drug Class</td>
                                 <td>: <?php echo $AllBrands[0]['Classification'];?></td>
                             </tr>

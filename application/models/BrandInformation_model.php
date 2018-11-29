@@ -549,8 +549,10 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->select('g.ContraindicationPrecaution');
                 $this->db->select('g.SideEffect');
                 $this->db->select('g.PregnancyLactation');
+                $this->db->select('m.Name AS ManufacturerName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
                 $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
                 $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
                 $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
@@ -580,8 +582,10 @@ class BrandInformation_model extends GeneralData_model {
                 $this->db->select('g.ContraindicationPrecaution');
                 $this->db->select('g.SideEffect');
                 $this->db->select('g.PregnancyLactation');
+                $this->db->select('m.Name AS ManufacturerName');
                 $this->db->from('brandinformation AS b');
                 $this->db->join('genericinformation AS g', 'b.GenericID = g.ID', 'inner');
+                $this->db->join('manufacturerinformation AS m', 'b.ManufacturerID = m.ID', 'inner');
                 $this->db->join('dosageforminformation AS df', 'b.DosageFormID = df.ID', 'inner');
                 $this->db->join('strengthinformation AS s', 'b.StrengthID = s.ID', 'inner');
                 $this->db->join('packsizeinformation AS ps', 'b.PackSizeID = ps.ID', 'inner');
