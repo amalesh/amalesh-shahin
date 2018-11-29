@@ -16,14 +16,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-12">
-            <div class="in-page-advert special-report-advert-top-left">
-                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
-            </div>
+            <div class="in-page-advert special-report-advert-top-left"></div>
         </div>
         <div class="col-md-6 col-12">
-            <div class="in-page-advert special-report-advert-top-right">
-                <img src="<?php echo base_url();?>application/views/images/add-6.png" alt="">
-            </div>
+            <div class="in-page-advert special-report-advert-top-right"></div>
         </div>
     </div>
 </div>
@@ -40,16 +36,17 @@
                         <img src="'.base_url('SpecialReportImages/'.$report['ImagePath']).'" alt="">
                     </div>
                     <div class="news-info col-9">
-                        <a class="news-title" href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a>
+                        <h3 class="news-title">
+                          <a class="news-title" href="'.$report['LinkAddress'].'" target="_blank">'.$report['Title'].'</a>
+                        </h3>
+                        <p class="news-summary">'.$report['Description'].'</p>
                         <a href="'.$report['LinkAddress'].'" target="_blank" class="read-more">Read More</a>
                     </div>
                 </div>';
                 }
                 ?>
             </div>
-            <div class="in-page-advert special-report-advert-bottom">
-                <img src="<?php echo base_url();?>application/views/images/add-12.png" alt="">
-            </div>
+            <div class="in-page-advert special-report-advert-bottom"></div>
         </div>
         <div class="col-md-4 col-12">
             <div class="container">
@@ -63,9 +60,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="in-page-advert side-col special-report-sidebar-advert">
-                        <img src="<?php echo base_url();?>application/views/images/add-4.png" alt="">
-                    </div>
+                    <div class="in-page-advert side-col special-report-sidebar-advert"></div>
                 </div>
                 <div class="row">
                     <!-- local news -->

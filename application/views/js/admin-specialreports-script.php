@@ -35,6 +35,7 @@
             $('.error-message').hide();
             $('#specialreports_modal').html('Create');
             $('#SpecialReportsTitle').val('');
+            $('#SpecialReportDescription').val('');
             $('#SpecialReportsLinkAddress').val('');
             $('#SpecialReportsImagePathThumbnail').attr('src', '');
             $("#SpecialReportsIsActiveNo").prop("checked", true);
@@ -129,6 +130,7 @@
             var formURL = "<?php echo site_url('SpecialReports/getSpecialReportsDetailInformation')?>?SpecialReportsID="+specialreportsID;
             mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'specialReportsObject.showSpecialReportsEditModal', function(specialreportsData){
                 $('#SpecialReportsTitle').val(specialreportsData.Title);
+                $('#SpecialReportDescription').val(specialreportsData.Description);
                 $('#SpecialReportsLinkAddress').val(specialreportsData.LinkAddress);
                 $('#SpecialReportsImagePathThumbnail').attr('src', '<?php echo base_url()?>SpecialReportImages/'+specialreportsData.ImagePath);
                 if (specialreportsData.IsActive) {

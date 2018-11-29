@@ -17,9 +17,10 @@ class SpecialReports_model extends GeneralData_model {
 
     public function getAllActiveSpecialReports() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
+        $this->db->select('sr.ID, sr.Title, sr.Description, sr.LinkAddress, sr.ImagePath, sr.IsActive');
         $this->db->from('specialreports AS sr');
         $this->db->where('sr.IsActive', 1);
+        $this->db->order_by('sr.Title');
         $this->db->limit(config_item('per_page_special_report_number'));
         $special_report = $this->db->get()->result_array();
 
@@ -36,7 +37,7 @@ class SpecialReports_model extends GeneralData_model {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $page_no = $this->input->get('PageNo');
         $page_no = empty($page_no) ? 1 : $page_no;
-        $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
+        $this->db->select('sr.ID, sr.Title, sr.Description, sr.LinkAddress, sr.ImagePath, sr.IsActive');
         $this->db->from('specialreports AS sr');
         $this->db->where('sr.IsActive', 1);
         $this->db->limit(config_item('per_page_special_report_number'), ($page_no - 1) * config_item('per_page_special_report_number'));
@@ -48,13 +49,14 @@ class SpecialReports_model extends GeneralData_model {
 
     public function createSpecialReports($userID) {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
-        $this->require_fields = array('Title', 'LinkAddress');
+        $this->require_fields = array('Title', 'Description', 'LinkAddress');
         $this->request_type = 'post';
         $check_require_field_erro = parent::create();
         if ($check_require_field_erro != NO_ERROR) return $this->prepareErrorResponse($check_require_field_erro);
 
         $data = array();
         $data['Title'] = $this->input->post('Title');
+        $data['Description'] = $this->input->post('Description');
         $data['LinkAddress'] = $this->input->post('LinkAddress');
         $data['ImagePath'] = $this->input->post('ImagePath');
         $data['CreatedBy'] = $userID;
@@ -93,8 +95,9 @@ class SpecialReports_model extends GeneralData_model {
 
     public function getAllSpecialReports() {
         log_message('debug', __METHOD__ . ' Method Start with Arguments: ' . print_r(func_get_args(), true));
-        $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
+        $this->db->select('sr.ID, sr.Title, sr.Description, sr.LinkAddress, sr.ImagePath, sr.IsActive');
         $this->db->from('specialreports AS sr');
+        $this->db->order_by('sr.Title');
         $result = $this->db->get()->result_array();
 //        echo $this->db->last_query();
         log_message('debug', __METHOD__ . '#' . __LINE__ . ' Method End.');
@@ -105,7 +108,7 @@ class SpecialReports_model extends GeneralData_model {
         log_message('debug', __METHOD__ . ' Method Start with Arguments: ' . print_r(func_get_args(), true));
         $specialreports_id = $this->input->get('SpecialReportsID');
         if ($specialreports_id) {
-            $this->db->select('sr.ID, sr.Title, sr.LinkAddress, sr.ImagePath, sr.IsActive');
+            $this->db->select('sr.ID, sr.Title, sr.Description, sr.LinkAddress, sr.ImagePath, sr.IsActive');
             $this->db->from('specialreports AS sr');
             $this->db->where('sr.ID', $specialreports_id);
             $this->db->limit(1);
@@ -125,11 +128,12 @@ class SpecialReports_model extends GeneralData_model {
 
         $data = array();
         $data['Title'] = $this->input->post('Title');
+        $data['Description'] = $this->input->post('Description');
         $data['LinkAddress'] = $this->input->post('LinkAddress');
         $data['ImagePath'] = $this->input->post('ImagePath');
         $data['CreatedBy'] = $userID;
 
-        $require_fields = array('Title', 'LinkAddress');
+        $require_fields = array('Title', 'Description', 'LinkAddress');
         $check_require_field_erro = $this->checkRequireFilds($require_fields, 'post');
         if ($check_require_field_erro != NO_ERROR) {
             return $this->prepareErrorResponse($check_require_field_erro);
@@ -179,6 +183,7 @@ class SpecialReports_model extends GeneralData_model {
     public function getSpecialReportsForSidebar() {
         log_message('debug', __METHOD__.' Method Start with Arguments: '.print_r(func_get_args(), true));
         $this->db->select('Title');
+        $this->db->select('Description');
         $this->db->select('ImagePath');
         $this->db->select('LinkAddress');
         $this->db->from('specialreports');
