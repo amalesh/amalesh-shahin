@@ -460,7 +460,7 @@ thead {
 .alphabets.nav-aldphabets:last-of-type {
   justify-content: left;
 }
-.alphabets.nav-aldphabets .alphabet-link {
+.alphabets.nav-aldphabets a.alphabet-link {
   color: var(--theme-color-primary);
   width: 7vw;
 }
@@ -476,6 +476,12 @@ thead {
 }
 .alphabet-link:hover, .alphabet-link:focus, .alphabet-link:active {
   color: var(--theme-color-primary) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .alphabets.nav-aldphabets .alphabet-link {
+    color: var(--theme-color-primary) !important;
+  }
 }
 
 /* --------------------------------------------- */
