@@ -34,7 +34,7 @@
         <div class="col-md-8 col-12">
             <div class="international-health-list container">
                 <?php
-                foreach ($AllNews AS $internationalHealth) {
+                foreach ($AllInternationalHealth AS $internationalHealth) {
                     echo '<div class="international-health-item row">
                     <div class="international-health-thumb col-3">
                         <img src="'.base_url('NewsImages/'.$internationalHealth['ImagePath']).'" alt="">
@@ -42,7 +42,7 @@
                     <div class="international-health-info col-9">
                         <a class="international-health-title" href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'">'.$internationalHealth['Title'].'</a>
                         <p class="international-health-summary">'.$internationalHealth['Description'].'</p>
-                        <a href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'" class="read-more">Read More</a>
+                        <a href="'.site_url('InternationalHealth/showIndividualInternationalHealthDetail?InternationalHealthID='.$internationalHealth['ID']).'" class="read-more">Read More</a>
                     </div>
                 </div>';
                 }

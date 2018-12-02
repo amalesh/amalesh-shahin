@@ -20,7 +20,7 @@ class InternationalHealth extends CI_Controller {
         $this->load->view('js/frontend-common-script');
         //$this->load->view('front-end/main-menu');
         $this->load->view('js/frontend-international-health-script');
-        $this->load->view('front-end/local-international-health', $data);
+        $this->load->view('front-end/international-health', $data);
         $this->load->view('front-end/footer');
     }
 
@@ -37,7 +37,7 @@ class InternationalHealth extends CI_Controller {
         $this->load->view('front-end/header');
         $this->load->view('js/frontend-common-script');
         //$this->load->view('front-end/main-menu');
-        $this->load->view('front-end/local-international-health-detail', $data);
+        $this->load->view('front-end/international-health-detail', $data);
         $this->load->view('front-end/footer');
     }
 

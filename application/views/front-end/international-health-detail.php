@@ -34,16 +34,16 @@
         <div class="col-md-8 col-12">
             <div class="international-health-details">
                 <!-- title -->
-                <h2 class="international-health-title"><?php echo $NewsInfo['Title'];?></h2>
+                <h2 class="international-health-title"><?php echo $InternationalHealthInfo['Title'];?></h2>
                 <!-- description -->
-                <p class="international-health-description"><?php echo $NewsInfo['Description'];?></p>
+                <p class="international-health-description"><?php echo $InternationalHealthInfo['Description'];?></p>
                 <div class="featured-international-health-img">
-                    <img class="img-fluid" src="<?php echo base_url('NewsImages/'.$NewsInfo['ImagePath']);?>" alt="">
+                    <img class="img-fluid" src="<?php echo base_url('NewsImages/'.$InternationalHealthInfo['ImagePath']);?>" alt="">
                 </div>
             </div>
             <div class="international-health-list container">
                 <?php
-                foreach ($AllNews AS $internationalHealth) {
+                foreach ($AllInternationalHealth AS $internationalHealth) {
                     echo '<div class="international-health-item row">
                     <div class="international-health-thumb col-3">
                         <img src="'.base_url('NewsImages/'.$internationalHealth['ImagePath']).'" alt="">

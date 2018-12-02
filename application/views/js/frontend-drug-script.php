@@ -109,7 +109,7 @@
                             '                            <p class="job-title">'+internationalHealthData[international_health_no].Title+'</p>' +
                             '                            <p class="job-company">'+news_description+'</p>' +
                             '                        </div>' +
-                            '                        <img class="right-arrow" src="<?php echo base_url()?>InternationalHealthImages/' + internationalHealthData[international_health_no].ImagePath+'" alt=">">' +
+                            '                        <img class="right-arrow" src="<?php echo base_url('application');?>/views/images/icons/right-arrow.svg" alt=">">' +
                             '                    </div>';
                         $('#internationalHealthList').append(individual_international_health);
                     }
