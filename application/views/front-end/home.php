@@ -103,7 +103,7 @@
 </div>
 
 <!-- home advert -->
-<div class="container advert-container home-advert-container2 home-advert-container-mid"></div>
+<div class="container advert-container home-advert-container2 home-advert-container-mid" style="padding-top: 30px;"></div>
 
 <!-- special reports slider -->
 <div class="home-special-report-slider-container container">
