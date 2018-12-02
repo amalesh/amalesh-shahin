@@ -152,7 +152,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="form-group">
                         <label class="control-label col-md-4">
                             <span>Image </span>
-                            <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
                             <input id="JobCircularImagePath" name="JobCircularImagePath" type="file" onchange="jobObject.setJobImagePathThumbnail(this, 'JobCircularImagePathThumbnail')" />
@@ -172,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <span>Salary </span>
                         </label>
                         <div class="col-md-6">
-                            <input id="JobSalary" name="Salary" required class="date-field">
+                            <input id="JobSalary" name="Salary" required type="number">
                         </div>
                     </div>
                     <div class="form-group">
@@ -196,7 +195,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <span>Number of Vacancy </span>
                         </label>
                         <div class="col-md-6">
-                            <input id="JobNumberOfVacancy" name="NumberOfVacancy">
+                            <input id="JobNumberOfVacancy" name="NumberOfVacancy" type="number">
                         </div>
                     </div>
                     <div class="form-group">
@@ -204,7 +203,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <span>Age Limit </span>
                         </label>
                         <div class="col-md-6">
-                            <input id="JobAgeLimit" name="AgeLimit">
+                            <input id="JobAgeLimit" name="AgeLimit" type="number">
                         </div>
                     </div>
                     <div class="form-group">

@@ -30,10 +30,6 @@
                 is_valid = false;
                 $('.job-publish-date-require-message').show();
             }
-            if ($('#JobCircularImagePath').val() == '') {
-                is_valid = false;
-                $('.job-circular-image-path-require-message').show();
-            }
 
             return is_valid;
         },

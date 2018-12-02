@@ -92,7 +92,7 @@ $job_image = empty($JobInfo['JobCircularImagePath']) ? '' : '<div class="col-md-
                                         </tr>
                                         <tr>
                                             <td class="job-info-title">Educational Requirement</td>
-                                            <td>: <?php echo $job_title;?></td>
+                                            <td>: <?php echo $job_educational_requirement;?></td>
                                         </tr>
                                         <tr>
                                             <td class="job-info-title">Experience Requirement</td>
