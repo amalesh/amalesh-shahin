@@ -171,7 +171,7 @@
     drugObject.getSpecialReports();
     drugObject.getJobCirculars();
     drugObject.getLocalNews();
-    drugObject.getImportantAddress();
+    drugObject.getInternationalHealth();
     // drugObject.getResources();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
