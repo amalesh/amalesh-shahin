@@ -32,26 +32,26 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-12">
-            <div class="international-health-details">
+            <div class="international-health-details news-details">
                 <!-- title -->
-                <h2 class="international-health-title"><?php echo $InternationalHealthInfo['Title'];?></h2>
+                <h2 class="international-health-title news-title"><?php echo $InternationalHealthInfo['Title'];?></h2>
                 <!-- description -->
-                <p class="international-health-description"><?php echo $InternationalHealthInfo['Description'];?></p>
-                <div class="featured-international-health-img">
-                    <img class="img-fluid" src="<?php echo base_url('NewsImages/'.$InternationalHealthInfo['ImagePath']);?>" alt="">
+                <p class="international-health-description news-description"><?php echo $InternationalHealthInfo['Description'];?></p>
+                <div class="featured-international-health-img featured-news-img">
+                    <img class="img-fluid" src="<?php echo base_url('InternationalHealthImages/'.$InternationalHealthInfo['ImagePath']);?>" alt="">
                 </div>
             </div>
-            <div class="international-health-list container">
+            <div class="international-health-list news-list container">
                 <?php
                 foreach ($AllInternationalHealth AS $internationalHealth) {
-                    echo '<div class="international-health-item row">
-                    <div class="international-health-thumb col-3">
-                        <img src="'.base_url('NewsImages/'.$internationalHealth['ImagePath']).'" alt="">
+                    echo '<div class="international-health-item news-item row">
+                    <div class="international-health-thumb news-thumb col-3">
+                        <img src="'.base_url('InternationalHealthImages/'.$internationalHealth['ImagePath']).'" alt="">
                     </div>
-                    <div class="international-health-info col-9">
-                        <a class="international-health-title" href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'">'.$internationalHealth['Title'].'</a>
-                        <p class="international-health-summary">'.$internationalHealth['Description'].'</p>
-                        <a href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'" class="read-more">Read More</a>
+                    <div class="international-health-info news-info col-9">
+                        <a class="international-health-title news-title" href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'">'.$internationalHealth['Title'].'</a>
+                        <p class="international-health-summary news-summary">'.$internationalHealth['Description'].'</p>
+                        <a href="'.site_url('InternationalHealth/showIndividualInternationalHealthDetail?InternationalHealthID='.$internationalHealth['ID']).'" class="read-more">Read More</a>
                     </div>
                 </div>';
                 }

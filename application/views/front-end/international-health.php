@@ -32,16 +32,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-12">
-            <div class="international-health-list container">
+            <div class="international-health-list news-list container">
                 <?php
                 foreach ($AllInternationalHealth AS $internationalHealth) {
-                    echo '<div class="international-health-item row">
-                    <div class="international-health-thumb col-3">
-                        <img src="'.base_url('NewsImages/'.$internationalHealth['ImagePath']).'" alt="">
+                    echo '<div class="international-health-item news-item row">
+                    <div class="international-health-thumb news-thumb col-3">
+                        <img src="'.base_url('InternationalHealthImages/'.$internationalHealth['ImagePath']).'" alt="">
                     </div>
-                    <div class="international-health-info col-9">
-                        <a class="international-health-title" href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'">'.$internationalHealth['Title'].'</a>
-                        <p class="international-health-summary">'.$internationalHealth['Description'].'</p>
+                    <div class="international-health-info news-info col-9">
+                        <a class="international-health-title news-title" href="'.site_url('News/showIndividualNewsDetail?NewsID='.$internationalHealth['ID']).'">'.$internationalHealth['Title'].'</a>
+                        <p class="international-health-summary news-summary">'.$internationalHealth['Description'].'</p>
                         <a href="'.site_url('InternationalHealth/showIndividualInternationalHealthDetail?InternationalHealthID='.$internationalHealth['ID']).'" class="read-more">Read More</a>
                     </div>
                 </div>';

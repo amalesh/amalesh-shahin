@@ -44,6 +44,9 @@
         </div>
     </div>
 </div>
+<div id="searchDrugOptionForMobile">
+    <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars..."></ul>
+</div>
 
 <!-- home product slider -->
 <div class="home-product-slider-container container">
@@ -75,7 +78,9 @@
         </div>
         <!-- star product -->
         <div class="col-md-4 col-12">
-            <div class="star-product" id="highlighted-product"></div>
+            <div class="star-product" id="highlighted-product">
+
+            </div>
         </div>
     </div>
     <div class="row">
@@ -124,7 +129,7 @@
             <div class="content-section" style="padding: 0; max-height: none;">
                 <div class="section-header own-pad" style="margin-bottom: 16px;">
                     <span><img src="<?php echo base_url().'application/views/';?>images/icons/briefcase.svg" alt="*"></span>International Health
-                    <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('InternationalHealth/getAllInternationalHealth')?>">See All News</a>
+                    <a class="section-header-view-all-btn no-outline" href="<?php echo site_url('InternationalHealth/getAllInternationalHealth')?>">See All International Health</a>
                 </div>
                 <div id="internationalHealthList" class="container"></div>
             </div>
@@ -172,7 +177,7 @@
     drugObject.getJobCirculars();
     drugObject.getLocalNews();
     drugObject.getInternationalHealth();
-    // drugObject.getResources();
+    drugObject.getImportantAddress();
     drugObject.getNewBrands(0);
     drugObject.getNewPresentations(0);
     drugObject.getNewProducts(0);

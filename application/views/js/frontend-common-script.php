@@ -176,10 +176,24 @@
                 $('.'+class_name).html('');
                 var formURL = "<?php echo site_url('Advertisement/getAdvertisement?ClassName=')?>"+class_name;
                 mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'frontendCommonMethods.getAdvertisement', function(advertisementData){
+                    var position_class_name = advertisementData[0].ClassName;
+                    var img_style = '';
+
                     if (advertisementData.length) {
-                        var position_class_name = advertisementData[0].ClassName;
-                        var interval = advertisementData[0].Interval;
-                        $('.'+advertisementData[0].ClassName).append('<img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[0].ImagePath+'" alt="">');
+                        if (position_class_name.indexOf('advert-container-top')) {
+                            img_style = 'style="max-width: 1110px;max-height: 140px;"';
+                        } else if (position_class_name.indexOf('advert-container-mid')) {
+                            img_style = 'style="max-width: 1110px;max-height: 140px;"';
+                        } else if (position_class_name.indexOf('advert-bottom')) {
+                            img_style = 'style="max-width: 1110px;max-height: 140px;"';
+                        } else if (position_class_name.indexOf('advert-top-left')) {
+                            img_style = 'style="max-width: 540px;max-height: 130px;"';
+                        } else if (position_class_name.indexOf('advert-top-right')) {
+                            img_style = 'style="max-width: 540px;max-height: 130px;"';
+                        } else if (position_class_name.indexOf('sidebar-advert')) {
+                            img_style = 'style="max-width: 350px;max-height: 350px;"';
+                        }
+                        $('.'+advertisementData[0].ClassName).append('<img src="<?php echo base_url('AdvertisementImages/');?>'+advertisementData[0].ImagePath+'" alt="" '+img_style+'>');
                     }
                 });
             }

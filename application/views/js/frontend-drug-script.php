@@ -109,7 +109,7 @@
                             '                            <p class="job-title">'+internationalHealthData[international_health_no].Title+'</p>' +
                             '                            <p class="job-company">'+news_description+'</p>' +
                             '                        </div>' +
-                            '                        <img class="right-arrow" src="<?php echo base_url('application');?>/views/images/icons/right-arrow.svg" alt=">">' +
+                            '                        <a href="<?php echo site_url('InternationalHealth/showIndividualInternationalHealthDetail?InternationalHealthID=');?>'+internationalHealthData[international_health_no].ID+'"><img class="right-arrow" src="<?php echo base_url('application');?>/views/images/icons/right-arrow.svg" alt=">"></a>' +
                             '                    </div>';
                         $('#internationalHealthList').append(individual_international_health);
                     }
@@ -335,19 +335,42 @@
         getHighlightedBrands: function() {
             console.log('Method Name: drugObject.getHighlightedBrands Param:  Value: '+[].toString());
             var formURL = "<?php echo site_url('Brand/getHighlightedBrands')?>";
-            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(drugData){
-                if(drugData.ImagePath != undefined) {
-                    var indication = drugData.Indication;
-                    indication = indication.length > 70 ? indication.substr(0, 67) + '...' : indication;
-                    $('#highlighted-product').html('<div class="star-product-img">' +
-                        '<img src="<?php echo base_url()?>BrandImages/' + drugData.ImagePath + '" alt="">' +
-                        '</div>' +
-                        '<div class="star-product-info">' +
-                        '<div class="star"><i class="fas fa-star"></i></div>' +
-                        '<a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>' + drugData.ID + '" class="star-product-name">' + drugData.Name + '</a>' +
-                        '<p class="star-product-attributes">(' + drugData.StrengthName + ')</p>' +
-                        '<p class="star-product-description">' + indication + '</p>' +
-                        '</div>');
+            $('#highlighted-product').html('');
+            mimsServerAPI.getServerData('GET', formURL, 'jsonp', 'drugObject.getFeatureProducts', function(highlightedDrugData){
+                if (highlightedDrugData.length > 0) {
+                    var indication = '';
+                    for (var drug_index = 0; drug_index < highlightedDrugData.length; drug_index++) {
+                        var drugData = highlightedDrugData[drug_index];
+
+                        indication = drugData.Indication;
+                        indication = indication.length > 70 ? indication.substr(0, 67) + '...' : indication;
+                        $('#highlighted-product').append('<div><div class="star-product-img">' +
+                            '<img src="<?php echo base_url()?>BrandImages/' + drugData.ImagePath + '" alt="">' +
+                            '</div>' +
+                            '<div class="star-product-info">' +
+                            '<div class="star"><i class="fas fa-star"></i></div>' +
+                            '<a href="<?php echo site_url('Brand/showBrandDetail?BrandID=')?>' + drugData.ID + '" class="star-product-name">' + drugData.Name + '</a>' +
+                            '<p class="star-product-attributes">(' + drugData.StrengthName + ')</p>' +
+                            '<p class="star-product-description">' + indication + '</p>' +
+                            '</div></div>');
+                    }
+
+                    $('#highlighted-product').slick({
+                        slidesToScroll: 1,
+                        slidesToShow: 1,
+                        autoplay: true,
+                        autoplaySpeed: 2000,
+                        infinite: true,
+                        arrows: false,
+                        responsive: [
+                            {
+                                breakpoint: 480,
+                                settings: {
+                                    slidesToShow: 1,
+                                }
+                            }
+                        ]
+                    });
                 }
             });
         },
@@ -358,10 +381,12 @@
             var search_options = [];
             switch (searchOption) {
                 case 'brand':
+                case 'brand_by_alphabetically':
                     search_options = drugObject.searchOptionForBrand;
                     $('ul.search-tabs li.brand').addClass('active');
                     break;
                 case 'generic':
+                case 'generic_by_alphabetically':
                     search_options = drugObject.searchOptionForGeneric;
                     $('ul.search-tabs li.generic').addClass('active');
                     break;
@@ -386,6 +411,19 @@
                     drugObject.searchBrandInformation(ui.item.value);
                 }
             });
+
+            for(var i = 0; i < search_options.length; i++) {
+                $('#searchDrugOptionForMobile ul').append('<li data-name="'+search_options[i]+'" class="ui-screen-hidden ui-li-static ui-body-inherit">'+search_options[i]+'</li>');
+            }
+
+            $('#searchDrugOptionForMobile ul').children('li').bind('touchstart mousedown', function(e) {
+                $('#searchDrugOptionForMobile form.ui-filterable div input').val($(this).attr('data-name'));
+                setTimeout(drugObject.hideAutocompleteValue, 1000);
+                drugObject.searchBrandInformation($(this).attr('data-name'));
+            });
+        },
+        hideAutocompleteValue: function() {
+            $('#searchDrugOptionForMobile ul li').addClass('ui-screen-hidden');
         },
         searchAlphabetically: function(value) {
             if(drugObject.searchOptionType == 'manufacturer') {
@@ -437,7 +475,7 @@
             });
         },
         populatePagination: function (objectID, pageNo, populateList) {
-            console.log('Method Name: drugObject.populatePagination Param: pageNo Value: '+[pageNo].toString());
+            console.log('Method Name: drugObject.populatePagination Param: objectID, pageNo, populateList Value: '+[objectID, pageNo, populateList].toString());
             var per_page_information_number = drugObject.perPageInformationNumber;
             var total_page = Math.ceil(drugObject.totalDrug / per_page_information_number);
 

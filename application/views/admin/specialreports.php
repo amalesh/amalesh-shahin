@@ -81,7 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <span class="required-field">*</span>
                         </label>
                         <div class="col-md-6">
-                            <textarea id="SpecialReportDescription" name="Description" rows="6" class="form-control" type="text" maxlength="2000"></textarea>
+                            <textarea id="SpecialReportDescription" name="Description" rows="6" class="form-control" type="text" maxlength="5000"></textarea>
                             <span class="news-description-require-message error-message error">This field is required.</span>
                         </div>
                     </div>

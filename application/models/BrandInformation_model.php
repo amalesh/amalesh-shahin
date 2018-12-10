@@ -401,11 +401,12 @@ class BrandInformation_model extends GeneralData_model {
         $this->db->where('s.IsActive', 1);
         $this->db->where('ps.IsActive', 1);
         $this->db->where('b.IsHighlighted', 1);
-        $this->db->order_by('b.CreateDate', 'DESC');
-        $this->db->limit(1);
+        $this->db->where("b.ImagePath <> ''", NULL, false);
+        $this->db->order_by('rand()');
+        $this->db->limit(3);
         $all_new_information = $this->db->get()->result_array();
         log_message('debug', __METHOD__.'#'.__LINE__.' Method End.');
-        return isset($all_new_information[0]['ID']) ? $all_new_information[0] : array();
+        return isset($all_new_information[0]['ID']) ? $all_new_information : array();
     }
 
     public function getAllDrugInfoForAutoComplete() {
