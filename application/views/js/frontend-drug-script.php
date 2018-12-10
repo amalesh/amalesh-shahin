@@ -412,6 +412,7 @@
                 }
             });
 
+            $('#searchDrugOptionForMobile ul').html('');
             for(var i = 0; i < search_options.length; i++) {
                 $('#searchDrugOptionForMobile ul').append('<li data-name="'+search_options[i]+'" class="ui-screen-hidden ui-li-static ui-body-inherit">'+search_options[i]+'</li>');
             }
