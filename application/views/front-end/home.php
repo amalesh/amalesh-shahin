@@ -44,9 +44,6 @@
         </div>
     </div>
 </div>
-<div id="searchDrugOptionForMobile">
-    <ul data-role="listview" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search cars..."></ul>
-</div>
 
 <!-- home product slider -->
 <div class="home-product-slider-container container">

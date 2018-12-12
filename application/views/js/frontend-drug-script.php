@@ -411,20 +411,6 @@
                     drugObject.searchBrandInformation(ui.item.value);
                 }
             });
-
-            $('#searchDrugOptionForMobile ul').html('');
-            for(var i = 0; i < search_options.length; i++) {
-                $('#searchDrugOptionForMobile ul').append('<li data-name="'+search_options[i]+'" class="ui-screen-hidden ui-li-static ui-body-inherit">'+search_options[i]+'</li>');
-            }
-
-            $('#searchDrugOptionForMobile ul').children('li').bind('touchstart mousedown', function(e) {
-                $('#searchDrugOptionForMobile form.ui-filterable div input').val($(this).attr('data-name'));
-                setTimeout(drugObject.hideAutocompleteValue, 1000);
-                drugObject.searchBrandInformation($(this).attr('data-name'));
-            });
-        },
-        hideAutocompleteValue: function() {
-            $('#searchDrugOptionForMobile ul li').addClass('ui-screen-hidden');
         },
         searchAlphabetically: function(value) {
             if(drugObject.searchOptionType == 'manufacturer') {
